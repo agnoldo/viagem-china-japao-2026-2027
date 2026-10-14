@@ -86,9 +86,7 @@ function AppShell() {
           <svg viewBox="0 0 40 40" aria-hidden="true">
             <path d="M8 29V12h10v17m4 0V12h10v17M4 20h32M11 8h18M5 32h30" />
           </svg>
-          <span>
-            Nossa viagem<small>{content.trip.name}</small>
-          </span>
+          <span>{content.trip.name}</span>
         </Link>
         <nav aria-label="Navegação principal">
           {navigation.map(({ to, label, icon: Icon }) => (
@@ -121,9 +119,8 @@ function AppShell() {
       <div className="workspace">
         <header className="topbar">
           <Link to="/hoje" className="mobile-brand">
-            Nossa viagem
+            {content.trip.name}
           </Link>
-          <span className="topbar-title">{content.trip.name}</span>
           <form
             className="search-form"
             role="search"

@@ -4,14 +4,14 @@ Atualização em 14/10/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Conteúdo
 
-- 11 dias registrados, 7 cidades, 7 locais e 2 hospedagens. Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
+- 11 dias registrados, 7 cidades, 7 locais e 3 hospedagens. Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
 - Seis voos do bilhete confirmados para os quatro viajantes: QR7251, QR774, QR892, QR809, QR785, QR4834. Horários locais e durações conferidos entre Brasil, Doha, China e Japão.
 - Conexões calculadas: GRU 9h35, DOH 4h25 na ida; DOH 45 minutos e GRU 1h45 na volta. Trocas de terminal em GRU 2→3 e 3→2.
 - Beijing Daxing (PKX), Haneda (HND) e Narita (NRT) são aeroportos distintos. Economy, 2 volumes por passageiro, peso desconhecido. Operação LATAM nos trechos domésticos.
 - Recibo integral, número de passageiro frequente e códigos tarifários não armazenados.
 - Pan Pacific Beijing: 4 noites, de 31/12/2026 a 04/01/2027; check-in a partir das 15h e checkout até 12h, fuso Asia/Shanghai. Endereço/telefone da reserva correspondem ao [site oficial](https://www.panpacific.com/zh/hotels-and-resorts/pp-beijing/the-hotel.html), usado para nome e endereço em chinês.
 - Hotel associado somente às quatro noites; 04/01 tem checkout sem pernoite presumido. Transfer de Daxing e continuação não definidos. Valores, política financeira e contato privado excluídos.
-- Dia 18/01: voo Shanghai → Haneda e pernoite em Tokyo, hospedagem indefinida.
+- Dia 18/01: voo Shanghai → Haneda e pernoite confirmado no Ueno Woo Hotel, dois quartos Double Room, sem refeições. Check-in 15h–21h; checkout até 11h de 19/01. Endereço/telefone conferidos no [site do hotel](https://ueno-woo-hotel.mydirectstay.com/contact-us.html). Nome da hóspede, valores e dados de pagamento não publicados.
 - Dia 19/01: Joetsu Shinkansen e início de resort reservado.
 - No resort de Echigo-Yuzawa, `booked` foi normalizado para `confirmed`; nome/endereço/checkout continuam nulos.
 - Aeroporto em Shanghai, estação de Tokyo, horários de 18–19/01 e programação dos dias sem registro permanecem desconhecidos.
@@ -20,7 +20,7 @@ Atualização em 14/10/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Verificações
 
-Resultado local: 55 testes Vitest e 16 testes Playwright aprovados, além de lint, validação e build. O teste offline cobre os horários do hotel de Beijing, nome/endereço em chinês, cópia e link AMap.
+Resultado local: 56 testes Vitest e 16 testes Playwright aprovados, além de lint, validação e build. Título geral “China e Japão 2027”, sem subtítulo no shell, documento e metadados da PWA. Revisão visual em desktop, iPhone emulado e largura de 320 px, sem rolagem horizontal. Teste offline confirma a janela de check-in do Ueno Woo Hotel, pernoite em 18/01 e manutenção do resort como hospedagem de 19/01.
 
 Lint e TypeScript strict; YAML, schemas e referências; Vitest com fixture completa e plano parcial; build e auditoria de assets locais. Os testes de conteúdo verificam a diferença entre limite geral e data de um dia registrado, reserva confirmada sem nome e local de embarque desconhecido sem perder a validação de IDs reais.
 

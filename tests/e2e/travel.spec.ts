@@ -35,6 +35,7 @@ test('roteiro, locais e endereços acessíveis sem assets externos', async ({ pa
       external.push(r.url());
   });
   await installed(page);
+  await expect(page).toHaveTitle('China e Japão 2027');
   const airport = content.places.find((p) => p.category === 'airport')!;
   await page.goto(base + `#/local/${airport.id}`);
   await expect(
@@ -114,6 +115,18 @@ test('reabre sem rede e navega por todos os dias e cidades registrados', async (
   await expect(reopened.getByRole('status', { name: 'Resultado da cópia' })).toContainText(
     /copiado|Selecione/,
   );
+  await reopened.goto(base + '#/hotel/ueno-woo-hotel');
+  await expect(reopened.locator('h1')).toHaveText('Ueno Woo Hotel');
+  await expect(reopened.getByText('Check-in:', { exact: false })).toContainText(
+    '18 de janeiro · 15:00–21:00',
+  );
+  await expect(reopened.getByText('Check-out:', { exact: false })).toContainText(
+    '19 de janeiro · 11:00',
+  );
+  await reopened.goto(base + '#/hoje/2027-01-18');
+  await expect(reopened.locator('.stay-panel')).toContainText('Ueno Woo Hotel');
+  await reopened.goto(base + '#/hoje/2027-01-19');
+  await expect(reopened.locator('.stay-panel')).toContainText('Resort · nome a registrar');
   await reopened.goto(base + '#/logistica');
   await expect(reopened.getByRole('heading', { name: 'Voos', exact: true })).toBeVisible();
   await reopened.reload();

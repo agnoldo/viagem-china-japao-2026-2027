@@ -1,11 +1,11 @@
-date: '2027-01-18'
+date: 2027-01-18
 cityId: tokyo
 regionId: japan
 summary: Chegada ao Japão e pernoite em Tokyo
 status: planned
-notes:
-  Chegada a Tokyo Haneda vindo de Shanghai. A hospedagem desta noite ainda não foi definida. O objetivo
-  é pernoitar antes de seguir para Echigo-Yuzawa no dia seguinte.
+notes: Chegada prevista a Tokyo Haneda vindo de Shanghai e pernoite confirmado no Ueno Woo Hotel em
+  dois quartos. Check-in entre 15:00 e 21:00; horário do voo e chegada ao hotel ainda não definidos.
+  Seguir para Echigo-Yuzawa no dia seguinte.
 activities:
   - id: arrive-tokyo
     type: flight
@@ -22,6 +22,11 @@ activities:
     timezone: Asia/Tokyo
   - id: overnight-tokyo
     type: hotel
-    title: Pernoite em Tokyo
-    status: planned
-    notes: Hotel ainda não definido.
+    title: Check-in e pernoite no Ueno Woo Hotel
+    status: confirmed
+    notes: Dois quartos Double Room, sem refeições. Check-in disponível de 15:00 a 21:00; chegada ao
+      hotel ainda não agendada. Confira compatibilidade com o horário do voo assim que for
+      informado.
+    hotelId: ueno-woo-hotel
+    timezone: Asia/Tokyo
+hotelId: ueno-woo-hotel

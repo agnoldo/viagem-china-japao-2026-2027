@@ -336,6 +336,7 @@ export function PlaceDetail({ hotel = false }: { hotel?: boolean }) {
         <Section title="Estadia">
           <p>
             Check-in: {formatDate(place.checkInDate)} · {place.checkIn ?? 'horário a definir'}
+            {place.checkInUntil && `–${place.checkInUntil}`}
             <br />
             Check-out: {formatDate(place.checkOutDate)} · {place.checkOut ?? 'horário a definir'}
           </p>

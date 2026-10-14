@@ -1,5 +1,5 @@
 id: china-japan-2027
-name: China + Japão 2027
+name: China e Japão 2027
 year: 2027
 status: planning
 startDate: 2026-12-29
@@ -32,6 +32,8 @@ notes:
   - 'Programação parcial: deslocamentos e estadias entre os dias registrados continuam em aberto.'
   - Na volta, conexão em Doha de 45 minutos e em Guarulhos de 1h45, com troca do terminal 3 para o
     2. Confirmar com as companhias as orientações de conexão.
+  - 'Tokyo: Ueno Woo Hotel reservado para a noite de 18/01, dois quartos Double Room para os quatro
+    viajantes. Check-in de 15:00 a 21:00; checkout até 11:00 de 19/01, horários locais.'
 regions:
   - id: brazil
     name: Brasil
@@ -127,9 +129,10 @@ cities:
     startDate: 2027-01-18
     endDate: 2027-01-19
     status: planned
-    notes: Pernoite de trânsito em 18/01 antes de seguir à neve. Hotel ainda não definido. Outras
-      estadias em Tokyo ainda não registradas. Retorno por Narita em 27/01 confirmado; chegada a
-      Tokyo antes desse voo ainda não registrada.
+    notes: Pernoite confirmado no Ueno Woo Hotel de 18 a 19/01/2027, em dois quartos Double Room.
+      Check-in entre 15:00 e 21:00, checkout até 11:00. Chegada prevista por Haneda em 18/01 e trem
+      para Echigo-Yuzawa em 19/01, ambos ainda sem horários registrados. Retorno por Narita em 27/01
+      confirmado; outras estadias em Tokyo ainda não registradas.
   - id: echigo-yuzawa
     name:
       default: Echigo-Yuzawa

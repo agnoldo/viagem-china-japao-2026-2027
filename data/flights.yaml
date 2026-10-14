@@ -164,8 +164,9 @@
     e horários ainda não registrados.
   offlineInstructions:
     Confirmar aeroporto de saída e horários no bilhete. Na chegada a Haneda, seguir
-    para a hospedagem de trânsito em Tokyo, ainda não definida. A ida a Echigo-Yuzawa está prevista
-    para o dia seguinte.
+    para o Ueno Woo Hotel, com dois quartos reservados. Check-in de 15:00 a 21:00; conferir
+    compatibilidade com o voo. Transfer até o hotel ainda não definido. A ida a Echigo-Yuzawa está
+    prevista para o dia seguinte.
 - id: flight-qr809-2027-01-27
   kind: flight
   status: confirmed

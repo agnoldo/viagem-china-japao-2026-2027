@@ -1,7 +1,7 @@
 # Instruções para manutenção
 
 ## Objetivo
-PWA familiar de consulta para China/Japão em 2027. Viagem de 29/12/2026 a 28/01/2027; seis voos confirmados para os quatro viajantes. Plano parcial: chegada a Daxing em 31/12, 18/01 Tokyo/Haneda, 19/01 início do resort em Echigo-Yuzawa, retorno por Narita em 27/01. Pan Pacific Beijing reservado de 31/12 a 04/01, com quatro pernoites e checkout sem pernoite extra. Há lacunas na programação. Confiabilidade offline e leitura no iPhone são prioritárias. Um mantenedor edita YAML no Git; os outros viajantes apenas consultam.
+PWA familiar de consulta para China/Japão em 2027. Viagem de 29/12/2026 a 28/01/2027; seis voos confirmados para os quatro viajantes. Plano parcial: chegada a Daxing em 31/12, 18/01 Tokyo/Haneda, 19/01 início do resort em Echigo-Yuzawa, retorno por Narita em 27/01. Pan Pacific Beijing reservado de 31/12 a 04/01, com quatro pernoites e checkout sem pernoite extra. Ueno Woo Hotel reservado para a noite de 18/01, dois quartos; check-in 15h–21h e checkout até 11h de 19/01. Há lacunas na programação. Confiabilidade offline e leitura no iPhone são prioritárias. Um mantenedor edita YAML no Git; os outros viajantes apenas consultam.
 
 ## Comunicação
 Responder em português, sem enfeites. Linguagem direta. Entregar resultado, verificações e limitações materiais. Não pedir confirmação para decisões técnicas triviais já delegadas.
@@ -26,7 +26,7 @@ Responder em português, sem enfeites. Linguagem direta. Entregar resultado, ver
 - Atualizar `contentVersion` com data real da edição. Validar antes do commit.
 
 ## Não inventar reservas
-Usar `status: example` em demonstrações. Se não há hotel, número, preço, terminal, horário ou compra confirmada, manter informação vazia ou pendente com explicação. Um local desconhecido deve ser null. `booked` fornecido pelo usuário vira `confirmed`, sem preencher nome/endereço/horários de uma reserva incompleta. Datas de check-in/checkout são independentes. Não confirmar disponibilidade de ligação direta pelo fato de um trecho existir no YAML.
+Usar `status: example` em demonstrações. Se não há hotel, número, preço, terminal, horário ou compra confirmada, manter informação vazia ou pendente com explicação. Um local desconhecido deve ser null. `booked` fornecido pelo usuário vira `confirmed`, sem preencher nome/endereço/horários de uma reserva incompleta. Datas de check-in/checkout são independentes. `checkInUntil` registra o fim opcional da janela de check-in; não transformar a janela em chegada agendada. Não confirmar disponibilidade de ligação direta pelo fato de um trecho existir no YAML.
 
 ## Fusos
 China `Asia/Shanghai`; Japão `Asia/Tokyo`; Brasil `America/Sao_Paulo`; Catar `Asia/Qatar`. Nunca usar o fuso do servidor/dispositivo como único critério para o dia da viagem. Preservar a estratégia de cidade-base em `src/lib/time.ts` e os testes de virada de dia. Cada lado do transporte mantém seu horário local.

@@ -1,13 +1,21 @@
-date: '2027-01-19'
+date: 2027-01-19
 cityId: echigo-yuzawa
 regionId: japan
 summary: Tokyo → Echigo-Yuzawa e início da estadia na neve
 status: planned
 hotelId: echigo-yuzawa-resort
-notes:
-  Primeiro dia da hospedagem no resort de neve. Reserva informada; nome e demais dados ainda não
-  registrados.
+notes: Primeiro dia da hospedagem no resort de neve. Reserva informada; nome e demais dados ainda
+  não registrados.
 activities:
+  - id: ueno-woo-checkout
+    type: hotel
+    title: Checkout do Ueno Woo Hotel até as 11:00
+    hotelId: ueno-woo-hotel
+    status: confirmed
+    time: 11:00
+    timezone: Asia/Tokyo
+    notes: Horário limite, não uma saída agendada. Ajustar saída do hotel ao trem para Echigo-Yuzawa
+      quando estação e horário estiverem definidos.
   - id: tokyo-echigo-yuzawa
     type: train
     title: Tokyo → Echigo-Yuzawa

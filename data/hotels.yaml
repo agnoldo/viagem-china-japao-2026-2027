@@ -73,3 +73,43 @@
     o início da disponibilidade, não uma chegada agendada. Nome e endereço em chinês identificados
     pela correspondência do endereço e telefone com o site oficial. Transfer de Daxing até o hotel e
     destino após o checkout ainda não registrados.'
+- id: ueno-woo-hotel
+  cityId: tokyo
+  name:
+    default: Ueno Woo Hotel
+    local: Ueno Woo Hotel 東京上野 窩·旅店
+  type: hotel
+  status: confirmed
+  address:
+    default: 2 Chome-4-1 Higashiueno, Taito City, Tokyo, Japan
+    local: 東京都台東区東上野2丁目4-1
+  phone: +81 70-7654-8868
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: Ueno Woo Hotel 東京都台東区東上野2丁目4-1
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  officialUrl: https://ueno-woo-hotel.mydirectstay.com/contact-us.html
+  checkInDate: 2027-01-18
+  checkIn: 15:00
+  checkInUntil: 21:00
+  checkOutDate: 2027-01-19
+  checkOut: 11:00
+  notes: Reserva confirmada de 1 noite, 2 quartos Double Room, para 2 adultos e 2 filhos. Sem
+    refeições incluídas. Check-in entre 15:00 e 21:00 de 18/01; checkout até 11:00 de 19/01, no fuso
+    Asia/Tokyo. O horário de chegada ao hotel ainda não está definido. Confirmar a chegada dentro da
+    janela de check-in quando o horário do voo Shanghai–Haneda estiver registrado. Nome, endereço e
+    telefone correspondem ao site do hotel. Deslocamento de Haneda até o hotel e estação de embarque
+    do trem do dia seguinte ainda não definidos.

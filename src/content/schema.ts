@@ -94,6 +94,7 @@ export const hotelSchema = z
     name: z.object({ default: nullableText, local: nullableText }).strict(),
     type: z.enum(['hotel', 'resort']).default('hotel'),
     checkIn: timeSchema.nullable(),
+    checkInUntil: timeSchema.nullable().default(null),
     checkOut: timeSchema.nullable(),
     checkInDate: dateSchema.nullable().default(null),
     checkOutDate: dateSchema.nullable().default(null),
@@ -102,6 +103,10 @@ export const hotelSchema = z
   .refine(
     (v) => !v.checkInDate || !v.checkOutDate || v.checkOutDate >= v.checkInDate,
     'Checkout anterior ao check-in',
+  )
+  .refine(
+    (v) => !v.checkInUntil || (!!v.checkIn && v.checkInUntil >= v.checkIn),
+    'Janela de check-in inválida',
   );
 export const activityTypes = [
   'flight',

@@ -66,10 +66,36 @@ describe('plano atual com dados incompletos', () => {
     const arrival = content.days.find((d) => d.date === '2027-01-18')!;
     const snow = content.days.find((d) => d.date === '2027-01-19')!;
     expect(arrival.cityId).toBe('tokyo');
-    expect(arrival.hotelId).toBeUndefined();
+    expect(arrival.hotelId).toBe('ueno-woo-hotel');
     expect(snow.cityId).toBe('echigo-yuzawa');
     expect(snow.hotelId).toBe('echigo-yuzawa-resort');
     expect(arrival.activities.some((a) => a.type === 'train')).toBe(false);
+  });
+  it('preserva janela de check-in e checkout de Tokyo sem mudar o hotel da noite seguinte', () => {
+    const hotel = content.hotels.find((h) => h.id === 'ueno-woo-hotel')!;
+    expect([
+      hotel.checkInDate,
+      hotel.checkIn,
+      hotel.checkInUntil,
+      hotel.checkOutDate,
+      hotel.checkOut,
+    ]).toEqual(['2027-01-18', '15:00', '21:00', '2027-01-19', '11:00']);
+    expect(hotel.notes).toContain('2 quartos Double Room');
+    expect(content.days.filter((d) => d.hotelId === hotel.id).map((d) => d.date)).toEqual([
+      '2027-01-18',
+    ]);
+    const checkin = content.days
+      .find((d) => d.date === '2027-01-18')!
+      .activities.find((a) => a.hotelId === hotel.id)!;
+    expect(checkin.time).toBeUndefined();
+    expect(
+      content.days
+        .find((d) => d.date === '2027-01-19')!
+        .activities.find((a) => a.hotelId === hotel.id)!.time,
+    ).toBe('11:00');
+    const invalid = structuredClone(content);
+    invalid.hotels.find((h) => h.id === hotel.id)!.checkInUntil = '14:00';
+    expect(() => validateContent(invalid)).toThrow(/Janela de check-in/);
   });
   it('preserva Haneda, deixando aeroporto de Shanghai e horários em aberto', () => {
     const flight = content.flights.find((f) => f.id === 'flight-shanghai-tokyo-2027-01-18')!;
