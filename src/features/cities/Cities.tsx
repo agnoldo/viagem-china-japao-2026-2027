@@ -1,3 +1,4 @@
+import { entityName } from '../../lib/labels';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowUpRight, ArrowRight, BedDouble } from 'lucide-react';
 import { content, cities } from '../../content';
@@ -93,7 +94,9 @@ export function CityDetail() {
                 </Link>
               ))
             ) : (
-              <Empty>Destino alternativo. Nenhum dia foi confirmado aqui.</Empty>
+              <Empty>
+                Nenhum dia registrado neste destino. Datas e programação ainda incompletas.
+              </Empty>
             )}
           </Section>
           <Section title="Locais e endereços">
@@ -115,7 +118,7 @@ export function CityDetail() {
                 <Link className="simple-row" key={h.id} to={`/hotel/${h.id}`}>
                   <BedDouble size={21} />
                   <div>
-                    <strong>{h.name.default}</strong>
+                    <strong>{entityName(h)}</strong>
                     <StatusBadge status={h.status} />
                   </div>
                   <ArrowRight size={18} />

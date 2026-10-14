@@ -1,14 +1,15 @@
-- id: beijing-example-hotel
-  cityId: beijing
+- id: echigo-yuzawa-resort
+  cityId: echigo-yuzawa
   name:
-    default: Hospedagem a definir · Beijing
+    default: null
     local: null
-  status: example
+  type: resort
+  status: confirmed
   address:
     default: null
     local: null
   phone: null
-  coordinates: &id001
+  coordinates:
     wgs84:
       lat: null
       lon: null
@@ -25,215 +26,11 @@
     baiduKeyword: null
     baiduCity: null
   mapLinks: {}
+  checkInDate: '2027-01-19'
   checkIn: null
+  checkOutDate: null
   checkOut: null
   notes:
-    'EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários
-    pelos dados reais.'
-- id: xian-example-hotel
-  cityId: xian
-  name:
-    default: Hospedagem a definir · Xi’an
-    local: null
-  status: example
-  address:
-    default: null
-    local: null
-  phone: null
-  coordinates: *id001
-  mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
-  mapLinks: {}
-  checkIn: null
-  checkOut: null
-  notes:
-    'EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários
-    pelos dados reais.'
-- id: chengdu-example-hotel
-  cityId: chengdu
-  name:
-    default: Hospedagem a definir · Chengdu
-    local: null
-  status: example
-  address:
-    default: null
-    local: null
-  phone: null
-  coordinates: *id001
-  mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
-  mapLinks: {}
-  checkIn: null
-  checkOut: null
-  notes:
-    'EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários
-    pelos dados reais.'
-- id: chongqing-example-hotel
-  cityId: chongqing
-  name:
-    default: Hospedagem a definir · Chongqing
-    local: null
-  status: example
-  address:
-    default: null
-    local: null
-  phone: null
-  coordinates: *id001
-  mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
-  mapLinks: {}
-  checkIn: null
-  checkOut: null
-  notes:
-    'EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários
-    pelos dados reais.'
-- id: zhangjiajie-example-hotel
-  cityId: zhangjiajie
-  name:
-    default: Hospedagem a definir · Zhangjiajie
-    local: null
-  status: example
-  address:
-    default: null
-    local: null
-  phone: null
-  coordinates: *id001
-  mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
-  mapLinks: {}
-  checkIn: null
-  checkOut: null
-  notes:
-    'EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários
-    pelos dados reais.'
-- id: shanghai-example-hotel
-  cityId: shanghai
-  name:
-    default: Hospedagem a definir · Shanghai
-    local: null
-  status: example
-  address:
-    default: null
-    local: null
-  phone: null
-  coordinates: *id001
-  mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
-  mapLinks: {}
-  checkIn: null
-  checkOut: null
-  notes:
-    'EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários
-    pelos dados reais.'
-- id: tokyo-example-hotel
-  cityId: tokyo
-  name:
-    default: Hospedagem a definir · Tokyo
-    local: null
-  status: example
-  address:
-    default: null
-    local: null
-  phone: null
-  coordinates: *id001
-  mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
-  mapLinks: {}
-  checkIn: null
-  checkOut: null
-  notes:
-    'EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários
-    pelos dados reais.'
-- id: echigo-yuzawa-example-hotel
-  cityId: echigo-yuzawa
-  name:
-    default: Hospedagem a definir · Echigo-Yuzawa
-    local: null
-  status: example
-  address:
-    default: null
-    local: null
-  phone: null
-  coordinates: *id001
-  mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
-  mapLinks: {}
-  checkIn: null
-  checkOut: null
-  notes:
-    'EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários
-    pelos dados reais.'
-- id: fuji-area-example-hotel
-  cityId: fuji-area
-  name:
-    default: Hospedagem a definir · Região do Monte Fuji
-    local: null
-  status: example
-  address:
-    default: null
-    local: null
-  phone: null
-  coordinates: *id001
-  mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
-  mapLinks: {}
-  checkIn: null
-  checkOut: null
-  notes:
-    'EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários
-    pelos dados reais.'
-- id: osaka-example-hotel
-  cityId: osaka
-  name:
-    default: Hospedagem a definir · Osaka e arredores
-    local: null
-  status: example
-  address:
-    default: null
-    local: null
-  phone: null
-  coordinates: *id001
-  mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
-  mapLinks: {}
-  checkIn: null
-  checkOut: null
-  notes:
-    'EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários
-    pelos dados reais.'
+    'Reserva informada pelo mantenedor (status original: booked). Resort de neve com início da hospedagem
+    em 19/01/2027. Nome, endereço, telefone, horários e data de checkout ainda não registrados. Não é
+    uma reserva de exemplo.'

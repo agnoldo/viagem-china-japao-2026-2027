@@ -1,10 +1,11 @@
-id: china-japan-2026-2027
-name: China e Japão 2026–2027
-startDate: '2026-12-29'
-endDate: '2027-01-27'
+id: china-japan-2027
+name: China + Japão 2027
+year: 2027
+status: planning
+startDate: null
+endDate: null
 homeCity: Belo Horizonte
 countries:
-  - BR
   - CN
   - JP
 defaultLocale: pt-BR
@@ -19,184 +20,62 @@ travelers:
     label: Adolescente 1
   - id: teen-2
     label: Adolescente 2
+notes:
+  - Viagem familiar à China e ao Japão em janeiro de 2027.
+  - Casal com dois filhos adolescentes, com 16 e 15 anos durante o planejamento.
+  - Dados ainda incompletos. Datas de saída do Brasil e de retorno não registradas.
+  - Cidades chinesas anteriores a Shanghai e destinos japoneses posteriores a Echigo-Yuzawa ainda não registrados.
 regions:
-  - id: brazil
-    name: Brasil
-    country: BR
   - id: china
     name: China
+    localName: 中国
     country: CN
   - id: japan
     name: Japão
+    localName: 日本
     country: JP
 cities:
-  - id: belo-horizonte
-    country: BR
-    regionId: brazil
-    timezone: America/Sao_Paulo
-    startDate: '2026-12-29'
-    endDate: '2026-12-31'
-    status: planned
-    aliases: []
-    name:
-      default: Belo Horizonte
-      local: Belo Horizonte
-    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
-  - id: beijing
-    country: CN
-    regionId: china
-    timezone: Asia/Shanghai
-    startDate: '2026-12-31'
-    endDate: '2027-01-04'
-    status: planned
-    aliases:
-      - Pequim
-    name:
-      default: Beijing
-      local: 北京
-    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
-  - id: xian
-    country: CN
-    regionId: china
-    timezone: Asia/Shanghai
-    startDate: '2027-01-04'
-    endDate: '2027-01-06'
-    status: planned
-    aliases:
-      - Xi'an
-    name:
-      default: Xi’an
-      local: 西安
-    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
-  - id: chengdu
-    country: CN
-    regionId: china
-    timezone: Asia/Shanghai
-    startDate: '2027-01-06'
-    endDate: '2027-01-09'
-    status: planned
-    aliases: []
-    name:
-      default: Chengdu
-      local: 成都
-    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
-  - id: chongqing
-    country: CN
-    regionId: china
-    timezone: Asia/Shanghai
-    startDate: '2027-01-09'
-    endDate: '2027-01-11'
-    status: planned
-    aliases: []
-    name:
-      default: Chongqing
-      local: 重庆
-    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
-  - id: zhangjiajie
-    country: CN
-    regionId: china
-    timezone: Asia/Shanghai
-    startDate: '2027-01-11'
-    endDate: '2027-01-14'
-    status: planned
-    aliases: []
-    name:
-      default: Zhangjiajie
-      local: 张家界
-    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
   - id: shanghai
-    country: CN
-    regionId: china
-    timezone: Asia/Shanghai
-    startDate: '2027-01-14'
-    endDate: '2027-01-18'
-    status: planned
-    aliases:
-      - Xangai
     name:
       default: Shanghai
       local: 上海
-    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
-  - id: tokyo
-    country: JP
-    regionId: japan
-    timezone: Asia/Tokyo
-    startDate: '2027-01-18'
-    endDate: '2027-01-27'
+    regionId: china
+    country: CN
+    aliases: []
+    timezone: Asia/Shanghai
+    startDate: null
+    endDate: '2027-01-18'
     status: planned
-    aliases:
-      - Tóquio
+    notes: Estadia anterior à saída para Tokyo; início e demais trechos da China ainda não registrados.
+  - id: tokyo
     name:
       default: Tokyo
       local: 東京
-    notes:
-      Porta de entrada e saída do Japão. Presença entre 22 e 26/01 depende da alternativa escolhida;
-      não representa hospedagem confirmada.
-  - id: echigo-yuzawa
-    country: JP
     regionId: japan
+    country: JP
+    aliases: []
     timezone: Asia/Tokyo
     startDate: '2027-01-18'
-    endDate: '2027-01-22'
-    status: undecided
-    aliases:
-      - Yuzawa
-      - Neve
+    endDate: '2027-01-19'
+    status: planned
+    notes:
+      Pernoite de trânsito em 18/01 antes de seguir à neve. Hotel ainda não definido. Outras estadias
+      em Tokyo ainda não registradas.
+  - id: echigo-yuzawa
     name:
       default: Echigo-Yuzawa
       local: 越後湯沢
+    regionId: japan
+    country: JP
+    aliases: []
+    timezone: Asia/Tokyo
+    startDate: '2027-01-19'
+    endDate: null
+    status: planned
     notes:
-      Quatro noites previstas. Resort e deslocamentos ainda não escolhidos. Avaliar conexão no dia
-      da chegada internacional.
-  - id: fuji-area
-    country: JP
-    regionId: japan
-    timezone: Asia/Tokyo
-    startDate: '2027-01-22'
-    endDate: '2027-01-27'
-    status: optional
-    aliases:
-      - Fuji
-      - Kawaguchiko
-    name:
-      default: Região do Monte Fuji
-      local: 富士山周辺
-    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
-  - id: osaka
-    country: JP
-    regionId: japan
-    timezone: Asia/Tokyo
-    startDate: '2027-01-22'
-    endDate: '2027-01-27'
-    status: optional
-    aliases:
-      - Osaca
-    name:
-      default: Osaka e arredores
-      local: 大阪
-    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
-alternatives:
-  - id: japan-after-echigo
-    kind: alternative
-    status: undecided
-    label: 'Depois da neve: Fuji ou Osaka?'
-    startDate: '2027-01-22'
-    endDate: '2027-01-27'
-    options:
-      - id: fuji-option
-        label: Monte Fuji
-        status: optional
-        cityIds:
-          - fuji-area
-          - tokyo
-        notes: Possibilidade de visitar a região de Fuji e retornar a Tokyo. Hospedagens e transporte a definir.
-      - id: osaka-option
-        label: Osaka e arredores
-        status: optional
-        cityIds:
-          - osaka
-          - tokyo
-        notes: Possibilidade de visitar o amigo da família e retornar a Tokyo. Datas e deslocamentos a definir.
+      Destino de neve. Hospedagem em resort reservada a partir de 19/01/2027. Nome, endereço e checkout
+      ainda não registrados.
+alternatives: []
 usefulInfo:
   - title: Antes de sair do hotel
     body:

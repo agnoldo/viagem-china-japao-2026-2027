@@ -1,15 +1,23 @@
 date: '2027-01-19'
 cityId: echigo-yuzawa
 regionId: japan
-summary: Programação a definir em Echigo-Yuzawa
+summary: Tokyo → Echigo-Yuzawa e início da estadia na neve
 status: planned
-notes: Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.
+hotelId: echigo-yuzawa-resort
+notes:
+  Primeiro dia da hospedagem no resort de neve. Reserva informada; nome e demais dados ainda não
+  registrados.
 activities:
-  - title: Dia de neve
-    type: free-time
-    placeId: snow-region
-    notes: Resort, passes, equipamentos e atividades a escolher.
-    id: 20270119-activity-1
-    status: example
+  - id: tokyo-echigo-yuzawa
+    type: train
+    title: Tokyo → Echigo-Yuzawa
+    transportId: tokyo-echigo-yuzawa-2027-01-19
+    status: planned
     timezone: Asia/Tokyo
-hotelId: echigo-yuzawa-example-hotel
+    notes: Joetsu Shinkansen; estação de embarque e horários a definir.
+  - id: resort-checkin
+    type: hotel
+    title: Check-in no resort
+    hotelId: echigo-yuzawa-resort
+    status: confirmed
+    notes: Reserva informada. Nome do resort e horário do check-in ainda não registrados.

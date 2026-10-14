@@ -20,22 +20,25 @@ export function localTime(now: Date, timezone: string): string {
 export function currentTripDay(
   c: Content,
   now = new Date(),
-): { date: string; phase: 'before' | 'during' | 'after' } {
+): { date: string; phase: 'before' | 'during' | 'after' | 'incomplete' } {
   const zone = (day: Day) =>
     c.trip.cities.find((v) => v.id === day.cityId)?.timezone ?? c.trip.defaultTimeZone;
-  if (localDate(now, zone(c.days[0])) < c.trip.startDate)
-    return { date: c.trip.startDate, phase: 'before' };
+  const first = c.days[0];
   const last = c.days[c.days.length - 1];
-  if (localDate(now, zone(last)) > c.trip.endDate) return { date: c.trip.endDate, phase: 'after' };
+  if (c.trip.startDate && localDate(now, zone(first)) < c.trip.startDate)
+    return { date: first.date, phase: 'before' };
+  if (c.trip.endDate && localDate(now, zone(last)) > c.trip.endDate)
+    return { date: last.date, phase: 'after' };
   const matching = c.days.filter((day) => localDate(now, zone(day)) === day.date);
   if (matching.length) return { date: matching[matching.length - 1].date, phase: 'during' };
   const upcoming = c.days.find((day) => localDate(now, zone(day)) < day.date);
-  return { date: upcoming?.date ?? c.trip.endDate, phase: 'during' };
+  return { date: upcoming?.date ?? last.date, phase: 'incomplete' };
 }
 export function formatDate(
-  date: string,
+  date: string | null,
   options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long' },
 ): string {
+  if (!date) return 'A definir';
   return new Intl.DateTimeFormat('pt-BR', { ...options, timeZone: 'UTC' }).format(
     new Date(`${date}T12:00:00Z`),
   );

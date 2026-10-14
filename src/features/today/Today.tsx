@@ -1,3 +1,4 @@
+import { entityName } from '../../lib/labels';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
   ArrowRight,
@@ -57,7 +58,7 @@ export function Today({ now }: { now: Date }) {
     return (
       <>
         <h1>Dia fora da viagem</h1>
-        <Link to="/viagem">Escolher um dos 30 dias</Link>
+        <Link to="/viagem">Escolher um dia registrado</Link>
       </>
     );
   const city = cities.get(day.cityId)!;
@@ -96,8 +97,8 @@ export function Today({ now }: { now: Date }) {
           <input
             aria-label="Escolher dia"
             type="date"
-            min={content.trip.startDate}
-            max={content.trip.endDate}
+            min={content.days[0].date}
+            max={content.days[content.days.length - 1].date}
             value={day.date}
             onChange={(e) => {
               if (content.days.some((d) => d.date === e.target.value)) visit(e.target.value);
@@ -116,6 +117,12 @@ export function Today({ now }: { now: Date }) {
           <ChevronRight size={23} />
         </button>
       </div>
+      {current.phase === 'incomplete' && (
+        <div className="notice">
+          <strong>Plano parcial.</strong> Início e fim da viagem ainda não registrados. Exibindo os
+          dias disponíveis; os demais trechos continuam em aberto.
+        </div>
+      )}
       {current.phase === 'before' && !preview && (
         <div className="notice preparation">
           <div>
@@ -289,11 +296,11 @@ export function Today({ now }: { now: Date }) {
               {hotel ? (
                 <>
                   <StatusBadge status={hotel.status} />
-                  <h3>{hotel.name.default}</h3>
+                  <h3>{entityName(hotel)}</h3>
                   <p>
                     {hotel.address.local ||
                       hotel.address.default ||
-                      'Endereço e horários aguardam confirmação.'}
+                      'Endereço e horários ainda não registrados.'}
                   </p>
                   <Link className="text-link" to={`/hotel/${hotel.id}`}>
                     Consultar hospedagem
@@ -306,7 +313,7 @@ export function Today({ now }: { now: Date }) {
                   <p>
                     {day.alternativeId
                       ? 'Depende da alternativa escolhida.'
-                      : 'Confirme se haverá pernoite em hotel ou em trânsito.'}
+                      : 'A hospedagem desta noite ainda não foi definida.'}
                   </p>
                   <Link className="text-link" to="/logistica?tipo=hotel">
                     Ver hospedagens

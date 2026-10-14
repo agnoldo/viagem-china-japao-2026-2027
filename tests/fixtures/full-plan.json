@@ -1,0 +1,2582 @@
+{
+  "trip": {
+    "id": "china-japan-2026-2027",
+    "name": "China e Japão 2026–2027",
+    "startDate": "2026-12-29",
+    "endDate": "2027-01-27",
+    "homeCity": "Belo Horizonte",
+    "countries": [
+      "BR",
+      "CN",
+      "JP"
+    ],
+    "defaultLocale": "pt-BR",
+    "defaultTimeZone": "America/Sao_Paulo",
+    "contentVersion": "2026-10-14",
+    "travelers": [
+      {
+        "id": "adult-1",
+        "label": "Adulto 1"
+      },
+      {
+        "id": "adult-2",
+        "label": "Adulto 2"
+      },
+      {
+        "id": "teen-1",
+        "label": "Adolescente 1"
+      },
+      {
+        "id": "teen-2",
+        "label": "Adolescente 2"
+      }
+    ],
+    "regions": [
+      {
+        "id": "brazil",
+        "name": "Brasil",
+        "country": "BR"
+      },
+      {
+        "id": "china",
+        "name": "China",
+        "country": "CN"
+      },
+      {
+        "id": "japan",
+        "name": "Japão",
+        "country": "JP"
+      }
+    ],
+    "cities": [
+      {
+        "id": "belo-horizonte",
+        "regionId": "brazil",
+        "country": "BR",
+        "name": {
+          "default": "Belo Horizonte",
+          "local": "Belo Horizonte"
+        },
+        "aliases": [],
+        "timezone": "America/Sao_Paulo",
+        "startDate": "2026-12-29",
+        "endDate": "2026-12-31",
+        "status": "planned",
+        "notes": "Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada."
+      },
+      {
+        "id": "beijing",
+        "regionId": "china",
+        "country": "CN",
+        "name": {
+          "default": "Beijing",
+          "local": "北京"
+        },
+        "aliases": [
+          "Pequim"
+        ],
+        "timezone": "Asia/Shanghai",
+        "startDate": "2026-12-31",
+        "endDate": "2027-01-04",
+        "status": "planned",
+        "notes": "Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada."
+      },
+      {
+        "id": "xian",
+        "regionId": "china",
+        "country": "CN",
+        "name": {
+          "default": "Xi’an",
+          "local": "西安"
+        },
+        "aliases": [
+          "Xi'an"
+        ],
+        "timezone": "Asia/Shanghai",
+        "startDate": "2027-01-04",
+        "endDate": "2027-01-06",
+        "status": "planned",
+        "notes": "Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada."
+      },
+      {
+        "id": "chengdu",
+        "regionId": "china",
+        "country": "CN",
+        "name": {
+          "default": "Chengdu",
+          "local": "成都"
+        },
+        "aliases": [],
+        "timezone": "Asia/Shanghai",
+        "startDate": "2027-01-06",
+        "endDate": "2027-01-09",
+        "status": "planned",
+        "notes": "Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada."
+      },
+      {
+        "id": "chongqing",
+        "regionId": "china",
+        "country": "CN",
+        "name": {
+          "default": "Chongqing",
+          "local": "重庆"
+        },
+        "aliases": [],
+        "timezone": "Asia/Shanghai",
+        "startDate": "2027-01-09",
+        "endDate": "2027-01-11",
+        "status": "planned",
+        "notes": "Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada."
+      },
+      {
+        "id": "zhangjiajie",
+        "regionId": "china",
+        "country": "CN",
+        "name": {
+          "default": "Zhangjiajie",
+          "local": "张家界"
+        },
+        "aliases": [],
+        "timezone": "Asia/Shanghai",
+        "startDate": "2027-01-11",
+        "endDate": "2027-01-14",
+        "status": "planned",
+        "notes": "Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada."
+      },
+      {
+        "id": "shanghai",
+        "regionId": "china",
+        "country": "CN",
+        "name": {
+          "default": "Shanghai",
+          "local": "上海"
+        },
+        "aliases": [
+          "Xangai"
+        ],
+        "timezone": "Asia/Shanghai",
+        "startDate": "2027-01-14",
+        "endDate": "2027-01-18",
+        "status": "planned",
+        "notes": "Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada."
+      },
+      {
+        "id": "tokyo",
+        "regionId": "japan",
+        "country": "JP",
+        "name": {
+          "default": "Tokyo",
+          "local": "東京"
+        },
+        "aliases": [
+          "Tóquio"
+        ],
+        "timezone": "Asia/Tokyo",
+        "startDate": "2027-01-18",
+        "endDate": "2027-01-27",
+        "status": "planned",
+        "notes": "Porta de entrada e saída do Japão. Presença entre 22 e 26/01 depende da alternativa escolhida; não representa hospedagem confirmada."
+      },
+      {
+        "id": "echigo-yuzawa",
+        "regionId": "japan",
+        "country": "JP",
+        "name": {
+          "default": "Echigo-Yuzawa",
+          "local": "越後湯沢"
+        },
+        "aliases": [
+          "Yuzawa",
+          "Neve"
+        ],
+        "timezone": "Asia/Tokyo",
+        "startDate": "2027-01-18",
+        "endDate": "2027-01-22",
+        "status": "undecided",
+        "notes": "Quatro noites previstas. Resort e deslocamentos ainda não escolhidos. Avaliar conexão no dia da chegada internacional."
+      },
+      {
+        "id": "fuji-area",
+        "regionId": "japan",
+        "country": "JP",
+        "name": {
+          "default": "Região do Monte Fuji",
+          "local": "富士山周辺"
+        },
+        "aliases": [
+          "Fuji",
+          "Kawaguchiko"
+        ],
+        "timezone": "Asia/Tokyo",
+        "startDate": "2027-01-22",
+        "endDate": "2027-01-27",
+        "status": "optional",
+        "notes": "Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada."
+      },
+      {
+        "id": "osaka",
+        "regionId": "japan",
+        "country": "JP",
+        "name": {
+          "default": "Osaka e arredores",
+          "local": "大阪"
+        },
+        "aliases": [
+          "Osaca"
+        ],
+        "timezone": "Asia/Tokyo",
+        "startDate": "2027-01-22",
+        "endDate": "2027-01-27",
+        "status": "optional",
+        "notes": "Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada."
+      }
+    ],
+    "alternatives": [
+      {
+        "id": "japan-after-echigo",
+        "kind": "alternative",
+        "status": "undecided",
+        "label": "Depois da neve: Fuji ou Osaka?",
+        "startDate": "2027-01-22",
+        "endDate": "2027-01-27",
+        "options": [
+          {
+            "id": "fuji-option",
+            "label": "Monte Fuji",
+            "status": "optional",
+            "cityIds": [
+              "fuji-area",
+              "tokyo"
+            ],
+            "notes": "Possibilidade de visitar a região de Fuji e retornar a Tokyo. Hospedagens e transporte a definir."
+          },
+          {
+            "id": "osaka-option",
+            "label": "Osaka e arredores",
+            "status": "optional",
+            "cityIds": [
+              "osaka",
+              "tokyo"
+            ],
+            "notes": "Possibilidade de visitar o amigo da família e retornar a Tokyo. Datas e deslocamentos a definir."
+          }
+        ]
+      }
+    ],
+    "usefulInfo": [
+      {
+        "title": "Antes de sair do hotel",
+        "body": "Confira o próximo endereço local, a estação exata e a antecedência de saída. Guarde uma captura da tela de endereço."
+      },
+      {
+        "title": "Se um mapa não abrir",
+        "body": "Volte à PWA e mostre o nome e o endereço no idioma local. Os mapas são externos e podem precisar de internet ou de um aplicativo instalado."
+      },
+      {
+        "title": "Emergência e ajuda presencial",
+        "body": "Peça ajuda à recepção do hotel, à equipe da estação ou às autoridades locais. Confirme contatos públicos oficiais antes da viagem e mantenha contatos privados no Apple Notes."
+      },
+      {
+        "title": "Documentos privados",
+        "body": "Passaportes, vouchers, ingressos, contatos pessoais e reservas ficam no Apple Notes ou iCloud Drive, disponíveis offline. Nunca publique códigos de reserva no repositório."
+      }
+    ]
+  },
+  "places": [
+    {
+      "id": "forbidden-city",
+      "cityId": "beijing",
+      "name": {
+        "default": "Cidade Proibida",
+        "local": "故宫"
+      },
+      "status": "example",
+      "address": {
+        "default": "Cidade Proibida, Beijing",
+        "local": "北京市东城区景山前街4号"
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": 39.9163,
+          "lon": 116.3972
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "故宫博物院",
+        "amapCity": "北京",
+        "baiduKeyword": "故宫博物院",
+        "baiduCity": "北京"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [
+        "Forbidden City",
+        "Palace Museum",
+        "故宫博物院"
+      ],
+      "notes": "Endereço e coordenada de referência fornecidos no pedido. Confirmar entrada oficial e ingresso; visita demonstrativa.",
+      "officialUrl": null,
+      "category": "attraction"
+    },
+    {
+      "id": "terracotta-army",
+      "cityId": "xian",
+      "name": {
+        "default": "Exército de Terracota",
+        "local": "秦始皇帝陵博物院"
+      },
+      "status": "example",
+      "address": {
+        "default": "Exército de Terracota, Xi’an",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "秦始皇帝陵博物院",
+        "amapCity": "西安",
+        "baiduKeyword": "秦始皇帝陵博物院",
+        "baiduCity": "西安"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [
+        "Terracotta Army",
+        "Guerreiros de terracota"
+      ],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "attraction"
+    },
+    {
+      "id": "panda-base",
+      "cityId": "chengdu",
+      "name": {
+        "default": "Base de pesquisa dos pandas",
+        "local": "成都大熊猫繁育研究基地"
+      },
+      "status": "example",
+      "address": {
+        "default": "Base de pesquisa dos pandas, Chengdu",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "成都大熊猫繁育研究基地",
+        "amapCity": "成都",
+        "baiduKeyword": "成都大熊猫繁育研究基地",
+        "baiduCity": "成都"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [
+        "Pandas",
+        "Chengdu Panda Base"
+      ],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "attraction"
+    },
+    {
+      "id": "hongyadong",
+      "cityId": "chongqing",
+      "name": {
+        "default": "Hongyadong",
+        "local": "洪崖洞"
+      },
+      "status": "example",
+      "address": {
+        "default": "Hongyadong, Chongqing",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "洪崖洞",
+        "amapCity": "重庆",
+        "baiduKeyword": "洪崖洞",
+        "baiduCity": "重庆"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "attraction"
+    },
+    {
+      "id": "zhangjiajie-park",
+      "cityId": "zhangjiajie",
+      "name": {
+        "default": "Parque de Zhangjiajie",
+        "local": "张家界国家森林公园"
+      },
+      "status": "example",
+      "address": {
+        "default": "Parque de Zhangjiajie, Zhangjiajie",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "张家界国家森林公园",
+        "amapCity": "张家界",
+        "baiduKeyword": "张家界国家森林公园",
+        "baiduCity": "张家界"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "attraction"
+    },
+    {
+      "id": "the-bund",
+      "cityId": "shanghai",
+      "name": {
+        "default": "Passeio pelo Bund",
+        "local": "外滩"
+      },
+      "status": "example",
+      "address": {
+        "default": "Passeio pelo Bund, Shanghai",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "外滩",
+        "amapCity": "上海",
+        "baiduKeyword": "外滩",
+        "baiduCity": "上海"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [
+        "Bund"
+      ],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "attraction"
+    },
+    {
+      "id": "yu-garden",
+      "cityId": "shanghai",
+      "name": {
+        "default": "Yu Garden",
+        "local": "豫园"
+      },
+      "status": "example",
+      "address": {
+        "default": "Yu Garden, Shanghai",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "豫园",
+        "amapCity": "上海",
+        "baiduKeyword": "豫园",
+        "baiduCity": "上海"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [
+        "Jardim Yu"
+      ],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "attraction"
+    },
+    {
+      "id": "tokyo-walk",
+      "cityId": "tokyo",
+      "name": {
+        "default": "Passeio por Asakusa",
+        "local": "浅草"
+      },
+      "status": "example",
+      "address": {
+        "default": "Passeio por Asakusa, Tokyo",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [
+        "Asakusa"
+      ],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "attraction"
+    },
+    {
+      "id": "snow-region",
+      "cityId": "echigo-yuzawa",
+      "name": {
+        "default": "Região de neve de Echigo-Yuzawa",
+        "local": "越後湯沢"
+      },
+      "status": "example",
+      "address": {
+        "default": "Região de neve de Echigo-Yuzawa, Echigo-Yuzawa",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "region"
+    },
+    {
+      "id": "fuji-region",
+      "cityId": "fuji-area",
+      "name": {
+        "default": "Região do Monte Fuji",
+        "local": "富士山"
+      },
+      "status": "example",
+      "address": {
+        "default": "Região do Monte Fuji, Região do Monte Fuji",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "region"
+    },
+    {
+      "id": "osaka-region",
+      "cityId": "osaka",
+      "name": {
+        "default": "Osaka",
+        "local": "大阪"
+      },
+      "status": "example",
+      "address": {
+        "default": "Osaka, Osaka e arredores",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "region"
+    },
+    {
+      "id": "beijing-west",
+      "cityId": "beijing",
+      "name": {
+        "default": "Beijing West",
+        "local": "北京西站"
+      },
+      "status": "example",
+      "address": {
+        "default": "Beijing West, Beijing",
+        "local": "北京市丰台区莲花池东路118号"
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "北京西站",
+        "amapCity": "北京",
+        "baiduKeyword": "北京西站",
+        "baiduCity": "北京"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "station"
+    },
+    {
+      "id": "xian-north",
+      "cityId": "xian",
+      "name": {
+        "default": "Xi’an North",
+        "local": "西安北站"
+      },
+      "status": "example",
+      "address": {
+        "default": "Xi’an North, Xi’an",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "西安北站",
+        "amapCity": "西安",
+        "baiduKeyword": "西安北站",
+        "baiduCity": "西安"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "station"
+    },
+    {
+      "id": "chengdu-east",
+      "cityId": "chengdu",
+      "name": {
+        "default": "Chengdu East",
+        "local": "成都东站"
+      },
+      "status": "example",
+      "address": {
+        "default": "Chengdu East, Chengdu",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "成都东站",
+        "amapCity": "成都",
+        "baiduKeyword": "成都东站",
+        "baiduCity": "成都"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "station"
+    },
+    {
+      "id": "chongqing-north",
+      "cityId": "chongqing",
+      "name": {
+        "default": "Chongqing North",
+        "local": "重庆北站"
+      },
+      "status": "example",
+      "address": {
+        "default": "Chongqing North, Chongqing",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "重庆北站",
+        "amapCity": "重庆",
+        "baiduKeyword": "重庆北站",
+        "baiduCity": "重庆"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "station"
+    },
+    {
+      "id": "zhangjiajie-west",
+      "cityId": "zhangjiajie",
+      "name": {
+        "default": "Zhangjiajie West",
+        "local": "张家界西站"
+      },
+      "status": "example",
+      "address": {
+        "default": "Zhangjiajie West, Zhangjiajie",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "张家界西站",
+        "amapCity": "张家界",
+        "baiduKeyword": "张家界西站",
+        "baiduCity": "张家界"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "station"
+    },
+    {
+      "id": "shanghai-hongqiao-station",
+      "cityId": "shanghai",
+      "name": {
+        "default": "Shanghai Hongqiao",
+        "local": "上海虹桥站"
+      },
+      "status": "example",
+      "address": {
+        "default": "Shanghai Hongqiao, Shanghai",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "上海虹桥站",
+        "amapCity": "上海",
+        "baiduKeyword": "上海虹桥站",
+        "baiduCity": "上海"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "station"
+    },
+    {
+      "id": "tokyo-station",
+      "cityId": "tokyo",
+      "name": {
+        "default": "Tokyo Station",
+        "local": "東京駅"
+      },
+      "status": "example",
+      "address": {
+        "default": "Tokyo Station, Tokyo",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "station"
+    },
+    {
+      "id": "echigo-yuzawa-station",
+      "cityId": "echigo-yuzawa",
+      "name": {
+        "default": "Echigo-Yuzawa Station",
+        "local": "越後湯沢駅"
+      },
+      "status": "example",
+      "address": {
+        "default": "Echigo-Yuzawa Station, Echigo-Yuzawa",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "station"
+    },
+    {
+      "id": "cnf-airport",
+      "cityId": "belo-horizonte",
+      "name": {
+        "default": "Aeroporto de Belo Horizonte / Confins",
+        "local": "Aeroporto Internacional de Belo Horizonte"
+      },
+      "status": "example",
+      "address": {
+        "default": "Aeroporto de Belo Horizonte / Confins, Belo Horizonte",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "airport"
+    },
+    {
+      "id": "pek-airport",
+      "cityId": "beijing",
+      "name": {
+        "default": "Beijing Capital International Airport",
+        "local": "北京首都国际机场"
+      },
+      "status": "example",
+      "address": {
+        "default": "Beijing Capital International Airport, Beijing",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "北京首都国际机场",
+        "amapCity": "北京",
+        "baiduKeyword": "北京首都国际机场",
+        "baiduCity": "北京"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "airport"
+    },
+    {
+      "id": "pvg-airport",
+      "cityId": "shanghai",
+      "name": {
+        "default": "Shanghai Pudong International Airport",
+        "local": "上海浦东国际机场"
+      },
+      "status": "example",
+      "address": {
+        "default": "Shanghai Pudong International Airport, Shanghai",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": "上海浦东国际机场",
+        "amapCity": "上海",
+        "baiduKeyword": "上海浦东国际机场",
+        "baiduCity": "上海"
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "airport"
+    },
+    {
+      "id": "hnd-airport",
+      "cityId": "tokyo",
+      "name": {
+        "default": "Tokyo Haneda Airport",
+        "local": "東京国際空港"
+      },
+      "status": "example",
+      "address": {
+        "default": "Tokyo Haneda Airport, Tokyo",
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {
+        "apple": null,
+        "amap": null,
+        "baidu": null
+      },
+      "aliases": [],
+      "notes": "Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa ingresso ou reserva.",
+      "officialUrl": null,
+      "category": "airport"
+    }
+  ],
+  "hotels": [
+    {
+      "id": "beijing-example-hotel",
+      "cityId": "beijing",
+      "name": {
+        "default": "Hospedagem a definir · Beijing",
+        "local": null
+      },
+      "status": "example",
+      "address": {
+        "default": null,
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {},
+      "aliases": [],
+      "notes": "EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários pelos dados reais.",
+      "officialUrl": null,
+      "checkIn": null,
+      "checkOut": null
+    },
+    {
+      "id": "xian-example-hotel",
+      "cityId": "xian",
+      "name": {
+        "default": "Hospedagem a definir · Xi’an",
+        "local": null
+      },
+      "status": "example",
+      "address": {
+        "default": null,
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {},
+      "aliases": [],
+      "notes": "EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários pelos dados reais.",
+      "officialUrl": null,
+      "checkIn": null,
+      "checkOut": null
+    },
+    {
+      "id": "chengdu-example-hotel",
+      "cityId": "chengdu",
+      "name": {
+        "default": "Hospedagem a definir · Chengdu",
+        "local": null
+      },
+      "status": "example",
+      "address": {
+        "default": null,
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {},
+      "aliases": [],
+      "notes": "EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários pelos dados reais.",
+      "officialUrl": null,
+      "checkIn": null,
+      "checkOut": null
+    },
+    {
+      "id": "chongqing-example-hotel",
+      "cityId": "chongqing",
+      "name": {
+        "default": "Hospedagem a definir · Chongqing",
+        "local": null
+      },
+      "status": "example",
+      "address": {
+        "default": null,
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {},
+      "aliases": [],
+      "notes": "EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários pelos dados reais.",
+      "officialUrl": null,
+      "checkIn": null,
+      "checkOut": null
+    },
+    {
+      "id": "zhangjiajie-example-hotel",
+      "cityId": "zhangjiajie",
+      "name": {
+        "default": "Hospedagem a definir · Zhangjiajie",
+        "local": null
+      },
+      "status": "example",
+      "address": {
+        "default": null,
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {},
+      "aliases": [],
+      "notes": "EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários pelos dados reais.",
+      "officialUrl": null,
+      "checkIn": null,
+      "checkOut": null
+    },
+    {
+      "id": "shanghai-example-hotel",
+      "cityId": "shanghai",
+      "name": {
+        "default": "Hospedagem a definir · Shanghai",
+        "local": null
+      },
+      "status": "example",
+      "address": {
+        "default": null,
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {},
+      "aliases": [],
+      "notes": "EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários pelos dados reais.",
+      "officialUrl": null,
+      "checkIn": null,
+      "checkOut": null
+    },
+    {
+      "id": "tokyo-example-hotel",
+      "cityId": "tokyo",
+      "name": {
+        "default": "Hospedagem a definir · Tokyo",
+        "local": null
+      },
+      "status": "example",
+      "address": {
+        "default": null,
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {},
+      "aliases": [],
+      "notes": "EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários pelos dados reais.",
+      "officialUrl": null,
+      "checkIn": null,
+      "checkOut": null
+    },
+    {
+      "id": "echigo-yuzawa-example-hotel",
+      "cityId": "echigo-yuzawa",
+      "name": {
+        "default": "Hospedagem a definir · Echigo-Yuzawa",
+        "local": null
+      },
+      "status": "example",
+      "address": {
+        "default": null,
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {},
+      "aliases": [],
+      "notes": "EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários pelos dados reais.",
+      "officialUrl": null,
+      "checkIn": null,
+      "checkOut": null
+    },
+    {
+      "id": "fuji-area-example-hotel",
+      "cityId": "fuji-area",
+      "name": {
+        "default": "Hospedagem a definir · Região do Monte Fuji",
+        "local": null
+      },
+      "status": "example",
+      "address": {
+        "default": null,
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {},
+      "aliases": [],
+      "notes": "EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários pelos dados reais.",
+      "officialUrl": null,
+      "checkIn": null,
+      "checkOut": null
+    },
+    {
+      "id": "osaka-example-hotel",
+      "cityId": "osaka",
+      "name": {
+        "default": "Hospedagem a definir · Osaka e arredores",
+        "local": null
+      },
+      "status": "example",
+      "address": {
+        "default": null,
+        "local": null
+      },
+      "phone": null,
+      "coordinates": {
+        "wgs84": {
+          "lat": null,
+          "lon": null
+        },
+        "gcj02": {
+          "lat": null,
+          "lon": null
+        },
+        "bd09": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      "mapSearch": {
+        "apple": null,
+        "amapKeyword": null,
+        "amapCity": null,
+        "baiduKeyword": null,
+        "baiduCity": null
+      },
+      "mapLinks": {},
+      "aliases": [],
+      "notes": "EXEMPLO: nenhum hotel escolhido ou reservado. Substituir nome, endereço local, telefone e horários pelos dados reais.",
+      "officialUrl": null,
+      "checkIn": null,
+      "checkOut": null
+    }
+  ],
+  "flights": [
+    {
+      "id": "brazil-beijing-example",
+      "status": "example",
+      "from": {
+        "cityId": "belo-horizonte",
+        "placeId": "cnf-airport",
+        "date": "2026-12-29",
+        "time": null,
+        "timezone": "America/Sao_Paulo",
+        "airportCode": "CNF",
+        "airportName": {
+          "default": "Aeroporto de Belo Horizonte / Confins",
+          "local": "Aeroporto Internacional de Belo Horizonte"
+        },
+        "terminal": null
+      },
+      "to": {
+        "cityId": "beijing",
+        "placeId": "pek-airport",
+        "date": "2026-12-31",
+        "time": null,
+        "timezone": "Asia/Shanghai",
+        "airportCode": "PEK",
+        "airportName": {
+          "default": "Beijing Capital International Airport",
+          "local": "北京首都国际机场"
+        },
+        "terminal": null
+      },
+      "bookingReferenceHint": null,
+      "notes": "EXEMPLO de deslocamento internacional, possivelmente com conexões. Aeroportos e escalas precisam ser confirmados. Chegada prevista para a tarde de 31/12.",
+      "offlineInstructions": "Confira os bilhetes privados no iCloud Drive. Verifique cada conexão, terminal e regras de bagagem.",
+      "kind": "flight",
+      "airline": null,
+      "flightNumber": null
+    },
+    {
+      "id": "shanghai-tokyo-example",
+      "status": "example",
+      "from": {
+        "cityId": "shanghai",
+        "placeId": "pvg-airport",
+        "date": "2027-01-18",
+        "time": "10:20",
+        "timezone": "Asia/Shanghai",
+        "airportCode": "PVG",
+        "airportName": {
+          "default": "Shanghai Pudong International Airport",
+          "local": "上海浦东国际机场"
+        },
+        "terminal": null
+      },
+      "to": {
+        "cityId": "tokyo",
+        "placeId": "hnd-airport",
+        "date": "2027-01-18",
+        "time": "14:30",
+        "timezone": "Asia/Tokyo",
+        "airportCode": "HND",
+        "airportName": {
+          "default": "Tokyo Haneda Airport",
+          "local": "東京国際空港"
+        },
+        "terminal": null
+      },
+      "bookingReferenceHint": null,
+      "notes": "EXEMPLO: horários demonstrativos, nenhum voo comprado. Confirmar aeroporto de Tokyo antes de planejar a conexão para a neve.",
+      "offlineInstructions": "Partida no fuso da China e chegada no fuso do Japão. Guarde o endereço da hospedagem e confirme a margem para imigração e bagagem.",
+      "kind": "flight",
+      "airline": null,
+      "flightNumber": null
+    },
+    {
+      "id": "tokyo-brazil-example",
+      "status": "example",
+      "from": {
+        "cityId": "tokyo",
+        "placeId": "hnd-airport",
+        "date": "2027-01-27",
+        "time": null,
+        "timezone": "Asia/Tokyo",
+        "airportCode": "HND",
+        "airportName": {
+          "default": "Tokyo Haneda Airport",
+          "local": "東京国際空港"
+        },
+        "terminal": null
+      },
+      "to": {
+        "cityId": "belo-horizonte",
+        "placeId": "cnf-airport",
+        "date": "2027-01-27",
+        "time": null,
+        "timezone": "America/Sao_Paulo",
+        "airportCode": "CNF",
+        "airportName": {
+          "default": "Aeroporto de Belo Horizonte / Confins",
+          "local": "Aeroporto Internacional de Belo Horizonte"
+        },
+        "terminal": null
+      },
+      "bookingReferenceHint": null,
+      "notes": "EXEMPLO do retorno por Tokyo, sem voo ou conexões definidos. A data real de chegada ao Brasil está pendente.",
+      "offlineInstructions": "Consulte o bilhete real para aeroportos, conexões, datas e horários de chegada. O roteiro termina na saída do Japão.",
+      "kind": "flight",
+      "airline": null,
+      "flightNumber": null
+    }
+  ],
+  "trains": [
+    {
+      "id": "beijing-xian-example",
+      "status": "example",
+      "from": {
+        "cityId": "beijing",
+        "placeId": "beijing-west",
+        "date": "2027-01-04",
+        "time": "09:00",
+        "timezone": "Asia/Shanghai",
+        "terminal": null,
+        "station": {
+          "default": "Beijing West",
+          "local": "北京西站"
+        }
+      },
+      "to": {
+        "cityId": "xian",
+        "placeId": "xian-north",
+        "date": "2027-01-04",
+        "time": "13:30",
+        "timezone": "Asia/Shanghai",
+        "terminal": null,
+        "station": {
+          "default": "Xi’an North",
+          "local": "西安北站"
+        }
+      },
+      "bookingReferenceHint": null,
+      "notes": "EXEMPLO: estações e horários demonstrativos. Confirmar o trem e os terminais após a compra.",
+      "offlineInstructions": "Mostre 北京西站 ao motorista somente após confirmar a estação do bilhete. Esteja na estação 45 minutos antes do horário demonstrativo; some o trajeto até ela.",
+      "kind": "train",
+      "trainNumber": null,
+      "class": null,
+      "recommendedArrivalMinutes": 45
+    },
+    {
+      "id": "tokyo-yuzawa-example",
+      "status": "example",
+      "from": {
+        "cityId": "tokyo",
+        "placeId": "tokyo-station",
+        "date": "2027-01-18",
+        "time": null,
+        "timezone": "Asia/Tokyo",
+        "terminal": null,
+        "station": {
+          "default": "Tokyo Station",
+          "local": "東京駅"
+        }
+      },
+      "to": {
+        "cityId": "echigo-yuzawa",
+        "placeId": "echigo-yuzawa-station",
+        "date": "2027-01-18",
+        "time": null,
+        "timezone": "Asia/Tokyo",
+        "terminal": null,
+        "station": {
+          "default": "Echigo-Yuzawa Station",
+          "local": "越後湯沢駅"
+        }
+      },
+      "bookingReferenceHint": null,
+      "notes": "EXEMPLO: conexão após chegada internacional, sem horário nem passagem. Avaliar viabilidade antes da compra.",
+      "offlineInstructions": "Confirme o percurso aeroporto → estação de Tokyo e a conexão para 越後湯沢駅. Não presuma conexão garantida.",
+      "kind": "train",
+      "trainNumber": null,
+      "class": null,
+      "recommendedArrivalMinutes": 30
+    }
+  ],
+  "transfers": [
+    {
+      "id": "xian-chengdu-example",
+      "status": "example",
+      "from": {
+        "cityId": "xian",
+        "placeId": "xian-north",
+        "date": "2027-01-06",
+        "time": null,
+        "timezone": "Asia/Shanghai",
+        "terminal": null,
+        "station": {
+          "default": "Xi’an North",
+          "local": "西安北站"
+        }
+      },
+      "to": {
+        "cityId": "chengdu",
+        "placeId": "chengdu-east",
+        "date": "2027-01-06",
+        "time": null,
+        "timezone": "Asia/Shanghai",
+        "terminal": null,
+        "station": {
+          "default": "Chengdu East",
+          "local": "成都东站"
+        }
+      },
+      "bookingReferenceHint": null,
+      "notes": "EXEMPLO de trecho entre cidades; meio de transporte, estações e duração devem ser confirmados. Não representa serviço direto disponível.",
+      "offlineInstructions": "Verifique o bilhete real, possíveis conexões e estação exata. Guarde os nomes locais e o endereço do destino antes de sair.",
+      "kind": "train",
+      "durationMinutes": null,
+      "safetyBufferMinutes": 45
+    },
+    {
+      "id": "chengdu-chongqing-example",
+      "status": "example",
+      "from": {
+        "cityId": "chengdu",
+        "placeId": "chengdu-east",
+        "date": "2027-01-09",
+        "time": null,
+        "timezone": "Asia/Shanghai",
+        "terminal": null,
+        "station": {
+          "default": "Chengdu East",
+          "local": "成都东站"
+        }
+      },
+      "to": {
+        "cityId": "chongqing",
+        "placeId": "chongqing-north",
+        "date": "2027-01-09",
+        "time": null,
+        "timezone": "Asia/Shanghai",
+        "terminal": null,
+        "station": {
+          "default": "Chongqing North",
+          "local": "重庆北站"
+        }
+      },
+      "bookingReferenceHint": null,
+      "notes": "EXEMPLO de trecho entre cidades; meio de transporte, estações e duração devem ser confirmados. Não representa serviço direto disponível.",
+      "offlineInstructions": "Verifique o bilhete real, possíveis conexões e estação exata. Guarde os nomes locais e o endereço do destino antes de sair.",
+      "kind": "train",
+      "durationMinutes": null,
+      "safetyBufferMinutes": 45
+    },
+    {
+      "id": "chongqing-zhangjiajie-example",
+      "status": "example",
+      "from": {
+        "cityId": "chongqing",
+        "placeId": "chongqing-north",
+        "date": "2027-01-11",
+        "time": null,
+        "timezone": "Asia/Shanghai",
+        "terminal": null,
+        "station": {
+          "default": "Chongqing North",
+          "local": "重庆北站"
+        }
+      },
+      "to": {
+        "cityId": "zhangjiajie",
+        "placeId": "zhangjiajie-west",
+        "date": "2027-01-11",
+        "time": null,
+        "timezone": "Asia/Shanghai",
+        "terminal": null,
+        "station": {
+          "default": "Zhangjiajie West",
+          "local": "张家界西站"
+        }
+      },
+      "bookingReferenceHint": null,
+      "notes": "EXEMPLO de trecho entre cidades; meio de transporte, estações e duração devem ser confirmados. Não representa serviço direto disponível.",
+      "offlineInstructions": "Verifique o bilhete real, possíveis conexões e estação exata. Guarde os nomes locais e o endereço do destino antes de sair.",
+      "kind": "train",
+      "durationMinutes": null,
+      "safetyBufferMinutes": 45
+    },
+    {
+      "id": "zhangjiajie-shanghai-example",
+      "status": "example",
+      "from": {
+        "cityId": "zhangjiajie",
+        "placeId": "zhangjiajie-west",
+        "date": "2027-01-14",
+        "time": null,
+        "timezone": "Asia/Shanghai",
+        "terminal": null,
+        "station": {
+          "default": "Zhangjiajie West",
+          "local": "张家界西站"
+        }
+      },
+      "to": {
+        "cityId": "shanghai",
+        "placeId": "shanghai-hongqiao-station",
+        "date": "2027-01-14",
+        "time": null,
+        "timezone": "Asia/Shanghai",
+        "terminal": null,
+        "station": {
+          "default": "Shanghai Hongqiao",
+          "local": "上海虹桥站"
+        }
+      },
+      "bookingReferenceHint": null,
+      "notes": "EXEMPLO de trecho entre cidades; meio de transporte, estações e duração devem ser confirmados. Não representa serviço direto disponível.",
+      "offlineInstructions": "Verifique o bilhete real, possíveis conexões e estação exata. Guarde os nomes locais e o endereço do destino antes de sair.",
+      "kind": "train",
+      "durationMinutes": null,
+      "safetyBufferMinutes": 45
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-12-29",
+      "cityId": "belo-horizonte",
+      "regionId": "brazil",
+      "summary": "Começa a viagem",
+      "status": "planned",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20261229-activity-1",
+          "title": "Saída de Belo Horizonte",
+          "type": "flight",
+          "status": "example",
+          "timezone": "America/Sao_Paulo",
+          "transportId": "brazil-beijing-example",
+          "travelBufferMinutes": 0,
+          "notes": "Voos, conexões e horários a confirmar."
+        }
+      ]
+    },
+    {
+      "date": "2026-12-30",
+      "cityId": "belo-horizonte",
+      "regionId": "brazil",
+      "summary": "Em trânsito para a China",
+      "status": "planned",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": []
+    },
+    {
+      "date": "2026-12-31",
+      "cityId": "beijing",
+      "regionId": "china",
+      "summary": "Chegada a Beijing",
+      "status": "planned",
+      "hotelId": "beijing-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20261231-activity-1",
+          "title": "Chegada a Beijing à tarde",
+          "type": "note",
+          "status": "example",
+          "timezone": "Asia/Shanghai",
+          "travelBufferMinutes": 0,
+          "notes": "Previsão do roteiro-base; horário exato e aeroporto dependem do bilhete."
+        },
+        {
+          "id": "20261231-activity-2",
+          "title": "Chegar à hospedagem e descansar",
+          "type": "hotel",
+          "status": "example",
+          "timezone": "Asia/Shanghai",
+          "hotelId": "beijing-example-hotel",
+          "travelBufferMinutes": 0,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "2027-01-01",
+      "cityId": "beijing",
+      "regionId": "china",
+      "summary": "Uma primeira descoberta em Beijing",
+      "status": "planned",
+      "hotelId": "beijing-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270101-activity-1",
+          "title": "Visitar a Cidade Proibida",
+          "type": "attraction",
+          "status": "example",
+          "time": "09:00",
+          "endTime": "11:30",
+          "timezone": "Asia/Shanghai",
+          "placeId": "forbidden-city",
+          "travelBufferMinutes": 60,
+          "notes": "Horário de EXEMPLO. Reservar ingresso e confirmar o portão de entrada."
+        },
+        {
+          "id": "20270101-activity-2",
+          "title": "Pausa para almoço",
+          "type": "meal",
+          "status": "optional",
+          "time": "12:30",
+          "timezone": "Asia/Shanghai",
+          "travelBufferMinutes": 0,
+          "notes": "Opcional; sem restaurante reservado."
+        }
+      ]
+    },
+    {
+      "date": "2027-01-02",
+      "cityId": "beijing",
+      "regionId": "china",
+      "summary": "Programação a definir em Beijing",
+      "status": "planned",
+      "hotelId": "beijing-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-03",
+      "cityId": "beijing",
+      "regionId": "china",
+      "summary": "Programação a definir em Beijing",
+      "status": "planned",
+      "hotelId": "beijing-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-04",
+      "cityId": "xian",
+      "regionId": "china",
+      "summary": "De Beijing a Xi’an",
+      "status": "planned",
+      "hotelId": "xian-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270104-activity-1",
+          "title": "Trem Beijing → Xi’an",
+          "type": "train",
+          "status": "example",
+          "time": "09:00",
+          "timezone": "Asia/Shanghai",
+          "placeId": "beijing-west",
+          "transportId": "beijing-xian-example",
+          "travelBufferMinutes": 90,
+          "notes": "EXEMPLO: margem de 90 min soma trajeto estimado e antecedência. Ajustar após confirmar hotel e trem."
+        }
+      ]
+    },
+    {
+      "date": "2027-01-05",
+      "cityId": "xian",
+      "regionId": "china",
+      "summary": "Programação a definir em Xi’an",
+      "status": "planned",
+      "hotelId": "xian-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270105-activity-1",
+          "title": "Conhecer o Exército de Terracota",
+          "type": "attraction",
+          "status": "example",
+          "timezone": "Asia/Shanghai",
+          "placeId": "terracotta-army",
+          "travelBufferMinutes": 0,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "2027-01-06",
+      "cityId": "chengdu",
+      "regionId": "china",
+      "summary": "Programação a definir em Chengdu",
+      "status": "planned",
+      "hotelId": "chengdu-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270106-activity-1",
+          "title": "Deslocamento para Chengdu",
+          "type": "transfer",
+          "status": "example",
+          "timezone": "Asia/Shanghai",
+          "transportId": "xian-chengdu-example",
+          "travelBufferMinutes": 0,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "2027-01-07",
+      "cityId": "chengdu",
+      "regionId": "china",
+      "summary": "Um dia com os pandas",
+      "status": "planned",
+      "hotelId": "chengdu-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270107-activity-1",
+          "title": "Visitar a base de pandas",
+          "type": "attraction",
+          "status": "example",
+          "time": "08:30",
+          "timezone": "Asia/Shanghai",
+          "placeId": "panda-base",
+          "travelBufferMinutes": 45,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "2027-01-08",
+      "cityId": "chengdu",
+      "regionId": "china",
+      "summary": "Programação a definir em Chengdu",
+      "status": "planned",
+      "hotelId": "chengdu-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-09",
+      "cityId": "chongqing",
+      "regionId": "china",
+      "summary": "Programação a definir em Chongqing",
+      "status": "planned",
+      "hotelId": "chongqing-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270109-activity-1",
+          "title": "Deslocamento para Chongqing",
+          "type": "transfer",
+          "status": "example",
+          "timezone": "Asia/Shanghai",
+          "transportId": "chengdu-chongqing-example",
+          "travelBufferMinutes": 0,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "2027-01-10",
+      "cityId": "chongqing",
+      "regionId": "china",
+      "summary": "Programação a definir em Chongqing",
+      "status": "planned",
+      "hotelId": "chongqing-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270110-activity-1",
+          "title": "Passear por Hongyadong",
+          "type": "attraction",
+          "status": "example",
+          "timezone": "Asia/Shanghai",
+          "placeId": "hongyadong",
+          "travelBufferMinutes": 0,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "2027-01-11",
+      "cityId": "zhangjiajie",
+      "regionId": "china",
+      "summary": "Programação a definir em Zhangjiajie",
+      "status": "planned",
+      "hotelId": "zhangjiajie-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270111-activity-1",
+          "title": "Deslocamento para Zhangjiajie",
+          "type": "transfer",
+          "status": "example",
+          "timezone": "Asia/Shanghai",
+          "transportId": "chongqing-zhangjiajie-example",
+          "travelBufferMinutes": 0,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "2027-01-12",
+      "cityId": "zhangjiajie",
+      "regionId": "china",
+      "summary": "Programação a definir em Zhangjiajie",
+      "status": "planned",
+      "hotelId": "zhangjiajie-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270112-activity-1",
+          "title": "Conhecer o parque de Zhangjiajie",
+          "type": "attraction",
+          "status": "example",
+          "timezone": "Asia/Shanghai",
+          "placeId": "zhangjiajie-park",
+          "travelBufferMinutes": 0,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "2027-01-13",
+      "cityId": "zhangjiajie",
+      "regionId": "china",
+      "summary": "Programação a definir em Zhangjiajie",
+      "status": "planned",
+      "hotelId": "zhangjiajie-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-14",
+      "cityId": "shanghai",
+      "regionId": "china",
+      "summary": "A caminho de Shanghai",
+      "status": "planned",
+      "hotelId": "shanghai-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270114-activity-1",
+          "title": "Deslocamento para Shanghai",
+          "type": "transfer",
+          "status": "example",
+          "timezone": "Asia/Shanghai",
+          "transportId": "zhangjiajie-shanghai-example",
+          "travelBufferMinutes": 0,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "2027-01-15",
+      "cityId": "shanghai",
+      "regionId": "china",
+      "summary": "Jardins e o encontro com o Bund",
+      "status": "planned",
+      "hotelId": "shanghai-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270115-activity-1",
+          "title": "Conhecer Yu Garden",
+          "type": "attraction",
+          "status": "example",
+          "time": "09:00",
+          "timezone": "Asia/Shanghai",
+          "placeId": "yu-garden",
+          "travelBufferMinutes": 30,
+          "notes": ""
+        },
+        {
+          "id": "20270115-activity-2",
+          "title": "Caminhar pelo Bund",
+          "type": "walk",
+          "status": "example",
+          "time": "16:00",
+          "timezone": "Asia/Shanghai",
+          "placeId": "the-bund",
+          "travelBufferMinutes": 30,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "2027-01-16",
+      "cityId": "shanghai",
+      "regionId": "china",
+      "summary": "Programação a definir em Shanghai",
+      "status": "planned",
+      "hotelId": "shanghai-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-17",
+      "cityId": "shanghai",
+      "regionId": "china",
+      "summary": "Programação a definir em Shanghai",
+      "status": "planned",
+      "hotelId": "shanghai-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-18",
+      "cityId": "echigo-yuzawa",
+      "regionId": "japan",
+      "summary": "Da China para a neve no Japão",
+      "status": "planned",
+      "hotelId": "echigo-yuzawa-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270118-activity-1",
+          "title": "Voo Shanghai → Tokyo",
+          "type": "flight",
+          "status": "example",
+          "time": "10:20",
+          "timezone": "Asia/Shanghai",
+          "placeId": "pvg-airport",
+          "transportId": "shanghai-tokyo-example",
+          "travelBufferMinutes": 240,
+          "notes": ""
+        },
+        {
+          "id": "20270118-activity-2",
+          "title": "Seguir para Echigo-Yuzawa",
+          "type": "train",
+          "status": "example",
+          "timezone": "Asia/Tokyo",
+          "transportId": "tokyo-yuzawa-example",
+          "travelBufferMinutes": 0,
+          "notes": "Conexão ainda não comprada. Confirmar viabilidade após imigração."
+        }
+      ]
+    },
+    {
+      "date": "2027-01-19",
+      "cityId": "echigo-yuzawa",
+      "regionId": "japan",
+      "summary": "Programação a definir em Echigo-Yuzawa",
+      "status": "planned",
+      "hotelId": "echigo-yuzawa-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270119-activity-1",
+          "title": "Dia de neve",
+          "type": "free-time",
+          "status": "example",
+          "timezone": "Asia/Tokyo",
+          "placeId": "snow-region",
+          "travelBufferMinutes": 0,
+          "notes": "Resort, passes, equipamentos e atividades a escolher."
+        }
+      ]
+    },
+    {
+      "date": "2027-01-20",
+      "cityId": "echigo-yuzawa",
+      "regionId": "japan",
+      "summary": "Programação a definir em Echigo-Yuzawa",
+      "status": "planned",
+      "hotelId": "echigo-yuzawa-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-21",
+      "cityId": "echigo-yuzawa",
+      "regionId": "japan",
+      "summary": "Programação a definir em Echigo-Yuzawa",
+      "status": "planned",
+      "hotelId": "echigo-yuzawa-example-hotel",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-22",
+      "cityId": "tokyo",
+      "regionId": "japan",
+      "summary": "Trecho aberto: Monte Fuji ou Osaka",
+      "status": "undecided",
+      "alternativeId": "japan-after-echigo",
+      "notes": "Cidade-base ainda não decidida. Tokyo é apenas referência para retorno, não compromisso ou hospedagem.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-23",
+      "cityId": "tokyo",
+      "regionId": "japan",
+      "summary": "Trecho aberto: Monte Fuji ou Osaka",
+      "status": "undecided",
+      "alternativeId": "japan-after-echigo",
+      "notes": "Cidade-base ainda não decidida. Tokyo é apenas referência para retorno, não compromisso ou hospedagem.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-24",
+      "cityId": "tokyo",
+      "regionId": "japan",
+      "summary": "Trecho aberto: Monte Fuji ou Osaka",
+      "status": "undecided",
+      "alternativeId": "japan-after-echigo",
+      "notes": "Cidade-base ainda não decidida. Tokyo é apenas referência para retorno, não compromisso ou hospedagem.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-25",
+      "cityId": "tokyo",
+      "regionId": "japan",
+      "summary": "Trecho aberto: Monte Fuji ou Osaka",
+      "status": "undecided",
+      "alternativeId": "japan-after-echigo",
+      "notes": "Cidade-base ainda não decidida. Tokyo é apenas referência para retorno, não compromisso ou hospedagem.",
+      "activities": []
+    },
+    {
+      "date": "2027-01-26",
+      "cityId": "tokyo",
+      "regionId": "japan",
+      "summary": "Trecho aberto: Monte Fuji ou Osaka",
+      "status": "undecided",
+      "alternativeId": "japan-after-echigo",
+      "notes": "Cidade-base ainda não decidida. Tokyo é apenas referência para retorno, não compromisso ou hospedagem.",
+      "activities": [
+        {
+          "id": "20270126-activity-1",
+          "title": "Possibilidade de passeio em Tokyo",
+          "type": "walk",
+          "status": "optional",
+          "timezone": "Asia/Tokyo",
+          "placeId": "tokyo-walk",
+          "travelBufferMinutes": 0,
+          "notes": "Somente se o roteiro final permitir; retorno a Tokyo a definir."
+        }
+      ]
+    },
+    {
+      "date": "2027-01-27",
+      "cityId": "tokyo",
+      "regionId": "japan",
+      "summary": "Retorno por Tokyo",
+      "status": "planned",
+      "notes": "Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.",
+      "activities": [
+        {
+          "id": "20270127-activity-1",
+          "title": "Retorno ao Brasil por Tokyo",
+          "type": "flight",
+          "status": "example",
+          "timezone": "Asia/Tokyo",
+          "placeId": "hnd-airport",
+          "transportId": "tokyo-brazil-example",
+          "travelBufferMinutes": 0,
+          "notes": "Partida, aeroporto e conexões a confirmar."
+        }
+      ]
+    }
+  ]
+}

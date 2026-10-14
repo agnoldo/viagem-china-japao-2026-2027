@@ -14,7 +14,7 @@ export default defineConfig({
       includeAssets: ['icons/*.png', 'icons/*.svg'],
       manifest: {
         id: './',
-        name: 'China e Japão · Viagem em família 2026–2027',
+        name: 'China e Japão · Nossa viagem',
         short_name: 'Nossa viagem',
         description: 'Roteiro, endereços e logística da família, disponíveis offline.',
         lang: 'pt-BR',

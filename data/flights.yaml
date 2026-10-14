@@ -1,98 +1,33 @@
-- id: brazil-beijing-example
+- id: flight-shanghai-tokyo-2027-01-18
   kind: flight
-  status: example
-  from:
-    cityId: belo-horizonte
-    placeId: cnf-airport
-    date: '2026-12-29'
-    time: null
-    timezone: America/Sao_Paulo
-    terminal: null
-    airportCode: CNF
-    airportName: &id002
-      default: Aeroporto de Belo Horizonte / Confins
-      local: Aeroporto Internacional de Belo Horizonte
-  to:
-    cityId: beijing
-    placeId: pek-airport
-    date: '2026-12-31'
-    time: null
-    timezone: Asia/Shanghai
-    terminal: null
-    airportCode: PEK
-    airportName:
-      default: Beijing Capital International Airport
-      local: 北京首都国际机场
-  airline: null
-  flightNumber: null
-  bookingReferenceHint: null
-  notes:
-    EXEMPLO de deslocamento internacional, possivelmente com conexões. Aeroportos e escalas precisam
-    ser confirmados. Chegada prevista para a tarde de 31/12.
-  offlineInstructions:
-    Confira os bilhetes privados no iCloud Drive. Verifique cada conexão, terminal
-    e regras de bagagem.
-- id: shanghai-tokyo-example
-  kind: flight
-  status: example
+  status: planned
   from:
     cityId: shanghai
-    placeId: pvg-airport
+    placeId: null
     date: '2027-01-18'
-    time: '10:20'
+    time: null
     timezone: Asia/Shanghai
     terminal: null
-    airportCode: PVG
-    airportName:
-      default: Shanghai Pudong International Airport
-      local: 上海浦东国际机场
+    airportCode: null
+    airportName: null
   to:
     cityId: tokyo
-    placeId: hnd-airport
+    placeId: tokyo-haneda
     date: '2027-01-18'
-    time: '14:30'
+    time: null
     timezone: Asia/Tokyo
     terminal: null
     airportCode: HND
-    airportName: &id001
+    airportName:
       default: Tokyo Haneda Airport
-      local: 東京国際空港
+      local: 羽田空港
   airline: null
   flightNumber: null
   bookingReferenceHint: null
   notes:
-    'EXEMPLO: horários demonstrativos, nenhum voo comprado. Confirmar aeroporto de Tokyo antes de
-    planejar a conexão para a neve.'
+    Chegada a Tokyo Haneda vindo de Shanghai em 18/01/2027. Aeroporto de saída, companhia, número
+    e horários ainda não registrados.
   offlineInstructions:
-    Partida no fuso da China e chegada no fuso do Japão. Guarde o endereço da hospedagem
-    e confirme a margem para imigração e bagagem.
-- id: tokyo-brazil-example
-  kind: flight
-  status: example
-  from:
-    cityId: tokyo
-    placeId: hnd-airport
-    date: '2027-01-27'
-    time: null
-    timezone: Asia/Tokyo
-    terminal: null
-    airportCode: HND
-    airportName: *id001
-  to:
-    cityId: belo-horizonte
-    placeId: cnf-airport
-    date: '2027-01-27'
-    time: null
-    timezone: America/Sao_Paulo
-    terminal: null
-    airportCode: CNF
-    airportName: *id002
-  airline: null
-  flightNumber: null
-  bookingReferenceHint: null
-  notes:
-    EXEMPLO do retorno por Tokyo, sem voo ou conexões definidos. A data real de chegada ao Brasil
-    está pendente.
-  offlineInstructions:
-    Consulte o bilhete real para aeroportos, conexões, datas e horários de chegada.
-    O roteiro termina na saída do Japão.
+    Confirmar aeroporto de saída e horários no bilhete. Na chegada a Haneda, seguir
+    para a hospedagem de trânsito em Tokyo, ainda não definida. A ida a Echigo-Yuzawa está prevista para
+    o dia seguinte.

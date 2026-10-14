@@ -193,7 +193,7 @@ function AppShell() {
           </Routes>
           <footer className="page-footer">
             <span>Conteúdo atualizado em {content.trip.contentVersion}</span>
-            <span>Horários locais · Dados de exemplo identificados</span>
+            <span>Horários locais · Pendências sinalizadas</span>
           </footer>
         </main>
       </div>

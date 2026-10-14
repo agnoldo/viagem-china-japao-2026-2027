@@ -1,3 +1,4 @@
+import { entityName } from '../../lib/labels';
 import type { Hotel, Place } from '../../content/schema';
 export type MapTarget = Place | Hotel;
 export type MapProvider = 'apple' | 'amap' | 'baidu' | 'google';
@@ -28,7 +29,7 @@ export function buildMapLinks(place: MapTarget, provider: string): MapLinkResult
   });
   const explicit = place.mapLinks[provider];
   if (explicit) return result(explicit);
-  const query = [place.name.local || place.name.default, address].filter(Boolean).join(', ');
+  const query = [place.name.local || entityName(place), address].filter(Boolean).join(', ');
   if (provider === 'apple') {
     if (place.mapSearch.apple || address)
       return result(url('https://maps.apple.com/', { q: place.mapSearch.apple || query }));
@@ -36,7 +37,7 @@ export function buildMapLinks(place: MapTarget, provider: string): MapLinkResult
       return result(
         url('https://maps.apple.com/', {
           ll: `${coords.lat},${coords.lon}`,
-          q: place.name.default,
+          q: entityName(place),
         }),
       );
   }
@@ -52,7 +53,7 @@ export function buildMapLinks(place: MapTarget, provider: string): MapLinkResult
       return result(
         url('https://uri.amap.com/marker', {
           position: `${coords.lon},${coords.lat}`,
-          name: place.name.local || place.name.default,
+          name: place.name.local || entityName(place),
         }),
       );
   }
@@ -70,8 +71,8 @@ export function buildMapLinks(place: MapTarget, provider: string): MapLinkResult
       return result(
         url('https://api.map.baidu.com/marker', {
           location: `${coords.lat},${coords.lon}`,
-          title: place.name.local || place.name.default,
-          content: address || place.name.default,
+          title: place.name.local || entityName(place),
+          content: address || entityName(place),
           coord_type: 'bd09ll',
           output: 'html',
           src: 'webapp.family.chinajapan',
@@ -84,7 +85,7 @@ export function buildMapLinks(place: MapTarget, provider: string): MapLinkResult
 }
 export function offlineInstruction(place: MapTarget): string {
   return [
-    place.name.local || place.name.default,
+    place.name.local || entityName(place),
     place.address.local ||
       place.address.default ||
       'Endereço ainda não preenchido. Confirme antes de sair.',

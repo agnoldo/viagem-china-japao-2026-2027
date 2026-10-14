@@ -65,7 +65,7 @@ const basePlace = {
   officialUrl: safeUrl.nullable().default(null),
 };
 export const regionSchema = z
-  .object({ id, name: text, country: z.enum(['BR', 'CN', 'JP']) })
+  .object({ id, name: text, localName: nullableText, country: z.enum(['BR', 'CN', 'JP']) })
   .strict();
 export const citySchema = z
   .object({
@@ -75,13 +75,13 @@ export const citySchema = z
     name,
     aliases: z.array(text).default([]),
     timezone: timezoneSchema,
-    startDate: dateSchema,
-    endDate: dateSchema,
+    startDate: dateSchema.nullable(),
+    endDate: dateSchema.nullable(),
     status: statusSchema,
     notes: z.string().default(''),
   })
   .strict()
-  .refine((v) => v.endDate >= v.startDate, 'Período invertido');
+  .refine((v) => !v.startDate || !v.endDate || v.endDate >= v.startDate, 'Período invertido');
 export const placeSchema = z
   .object({
     ...basePlace,
@@ -89,10 +89,23 @@ export const placeSchema = z
   })
   .strict();
 export const hotelSchema = z
-  .object({ ...basePlace, checkIn: timeSchema.nullable(), checkOut: timeSchema.nullable() })
-  .strict();
+  .object({
+    ...basePlace,
+    name: z.object({ default: nullableText, local: nullableText }).strict(),
+    type: z.enum(['hotel', 'resort']).default('hotel'),
+    checkIn: timeSchema.nullable(),
+    checkOut: timeSchema.nullable(),
+    checkInDate: dateSchema.nullable().default(null),
+    checkOutDate: dateSchema.nullable().default(null),
+  })
+  .strict()
+  .refine(
+    (v) => !v.checkInDate || !v.checkOutDate || v.checkOutDate >= v.checkInDate,
+    'Checkout anterior ao check-in',
+  );
 export const activityTypes = [
   'flight',
+  'arrival',
   'train',
   'transfer',
   'metro',
@@ -141,17 +154,18 @@ export const daySchema = z
 const endpoint = z
   .object({
     cityId: id,
-    placeId: id,
+    placeId: id.nullable(),
     date: dateSchema,
     time: timeSchema.nullable(),
     timezone: timezoneSchema,
     airportCode: z
       .string()
       .regex(/^[A-Z]{3}$/)
+      .nullable()
       .optional(),
-    airportName: name.optional(),
+    airportName: name.nullable().optional(),
     terminal: nullableText,
-    station: name.optional(),
+    station: name.nullable().optional(),
   })
   .strict();
 const transportFields = {
@@ -172,7 +186,8 @@ export const flightSchema = z
   })
   .strict()
   .refine(
-    (v) => !!v.from.airportCode && !!v.to.airportCode && !!v.from.airportName && !!v.to.airportName,
+    (v) =>
+      [v.from, v.to].every((side) => !side.placeId || (!!side.airportCode && !!side.airportName)),
     'Voo exige aeroportos',
   );
 export const trainSchema = z
@@ -181,10 +196,15 @@ export const trainSchema = z
     kind: z.literal('train'),
     trainNumber: nullableText,
     class: nullableText,
-    recommendedArrivalMinutes: z.number().int().min(0),
+    recommendedArrivalMinutes: z.number().int().min(0).nullable(),
+    service: z.object({ type: text, line: nullableText }).strict().optional(),
+    reservationStatus: nullableText,
   })
   .strict()
-  .refine((v) => !!v.from.station && !!v.to.station, 'Trem exige estações');
+  .refine(
+    (v) => [v.from, v.to].every((side) => !side.placeId || !!side.station),
+    'Estação conhecida exige nome',
+  );
 export const transferSchema = z
   .object({
     ...transportFields,
@@ -209,8 +229,8 @@ export const alternativeSchema = z
     kind: z.literal('alternative'),
     status: z.literal('undecided'),
     label: text,
-    startDate: dateSchema,
-    endDate: dateSchema,
+    startDate: dateSchema.nullable(),
+    endDate: dateSchema.nullable(),
     options: z
       .array(
         z
@@ -230,9 +250,12 @@ export const tripSchema = z
   .object({
     id,
     name: text,
-    startDate: dateSchema,
-    endDate: dateSchema,
+    startDate: dateSchema.nullable(),
+    endDate: dateSchema.nullable(),
     homeCity: text,
+    year: z.number().int().optional(),
+    status: z.enum(['planning', 'active', 'completed']).default('planning'),
+    notes: z.array(text).default([]),
     countries: z.array(z.enum(['BR', 'CN', 'JP'])).min(1),
     defaultLocale: z.literal('pt-BR'),
     defaultTimeZone: timezoneSchema,
@@ -244,7 +267,10 @@ export const tripSchema = z
     usefulInfo: z.array(z.object({ title: text, body: text }).strict()),
   })
   .strict()
-  .refine((v) => v.endDate >= v.startDate, 'Período da viagem invertido');
+  .refine(
+    (v) => !v.startDate || !v.endDate || v.endDate >= v.startDate,
+    'Período da viagem invertido',
+  );
 export const contentSchema = z
   .object({
     trip: tripSchema,
@@ -253,7 +279,7 @@ export const contentSchema = z
     flights: z.array(flightSchema),
     trains: z.array(trainSchema),
     transfers: z.array(transferSchema),
-    days: z.array(daySchema),
+    days: z.array(daySchema).min(1),
   })
   .strict();
 export type Content = z.infer<typeof contentSchema>;

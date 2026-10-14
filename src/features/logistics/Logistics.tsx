@@ -1,3 +1,4 @@
+import { entityName } from '../../lib/labels';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Plane, TrainFront, BedDouble, Route } from 'lucide-react';
 import { content, cities, hotels, places, transports } from '../../content';
@@ -24,7 +25,11 @@ export function TransportRow({ route }: { route: Transport }) {
         </strong>
         <span>
           {formatDate(route.from.date, { day: '2-digit', month: 'short' })} ·{' '}
-          {route.from.time ?? 'Horário a definir'} · {places.get(route.from.placeId)?.name.default}
+          {route.from.time ?? 'Horário a definir'} ·{' '}
+          {places.get(route.from.placeId ?? '')?.name.default ??
+            (route.kind === 'flight'
+              ? 'Aeroporto de saída a definir'
+              : 'Estação de embarque a definir')}
         </span>
       </div>
       <StatusBadge status={route.status} />
@@ -59,8 +64,8 @@ export function Logistics() {
         ))}
       </div>
       <div className="notice">
-        Nenhuma reserva foi fornecida. Horários e terminais de exemplo precisam ser substituídos
-        pelos bilhetes reais.
+        Dados ainda incompletos. Uma reserva confirmada pode continuar sem nome, endereço ou horário
+        registrados. Consulte as pendências de cada item.
       </div>
       {(filter === 'all' || filter === 'flight') && (
         <Section title="Voos">
@@ -97,7 +102,7 @@ export function Logistics() {
                 <BedDouble className="row-icon" size={21} />
                 <div className="row-main">
                   <strong>{cities.get(h.cityId)?.name.default}</strong>
-                  <span>{h.name.default}</span>
+                  <span>{entityName(h)}</span>
                 </div>
                 <StatusBadge status={h.status} />
                 <ArrowUpRight size={17} aria-hidden="true" />
@@ -162,7 +167,7 @@ export function TransportDetail() {
             ['Chegada', route.to],
           ] as const
         ).map(([label, side]) => {
-          const p = places.get(side.placeId);
+          const p = places.get(side.placeId ?? '');
           return (
             <section className="route-endpoint" key={label}>
               <h2>{label}</h2>
@@ -170,7 +175,10 @@ export function TransportDetail() {
               <p>
                 {formatDate(side.date)} · <span className="timezone">{side.timezone}</span>
               </p>
-              <h3>{p?.name.default}</h3>
+              <h3>
+                {p?.name.default ??
+                  (route.kind === 'flight' ? 'Aeroporto a definir' : 'Estação a definir')}
+              </h3>
               <p className="local-name">{p?.name.local}</p>
               <p>
                 {side.terminal ? `Terminal ${side.terminal}` : 'Terminal / plataforma a confirmar'}
@@ -182,7 +190,7 @@ export function TransportDetail() {
       </div>
       <Section title="Antes de sair">
         <p>{route.notes}</p>
-        {'recommendedArrivalMinutes' in route && (
+        {'recommendedArrivalMinutes' in route && route.recommendedArrivalMinutes !== null && (
           <p>
             Chegar à estação com {route.recommendedArrivalMinutes} minutos de antecedência. Some o
             tempo de trajeto.
@@ -193,6 +201,12 @@ export function TransportDetail() {
             Margem demonstrativa: {route.safetyBufferMinutes} minutos. Duração:{' '}
             {route.durationMinutes === null ? 'a definir' : `${route.durationMinutes} minutos`}.
           </p>
+        )}
+        {'service' in route && route.service && (
+          <p>Serviço: {route.service.line || route.service.type}</p>
+        )}
+        {'recommendedArrivalMinutes' in route && route.recommendedArrivalMinutes === null && (
+          <p>Antecedência na estação: a definir.</p>
         )}
         {'trainNumber' in route && (
           <p>
@@ -235,14 +249,12 @@ export function PlaceDetail({ hotel = false }: { hotel?: boolean }) {
       <Link className="back-link" to={`/cidades/${place.cityId}`}>
         ← {city?.name.default}
       </Link>
-      <PageHeading title={place.name.default} description={place.name.local ?? undefined} />
+      <PageHeading title={entityName(place)} description={place.name.local ?? undefined} />
       <StatusBadge status={place.status} />
       {place.status === 'example' && <ExampleNotice />}
       <Section title="Endereço">
         <p className="address-preview" lang={city?.country === 'CN' ? 'zh' : 'ja'}>
-          {place.address.local ??
-            place.address.default ??
-            'Endereço a preencher quando o local for confirmado.'}
+          {place.address.local ?? place.address.default ?? 'Endereço ainda não registrado.'}
         </p>
         <MapActions place={place} kind={hotel ? 'hotel' : 'local'} />
         <p className="muted">
@@ -252,7 +264,9 @@ export function PlaceDetail({ hotel = false }: { hotel?: boolean }) {
       {hotel && 'checkIn' in place && (
         <Section title="Estadia">
           <p>
-            Check-in: {place.checkIn ?? 'a definir'} · Check-out: {place.checkOut ?? 'a definir'}
+            Check-in: {formatDate(place.checkInDate)} · {place.checkIn ?? 'horário a definir'}
+            <br />
+            Check-out: {formatDate(place.checkOutDate)} · {place.checkOut ?? 'horário a definir'}
           </p>
           <p>Telefone: {place.phone ?? 'a preencher'}</p>
         </Section>

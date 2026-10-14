@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { readContent } from '../scripts/read-content';
+import { fullPlanFixture } from './fixtures/full-plan';
 import {
   currentTripDay,
   localDate,
@@ -11,7 +11,7 @@ import {
 import { buildMapLinks, offlineInstruction } from '../src/features/maps/links';
 import { canOfferUpdate, cacheNames, versionHash } from '../src/lib/cache-policy';
 import { readPreference, writePreference } from '../src/lib/preferences';
-const c = readContent();
+const c = fullPlanFixture();
 afterEach(() => vi.unstubAllGlobals());
 describe('dia local e atividades', () => {
   it('mostra preparação antes e histórico depois da viagem', () => {

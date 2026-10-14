@@ -36,7 +36,7 @@ export function More() {
         <div className="offline-guide">
           <ShieldCheck size={32} aria-hidden="true" />
           <div>
-            <h3>Roteiro completo no seu iPhone</h3>
+            <h3>Conteúdo registrado no seu iPhone</h3>
             <p>
               Após a instalação do cache, China e Japão ficam juntos no dispositivo. A indicação de
               rede, sozinha, não garante que o cache está completo.
@@ -118,6 +118,9 @@ export function More() {
             <dd>{content.days.length} dias · China e Japão</dd>
           </div>
         </dl>
+        {content.trip.notes.map((note) => (
+          <p key={note}>{note}</p>
+        ))}
         <p>
           Os dados de exemplo não são reservas. Horários são locais; cada voo mostra o fuso da
           partida e da chegada.

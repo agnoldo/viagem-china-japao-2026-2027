@@ -1,7 +1,8 @@
+import { entityName } from '../lib/labels';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { content } from '../content';
-import { PageHeading, Empty } from '../components/shared';
+import { PageHeading, Empty, statuses } from '../components/shared';
 import { formatDate } from '../lib/time';
 const normalized = (value: string) =>
   value
@@ -29,9 +30,9 @@ export function Search() {
     })),
     ...content.hotels.map((h) => ({
       id: h.id,
-      title: h.name.default,
-      subtitle: 'Hospedagem · Exemplo',
-      search: [h.name.default, h.name.local, ...h.aliases].join(' '),
+      title: entityName(h),
+      subtitle: `Hospedagem · ${statuses[h.status]}`,
+      search: [entityName(h), h.name.local, ...h.aliases].join(' '),
       href: `/hotel/${h.id}`,
     })),
     ...content.days.map((d) => ({

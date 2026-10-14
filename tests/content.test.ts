@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { readContent } from '../scripts/read-content';
+import { fullPlanFixture } from './fixtures/full-plan';
 import { parseYaml, validateContent, datesBetween } from '../src/content/validate';
 import { dateSchema, timeSchema, timezoneSchema, contentSchema } from '../src/content/schema';
-const fixture = readContent();
+const fixture = fullPlanFixture();
 const copy = () => structuredClone(fixture);
 describe('YAML e schemas', () => {
   it('lê YAML e rejeita sintaxe e chaves duplicadas', () => {

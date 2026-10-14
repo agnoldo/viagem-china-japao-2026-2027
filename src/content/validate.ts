@@ -51,8 +51,11 @@ export function validateContent(input: unknown): Content {
   const reference = (exists: boolean, label: string) => {
     if (!exists) errors.push(`Referência inválida: ${label}`);
   };
-  const inRange = (date: string, label: string) => {
-    if (date < c.trip.startDate || date > c.trip.endDate)
+  const inRange = (date: string | null, label: string) => {
+    if (
+      date &&
+      ((c.trip.startDate && date < c.trip.startDate) || (c.trip.endDate && date > c.trip.endDate))
+    )
       errors.push(`Data fora da viagem: ${label}`);
   };
   for (const city of c.trip.cities) {
@@ -64,6 +67,10 @@ export function validateContent(input: unknown): Content {
   }
   for (const place of [...c.places, ...c.hotels])
     reference(cities.has(place.cityId), `cidade de ${place.id}`);
+  for (const hotel of c.hotels) {
+    inRange(hotel.checkInDate, hotel.id);
+    inRange(hotel.checkOutDate, hotel.id);
+  }
   for (const day of c.days) {
     inRange(day.date, day.date);
     reference(cities.has(day.cityId), `cidade de ${day.date}`);
@@ -86,7 +93,9 @@ export function validateContent(input: unknown): Content {
       }
     }
   }
-  for (const date of datesBetween(c.trip.startDate, c.trip.endDate))
+  for (const date of c.trip.startDate && c.trip.endDate
+    ? datesBetween(c.trip.startDate, c.trip.endDate)
+    : [])
     reference(
       c.days.some((d) => d.date === date),
       `dia ${date}`,
@@ -94,13 +103,22 @@ export function validateContent(input: unknown): Content {
   for (const route of transports.values()) {
     for (const side of [route.from, route.to]) {
       reference(cities.has(side.cityId), `cidade de ${route.id}`);
-      reference(places.has(side.placeId), `local de ${route.id}`);
+      if (side.placeId) reference(places.has(side.placeId), `local de ${route.id}`);
       inRange(side.date, route.id);
-      if (places.has(side.placeId) && places.get(side.placeId)?.cityId !== side.cityId)
+      if (
+        side.placeId &&
+        places.has(side.placeId) &&
+        places.get(side.placeId)?.cityId !== side.cityId
+      )
         errors.push(`Local em outra cidade: ${route.id}`);
-      if (route.kind === 'flight' && places.get(side.placeId)?.category !== 'airport')
+      if (
+        side.placeId &&
+        route.kind === 'flight' &&
+        places.get(side.placeId)?.category !== 'airport'
+      )
         errors.push(`Voo exige aeroporto: ${route.id}`);
       if (
+        side.placeId &&
         route.kind === 'train' &&
         'trainNumber' in route &&
         places.get(side.placeId)?.category !== 'station'
@@ -129,7 +147,8 @@ export function validateContent(input: unknown): Content {
   for (const a of c.trip.alternatives) {
     inRange(a.startDate, a.id);
     inRange(a.endDate, a.id);
-    if (a.endDate < a.startDate) errors.push(`Período invertido: ${a.id}`);
+    if (a.startDate && a.endDate && a.endDate < a.startDate)
+      errors.push(`Período invertido: ${a.id}`);
     for (const o of a.options)
       for (const cityId of o.cityIds) reference(cities.has(cityId), `cidade de ${o.id}`);
   }

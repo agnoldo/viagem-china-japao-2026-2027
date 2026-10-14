@@ -45,15 +45,23 @@ export function Itinerary() {
   return (
     <>
       <PageHeading
-        title="A viagem inteira"
-        description="30 dias, dois países para descobrir. Um roteiro que ainda está tomando forma."
+        title="Plano da viagem"
+        description={`${content.days.length} dias registrados. Os trechos ainda não informados permanecem em aberto.`}
       />
       <div className="trip-summary">
         <span>
-          29 dez 2026 <ArrowRight size={17} /> 27 jan 2027
+          {formatDate(content.trip.startDate)} <ArrowRight size={17} />{' '}
+          {formatDate(content.trip.endDate)}
         </span>
-        <span>China · 18 noites</span>
+        {(!content.trip.startDate || !content.trip.endDate) && (
+          <span>Datas gerais da viagem a definir</span>
+        )}
         <span>Japão · roteiro em definição</span>
+      </div>
+      <div className="notice">
+        {content.trip.notes.map((note) => (
+          <p key={note}>{note}</p>
+        ))}
       </div>
       <Alternatives />
       <Section title="Dia a dia">
@@ -88,7 +96,7 @@ export function Itinerary() {
                       {day.hotelId && (
                         <>
                           {' '}
-                          · <BedDouble size={14} aria-label="Hospedagem" /> Exemplo de hospedagem
+                          · <BedDouble size={14} aria-label="Hospedagem" /> Hospedagem cadastrada
                         </>
                       )}
                     </span>

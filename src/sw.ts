@@ -7,23 +7,28 @@ const entries = self.__WB_MANIFEST;
 const scope = self.registration.scope;
 const version = versionHash(entries);
 const [primaryName, rescueName] = cacheNames(scope, version);
-const urls = entries.map((entry) => new URL(entry.url, scope).href);
+const urls = [...new Set(entries.map((entry) => new URL(entry.url, scope).href))];
 const shell = new URL('index.html', scope).href;
+function cacheKey(url: string): string {
+  const key = new URL(url);
+  key.searchParams.set('__trip_version', version);
+  return key.href;
+}
 // Só esta versão utiliza estes caches; um install incompleto nunca substitui a versão ativa.
 self.addEventListener('install', (event) => {
   event.waitUntil(
     (async () => {
       const primary = await caches.open(primaryName);
       const rescue = await caches.open(rescueName);
-      await Promise.all(
-        urls.map(async (url) => {
-          const response = await fetch(new Request(url, { cache: 'reload' }));
-          if (!response.ok || response.type === 'opaque')
-            throw new Error(`Falha ao preparar offline: ${url}`);
-          await primary.put(url, response.clone());
-          await rescue.put(url, response);
-        }),
-      );
+      // addAll grava o lote de forma atômica; falha de um download não deixa meio lote ativo.
+      const requests = urls.map((url) => new Request(cacheKey(url), { cache: 'no-store' }));
+      await primary.addAll(requests);
+      await rescue.addAll(requests);
+      // Não oferecer um worker cujo cache ainda não passou por uma leitura completa.
+      for (const url of urls) {
+        if (!(await primary.match(cacheKey(url))) || !(await rescue.match(cacheKey(url))))
+          throw new Error(`Gravação offline incompleta: ${url}`);
+      }
     })(),
   );
 });
@@ -44,11 +49,11 @@ self.addEventListener('activate', (event) => {
 });
 async function localResponse(url: string): Promise<Response | undefined> {
   const primary = await caches.open(primaryName);
-  const cached = await primary.match(url);
+  const cached = await primary.match(cacheKey(url));
   if (cached) return cached;
-  const backup = await (await caches.open(rescueName)).match(url);
+  const backup = await (await caches.open(rescueName)).match(cacheKey(url));
   if (backup) {
-    await primary.put(url, backup.clone());
+    await primary.put(cacheKey(url), backup.clone());
     return backup;
   }
   return undefined;
@@ -87,12 +92,12 @@ self.addEventListener('message', (event) => {
         const rescue = await caches.open(rescueName);
         let missing = 0;
         for (const url of urls) {
-          const a = await primary.match(url);
-          const b = await rescue.match(url);
+          const a = await primary.match(cacheKey(url));
+          const b = await rescue.match(cacheKey(url));
           if (!a && !b) missing++;
           else {
-            if (!a && b) await primary.put(url, b.clone());
-            if (!b && a) await rescue.put(url, a.clone());
+            if (!a && b) await primary.put(cacheKey(url), b.clone());
+            if (!b && a) await rescue.put(cacheKey(url), a.clone());
           }
         }
         event.ports[0]?.postMessage({

@@ -1,24 +1,27 @@
 date: '2027-01-18'
-cityId: echigo-yuzawa
+cityId: tokyo
 regionId: japan
-summary: Da China para a neve no Japão
+summary: Chegada ao Japão e pernoite em Tokyo
 status: planned
-notes: Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.
+notes:
+  Chegada a Tokyo Haneda vindo de Shanghai. A hospedagem desta noite ainda não foi definida. O objetivo
+  é pernoitar antes de seguir para Echigo-Yuzawa no dia seguinte.
 activities:
-  - time: '10:20'
-    timezone: Asia/Shanghai
-    title: Voo Shanghai → Tokyo
+  - id: arrive-tokyo
     type: flight
-    transportId: shanghai-tokyo-example
-    placeId: pvg-airport
-    travelBufferMinutes: 240
-    id: 20270118-activity-1
-    status: example
-  - title: Seguir para Echigo-Yuzawa
-    type: train
-    transportId: tokyo-yuzawa-example
-    notes: Conexão ainda não comprada. Confirmar viabilidade após imigração.
-    id: 20270118-activity-2
-    status: example
+    title: Shanghai → Tokyo
+    transportId: flight-shanghai-tokyo-2027-01-18
+    status: planned
+    timezone: Asia/Shanghai
+    notes: Horários e aeroporto de saída em Shanghai ainda não registrados.
+  - id: haneda-arrival
+    type: arrival
+    title: Chegada ao Aeroporto de Haneda
+    placeId: tokyo-haneda
+    status: planned
     timezone: Asia/Tokyo
-hotelId: echigo-yuzawa-example-hotel
+  - id: overnight-tokyo
+    type: hotel
+    title: Pernoite em Tokyo
+    status: planned
+    notes: Hotel ainda não definido.

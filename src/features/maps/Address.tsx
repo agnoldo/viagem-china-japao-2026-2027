@@ -1,3 +1,4 @@
+import { entityName } from '../../lib/labels';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Check, Copy, ArrowLeft } from 'lucide-react';
@@ -56,13 +57,13 @@ export function Address() {
         className="big-address"
         lang={city?.country === 'CN' ? 'zh' : city?.country === 'JP' ? 'ja' : 'pt'}
       >
-        <strong>{place.name.local || place.name.default}</strong>
+        <strong>{place.name.local || entityName(place)}</strong>
         <p>{place.address.local || place.address.default || 'Endereço ainda não preenchido.'}</p>
       </div>
       <p>
-        {place.name.default} · {city?.name.default}
+        {entityName(place)} · {city?.name.default}
       </p>
-      <button className="button button-primary" onClick={() => void copy()}>
+      <button className="button button-primary" disabled={!text} onClick={() => void copy()}>
         {message.startsWith('Endereço copiado') ? <Check size={20} /> : <Copy size={20} />}Copiar
         nome e endereço
       </button>
