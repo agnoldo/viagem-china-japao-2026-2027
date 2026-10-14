@@ -292,6 +292,23 @@ export const tripSchema = z
     (v) => !v.startDate || !v.endDate || v.endDate >= v.startDate,
     'Período da viagem invertido',
   );
+export const postCategorySchema = z
+  .object({
+    id: text,
+    title: text,
+    images: z.array(
+      z
+        .object({
+          id: text,
+          title: text,
+          src: z.string().regex(/^posts\/[a-f0-9]{24}\.webp$/),
+          width: z.number().int().positive(),
+          height: z.number().int().positive(),
+        })
+        .strict(),
+    ),
+  })
+  .strict();
 export const contentSchema = z
   .object({
     trip: tripSchema,
@@ -301,6 +318,7 @@ export const contentSchema = z
     trains: z.array(trainSchema),
     transfers: z.array(transferSchema),
     days: z.array(daySchema).min(1),
+    posts: z.array(postCategorySchema).default([]),
   })
   .strict();
 export type Content = z.infer<typeof contentSchema>;

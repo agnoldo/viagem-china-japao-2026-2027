@@ -19,6 +19,7 @@ import {
   WifiOff,
   Check,
   ArrowRight,
+  Images,
 } from 'lucide-react';
 import { Today } from '../features/today/Today';
 import { Itinerary } from '../features/itinerary/Itinerary';
@@ -28,12 +29,14 @@ import { Address } from '../features/maps/Address';
 import { More } from '../features/More';
 import { Search } from '../features/Search';
 import { content } from '../content';
+import { Posts, PostDetail } from '../features/posts/Posts';
 import { activateUpdate, startPwa } from '../lib/pwa';
 const navigation = [
   { to: '/hoje', label: 'Hoje', icon: CalendarDays },
   { to: '/viagem', label: 'Viagem', icon: RouteIcon },
   { to: '/logistica', label: 'Logística', icon: TrainFront },
   { to: '/cidades', label: 'Cidades', icon: MapPin },
+  { to: '/posts', label: 'Posts', icon: Images },
   { to: '/mais', label: 'Mais', icon: Ellipsis },
 ];
 function AppShell() {
@@ -169,6 +172,8 @@ function AppShell() {
             <Route path="/" element={<Navigate to="/hoje" replace />} />
             <Route path="/hoje/:date?" element={<Today now={now} />} />
             <Route path="/viagem" element={<Itinerary />} />
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/posts/imagem/:id" element={<PostDetail key={location.pathname} />} />
             <Route path="/cidades" element={<Cities />} />
             <Route path="/cidades/:id" element={<CityDetail />} />
             <Route path="/logistica" element={<Logistics />} />

@@ -43,6 +43,14 @@ export function validateContent(input: unknown): Content {
     c.days.map((d) => d.date),
     'Dia',
   );
+  unique(
+    c.posts.map((category) => category.id),
+    'Categoria de posts',
+  );
+  unique(
+    c.posts.flatMap((category) => category.images.map((image) => image.id)),
+    'Imagem de posts',
+  );
   const cities = new Map(c.trip.cities.map((v) => [v.id, v]));
   const regions = new Map(c.trip.regions.map((v) => [v.id, v]));
   const places = new Map(c.places.map((v) => [v.id, v]));
@@ -183,7 +191,7 @@ export function validateContent(input: unknown): Content {
   if (errors.length) throw new Error(errors.join('\n'));
   return { ...c, days: c.days.sort((a, b) => a.date.localeCompare(b.date)) };
 }
-export function loadContentFiles(files: Record<string, string>): Content {
+export function loadContentFiles(files: Record<string, string>, posts: unknown = []): Content {
   const get = (name: string) => {
     const entry = Object.entries(files).find(
       ([path]) => path.endsWith(`/data/${name}.yaml`) || path === `data/${name}.yaml`,
@@ -192,6 +200,7 @@ export function loadContentFiles(files: Record<string, string>): Content {
     return parseYaml(entry[1], entry[0]);
   };
   return validateContent({
+    posts,
     trip: get('trip'),
     places: get('places'),
     hotels: get('hotels'),

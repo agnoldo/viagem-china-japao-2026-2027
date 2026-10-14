@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { postsPlugin } from './scripts/posts-plugin';
 export default defineConfig({
   base: process.env.BASE_PATH || './',
   plugins: [
     react(),
+    postsPlugin(process.env.POSTS_DIR ?? 'data/posts'),
     VitePWA({
       strategies: 'injectManifest',
       srcDir: 'src',
@@ -35,7 +37,7 @@ export default defineConfig({
         ],
       },
       injectManifest: {
-        globPatterns: ['**/*.{js,css,html,png,svg,webmanifest}'],
+        globPatterns: ['**/*.{js,css,html,png,svg,webp,webmanifest}'],
         maximumFileSizeToCacheInBytes: 2_000_000,
       },
     }),

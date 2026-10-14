@@ -190,6 +190,8 @@ test('instalação interrompida preserva versão; atualização e rollback exige
 }) => {
   await installed(page);
   const old = (await health(page)).version;
+  await page.goto(base + '#/posts');
+  await expect(page.getByRole('heading', { name: 'Nenhum print adicionado ainda' })).toBeVisible();
   await request.get('http://127.0.0.1:4178/__qa?version=next&interrupt=yes');
   await page.evaluate(async () => {
     const reg = await navigator.serviceWorker.getRegistration();
@@ -203,7 +205,7 @@ test('instalação interrompida preserva versão; atualização e rollback exige
   await expect(page.getByRole('button', { name: 'Atualizar agora' })).toHaveCount(0);
   await context.setOffline(true);
   await page.reload();
-  await expect(page.locator('h1')).toContainText(firstCity);
+  await expect(page.getByRole('heading', { name: 'Nenhum print adicionado ainda' })).toBeVisible();
   await context.setOffline(false);
   await request.get('http://127.0.0.1:4178/__qa?version=next');
   await page.evaluate(async () => {
@@ -212,12 +214,18 @@ test('instalação interrompida preserva versão; atualização e rollback exige
   });
   await expect(page.getByRole('button', { name: 'Atualizar agora' })).toBeVisible();
   expect((await health(page)).version).toBe(old);
+  await expect(page.locator('.post-item')).toHaveCount(0);
   await page.getByRole('button', { name: 'Atualizar agora' }).click();
   await expect(page.locator('meta[name="qa-version"]')).toHaveAttribute('content', 'next');
   const reportAfterUpdate = await health(page);
   expect(reportAfterUpdate).toMatchObject({ ready: true });
   await expect(page.getByRole('link', { name: 'Offline pronto', exact: true })).toBeVisible();
   expect(reportAfterUpdate.version).not.toBe(old);
+  await context.setOffline(true);
+  await page.goto(base + '#/posts');
+  await expect(page.locator('.post-item')).toHaveCount(3);
+  await expect(page.locator('.post-gallery img').first()).toHaveJSProperty('naturalWidth', 1100);
+  await context.setOffline(false);
   await request.get('http://127.0.0.1:4178/__qa?version=current');
   await page.evaluate(async () => {
     const reg = await navigator.serviceWorker.getRegistration();
@@ -227,6 +235,7 @@ test('instalação interrompida preserva versão; atualização e rollback exige
   await page.getByRole('button', { name: 'Atualizar agora' }).click();
   await expect(page.locator('meta[name="qa-version"]')).toHaveCount(0);
   expect((await health(page)).version).toBe(old);
+  await expect(page.locator('.post-item')).toHaveCount(0);
 });
 test('sem estado local mantém navegação e layout utilizável', async ({ page }) => {
   await page.addInitScript(() => {

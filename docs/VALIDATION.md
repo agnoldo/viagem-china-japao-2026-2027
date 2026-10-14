@@ -20,7 +20,7 @@ Atualização em 14/10/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Verificações
 
-Resultado local: 86 testes Vitest e 28 testes Playwright aprovados, além de lint, validação e build. Fallback web exercitado em Chromium e WebKit, na mesma janela, com iPadOS e standalone simulados. URLs nativas AMap/Baidu, detecção de iOS/iPadOS, fallback de 1,5 s, cancelamento ao ocultar/sair, cliques repetidos/modificados e preservação do Apple Maps cobertos por testes. Standalone simulado não equivale a instalação na Tela de Início; handoff para apps nativos em iPhone físico continua pendente.
+Resultado local: 90 testes Vitest e 34 testes Playwright aprovados, além de lint, validação e build. Fallback web exercitado em Chromium e WebKit, na mesma janela, com iPadOS e standalone simulados. URLs nativas AMap/Baidu, detecção de iOS/iPadOS, fallback de 1,5 s, cancelamento ao ocultar/sair, cliques repetidos/modificados e preservação do Apple Maps cobertos por testes. Standalone simulado não equivale a instalação na Tela de Início; handoff para apps nativos em iPhone físico continua pendente.
 
 Lint e TypeScript strict; YAML, schemas e referências; Vitest com fixture completa e plano parcial; build e auditoria de assets locais. Os testes de conteúdo verificam a diferença entre limite geral e data de um dia registrado, reserva confirmada sem nome e local de embarque desconhecido sem perder a validação de IDs reais.
 
@@ -31,6 +31,14 @@ Playwright em Chromium e WebKit com viewport de iPhone: navegação por todos os
 Visão mensal em Viagem com alternância para lista; 31 datas dentro dos limites gerais e 24 dias registrados, preservando as sete lacunas de 20–26/01. Janeiro é o mês inicial por conter a maior parte da viagem. Sem duplicação de dados ou mudanças nas reservas.
 
 Cobertura: virada de ano, alinhamento dos dias da semana, fevereiro bissexto, limites gerais nulos, seleção persistida na URL, resumo de lacunas sem links inválidos, voo planejado junto a hotel confirmado, noites em trânsito, troca de mês, navegação para os detalhes, reabertura offline em subpasta e ausência de overflow em 320 px. Inspeção visual em desktop e mobile; abreviações e legenda mantêm os nomes legíveis em telas estreitas. Chromium e WebKit simulados, sem teste em iPhone físico.
+
+## Posts
+
+Menu com seis destinos, galeria por pasta/categoria, opção Todos, contagem, categoria vazia, legenda derivada do arquivo e leitura com ampliação. Dez categorias vazias criadas para países/cidades; nenhum print real foi fornecido ou inventado.
+
+Pipeline de build com Sharp para JPG/JPEG/PNG/WebP: orientação, compressão WebP, largura máxima 1600 px sem recorte/ampliação, remoção de metadados na cópia publicada, nomes de assets por hash e validação do catálogo antes da UI. Originais ficam fora do bundle e permanecem no Git. Orçamentos separados: aplicação 2 MB; galeria 30 MB; imagem otimizada 1,9 MB; origem 20 MB.
+
+Vitest cobre ordenação/categorias vazias, legendas, deduplicação, redução sem recorte, metadados, troca de URL ao substituir uma imagem, formatos inválidos/corrompidos e validação de URLs/IDs. E2E Chromium/WebKit cobre filtro, retorno ao filtro ou Todos, ampliação, URL inválida, reabertura offline de imagens nunca visitadas, recuperação de cache de imagem, 320 px e atualização interrompida/ativação explícita/rollback entre builds com e sem prints. Imagens demonstrativas existem somente em `.qa-builds/`, nunca em `data/` ou no `dist/` publicado. Inspeção visual desktop/mobile aprovada. Upload pelo GitHub documentado em `data/posts/README.md`; sem backend de upload ou dependência do Instagram.
 
 ## Limites
 

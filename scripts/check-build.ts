@@ -1,6 +1,7 @@
 import { readContent } from './read-content';
 import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { MAX_POST_IMAGE_BYTES, MAX_POSTS_BYTES, preparePosts } from './posts';
 function files(dir: string): string[] {
   return readdirSync(dir).flatMap((name) =>
     statSync(join(dir, name)).isDirectory() ? files(join(dir, name)) : [join(dir, name)],
@@ -38,7 +39,20 @@ const sw = readFileSync('dist/sw.js', 'utf8');
 if (!sw.includes('index.html') || !sw.includes('rescue') || !sw.includes('SKIP_WAITING'))
   throw new Error('Service Worker incompleto');
 const total = paths.reduce((sum, path) => sum + statSync(path).size, 0);
-if (total > 2_000_000) throw new Error('Build excedeu orçamento offline de 2 MB');
+const gallery = await preparePosts();
+for (const [path, source] of gallery.assets) {
+  const published = join('dist', path);
+  if (!existsSync(published) || !readFileSync(published).equals(source))
+    throw new Error(`Print ausente ou divergente: ${path}`);
+  if (!sw.includes(path)) throw new Error(`Print fora do pacote offline: ${path}`);
+  if (source.length > MAX_POST_IMAGE_BYTES) throw new Error(`Print excedeu orçamento: ${path}`);
+}
+const imageBytes = paths
+  .filter((path) => path.startsWith(join('dist', 'posts') + '/'))
+  .reduce((sum, path) => sum + statSync(path).size, 0);
+if (imageBytes > MAX_POSTS_BYTES) throw new Error('Posts excedeu orçamento offline de 30 MB');
+if (total - imageBytes > 2_000_000)
+  throw new Error('Aplicação excedeu orçamento offline de 2 MB, sem contar Posts');
 console.log(
   `Build verificado: conteúdo registrado, ícones e SW locais; ${(total / 1024).toFixed(0)} KiB sem gzip.`,
 );
