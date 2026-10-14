@@ -33,7 +33,7 @@ O calendário inclui os dias ainda sem programação, sem atribuir cidade ou hot
 
 ## Posts: upload por pastas
 
-A galeria **Posts** mostra todas as imagens ou filtra por categoria com um toque. As categorias são pastas em [`data/posts`](data/posts/README.md), sem edição de YAML. Envie os prints pelo GitHub com **Add file → Upload files → Commit changes** dentro da pasta desejada. O nome da pasta vira categoria e o nome do arquivo vira legenda. [Instruções completas](data/posts/README.md).
+A galeria **Posts** mostra todas as imagens ou filtra por categoria com um toque. Ao abrir um print, deslize para a esquerda/direita para avançar/voltar; também há botões, contador e setas do teclado. A navegação respeita a categoria, ou percorre tudo quando aberta em Todos. O swipe fica desativado com zoom, durante pinça e em gestos verticais; ajuste a imagem à tela para trocar de print. As categorias são pastas em [`data/posts`](data/posts/README.md), sem edição de YAML. Envie os prints pelo GitHub com **Add file → Upload files → Commit changes** dentro da pasta desejada. O nome da pasta vira categoria e o nome do arquivo vira legenda. [Instruções completas](data/posts/README.md).
 
 JPG/PNG/WebP são convertidos para WebP no build, sem recorte, com largura máxima de 1600 px e sem metadados na cópia publicada. Originais não entram no bundle, mas permanecem públicos no Git. Todas as imagens processadas são incluídas no cache offline atômico; nada depende do Instagram em runtime. Os testes acompanham os uploads automaticamente, sem exigir mudanças no código. O pacote principal conserva o limite de 2 MB, e a galeria tem limite separado de 30 MB processados (até 1,9 MB por imagem). A publicação rejeita arquivos inválidos ou limites excedidos.
 

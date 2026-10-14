@@ -20,7 +20,7 @@ Atualização em 14/10/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Verificações
 
-Resultado local: 90 testes Vitest e 34 testes Playwright aprovados, além de lint, validação e build. Fallback web exercitado em Chromium e WebKit, na mesma janela, com iPadOS e standalone simulados. URLs nativas AMap/Baidu, detecção de iOS/iPadOS, fallback de 1,5 s, cancelamento ao ocultar/sair, cliques repetidos/modificados e preservação do Apple Maps cobertos por testes. Standalone simulado não equivale a instalação na Tela de Início; handoff para apps nativos em iPhone físico continua pendente.
+Resultado local: 90 testes Vitest e 40 testes Playwright aprovados, além de lint, validação e build. Fallback web exercitado em Chromium e WebKit, na mesma janela, com iPadOS e standalone simulados. URLs nativas AMap/Baidu, detecção de iOS/iPadOS, fallback de 1,5 s, cancelamento ao ocultar/sair, cliques repetidos/modificados e preservação do Apple Maps cobertos por testes. Standalone simulado não equivale a instalação na Tela de Início; handoff para apps nativos em iPhone físico continua pendente.
 
 Lint e TypeScript strict; YAML, schemas e referências; Vitest com fixture completa e plano parcial; build e auditoria de assets locais. Os testes de conteúdo verificam a diferença entre limite geral e data de um dia registrado, reserva confirmada sem nome e local de embarque desconhecido sem perder a validação de IDs reais.
 
@@ -39,6 +39,14 @@ Menu com seis destinos, galeria por pasta/categoria, opção Todos, contagem, ca
 Pipeline de build com Sharp para JPG/JPEG/PNG/WebP: orientação, compressão WebP, largura máxima 1600 px sem recorte/ampliação, remoção de metadados na cópia publicada, nomes de assets por hash e validação do catálogo antes da UI. Originais ficam fora do bundle e permanecem no Git. Orçamentos separados: aplicação 2 MB; galeria 30 MB; imagem otimizada 1,9 MB; origem 20 MB.
 
 Vitest cobre ordenação/categorias vazias, legendas, deduplicação, redução sem recorte, metadados, troca de URL ao substituir uma imagem, formatos inválidos/corrompidos e validação de URLs/IDs. E2E Chromium/WebKit cobre filtro, retorno ao filtro ou Todos, ampliação, URL inválida, reabertura offline de imagens nunca visitadas, recuperação de cache de imagem, 320 px e atualização interrompida/ativação explícita/rollback entre o catálogo operacional e o catálogo isolado de teste. Imagens demonstrativas existem somente em `.qa-builds/`, nunca em `data/` ou no `dist/` publicado. Inspeção visual desktop/mobile aprovada. Upload pelo GitHub documentado em `data/posts/README.md`; sem backend de upload ou dependência do Instagram.
+
+## Swipe de Posts
+
+A página de leitura permite swipe horizontal entre os prints do filtro atual, botões Anterior/Próxima, contador e setas do teclado quando a imagem está focada. Não há retorno circular ao chegar às extremidades. Cada troca substitui a URL atual; Voltar aos posts preserva a categoria ou Todos.
+
+Gestos verticais, curtos, multitoque, cancelamento, ampliação para tamanho original e zoom da página não devem trocar o print. `touch-action: pan-y pinch-zoom` conserva rolagem vertical e pinça no modo ajustado; a imagem ampliada permite pan nativo. Referência: [MDN touch-action](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/touch-action).
+
+E2E cobre direção, escopo da categoria/Todos, limites, botões, teclado, cancelamento/multitoque/rolagem, zoom do visualizador, navegação offline, persistência ao recarregar e largura de 320 px. Os eventos de toque são simulados no DOM em Chromium/WebKit; não comprovam o gesto físico em iPhone ou no PWA instalado. Verificar swipe, pinça e rolagem no aparelho permanece parte da validação manual.
 
 ## Regressão de upload
 

@@ -1372,6 +1372,29 @@ main {
   overflow: auto;
   background: var(--wash);
   border: 1px solid var(--line);
+  touch-action: pan-y pinch-zoom;
+}
+.post-viewer-actual {
+  touch-action: auto;
+}
+.post-image-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 20px 0;
+}
+.post-image-nav > span {
+  color: var(--muted);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.post-image-nav .button {
+  min-height: 44px;
+  padding: 8px 12px;
+  gap: 4px;
+  font-size: 14px;
 }
 .post-viewer img {
   display: block;

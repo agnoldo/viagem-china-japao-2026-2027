@@ -1,6 +1,32 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import { expectOperationalGallery } from './operational-gallery';
 const base = 'http://127.0.0.1:4178/offline-check/';
+type Point = { x: number; y: number };
+async function touchEvents(
+  page: Page,
+  events: { type: string; points: Point[]; changed?: Point[] }[],
+) {
+  // DOM gesture simulation works in both desktop Chromium and WebKit; not a physical iPhone test.
+  await page.locator('.post-viewer').evaluate((viewer, sequence) => {
+    for (const step of sequence) {
+      const event = new Event(step.type, { bubbles: true });
+      const points = (values: { x: number; y: number }[]) =>
+        values.map((point) => ({ clientX: point.x, clientY: point.y }));
+      Object.defineProperties(event, {
+        touches: { value: points(step.points) },
+        changedTouches: { value: points(step.changed ?? step.points) },
+      });
+      viewer.dispatchEvent(event);
+    }
+  }, events);
+}
+async function swipe(page: Page, dx: number, dy = 0) {
+  await touchEvents(page, [
+    { type: 'touchstart', points: [{ x: 180, y: 180 }] },
+    { type: 'touchmove', points: [{ x: 180 + dx, y: 180 + dy }] },
+    { type: 'touchend', points: [], changed: [{ x: 180 + dx, y: 180 + dy }] },
+  ]);
+}
 test.beforeEach(async ({ request }) => {
   await request.get('http://127.0.0.1:4178/__qa?version=next');
 });
@@ -93,4 +119,101 @@ test('galeria operacional acompanha uploads e não publica fixtures', async ({ p
   }
   await page.goto(base + '#/posts/imagem/inexistente');
   await expect(page.getByRole('heading', { name: 'Print não encontrado' })).toBeVisible();
+});
+
+test('swipe respeita categoria e limites; botões e teclado navegam em Todos', async ({ page }) => {
+  await page.goto(base + '#/posts?categoria=Teste%20China');
+  await page.getByRole('link', { name: /Ampliar 01 metro/ }).click();
+  const pager = page.getByRole('navigation', { name: 'Navegação entre imagens' });
+  await expect(pager).toContainText('1 de 2');
+  await expect(page.getByRole('button', { name: 'Imagem anterior' })).toBeDisabled();
+  await swipe(page, 100);
+  await expect(pager).toContainText('1 de 2');
+  await swipe(page, -100);
+  await expect(pager).toContainText('2 de 2');
+  await expect(page.locator('h1')).toHaveText('02 restaurante');
+  await expect(page.getByRole('button', { name: 'Próxima imagem' })).toBeDisabled();
+  await swipe(page, -100);
+  await expect(pager).toContainText('2 de 2');
+  await swipe(page, 100);
+  await expect(pager).toContainText('1 de 2');
+  await page.getByRole('link', { name: 'Voltar aos posts' }).click();
+  await expect(page.getByRole('link', { name: 'Teste China 2', exact: true })).toHaveAttribute(
+    'aria-current',
+    'page',
+  );
+  await page.getByRole('link', { name: 'Todos 3', exact: true }).click();
+  await page.getByRole('link', { name: /Ampliar 02 restaurante/ }).click();
+  await expect(pager).toContainText('2 de 3');
+  await page.getByRole('button', { name: 'Próxima imagem' }).click();
+  await expect(page.locator('h1')).toHaveText('01 trem');
+  await page.locator('.post-viewer').focus();
+  await page.keyboard.press('ArrowLeft');
+  await expect(pager).toContainText('2 de 3');
+  await page.locator('.post-viewer').focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(pager).toContainText('3 de 3');
+  await page.getByRole('link', { name: 'Voltar aos posts' }).click();
+  await expect(page.locator('.post-item')).toHaveCount(3);
+});
+
+test('rolagem, gesto curto, multitoque, cancelamento e zoom não trocam o print', async ({
+  page,
+}) => {
+  await page.goto(base + '#/posts?categoria=Teste%20China');
+  await page.getByRole('link', { name: /Ampliar 01 metro/ }).click();
+  const pager = page.getByRole('navigation', { name: 'Navegação entre imagens' });
+  await swipe(page, -20);
+  await expect(pager).toContainText('1 de 2');
+  await swipe(page, -20, 100);
+  await expect(pager).toContainText('1 de 2');
+  await touchEvents(page, [
+    { type: 'touchstart', points: [{ x: 180, y: 180 }] },
+    { type: 'touchmove', points: [{ x: 180, y: 210 }] },
+    { type: 'touchend', points: [], changed: [{ x: 60, y: 210 }] },
+  ]);
+  await expect(pager).toContainText('1 de 2');
+  await touchEvents(page, [
+    { type: 'touchstart', points: [{ x: 180, y: 180 }] },
+    {
+      type: 'touchmove',
+      points: [
+        { x: 160, y: 180 },
+        { x: 200, y: 180 },
+      ],
+    },
+    { type: 'touchend', points: [], changed: [{ x: 60, y: 180 }] },
+  ]);
+  await expect(pager).toContainText('1 de 2');
+  await touchEvents(page, [
+    { type: 'touchstart', points: [{ x: 180, y: 180 }] },
+    { type: 'touchcancel', points: [] },
+    { type: 'touchend', points: [], changed: [{ x: 60, y: 180 }] },
+  ]);
+  await expect(pager).toContainText('1 de 2');
+  await page.getByRole('button', { name: 'Ampliar imagem' }).click();
+  await swipe(page, -100);
+  await expect(pager).toContainText('1 de 2');
+  await page.getByRole('button', { name: 'Ajustar à tela' }).click();
+  await swipe(page, -100);
+  await expect(pager).toContainText('2 de 2');
+});
+
+test('swipe funciona offline e navegação cabe em 320 px', async ({ page, context }, testInfo) => {
+  await page.goto(base + '#/posts?categoria=Teste%20China');
+  await page.waitForFunction(() => !!navigator.serviceWorker.controller);
+  await expect(page.getByRole('link', { name: 'Offline pronto', exact: true })).toBeVisible();
+  await context.setOffline(true);
+  await page.getByRole('link', { name: /Ampliar 01 metro/ }).click();
+  await swipe(page, -100);
+  await expect(page.locator('h1')).toHaveText('02 restaurante');
+  await expect(page.locator('.post-viewer img')).toHaveJSProperty('naturalWidth', 1100);
+  await page.screenshot({ path: testInfo.outputPath('swipe-viewer.png'), fullPage: true });
+  await page.setViewportSize({ width: 320, height: 720 });
+  await page.screenshot({ path: testInfo.outputPath('swipe-viewer-320.png'), fullPage: true });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.reload();
+  await expect(page.getByRole('navigation', { name: 'Navegação entre imagens' })).toContainText(
+    '2 de 2',
+  );
 });

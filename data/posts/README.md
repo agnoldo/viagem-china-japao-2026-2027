@@ -35,6 +35,12 @@ Para criar outra categoria no GitHub, use **Add file → Create new file** e dig
 
 Para retirar um print, exclua seu arquivo e faça o commit. Para trocar a legenda, renomeie o arquivo. Para substituir uma imagem, envie a nova versão com o mesmo nome. A PWA continuará usando sua versão anterior até a atualização explícita.
 
+## Consultar no iPhone
+
+Abra **Posts**, escolha uma categoria (ou Todos) e toque em um print. Com a imagem ajustada à tela, deslize para a esquerda para avançar e para a direita para voltar. Os botões Anterior/Próxima e o contador indicam a posição. A navegação para nas extremidades, sem pular para outra categoria. Em Todos, percorre todas as imagens.
+
+Com **Ampliar imagem** ativo ou após zoom por pinça, os gestos ficam reservados à leitura. Use **Ajustar à tela** ou reduza o zoom da página para voltar ao swipe. No computador, as setas do teclado funcionam quando a área da imagem está focada e sem zoom. A navegação também funciona offline.
+
 ## Publicação e offline
 
 A publicação converte as imagens para WebP, ajusta a orientação, limita a largura a 1600 px sem ampliar nem recortar e remove metadados EXIF/GPS da cópia publicada. O original permanece no Git e no histórico do repositório.

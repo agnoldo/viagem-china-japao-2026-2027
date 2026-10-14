@@ -1,6 +1,14 @@
-import { useState } from 'react';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { ArrowLeft, ImageOff, Images, ZoomIn, ZoomOut } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import {
+  ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
+  ImageOff,
+  Images,
+  ZoomIn,
+  ZoomOut,
+} from 'lucide-react';
 import { content } from '../../content';
 import { PageHeading } from '../../components/shared';
 
@@ -102,15 +110,26 @@ export function Posts() {
 
 export function PostDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [params] = useSearchParams();
   const [actualSize, setActualSize] = useState(false);
+  const touch = useRef<{ x: number; y: number } | null>(null);
   const category = content.posts.find((item) => item.images.some((image) => image.id === id));
   const image = category?.images.find((item) => item.id === id);
   const selected = params.get('categoria');
-  const back =
-    selected && content.posts.some((item) => item.id === selected)
-      ? `/posts?categoria=${encodeURIComponent(selected)}`
-      : '/posts';
+  const scope = selected === category?.id ? selected : null;
+  const query = scope ? `?categoria=${encodeURIComponent(scope)}` : '';
+  const back = `/posts${query}`;
+  const images = content.posts
+    .filter((item) => !scope || item.id === scope)
+    .flatMap((item) => item.images);
+  const index = images.findIndex((item) => item.id === id);
+  const canSwipe = () =>
+    !actualSize && images.length > 1 && (window.visualViewport?.scale ?? 1) <= 1.01;
+  const visit = (step: number) => {
+    const next = images[index + step];
+    if (next) navigate(`/posts/imagem/${next.id}${query}`, { replace: true });
+  };
   if (!image || !category)
     return (
       <>
@@ -144,15 +163,78 @@ export function PostDetail() {
         <p>
           {actualSize
             ? 'Deslize para ler os detalhes da imagem.'
-            : 'Amplie para ler os detalhes. No iPhone, você também pode usar o gesto de pinça.'}
+            : images.length > 1
+              ? 'Deslize a imagem para os lados para trocar de print. Amplie para ler os detalhes.'
+              : 'Amplie para ler os detalhes. No iPhone, você também pode usar o gesto de pinça.'}
         </p>
       </div>
+      {images.length > 1 && (
+        <nav className="post-image-nav" aria-label="Navegação entre imagens">
+          <button
+            type="button"
+            className="button button-secondary"
+            aria-label="Imagem anterior"
+            disabled={index <= 0}
+            onClick={() => visit(-1)}
+          >
+            <ChevronLeft size={18} aria-hidden="true" />
+            Anterior
+          </button>
+          <span aria-live="polite" aria-atomic="true">
+            {index + 1} de {images.length}
+          </span>
+          <button
+            type="button"
+            className="button button-secondary"
+            aria-label="Próxima imagem"
+            disabled={index === images.length - 1}
+            onClick={() => visit(1)}
+          >
+            Próxima
+            <ChevronRight size={18} aria-hidden="true" />
+          </button>
+        </nav>
+      )}
       <div
         className={`post-viewer${actualSize ? ' post-viewer-actual' : ''}`}
         role="region"
         aria-label="Imagem ampliada"
         tabIndex={0}
         key={image.id}
+        onKeyDown={(event) => {
+          if (!canSwipe() || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+          event.preventDefault();
+          visit(event.key === 'ArrowLeft' ? -1 : 1);
+        }}
+        onTouchStart={(event) => {
+          touch.current =
+            canSwipe() && event.touches.length === 1
+              ? { x: event.touches[0].clientX, y: event.touches[0].clientY }
+              : null;
+        }}
+        onTouchMove={(event) => {
+          if (!touch.current) return;
+          if (!canSwipe() || event.touches.length !== 1) {
+            touch.current = null;
+            return;
+          }
+          const dx = event.touches[0].clientX - touch.current.x;
+          const dy = event.touches[0].clientY - touch.current.y;
+          // Once a gesture becomes vertical, reserve it for scrolling to its end.
+          if (Math.abs(dy) > 10 && Math.abs(dy) >= Math.abs(dx)) touch.current = null;
+        }}
+        onTouchCancel={() => {
+          touch.current = null;
+        }}
+        onTouchEnd={(event) => {
+          const start = touch.current;
+          touch.current = null;
+          if (!start || !canSwipe() || event.touches.length || event.changedTouches.length !== 1)
+            return;
+          const dx = event.changedTouches[0].clientX - start.x;
+          const dy = event.changedTouches[0].clientY - start.y;
+          if (Math.abs(dx) >= 60 && Math.abs(dx) > Math.abs(dy) * 2) visit(dx < 0 ? 1 : -1);
+        }}
       >
         <PostImage {...image} />
       </div>
