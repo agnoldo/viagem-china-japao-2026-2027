@@ -4,7 +4,7 @@
 
 PWA familiar de consulta, offline-first, para China e Japão em 2027. Quatro viajantes, quatro iPhones, um mantenedor dos dados.
 
-O repositório está privado. A publicação no GitHub Pages está suspensa por restrição do plano atual; o preview local permanece disponível durante sua execução.
+Repositório público, com publicação no GitHub Pages por GitHub Actions após aprovação das verificações.
 
 ## Plano atual
 

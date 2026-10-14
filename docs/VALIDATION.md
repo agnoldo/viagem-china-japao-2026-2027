@@ -37,4 +37,4 @@ A inspeção de atualização encontrou entradas ausentes em gravações individ
 
 ## Estado da publicação
 
-Repositório privado. A republicação no GitHub Pages está bloqueada pelo plano atual (resposta da API: plano sem suporte para Pages neste repositório). Esta atualização foi validada no preview local; não declarar implantação pública concluída.
+Repositório público novamente por solicitação do mantenedor. GitHub Pages reativado com build por GitHub Actions; `deploy.yml` publica a `main` após aprovação do job de validação.
