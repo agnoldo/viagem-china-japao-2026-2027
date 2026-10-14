@@ -1,0 +1,14 @@
+date: '2026-12-29'
+cityId: belo-horizonte
+regionId: brazil
+summary: Começa a viagem
+status: planned
+notes: Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.
+activities:
+  - title: Saída de Belo Horizonte
+    type: flight
+    transportId: brazil-beijing-example
+    notes: Voos, conexões e horários a confirmar.
+    id: 20261229-activity-1
+    status: example
+    timezone: America/Sao_Paulo

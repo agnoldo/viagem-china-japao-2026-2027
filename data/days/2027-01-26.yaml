@@ -1,0 +1,15 @@
+date: '2027-01-26'
+cityId: tokyo
+regionId: japan
+summary: 'Trecho aberto: Monte Fuji ou Osaka'
+status: undecided
+notes: Cidade-base ainda não decidida. Tokyo é apenas referência para retorno, não compromisso ou hospedagem.
+activities:
+  - title: Possibilidade de passeio em Tokyo
+    type: walk
+    placeId: tokyo-walk
+    status: optional
+    notes: Somente se o roteiro final permitir; retorno a Tokyo a definir.
+    id: 20270126-activity-1
+    timezone: Asia/Tokyo
+alternativeId: japan-after-echigo

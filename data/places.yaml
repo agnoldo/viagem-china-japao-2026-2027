@@ -1,0 +1,645 @@
+- id: forbidden-city
+  cityId: beijing
+  category: attraction
+  name:
+    default: Cidade Proibida
+    local: 故宫
+  status: example
+  aliases:
+    - Forbidden City
+    - Palace Museum
+    - 故宫博物院
+  address:
+    default: Cidade Proibida, Beijing
+    local: 北京市东城区景山前街4号
+  phone: null
+  coordinates:
+    wgs84:
+      lat: 39.9163
+      lon: 116.3972
+    gcj02: &id001
+      lat: null
+      lon: null
+    bd09: &id002
+      lat: null
+      lon: null
+  mapSearch:
+    apple: null
+    amapKeyword: 故宫博物院
+    amapCity: 北京
+    baiduKeyword: 故宫博物院
+    baiduCity: 北京
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Endereço e coordenada de referência fornecidos no pedido. Confirmar entrada oficial e ingresso;
+    visita demonstrativa.
+- id: terracotta-army
+  cityId: xian
+  category: attraction
+  name:
+    default: Exército de Terracota
+    local: 秦始皇帝陵博物院
+  status: example
+  aliases:
+    - Terracotta Army
+    - Guerreiros de terracota
+  address:
+    default: Exército de Terracota, Xi’an
+    local: null
+  phone: null
+  coordinates: &id003
+    wgs84:
+      lat: null
+      lon: null
+    gcj02: *id001
+    bd09: *id002
+  mapSearch:
+    apple: null
+    amapKeyword: 秦始皇帝陵博物院
+    amapCity: 西安
+    baiduKeyword: 秦始皇帝陵博物院
+    baiduCity: 西安
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: panda-base
+  cityId: chengdu
+  category: attraction
+  name:
+    default: Base de pesquisa dos pandas
+    local: 成都大熊猫繁育研究基地
+  status: example
+  aliases:
+    - Pandas
+    - Chengdu Panda Base
+  address:
+    default: Base de pesquisa dos pandas, Chengdu
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 成都大熊猫繁育研究基地
+    amapCity: 成都
+    baiduKeyword: 成都大熊猫繁育研究基地
+    baiduCity: 成都
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: hongyadong
+  cityId: chongqing
+  category: attraction
+  name:
+    default: Hongyadong
+    local: 洪崖洞
+  status: example
+  aliases: []
+  address:
+    default: Hongyadong, Chongqing
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 洪崖洞
+    amapCity: 重庆
+    baiduKeyword: 洪崖洞
+    baiduCity: 重庆
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: zhangjiajie-park
+  cityId: zhangjiajie
+  category: attraction
+  name:
+    default: Parque de Zhangjiajie
+    local: 张家界国家森林公园
+  status: example
+  aliases: []
+  address:
+    default: Parque de Zhangjiajie, Zhangjiajie
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 张家界国家森林公园
+    amapCity: 张家界
+    baiduKeyword: 张家界国家森林公园
+    baiduCity: 张家界
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: the-bund
+  cityId: shanghai
+  category: attraction
+  name:
+    default: Passeio pelo Bund
+    local: 外滩
+  status: example
+  aliases:
+    - Bund
+  address:
+    default: Passeio pelo Bund, Shanghai
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 外滩
+    amapCity: 上海
+    baiduKeyword: 外滩
+    baiduCity: 上海
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: yu-garden
+  cityId: shanghai
+  category: attraction
+  name:
+    default: Yu Garden
+    local: 豫园
+  status: example
+  aliases:
+    - Jardim Yu
+  address:
+    default: Yu Garden, Shanghai
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 豫园
+    amapCity: 上海
+    baiduKeyword: 豫园
+    baiduCity: 上海
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: tokyo-walk
+  cityId: tokyo
+  category: attraction
+  name:
+    default: Passeio por Asakusa
+    local: 浅草
+  status: example
+  aliases:
+    - Asakusa
+  address:
+    default: Passeio por Asakusa, Tokyo
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: snow-region
+  cityId: echigo-yuzawa
+  category: region
+  name:
+    default: Região de neve de Echigo-Yuzawa
+    local: 越後湯沢
+  status: example
+  aliases: []
+  address:
+    default: Região de neve de Echigo-Yuzawa, Echigo-Yuzawa
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: fuji-region
+  cityId: fuji-area
+  category: region
+  name:
+    default: Região do Monte Fuji
+    local: 富士山
+  status: example
+  aliases: []
+  address:
+    default: Região do Monte Fuji, Região do Monte Fuji
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: osaka-region
+  cityId: osaka
+  category: region
+  name:
+    default: Osaka
+    local: 大阪
+  status: example
+  aliases: []
+  address:
+    default: Osaka, Osaka e arredores
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: beijing-west
+  cityId: beijing
+  category: station
+  name:
+    default: Beijing West
+    local: 北京西站
+  status: example
+  aliases: []
+  address:
+    default: Beijing West, Beijing
+    local: 北京市丰台区莲花池东路118号
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 北京西站
+    amapCity: 北京
+    baiduKeyword: 北京西站
+    baiduCity: 北京
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: xian-north
+  cityId: xian
+  category: station
+  name:
+    default: Xi’an North
+    local: 西安北站
+  status: example
+  aliases: []
+  address:
+    default: Xi’an North, Xi’an
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 西安北站
+    amapCity: 西安
+    baiduKeyword: 西安北站
+    baiduCity: 西安
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: chengdu-east
+  cityId: chengdu
+  category: station
+  name:
+    default: Chengdu East
+    local: 成都东站
+  status: example
+  aliases: []
+  address:
+    default: Chengdu East, Chengdu
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 成都东站
+    amapCity: 成都
+    baiduKeyword: 成都东站
+    baiduCity: 成都
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: chongqing-north
+  cityId: chongqing
+  category: station
+  name:
+    default: Chongqing North
+    local: 重庆北站
+  status: example
+  aliases: []
+  address:
+    default: Chongqing North, Chongqing
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 重庆北站
+    amapCity: 重庆
+    baiduKeyword: 重庆北站
+    baiduCity: 重庆
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: zhangjiajie-west
+  cityId: zhangjiajie
+  category: station
+  name:
+    default: Zhangjiajie West
+    local: 张家界西站
+  status: example
+  aliases: []
+  address:
+    default: Zhangjiajie West, Zhangjiajie
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 张家界西站
+    amapCity: 张家界
+    baiduKeyword: 张家界西站
+    baiduCity: 张家界
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: shanghai-hongqiao-station
+  cityId: shanghai
+  category: station
+  name:
+    default: Shanghai Hongqiao
+    local: 上海虹桥站
+  status: example
+  aliases: []
+  address:
+    default: Shanghai Hongqiao, Shanghai
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 上海虹桥站
+    amapCity: 上海
+    baiduKeyword: 上海虹桥站
+    baiduCity: 上海
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: tokyo-station
+  cityId: tokyo
+  category: station
+  name:
+    default: Tokyo Station
+    local: 東京駅
+  status: example
+  aliases: []
+  address:
+    default: Tokyo Station, Tokyo
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: echigo-yuzawa-station
+  cityId: echigo-yuzawa
+  category: station
+  name:
+    default: Echigo-Yuzawa Station
+    local: 越後湯沢駅
+  status: example
+  aliases: []
+  address:
+    default: Echigo-Yuzawa Station, Echigo-Yuzawa
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: cnf-airport
+  cityId: belo-horizonte
+  category: airport
+  name:
+    default: Aeroporto de Belo Horizonte / Confins
+    local: Aeroporto Internacional de Belo Horizonte
+  status: example
+  aliases: []
+  address:
+    default: Aeroporto de Belo Horizonte / Confins, Belo Horizonte
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: pek-airport
+  cityId: beijing
+  category: airport
+  name:
+    default: Beijing Capital International Airport
+    local: 北京首都国际机场
+  status: example
+  aliases: []
+  address:
+    default: Beijing Capital International Airport, Beijing
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 北京首都国际机场
+    amapCity: 北京
+    baiduKeyword: 北京首都国际机场
+    baiduCity: 北京
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: pvg-airport
+  cityId: shanghai
+  category: airport
+  name:
+    default: Shanghai Pudong International Airport
+    local: 上海浦东国际机场
+  status: example
+  aliases: []
+  address:
+    default: Shanghai Pudong International Airport, Shanghai
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: 上海浦东国际机场
+    amapCity: 上海
+    baiduKeyword: 上海浦东国际机场
+    baiduCity: 上海
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.
+- id: hnd-airport
+  cityId: tokyo
+  category: airport
+  name:
+    default: Tokyo Haneda Airport
+    local: 東京国際空港
+  status: example
+  aliases: []
+  address:
+    default: Tokyo Haneda Airport, Tokyo
+    local: null
+  phone: null
+  coordinates: *id003
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks:
+    apple: null
+    amap: null
+    baidu: null
+  officialUrl: null
+  notes:
+    Local demonstrativo. Confirmar endereço, acesso e funcionamento antes de usar. Não representa
+    ingresso ou reserva.

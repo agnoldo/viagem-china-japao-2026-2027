@@ -1,0 +1,64 @@
+- id: beijing-xian-example
+  kind: train
+  status: example
+  from:
+    cityId: beijing
+    placeId: beijing-west
+    date: '2027-01-04'
+    time: 09:00
+    timezone: Asia/Shanghai
+    terminal: null
+    station:
+      default: Beijing West
+      local: 北京西站
+  to:
+    cityId: xian
+    placeId: xian-north
+    date: '2027-01-04'
+    time: '13:30'
+    timezone: Asia/Shanghai
+    terminal: null
+    station:
+      default: Xi’an North
+      local: 西安北站
+  trainNumber: null
+  class: null
+  recommendedArrivalMinutes: 45
+  bookingReferenceHint: null
+  notes: 'EXEMPLO: estações e horários demonstrativos. Confirmar o trem e os terminais após a compra.'
+  offlineInstructions:
+    Mostre 北京西站 ao motorista somente após confirmar a estação do bilhete. Esteja na
+    estação 45 minutos antes do horário demonstrativo; some o trajeto até ela.
+- id: tokyo-yuzawa-example
+  kind: train
+  status: example
+  from:
+    cityId: tokyo
+    placeId: tokyo-station
+    date: '2027-01-18'
+    time: null
+    timezone: Asia/Tokyo
+    terminal: null
+    station:
+      default: Tokyo Station
+      local: 東京駅
+  to:
+    cityId: echigo-yuzawa
+    placeId: echigo-yuzawa-station
+    date: '2027-01-18'
+    time: null
+    timezone: Asia/Tokyo
+    terminal: null
+    station:
+      default: Echigo-Yuzawa Station
+      local: 越後湯沢駅
+  trainNumber: null
+  class: null
+  recommendedArrivalMinutes: 30
+  bookingReferenceHint: null
+  notes:
+    'EXEMPLO: conexão após chegada internacional, sem horário nem passagem. Avaliar viabilidade antes
+    da compra.'
+  offlineInstructions:
+    Confirme o percurso aeroporto → estação de Tokyo e a conexão para 越後湯沢駅. Não presuma
+    conexão garantida.

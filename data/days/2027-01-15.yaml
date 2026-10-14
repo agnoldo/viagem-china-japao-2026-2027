@@ -1,0 +1,24 @@
+date: '2027-01-15'
+cityId: shanghai
+regionId: china
+summary: Jardins e o encontro com o Bund
+status: planned
+notes: Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.
+activities:
+  - time: 09:00
+    title: Conhecer Yu Garden
+    type: attraction
+    placeId: yu-garden
+    travelBufferMinutes: 30
+    id: 20270115-activity-1
+    status: example
+    timezone: Asia/Shanghai
+  - time: '16:00'
+    title: Caminhar pelo Bund
+    type: walk
+    placeId: the-bund
+    travelBufferMinutes: 30
+    id: 20270115-activity-2
+    status: example
+    timezone: Asia/Shanghai
+hotelId: shanghai-example-hotel

@@ -1,0 +1,216 @@
+id: china-japan-2026-2027
+name: China e Japão 2026–2027
+startDate: '2026-12-29'
+endDate: '2027-01-27'
+homeCity: Belo Horizonte
+countries:
+  - BR
+  - CN
+  - JP
+defaultLocale: pt-BR
+defaultTimeZone: America/Sao_Paulo
+contentVersion: '2026-10-14'
+travelers:
+  - id: adult-1
+    label: Adulto 1
+  - id: adult-2
+    label: Adulto 2
+  - id: teen-1
+    label: Adolescente 1
+  - id: teen-2
+    label: Adolescente 2
+regions:
+  - id: brazil
+    name: Brasil
+    country: BR
+  - id: china
+    name: China
+    country: CN
+  - id: japan
+    name: Japão
+    country: JP
+cities:
+  - id: belo-horizonte
+    country: BR
+    regionId: brazil
+    timezone: America/Sao_Paulo
+    startDate: '2026-12-29'
+    endDate: '2026-12-31'
+    status: planned
+    aliases: []
+    name:
+      default: Belo Horizonte
+      local: Belo Horizonte
+    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
+  - id: beijing
+    country: CN
+    regionId: china
+    timezone: Asia/Shanghai
+    startDate: '2026-12-31'
+    endDate: '2027-01-04'
+    status: planned
+    aliases:
+      - Pequim
+    name:
+      default: Beijing
+      local: 北京
+    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
+  - id: xian
+    country: CN
+    regionId: china
+    timezone: Asia/Shanghai
+    startDate: '2027-01-04'
+    endDate: '2027-01-06'
+    status: planned
+    aliases:
+      - Xi'an
+    name:
+      default: Xi’an
+      local: 西安
+    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
+  - id: chengdu
+    country: CN
+    regionId: china
+    timezone: Asia/Shanghai
+    startDate: '2027-01-06'
+    endDate: '2027-01-09'
+    status: planned
+    aliases: []
+    name:
+      default: Chengdu
+      local: 成都
+    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
+  - id: chongqing
+    country: CN
+    regionId: china
+    timezone: Asia/Shanghai
+    startDate: '2027-01-09'
+    endDate: '2027-01-11'
+    status: planned
+    aliases: []
+    name:
+      default: Chongqing
+      local: 重庆
+    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
+  - id: zhangjiajie
+    country: CN
+    regionId: china
+    timezone: Asia/Shanghai
+    startDate: '2027-01-11'
+    endDate: '2027-01-14'
+    status: planned
+    aliases: []
+    name:
+      default: Zhangjiajie
+      local: 张家界
+    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
+  - id: shanghai
+    country: CN
+    regionId: china
+    timezone: Asia/Shanghai
+    startDate: '2027-01-14'
+    endDate: '2027-01-18'
+    status: planned
+    aliases:
+      - Xangai
+    name:
+      default: Shanghai
+      local: 上海
+    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
+  - id: tokyo
+    country: JP
+    regionId: japan
+    timezone: Asia/Tokyo
+    startDate: '2027-01-18'
+    endDate: '2027-01-27'
+    status: planned
+    aliases:
+      - Tóquio
+    name:
+      default: Tokyo
+      local: 東京
+    notes:
+      Porta de entrada e saída do Japão. Presença entre 22 e 26/01 depende da alternativa escolhida;
+      não representa hospedagem confirmada.
+  - id: echigo-yuzawa
+    country: JP
+    regionId: japan
+    timezone: Asia/Tokyo
+    startDate: '2027-01-18'
+    endDate: '2027-01-22'
+    status: undecided
+    aliases:
+      - Yuzawa
+      - Neve
+    name:
+      default: Echigo-Yuzawa
+      local: 越後湯沢
+    notes:
+      Quatro noites previstas. Resort e deslocamentos ainda não escolhidos. Avaliar conexão no dia
+      da chegada internacional.
+  - id: fuji-area
+    country: JP
+    regionId: japan
+    timezone: Asia/Tokyo
+    startDate: '2027-01-22'
+    endDate: '2027-01-27'
+    status: optional
+    aliases:
+      - Fuji
+      - Kawaguchiko
+    name:
+      default: Região do Monte Fuji
+      local: 富士山周辺
+    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
+  - id: osaka
+    country: JP
+    regionId: japan
+    timezone: Asia/Tokyo
+    startDate: '2027-01-22'
+    endDate: '2027-01-27'
+    status: optional
+    aliases:
+      - Osaca
+    name:
+      default: Osaka e arredores
+      local: 大阪
+    notes: Roteiro-base, sujeito a revisão. Nenhuma reserva confirmada.
+alternatives:
+  - id: japan-after-echigo
+    kind: alternative
+    status: undecided
+    label: 'Depois da neve: Fuji ou Osaka?'
+    startDate: '2027-01-22'
+    endDate: '2027-01-27'
+    options:
+      - id: fuji-option
+        label: Monte Fuji
+        status: optional
+        cityIds:
+          - fuji-area
+          - tokyo
+        notes: Possibilidade de visitar a região de Fuji e retornar a Tokyo. Hospedagens e transporte a definir.
+      - id: osaka-option
+        label: Osaka e arredores
+        status: optional
+        cityIds:
+          - osaka
+          - tokyo
+        notes: Possibilidade de visitar o amigo da família e retornar a Tokyo. Datas e deslocamentos a definir.
+usefulInfo:
+  - title: Antes de sair do hotel
+    body:
+      Confira o próximo endereço local, a estação exata e a antecedência de saída. Guarde uma captura
+      da tela de endereço.
+  - title: Se um mapa não abrir
+    body:
+      Volte à PWA e mostre o nome e o endereço no idioma local. Os mapas são externos e podem precisar
+      de internet ou de um aplicativo instalado.
+  - title: Emergência e ajuda presencial
+    body:
+      Peça ajuda à recepção do hotel, à equipe da estação ou às autoridades locais. Confirme contatos
+      públicos oficiais antes da viagem e mantenha contatos privados no Apple Notes.
+  - title: Documentos privados
+    body:
+      Passaportes, vouchers, ingressos, contatos pessoais e reservas ficam no Apple Notes ou iCloud
+      Drive, disponíveis offline. Nunca publique códigos de reserva no repositório.

@@ -1,0 +1,14 @@
+date: '2027-01-10'
+cityId: chongqing
+regionId: china
+summary: Programação a definir em Chongqing
+status: planned
+notes: Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.
+activities:
+  - title: Passear por Hongyadong
+    type: attraction
+    placeId: hongyadong
+    id: 20270110-activity-1
+    status: example
+    timezone: Asia/Shanghai
+hotelId: chongqing-example-hotel

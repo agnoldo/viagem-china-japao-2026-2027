@@ -1,0 +1,14 @@
+date: '2027-01-05'
+cityId: xian
+regionId: china
+summary: Programação a definir em Xi’an
+status: planned
+notes: Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.
+activities:
+  - title: Conhecer o Exército de Terracota
+    type: attraction
+    placeId: terracotta-army
+    id: 20270105-activity-1
+    status: example
+    timezone: Asia/Shanghai
+hotelId: xian-example-hotel

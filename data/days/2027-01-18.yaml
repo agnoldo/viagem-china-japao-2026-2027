@@ -1,0 +1,24 @@
+date: '2027-01-18'
+cityId: echigo-yuzawa
+regionId: japan
+summary: Da China para a neve no Japão
+status: planned
+notes: Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.
+activities:
+  - time: '10:20'
+    timezone: Asia/Shanghai
+    title: Voo Shanghai → Tokyo
+    type: flight
+    transportId: shanghai-tokyo-example
+    placeId: pvg-airport
+    travelBufferMinutes: 240
+    id: 20270118-activity-1
+    status: example
+  - title: Seguir para Echigo-Yuzawa
+    type: train
+    transportId: tokyo-yuzawa-example
+    notes: Conexão ainda não comprada. Confirmar viabilidade após imigração.
+    id: 20270118-activity-2
+    status: example
+    timezone: Asia/Tokyo
+hotelId: echigo-yuzawa-example-hotel

@@ -1,0 +1,122 @@
+- id: xian-chengdu-example
+  kind: train
+  status: example
+  from:
+    cityId: xian
+    placeId: xian-north
+    date: '2027-01-06'
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station:
+      default: Xi’an North
+      local: 西安北站
+  to:
+    cityId: chengdu
+    placeId: chengdu-east
+    date: '2027-01-06'
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: &id001
+      default: Chengdu East
+      local: 成都东站
+  durationMinutes: null
+  safetyBufferMinutes: 45
+  bookingReferenceHint: null
+  notes:
+    EXEMPLO de trecho entre cidades; meio de transporte, estações e duração devem ser confirmados.
+    Não representa serviço direto disponível.
+  offlineInstructions:
+    Verifique o bilhete real, possíveis conexões e estação exata. Guarde os nomes locais
+    e o endereço do destino antes de sair.
+- id: chengdu-chongqing-example
+  kind: train
+  status: example
+  from:
+    cityId: chengdu
+    placeId: chengdu-east
+    date: '2027-01-09'
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: *id001
+  to:
+    cityId: chongqing
+    placeId: chongqing-north
+    date: '2027-01-09'
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: &id002
+      default: Chongqing North
+      local: 重庆北站
+  durationMinutes: null
+  safetyBufferMinutes: 45
+  bookingReferenceHint: null
+  notes:
+    EXEMPLO de trecho entre cidades; meio de transporte, estações e duração devem ser confirmados.
+    Não representa serviço direto disponível.
+  offlineInstructions:
+    Verifique o bilhete real, possíveis conexões e estação exata. Guarde os nomes locais
+    e o endereço do destino antes de sair.
+- id: chongqing-zhangjiajie-example
+  kind: train
+  status: example
+  from:
+    cityId: chongqing
+    placeId: chongqing-north
+    date: '2027-01-11'
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: *id002
+  to:
+    cityId: zhangjiajie
+    placeId: zhangjiajie-west
+    date: '2027-01-11'
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: &id003
+      default: Zhangjiajie West
+      local: 张家界西站
+  durationMinutes: null
+  safetyBufferMinutes: 45
+  bookingReferenceHint: null
+  notes:
+    EXEMPLO de trecho entre cidades; meio de transporte, estações e duração devem ser confirmados.
+    Não representa serviço direto disponível.
+  offlineInstructions:
+    Verifique o bilhete real, possíveis conexões e estação exata. Guarde os nomes locais
+    e o endereço do destino antes de sair.
+- id: zhangjiajie-shanghai-example
+  kind: train
+  status: example
+  from:
+    cityId: zhangjiajie
+    placeId: zhangjiajie-west
+    date: '2027-01-14'
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: *id003
+  to:
+    cityId: shanghai
+    placeId: shanghai-hongqiao-station
+    date: '2027-01-14'
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station:
+      default: Shanghai Hongqiao
+      local: 上海虹桥站
+  durationMinutes: null
+  safetyBufferMinutes: 45
+  bookingReferenceHint: null
+  notes:
+    EXEMPLO de trecho entre cidades; meio de transporte, estações e duração devem ser confirmados.
+    Não representa serviço direto disponível.
+  offlineInstructions:
+    Verifique o bilhete real, possíveis conexões e estação exata. Guarde os nomes locais
+    e o endereço do destino antes de sair.

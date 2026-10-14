@@ -1,0 +1,14 @@
+date: '2027-01-11'
+cityId: zhangjiajie
+regionId: china
+summary: Programação a definir em Zhangjiajie
+status: planned
+notes: Atividades com horários são demonstrativas, não são reservas. Dias sem atividades aguardam planejamento.
+activities:
+  - title: Deslocamento para Zhangjiajie
+    type: transfer
+    transportId: chongqing-zhangjiajie-example
+    id: 20270111-activity-1
+    status: example
+    timezone: Asia/Shanghai
+hotelId: zhangjiajie-example-hotel
