@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, ImageOff, Images, X } from 'lucide-react';
 import { content } from '../../content';
@@ -38,6 +38,17 @@ function ImageViewer({
   const touch = useRef<{ x: number; y: number } | null>(null);
   const [index, setIndex] = useState(initialIndex);
   const image = images[index];
+  useLayoutEffect(() => {
+    const element = dialog.current;
+    if (!element?.open) return;
+    const focused = document.activeElement;
+    // A newly disabled boundary button can send focus to body in Chromium/WebKit.
+    if (!element.contains(focused) || (focused instanceof HTMLButtonElement && focused.disabled)) {
+      element
+        .querySelector<HTMLButtonElement>('button:not(:disabled)')
+        ?.focus({ preventScroll: true });
+    }
+  }, [index]);
   useEffect(() => {
     const element = dialog.current!;
     const overflow = document.body.style.overflow;

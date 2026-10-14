@@ -154,6 +154,9 @@ test('swipe, botões e teclado percorrem o filtro sem sair da galeria', async ({
   await expect(counter).toHaveText('2 de 3');
   await page.getByRole('button', { name: 'Próxima imagem' }).click();
   await expect(page.locator('.post-lightbox-stage img')).toHaveAttribute('alt', '01 trem');
+  expect(
+    await page.getByRole('dialog').evaluate((node) => node.contains(document.activeElement)),
+  ).toBe(true);
   await page.keyboard.press('ArrowLeft');
   await expect(counter).toHaveText('2 de 3');
   await page.keyboard.press('ArrowRight');

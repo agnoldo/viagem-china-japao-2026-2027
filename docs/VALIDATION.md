@@ -44,7 +44,7 @@ Vitest cobre ordenação/categorias vazias, legendas, deduplicação, redução 
 
 Miniaturas sem legendas visuais, filtro por categoria/Todos e visualizador nativo `dialog` em tela cheia. Não abre página específica nem altera a URL. A imagem fica inteira, sem recorte, com fechar, contador e setas discretos. Swipe e teclado percorrem os prints do filtro, sem navegação circular.
 
-Fechar ou Escape retorna o foco à miniatura e preserva a rolagem/categoria. O diálogo bloqueia a interação com os menus ao fundo e restaura a rolagem do documento ao fechar. Rotas antigas `/posts/imagem/:id` redirecionam para a galeria, preservando o filtro quando presente.
+Fechar ou Escape retorna o foco à miniatura e preserva a rolagem/categoria. O diálogo bloqueia a interação com os menus ao fundo e restaura a rolagem do documento ao fechar. Tab percorre os controles do visualizador; ao desativar uma seta na extremidade, o foco permanece em um controle habilitado para conservar a navegação pelo teclado. Rotas antigas `/posts/imagem/:id` redirecionam para a galeria, preservando o filtro quando presente.
 
 E2E cobre dimensões de tela cheia, foco/Tab/Escape, restauração de rolagem, URL inalterada, singletons, filtros, swipe, botões, teclado, limites, eventos verticais/curtos/cancelados/multitoque, guarda de zoom da página, abertura e navegação offline e largura de 320 px. Toques e zoom são simulados no DOM em Chromium/WebKit; não comprovam gesto físico ou pinça no PWA instalado em iPhone. Validação manual no aparelho continua pendente.
 
