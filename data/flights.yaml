@@ -126,12 +126,13 @@
     - teen-2
   nextFlightId: null
   bookingReferenceHint: null
-  notes: Chegada à China pelo Aeroporto de Beijing Daxing (PKX). Hospedagem e continuação do roteiro
-    ainda não registradas.
+  notes:
+    Chegada à China pelo Aeroporto de Beijing Daxing (PKX). Hospedagem confirmada no Pan Pacific
+    Beijing de 31/12 a 04/01. Transporte do aeroporto ao hotel ainda não definido.
   offlineInstructions: Horários locais em cada aeroporto. Todos os quatro viajantes seguem este voo.
-    Chegada à China pelo Aeroporto de Beijing Daxing (PKX). Hospedagem e continuação do roteiro
-    ainda não registradas. Confira portão e eventuais alterações no bilhete atualizado ou com a
-    companhia.
+    Na chegada a Daxing, consultar o nome e endereço em chinês do Pan Pacific Beijing na seção
+    Hospedagens. Check-in disponível a partir das 15:00; chegada ao hotel e transfer ainda não
+    definidos. Confira portão e eventuais alterações no bilhete atualizado ou com a companhia.
 - id: flight-shanghai-tokyo-2027-01-18
   kind: flight
   status: planned

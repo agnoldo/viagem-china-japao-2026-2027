@@ -19,6 +19,10 @@ describe('plano atual com dados incompletos', () => {
       '2026-12-29',
       '2026-12-30',
       '2026-12-31',
+      '2027-01-01',
+      '2027-01-02',
+      '2027-01-03',
+      '2027-01-04',
       '2027-01-18',
       '2027-01-19',
       '2027-01-27',
@@ -27,7 +31,36 @@ describe('plano atual com dados incompletos', () => {
     expect(formatDate(null)).toBe('A definir');
     const copy = structuredClone(content);
     copy.trip.itineraryCoverage = 'complete';
-    expect(() => validateContent(copy)).toThrow(/dia 2027-01-01/);
+    expect(() => validateContent(copy)).toThrow(/dia 2027-01-05/);
+  });
+  it('cobre quatro noites em Beijing sem transformar disponibilidade de check-in em chegada agendada', () => {
+    const hotel = content.hotels.find((h) => h.id === 'pan-pacific-beijing')!;
+    expect([hotel.checkInDate, hotel.checkIn, hotel.checkOutDate, hotel.checkOut]).toEqual([
+      '2026-12-31',
+      '15:00',
+      '2027-01-04',
+      '12:00',
+    ]);
+    expect(content.days.filter((d) => d.hotelId === hotel.id).map((d) => d.date)).toEqual([
+      '2026-12-31',
+      '2027-01-01',
+      '2027-01-02',
+      '2027-01-03',
+    ]);
+    const checkin = content.days
+      .find((d) => d.date === '2026-12-31')!
+      .activities.find((a) => a.hotelId === hotel.id)!;
+    expect(checkin.time).toBeUndefined();
+    const checkout = content.days.find((d) => d.date === '2027-01-04')!;
+    expect(checkout.hotelId).toBeUndefined();
+    expect(checkout.activities[0].time).toBe('12:00');
+    expect(hotel.name.local).toBe('北京泛太平洋酒店');
+    expect(hotel.address.local).toContain('华远街2号');
+    for (const provider of ['apple', 'amap', 'baidu'])
+      expect(buildMapLinks(hotel, provider).url).toMatch(/^https:/);
+    expect(
+      Object.values(hotel.coordinates).every((pair) => pair.lat === null && pair.lon === null),
+    ).toBe(true);
   });
   it('mantém pernoite em Tokyo no dia 18 e início do resort no dia 19', () => {
     const arrival = content.days.find((d) => d.date === '2027-01-18')!;

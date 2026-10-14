@@ -1,0 +1,18 @@
+date: 2027-01-04
+cityId: beijing
+regionId: china
+summary: Checkout do Pan Pacific Beijing
+status: confirmed
+notes: Encerramento da reserva de quatro noites. Destino seguinte, deslocamento e hospedagem desta
+  noite ainda não registrados.
+activities:
+  - id: beijing-hotel-checkout
+    type: hotel
+    title: Checkout do Pan Pacific Beijing até as 12:00
+    hotelId: pan-pacific-beijing
+    status: confirmed
+    time: 12:00
+    timezone: Asia/Shanghai
+    notes:
+      Horário limite para checkout, não uma saída agendada da cidade. Próximo destino e transporte
+      ainda não definidos.

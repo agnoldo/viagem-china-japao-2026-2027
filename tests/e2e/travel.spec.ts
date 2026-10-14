@@ -95,6 +95,25 @@ test('reabre sem rede e navega por todos os dias e cidades registrados', async (
     await reopened.goto(base + `#/cidades/${id}`);
     await expect(reopened.locator('h1')).toBeVisible();
   }
+  await reopened.goto(base + '#/hotel/pan-pacific-beijing');
+  await expect(reopened.locator('h1')).toHaveText('Pan Pacific Beijing');
+  await expect(reopened.getByText('Check-in:', { exact: false })).toContainText(
+    '31 de dezembro · 15:00',
+  );
+  await expect(reopened.getByText('Check-out:', { exact: false })).toContainText(
+    '4 de janeiro · 12:00',
+  );
+  await expect(reopened.getByRole('link', { name: 'AMap', exact: true })).toHaveAttribute(
+    'href',
+    /^https:/,
+  );
+  await reopened.getByRole('link', { name: 'Endereço local', exact: true }).click();
+  await expect(reopened.locator('.big-address')).toContainText('北京泛太平洋酒店');
+  await expect(reopened.locator('.big-address')).toContainText('华远街2号');
+  await reopened.getByRole('button', { name: 'Copiar nome e endereço' }).click();
+  await expect(reopened.getByRole('status', { name: 'Resultado da cópia' })).toContainText(
+    /copiado|Selecione/,
+  );
   await reopened.goto(base + '#/logistica');
   await expect(reopened.getByRole('heading', { name: 'Voos', exact: true })).toBeVisible();
   await reopened.reload();

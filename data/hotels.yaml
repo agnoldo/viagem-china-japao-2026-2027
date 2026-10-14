@@ -26,11 +26,50 @@
     baiduKeyword: null
     baiduCity: null
   mapLinks: {}
-  checkInDate: '2027-01-19'
+  checkInDate: 2027-01-19
   checkIn: null
   checkOutDate: null
   checkOut: null
+  notes: 'Reserva informada pelo mantenedor (status original: booked). Resort de neve com início da
+    hospedagem em 19/01/2027. Nome, endereço, telefone, horários e data de checkout ainda não
+    registrados. Não é uma reserva de exemplo.'
+- id: pan-pacific-beijing
+  cityId: beijing
+  name:
+    default: Pan Pacific Beijing
+    local: 北京泛太平洋酒店
+  type: hotel
+  status: confirmed
+  address:
+    default: No.2 Huayuan Street, Xicheng, 100032 Beijing, China
+    local: 中国北京市西城区西单华远街2号，邮编100032
+  phone: +86 10 6376 7777
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 北京泛太平洋酒店 北京市西城区华远街2号
+    amapKeyword: 北京泛太平洋酒店 华远街2号
+    amapCity: 北京
+    baiduKeyword: 北京泛太平洋酒店 华远街2号
+    baiduCity: 北京
+  mapLinks: {}
+  officialUrl: https://www.panpacific.com/en/hotels-and-resorts/pp-beijing.html
+  checkInDate: 2026-12-31
+  checkIn: 15:00
+  checkOutDate: 2027-01-04
+  checkOut: 12:00
   notes:
-    'Reserva informada pelo mantenedor (status original: booked). Resort de neve com início da hospedagem
-    em 19/01/2027. Nome, endereço, telefone, horários e data de checkout ainda não registrados. Não é
-    uma reserva de exemplo.'
+    'Reserva confirmada de 4 noites para 2 adultos e 2 filhos. Quarto Deluxe Family Room | Family
+    Pick: 1 Comfort King Bed + 1 Single Bed, conforme reserva. Check-in a partir das 15:00 de
+    31/12/2026; checkout até as 12:00 de 04/01/2027, no fuso Asia/Shanghai. O horário de check-in é
+    o início da disponibilidade, não uma chegada agendada. Nome e endereço em chinês identificados
+    pela correspondência do endereço e telefone com o site oficial. Transfer de Daxing até o hotel e
+    destino após o checkout ainda não registrados.'

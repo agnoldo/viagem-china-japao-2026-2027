@@ -27,6 +27,8 @@ notes:
     viajantes.
   - Chegada à China por Beijing Daxing (PKX) em 31/12. Saída do Japão por Tokyo Narita (NRT) em
     27/01. Haneda (HND) permanece a chegada prevista em 18/01, vindo de Shanghai.
+  - 'Beijing: Pan Pacific Beijing reservado de 31/12/2026 a 04/01/2027, 4 noites. Check-in a partir
+    das 15:00; checkout até as 12:00 (horários locais).'
   - 'Programação parcial: deslocamentos e estadias entre os dias registrados continuam em aberto.'
   - Na volta, conexão em Doha de 45 minutos e em Guarulhos de 1h45, com troca do terminal 3 para o
     2. Confirmar com as companhias as orientações de conexão.
@@ -95,10 +97,12 @@ cities:
     aliases: []
     timezone: Asia/Shanghai
     startDate: 2026-12-31
-    endDate: null
+    endDate: 2027-01-04
     status: confirmed
     notes:
-      Chegada confirmada em Daxing em 31/12/2026. Duração da estadia e deslocamento até Shanghai
+      Chegada a Daxing em 31/12/2026. Hospedagem confirmada no Pan Pacific Beijing por 4 noites,
+      com checkout até 12:00 de 04/01/2027. A data final representa o limite da hospedagem
+      registrada; não confirma saída da cidade. Transfer do aeroporto e continuação até Shanghai
       ainda não registrados.
   - id: shanghai
     name:

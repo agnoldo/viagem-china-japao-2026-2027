@@ -3,7 +3,9 @@ cityId: beijing
 regionId: china
 summary: 'Doha → Beijing Daxing: chegada à China'
 status: confirmed
-notes: Chegada a Daxing, não ao Aeroporto Capital. Programação após a chegada ainda em aberto.
+notes: Chegada a Daxing às 14:45. Hospedagem confirmada no Pan Pacific Beijing. Check-in disponível
+  a partir das 15:00, sem horário de chegada ao hotel definido. Transfer aeroporto–hotel ainda não
+  registrado.
 activities:
   - id: depart-qr892
     type: flight
@@ -21,5 +23,15 @@ activities:
     time: 14:45
     timezone: Asia/Shanghai
     notes:
-      Chegada à China pelo Aeroporto de Beijing Daxing (PKX). Hospedagem e continuação do roteiro
-      ainda não registradas.
+      Chegada à China pelo Aeroporto de Beijing Daxing (PKX). Seguir para o Pan Pacific Beijing;
+      transporte até o hotel ainda não definido.
+  - id: beijing-hotel-checkin
+    type: hotel
+    title: Check-in no Pan Pacific Beijing
+    hotelId: pan-pacific-beijing
+    status: confirmed
+    timezone: Asia/Shanghai
+    notes:
+      Disponível a partir das 15:00. Chegada ao hotel após desembarque e deslocamento de Daxing;
+      horário de chegada e transfer não definidos.
+hotelId: pan-pacific-beijing

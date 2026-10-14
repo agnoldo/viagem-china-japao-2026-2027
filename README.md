@@ -7,11 +7,12 @@ PWA familiar de consulta, offline-first, para China e Japão em 2027. Quatro via
 ## Plano atual
 
 - **29–31/12/2026:** Belo Horizonte (CNF) → Guarulhos (GRU) → Doha (DOH) → Beijing Daxing (PKX). Voos QR7251, QR774 e QR892 confirmados para os quatro viajantes.
+- **31/12/2026–04/01/2027:** Pan Pacific Beijing confirmado, 4 noites para a família. Check-in a partir das 15h; checkout até 12h, no fuso `Asia/Shanghai`. Nome e endereço em chinês conferidos no [site oficial](https://www.panpacific.com/zh/hotels-and-resorts/pp-beijing/the-hotel.html) pela correspondência de endereço e telefone. Transfer de Daxing e destino após o checkout ainda indefinidos.
 - **18/01/2027:** Shanghai → Tokyo Haneda; pernoite em Tokyo, hotel ainda não definido. Voo ainda planejado, sem aeroporto de origem ou horários registrados.
 - **19/01/2027:** Tokyo → Echigo-Yuzawa pelo Joetsu Shinkansen; início da hospedagem em resort reservado, ainda sem nome registrado.
 - **27–28/01/2027:** Tokyo Narita (NRT), terminal 2 → Doha → Guarulhos → Belo Horizonte. Voos QR809, QR785 e QR4834 confirmados para os quatro viajantes.
 - **Conexões:** ida GRU 9h35 (terminal 2 → 3), DOH 4h25; volta DOH **45 minutos**, GRU 1h45 (terminal 3 → 2). A conexão curta recebe destaque; confirmar orientações com Qatar e LATAM.
-- Limites da viagem: **29/12/2026 a 28/01/2027**, com **7 dias registrados**. `itineraryCoverage: partial` preserva as lacunas sem inventar estadias ou atividades.
+- Limites da viagem: **29/12/2026 a 28/01/2027**, com **11 dias registrados**. `itineraryCoverage: partial` preserva as lacunas sem inventar estadias ou atividades.
 - Estação de embarque em Tokyo, nome/endereço/checkout do resort, horários dos transportes de 18–19/01 e programação dos demais dias permanecem **não informados**.
 - Bilhete: cabine Economy e 2 volumes despachados por passageiro, peso não informado. Os dois voos domésticos são comercializados pela Qatar e operados pela LATAM. Número de passageiro frequente, dados tarifários e recibo integral não são publicados.
 
@@ -25,7 +26,7 @@ O roteiro demonstrativo anterior está apenas em `tests/fixtures/full-plan.json`
 - YAML em `data/`, schemas Zod e referências validados antes de o conteúdo chegar aos componentes. Todos os arquivos operacionais em `data/` são importados de forma eager no build, sem download posterior de dias ou países.
 - Manifest e Service Worker com `vite-plugin-pwa` em `injectManifest`. A política de cache própria permite recuperação redundante e atualização por consentimento no aplicativo.
 - Nenhum backend, autenticação, API de conteúdo, banco remoto, analytics, CDN, fonte remota ou imagem externa. A rede só é necessária para instalar/atualizar e abrir mapas externos.
-- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 559 KiB, antes de gzip, com limite automático de 2 MB. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
+- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 563 KiB, antes de gzip, com limite automático de 2 MB. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
 - `base: './'` por padrão: funciona na raiz e em subpastas, incluindo repositórios GitHub Pages. `BASE_PATH=/repositorio/ npm run build` permite prefixo explícito. Use o mesmo prefixo no preview se escolher um base absoluto. Hashes evitam 404 nas páginas internas.
 - `localStorage` serve apenas para último dia consultado; ausência, bloqueio ou corrupção não impedem a consulta. A abertura de Hoje usa sempre o dia automático; Mais oferece a última consulta.
 
@@ -172,6 +173,8 @@ Quando o endereço de rua não é conhecido, `address.local` fica `null`; o nome
 ### Adicionar hotel
 
 Copie um item de `hotels.yaml`, associe uma cidade e complete o endereço local real. `name.default` e `name.local` podem ser `null`; `checkInDate` e `checkOutDate` são datas ou `null`; `checkIn` e `checkOut` são horários `HH:mm` ou `null`; `phone` é público ou `null`. Use `status: example` para dados demonstrativos, `undecided` para pendência e `confirmed` somente após confirmação real. Associe o `hotelId` nos dias da estadia.
+
+A reserva de Beijing ocupa as noites de 31/12, 01/01, 02/01 e 03/01. Em 04/01 há atividade de checkout, sem associar o hotel à noite seguinte. O horário de check-in indica disponibilidade, sem agendar chegada às 15h após o voo das 14h45. Valores, condições de cancelamento e endereço privado de contato não entram na publicação.
 
 O resort atual tem reserva informada, mas nome e endereço vazios. A UI indica “Resort · nome a registrar”; esse rótulo não é o nome de um estabelecimento. Sem nome/endereço real, mapa e cópia não inventam um destino. A data de check-in não preenche automaticamente o checkout ou dias adicionais.
 

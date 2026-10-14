@@ -1,7 +1,7 @@
 # Instruções para manutenção
 
 ## Objetivo
-PWA familiar de consulta para China/Japão em 2027. Viagem de 29/12/2026 a 28/01/2027; seis voos confirmados para os quatro viajantes. Plano parcial: chegada a Daxing em 31/12, 18/01 Tokyo/Haneda, 19/01 início do resort em Echigo-Yuzawa, retorno por Narita em 27/01. Há lacunas na programação. Confiabilidade offline e leitura no iPhone são prioritárias. Um mantenedor edita YAML no Git; os outros viajantes apenas consultam.
+PWA familiar de consulta para China/Japão em 2027. Viagem de 29/12/2026 a 28/01/2027; seis voos confirmados para os quatro viajantes. Plano parcial: chegada a Daxing em 31/12, 18/01 Tokyo/Haneda, 19/01 início do resort em Echigo-Yuzawa, retorno por Narita em 27/01. Pan Pacific Beijing reservado de 31/12 a 04/01, com quatro pernoites e checkout sem pernoite extra. Há lacunas na programação. Confiabilidade offline e leitura no iPhone são prioritárias. Um mantenedor edita YAML no Git; os outros viajantes apenas consultam.
 
 ## Comunicação
 Responder em português, sem enfeites. Linguagem direta. Entregar resultado, verificações e limitações materiais. Não pedir confirmação para decisões técnicas triviais já delegadas.
@@ -35,7 +35,7 @@ China `Asia/Shanghai`; Japão `Asia/Tokyo`; Brasil `America/Sao_Paulo`; Catar `A
 Manter WGS84, GCJ-02 e BD-09 separados. Nunca presumir equivalência ou enviar WGS84 como coordenada AMap/Baidu. Preferir nome chinês, endereço local, cidade e URL específica de POI validada. Não usar geocodificação em runtime. Apple Maps sempre disponível quando houver dado útil; AMap/Baidu quando configurados. Sem link, endereço e instrução textual precisam continuar funcionando. Adaptadores adicionais em `features/maps/links.ts`; `mapLinks` aceita chaves de provedores sem redesenhar as entidades.
 
 ## Privacidade e rede
-Sem backend, API própria, autenticação, analytics, CDN, Google Fonts ou APIs externas em runtime. Mapas são links externos voluntários. Não publicar documentos, localizadores de reserva, QR privados, passaportes, cartões informação médica, número de passageiro frequente ou dados tarifários do recibo. `bookingReferenceHint` só aceita null. Documentos privados pertencem ao Apple Notes/iCloud Drive, sem integração.
+Sem backend, API própria, autenticação, analytics, CDN, Google Fonts ou APIs externas em runtime. Mapas são links externos voluntários. Não publicar documentos, localizadores de reserva, QR privados, passaportes, cartões, informação médica, número de passageiro frequente ou dados tarifários do recibo. `bookingReferenceHint` só aceita null. Documentos privados pertencem ao Apple Notes/iCloud Drive, sem integração.
 
 ## Service Worker
 O plugin injeta a lista do build em `src/sw.ts`. Não editar `dist/sw.js`. Não ativar novas versões automaticamente ou instalar conteúdos novos em chaves antigas. Manter caches por escopo e hash, cópias `main`/`rescue`, instalação integral antes de ativar e botão explícito de atualização. Não adicionar limpeza global de CacheStorage. Uma mudança de SW/cache exige teste de perda de entrada/cache, instalação interrompida, atualização e rollback em `tests/e2e/`.
