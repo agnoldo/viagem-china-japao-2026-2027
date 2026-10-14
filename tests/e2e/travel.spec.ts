@@ -186,3 +186,21 @@ test('sem estado local mantém navegação e layout utilizável', async ({ page 
   await page.getByRole('button', { name: 'Verificar offline', exact: true }).click();
   await expect(page.getByRole('status')).toContainText('Pronto para teste');
 });
+
+test('controlador instalado confirma offline mesmo se reinscrição falhar', async ({
+  page,
+  context,
+}) => {
+  await installed(page);
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator.serviceWorker, 'register', {
+      value: () => Promise.reject(new Error('Simulação de reinscrição sem rede')),
+    });
+  });
+  await context.setOffline(true);
+  await page.reload();
+  await expect(page.getByRole('link', { name: 'Offline pronto', exact: true })).toHaveCount(0);
+  // Sem rede é o rótulo prioritário; title comprova a auditoria do cache, independente de register.
+  await expect(page.locator('.connection')).toHaveAttribute('title', 'Conteúdo disponível offline');
+  expect((await health(page)).ready).toBe(true);
+});

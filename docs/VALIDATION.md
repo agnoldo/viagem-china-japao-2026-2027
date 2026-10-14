@@ -15,7 +15,7 @@ Data: 14/10/2026. Projeto novo, com dados demonstrativos.
 
 ## Teste de navegador executado
 
-Playwright: 10 testes, cinco em Chromium desktop e cinco em WebKit com viewport/user agent de iPhone 15 Pro Max. Servidor serve **o build real** em `/offline-check/`, comprovando operação fora da raiz do domínio. O teste usa data fixa anterior à viagem para continuar reprodutível depois dela.
+Playwright: 12 testes, seis em Chromium desktop e seis em WebKit com viewport/user agent de iPhone 15 Pro Max. Servidor serve **o build real** em `/offline-check/`, comprovando operação fora da raiz do domínio. O teste usa data fixa anterior à viagem para continuar reprodutível depois dela.
 
 1. Abriu Hoje, Viagem, Logística, Cidades e Mais.
 2. Abriu dias chineses e japoneses, hotéis, estação Beijing West, aeroporto Beijing Capital e atração Cidade Proibida.
@@ -28,7 +28,8 @@ Playwright: 10 testes, cinco em Chromium desktop e cinco em WebKit com viewport/
 9. Simulou publicação de um segundo build completo. Interrompeu download de seu shell com HTTP 503 e confirmou que a versão ativa permanecia navegável offline.
 10. Liberou o download, verificou aviso, confirmou que a versão não trocava antes do botão, acionou Atualizar agora e comprovou o shell novo. Republicou a versão anterior e confirmou rollback pelo mesmo mecanismo.
 11. Bloqueou localStorage; navegação e verificação offline continuaram funcionais.
-12. Conferiu ausência de rolagem horizontal no viewport mobile.
+12. Simulou falha na reinscrição do SW ao reabrir offline; a auditoria usa o controlador já instalado e não depende do registro ou da promessa ready.
+13. Conferiu ausência de rolagem horizontal no viewport mobile.
 
 ## Inspeção visual
 
@@ -47,3 +48,5 @@ Capturas desktop de 1440 px e mobile de 430 px, com o exemplo Beijing de 01/01. 
 - Confirmar funcionamento do segundo endereço estático e seu cache independente, quando escolhido.
 
 A perda total do armazenamento WebKit não é recuperável offline. A redundância cobre perda de entrada/cache enquanto alguma cópia essencial permanece.
+
+A primeira execução Linux revelou que a auditoria após atualização dependia do registro/ready do WebKit. A correção audita o controlador ativo imediatamente e mantém o registro existente acessível sem rede; o cenário de rejeição de register passou a integrar a suíte.

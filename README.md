@@ -1,5 +1,7 @@
 # China e Japão · Nossa viagem
 
+[Abrir a aplicação](https://agnoldo.github.io/viagem-china-japao-2026-2027/) · [Repositório](https://github.com/agnoldo/viagem-china-japao-2026-2027)
+
 PWA familiar de consulta, offline-first, para a viagem de **29/12/2026 a 27/01/2027**. Quatro viajantes, quatro iPhones, um mantenedor dos dados. O roteiro da China tem 18 noites; o Japão mantém a neve e as alternativas Fuji/Osaka em aberto.
 
 **O conteúdo inicial é demonstrativo. Não há reservas confirmadas.** Horários, aeroportos e estações de exemplo não comprovam disponibilidade, ligação direta ou compra. Hotéis são placeholders sem nomes de estabelecimentos inventados. Os dias ainda não planejados permanecem vazios e navegáveis.
@@ -29,6 +31,7 @@ Servidor local: endereço impresso pelo Vite. O modo dev não instala Service Wo
 
 | Comando | Função |
 | --- | --- |
+| `npm run format` | Formatar código e YAML com Prettier |
 | `npm run dev` | Desenvolvimento com recarga |
 | `npm run lint` | ESLint, TypeScript da aplicação e do SW |
 | `npm run validate:content` | YAML, schemas, IDs e referências |

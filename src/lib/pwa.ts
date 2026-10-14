@@ -10,50 +10,76 @@ export function startPwa(onUpdate: () => void, onStatus: (message: string) => vo
     return;
   }
   started = true;
-  let controlled = !!navigator.serviceWorker.controller;
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (controlled) location.reload();
-    controlled = true;
+  const container = navigator.serviceWorker;
+  let controlled = !!container.controller;
+  const audit = () => {
+    if (!container.controller) return;
     void checkOffline()
-      .then((r) =>
+      .then((report) =>
         onStatus(
-          r.ready
+          report.ready
             ? 'Conteúdo disponível offline'
             : 'Cache incompleto: reconecte para preparar offline.',
         ),
       )
-      .catch(() => onStatus('Não foi possível verificar o cache.'));
+      .catch(() =>
+        onStatus('Não foi possível verificar o cache. Abra Mais para tentar novamente.'),
+      );
+  };
+  // Auditar o controlador existente não depende de rede nem de uma nova chamada register().
+  // No WebKit, ready/register podem ficar pendentes ou rejeitar após uma reabertura offline.
+  if (controlled) audit();
+  container.addEventListener('controllerchange', () => {
+    if (controlled) {
+      location.reload();
+      return;
+    }
+    controlled = true;
+    audit();
   });
-  navigator.serviceWorker
+  const observed = new WeakSet<ServiceWorkerRegistration>();
+  const observe = (reg: ServiceWorkerRegistration) => {
+    registration = reg;
+    if (observed.has(reg)) return;
+    observed.add(reg);
+    const offer = (worker: ServiceWorker | null) => {
+      if (worker && canOfferUpdate(worker.state) && container.controller) {
+        waiting = worker;
+        onUpdate();
+      }
+    };
+    const watchInstalling = () => {
+      const worker = reg.installing;
+      if (worker) {
+        offer(worker);
+        worker.addEventListener('statechange', () => offer(worker));
+      }
+    };
+    offer(reg.waiting);
+    watchInstalling();
+    reg.addEventListener('updatefound', watchInstalling);
+  };
+  // Também recupera a inscrição ativa quando register não consegue acessar a publicação.
+  void container
+    .getRegistration()
+    .then((reg) => {
+      if (reg) observe(reg);
+    })
+    .catch(() => {});
+  void container
     .register(`${import.meta.env.BASE_URL}sw.js`, {
       scope: import.meta.env.BASE_URL,
       updateViaCache: 'none',
     })
     .then((reg) => {
-      registration = reg;
-      const offer = (worker: ServiceWorker | null) => {
-        if (worker && canOfferUpdate(worker.state) && navigator.serviceWorker.controller) {
-          waiting = worker;
-          onUpdate();
-        }
-      };
-      offer(reg.waiting);
-      reg.addEventListener('updatefound', () => {
-        const worker = reg.installing;
-        worker?.addEventListener('statechange', () => offer(worker));
-      });
-      void navigator.serviceWorker.ready
-        .then(() => checkOffline())
-        .then((r) =>
-          onStatus(
-            r.ready
-              ? 'Conteúdo disponível offline'
-              : 'Cache incompleto: reconecte para preparar offline.',
-          ),
-        )
-        .catch(() => onStatus('Abra Mais para verificar o conteúdo offline.'));
+      observe(reg);
+      if (container.controller) audit();
+      else void container.ready.then(audit);
     })
-    .catch(() => onStatus('Instalação offline falhou. Reconecte e recarregue a página.'));
+    .catch(() => {
+      if (container.controller) audit();
+      else onStatus('Instalação offline falhou. Reconecte e recarregue a página.');
+    });
 }
 export function activateUpdate(): void {
   if (waiting && canOfferUpdate(waiting.state)) waiting.postMessage({ type: 'SKIP_WAITING' });
