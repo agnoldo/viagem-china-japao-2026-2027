@@ -12,6 +12,7 @@ import {
   Empty,
 } from '../../components/shared';
 import { formatDate } from '../../lib/time';
+import { connectionMinutes, durationLabel, type Flight } from '../../lib/flights';
 export function TransportRow({ route }: { route: Transport }) {
   return (
     <Link className="transport-row" to={`/trecho/${route.id}`}>
@@ -23,9 +24,16 @@ export function TransportRow({ route }: { route: Transport }) {
           {cities.get(route.from.cityId)?.name.default} <span aria-label="para">→</span>{' '}
           {cities.get(route.to.cityId)?.name.default}
         </strong>
+        {'flightNumber' in route && (
+          <span>
+            {route.flightNumber ?? 'Voo a definir'} · {route.from.airportCode ?? '?'} →{' '}
+            {route.to.airportCode ?? '?'}
+          </span>
+        )}
         <span>
           {formatDate(route.from.date, { day: '2-digit', month: 'short' })} ·{' '}
-          {route.from.time ?? 'Horário a definir'} ·{' '}
+          {route.from.time ?? 'Horário a definir'}
+          {route.to.time ? ` → ${route.to.time} (horários locais)` : ''} ·{' '}
           {places.get(route.from.placeId ?? '')?.name.default ??
             (route.kind === 'flight'
               ? 'Aeroporto de saída a definir'
@@ -67,6 +75,14 @@ export function Logistics() {
         Dados ainda incompletos. Uma reserva confirmada pode continuar sem nome, endereço ou horário
         registrados. Consulte as pendências de cada item.
       </div>
+      {(filter === 'all' || filter === 'flight') &&
+        content.flights
+          .filter((f) => {
+            const next = content.flights.find((n) => n.id === f.nextFlightId);
+            const minutes = next ? connectionMinutes(f, next) : null;
+            return minutes !== null && minutes <= 60;
+          })
+          .map((f) => <FlightConnection key={f.id} flight={f} />)}
       {(filter === 'all' || filter === 'flight') && (
         <Section title="Voos">
           <div className="list-surface">
@@ -133,6 +149,39 @@ export function Logistics() {
     </>
   );
 }
+function FlightConnection({ flight }: { flight: Flight }) {
+  const next = content.flights.find((f) => f.id === flight.nextFlightId);
+  if (!next) return null;
+  const minutes = connectionMinutes(flight, next);
+  if (minutes === null) return null;
+  return (
+    <section className="notice flight-connection" aria-label="Conexão entre voos">
+      <h2>
+        {minutes <= 60 ? 'Conexão curta' : 'Próxima conexão'} · {durationLabel(minutes)}
+      </h2>
+      <p>
+        {flight.to.airportCode} · {cities.get(flight.to.cityId)?.name.default} ·{' '}
+        {flight.flightNumber} → {next.flightNumber}
+      </p>
+      <p>
+        Chegada: {formatDate(flight.to.date)} às {flight.to.time}. Partida:{' '}
+        {formatDate(next.from.date)} às {next.from.time}. Horários locais ({flight.to.timezone}).
+      </p>
+      {flight.to.terminal && next.from.terminal && (
+        <p>
+          Terminal {flight.to.terminal} → terminal {next.from.terminal}.
+        </p>
+      )}
+      {minutes <= 60 && (
+        <p>Confirme a conexão e as orientações com {flight.airline ?? 'a companhia'}.</p>
+      )}
+      <Link className="text-link" to={`/trecho/${next.id}`}>
+        Ver próximo voo · {next.flightNumber}
+        <ArrowRight size={17} />
+      </Link>
+    </section>
+  );
+}
 export function TransportDetail() {
   const { id } = useParams();
   const route = transports.get(id ?? '');
@@ -152,7 +201,7 @@ export function TransportDetail() {
         title={`${cities.get(route.from.cityId)?.name.default} → ${cities.get(route.to.cityId)?.name.default}`}
         description={
           route.kind === 'flight'
-            ? 'Deslocamento aéreo'
+            ? `Voo ${'flightNumber' in route ? (route.flightNumber ?? 'a definir') : 'a definir'} · Horários locais em cada aeroporto`
             : route.kind === 'train'
               ? 'Deslocamento de trem'
               : 'Deslocamento'
@@ -160,6 +209,7 @@ export function TransportDetail() {
       />
       <StatusBadge status={route.status} />
       {route.status === 'example' && <ExampleNotice />}
+      {'flightNumber' in route && <FlightConnection flight={route} />}
       <div className="route-detail">
         {(
           [
@@ -173,9 +223,11 @@ export function TransportDetail() {
               <h2>{label}</h2>
               <p className="large-time">{side.time ?? 'A definir'}</p>
               <p>
-                {formatDate(side.date)} · <span className="timezone">{side.timezone}</span>
+                {formatDate(side.date, { day: 'numeric', month: 'long', year: 'numeric' })} ·{' '}
+                <span className="timezone">{side.timezone}</span>
               </p>
               <h3>
+                {side.airportCode && `${side.airportCode} · `}
                 {p?.name.default ??
                   (route.kind === 'flight' ? 'Aeroporto a definir' : 'Estação a definir')}
               </h3>
@@ -188,6 +240,30 @@ export function TransportDetail() {
           );
         })}
       </div>
+      {'flightNumber' in route && (
+        <Section title="Dados do voo">
+          <p>
+            Voo: {route.flightNumber ?? 'a definir'} · Comercializado por:{' '}
+            {route.airline ?? 'a definir'}
+          </p>
+          <p>
+            Operado por: {route.operatedBy ?? 'a definir'} · Cabine: {route.cabin ?? 'a definir'}
+          </p>
+          <p>
+            Duração:{' '}
+            {route.durationMinutes === null ? 'a definir' : durationLabel(route.durationMinutes)}
+          </p>
+          <p>
+            Bagagem despachada:{' '}
+            {route.baggage
+              ? `${route.baggage.pieces} volumes por passageiro · ${route.baggage.weightKg === null ? 'peso não informado no recibo' : `${route.baggage.weightKg} kg por volume`}`
+              : 'a definir'}
+          </p>
+          {!!route.travelerIds.length && (
+            <p>Mesmo voo para os {route.travelerIds.length} viajantes.</p>
+          )}
+        </Section>
+      )}
       <Section title="Antes de sair">
         <p>{route.notes}</p>
         {'recommendedArrivalMinutes' in route && route.recommendedArrivalMinutes !== null && (
@@ -211,11 +287,6 @@ export function TransportDetail() {
         {'trainNumber' in route && (
           <p>
             Trem: {route.trainNumber ?? 'a definir'} · Classe: {route.class ?? 'a definir'}
-          </p>
-        )}
-        {'flightNumber' in route && (
-          <p>
-            Voo: {route.flightNumber ?? 'a definir'} · Companhia: {route.airline ?? 'a definir'}
           </p>
         )}
       </Section>

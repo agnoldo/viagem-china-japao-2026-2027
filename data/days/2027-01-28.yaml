@@ -1,0 +1,41 @@
+date: 2027-01-28
+cityId: belo-horizonte
+regionId: brazil
+summary: Doha → Guarulhos → Belo Horizonte
+status: confirmed
+notes: Conexão de 1h45 em Guarulhos, terminal 3 → terminal 2. Chegada final a Confins às 12:25.
+activities:
+  - id: depart-qr785
+    type: flight
+    title: QR785 · DOH → GRU
+    transportId: flight-qr785-2027-01-28
+    status: confirmed
+    time: 00:25
+    timezone: Asia/Qatar
+    notes: Terminal a confirmar.
+  - id: arrive-qr785
+    type: arrival
+    title: Chegada · GRU
+    placeId: gru-airport
+    status: confirmed
+    time: 09:30
+    timezone: America/Sao_Paulo
+    notes:
+      'Conexão em Guarulhos: 1h45, da chegada no terminal 3 à partida no terminal 2. Confirmar com
+      Qatar/LATAM as etapas de conexão e o procedimento da bagagem.'
+  - id: depart-qr4834
+    type: flight
+    title: QR4834 · GRU → CNF
+    transportId: flight-qr4834-2027-01-28
+    status: confirmed
+    time: 11:15
+    timezone: America/Sao_Paulo
+    notes: Partida do terminal 2.
+  - id: arrive-qr4834
+    type: arrival
+    title: Chegada · CNF
+    placeId: cnf-airport
+    status: confirmed
+    time: 12:25
+    timezone: America/Sao_Paulo
+    notes: Chegada final a Belo Horizonte / Confins em 28/01/2027 às 12:25.

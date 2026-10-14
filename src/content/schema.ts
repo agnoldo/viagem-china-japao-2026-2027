@@ -65,13 +65,13 @@ const basePlace = {
   officialUrl: safeUrl.nullable().default(null),
 };
 export const regionSchema = z
-  .object({ id, name: text, localName: nullableText, country: z.enum(['BR', 'CN', 'JP']) })
+  .object({ id, name: text, localName: nullableText, country: z.enum(['BR', 'CN', 'JP', 'QA']) })
   .strict();
 export const citySchema = z
   .object({
     id,
     regionId: id,
-    country: z.enum(['BR', 'CN', 'JP']),
+    country: z.enum(['BR', 'CN', 'JP', 'QA']),
     name,
     aliases: z.array(text).default([]),
     timezone: timezoneSchema,
@@ -183,6 +183,16 @@ export const flightSchema = z
     kind: z.literal('flight'),
     airline: nullableText,
     flightNumber: nullableText,
+    operatedBy: nullableText,
+    cabin: nullableText,
+    baggage: z
+      .object({ pieces: z.number().int().positive(), weightKg: z.number().positive().nullable() })
+      .strict()
+      .nullable()
+      .default(null),
+    durationMinutes: z.number().int().positive().nullable().default(null),
+    travelerIds: z.array(id).default([]),
+    nextFlightId: id.nullable().default(null),
   })
   .strict()
   .refine(
@@ -255,8 +265,9 @@ export const tripSchema = z
     homeCity: text,
     year: z.number().int().optional(),
     status: z.enum(['planning', 'active', 'completed']).default('planning'),
+    itineraryCoverage: z.enum(['complete', 'partial']).default('complete'),
     notes: z.array(text).default([]),
-    countries: z.array(z.enum(['BR', 'CN', 'JP'])).min(1),
+    countries: z.array(z.enum(['BR', 'CN', 'JP', 'QA'])).min(1),
     defaultLocale: z.literal('pt-BR'),
     defaultTimeZone: timezoneSchema,
     contentVersion: dateSchema,

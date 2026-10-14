@@ -6,10 +6,14 @@ PWA familiar de consulta, offline-first, para China e Japão em 2027. Quatro via
 
 ## Plano atual
 
-- **18/01/2027:** Shanghai → Tokyo Haneda; pernoite em Tokyo, hotel ainda não definido.
+- **29–31/12/2026:** Belo Horizonte (CNF) → Guarulhos (GRU) → Doha (DOH) → Beijing Daxing (PKX). Voos QR7251, QR774 e QR892 confirmados para os quatro viajantes.
+- **18/01/2027:** Shanghai → Tokyo Haneda; pernoite em Tokyo, hotel ainda não definido. Voo ainda planejado, sem aeroporto de origem ou horários registrados.
 - **19/01/2027:** Tokyo → Echigo-Yuzawa pelo Joetsu Shinkansen; início da hospedagem em resort reservado, ainda sem nome registrado.
-- Datas gerais de saída/retorno, aeroporto de saída em Shanghai, horários, estação de embarque em Tokyo, nome/endereço/checkout do resort e destinos posteriores permanecem **não informados**.
-- Existem **2 dias registrados**. Não se presume que esses dias sejam o início e o fim da viagem. As cidades anteriores da China e as alternativas antigas não fazem parte do plano operacional publicado.
+- **27–28/01/2027:** Tokyo Narita (NRT), terminal 2 → Doha → Guarulhos → Belo Horizonte. Voos QR809, QR785 e QR4834 confirmados para os quatro viajantes.
+- **Conexões:** ida GRU 9h35 (terminal 2 → 3), DOH 4h25; volta DOH **45 minutos**, GRU 1h45 (terminal 3 → 2). A conexão curta recebe destaque; confirmar orientações com Qatar e LATAM.
+- Limites da viagem: **29/12/2026 a 28/01/2027**, com **7 dias registrados**. `itineraryCoverage: partial` preserva as lacunas sem inventar estadias ou atividades.
+- Estação de embarque em Tokyo, nome/endereço/checkout do resort, horários dos transportes de 18–19/01 e programação dos demais dias permanecem **não informados**.
+- Bilhete: cabine Economy e 2 volumes despachados por passageiro, peso não informado. Os dois voos domésticos são comercializados pela Qatar e operados pela LATAM. Número de passageiro frequente, dados tarifários e recibo integral não são publicados.
 
 A informação `booked` recebida foi normalizada para `confirmed`, status já usado no projeto. Isso confirma a reserva informada, não preenche os detalhes ausentes. Nenhum horário ou estabelecimento foi inventado.
 
@@ -21,7 +25,7 @@ O roteiro demonstrativo anterior está apenas em `tests/fixtures/full-plan.json`
 - YAML em `data/`, schemas Zod e referências validados antes de o conteúdo chegar aos componentes. Todos os arquivos operacionais em `data/` são importados de forma eager no build, sem download posterior de dias ou países.
 - Manifest e Service Worker com `vite-plugin-pwa` em `injectManifest`. A política de cache própria permite recuperação redundante e atualização por consentimento no aplicativo.
 - Nenhum backend, autenticação, API de conteúdo, banco remoto, analytics, CDN, fonte remota ou imagem externa. A rede só é necessária para instalar/atualizar e abrir mapas externos.
-- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 540 KiB, antes de gzip, com limite automático de 2 MB. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
+- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 559 KiB, antes de gzip, com limite automático de 2 MB. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
 - `base: './'` por padrão: funciona na raiz e em subpastas, incluindo repositórios GitHub Pages. `BASE_PATH=/repositorio/ npm run build` permite prefixo explícito. Use o mesmo prefixo no preview se escolher um base absoluto. Hashes evitam 404 nas páginas internas.
 - `localStorage` serve apenas para último dia consultado; ausência, bloqueio ou corrupção não impedem a consulta. A abertura de Hoje usa sempre o dia automático; Mais oferece a última consulta.
 
@@ -117,11 +121,11 @@ status: optional
 notes: Possibilidade em avaliação.
 ```
 
-Use o nome local real quando conhecido. Defina datas dentro da viagem. China usa `Asia/Shanghai`, Japão `Asia/Tokyo`, Brasil `America/Sao_Paulo`. O status de uma cidade não confirma hotéis ou bilhetes.
+Use o nome local real quando conhecido. Defina datas dentro da viagem. China usa `Asia/Shanghai`, Japão `Asia/Tokyo`, Brasil `America/Sao_Paulo` e Catar `Asia/Qatar`. O status de uma cidade não confirma hotéis ou bilhetes.
 
 ### Adicionar ou editar um dia
 
-Edite ou crie `data/days/YYYY-MM-DD.yaml`. O nome do arquivo deve coincidir com `date`. `trip.startDate` e `trip.endDate` podem ser `null`: nesse caso só os dias registrados aparecem. Quando ambos os limites forem definidos, a validação volta a exigir todos os dias do intervalo, sem lacunas.
+Edite ou crie `data/days/YYYY-MM-DD.yaml`. O nome do arquivo deve coincidir com `date`. `trip.startDate` e `trip.endDate` podem ser `null`: nesse caso só os dias registrados aparecem. `itineraryCoverage: partial` também permite lacunas com limites conhecidos; `complete` exige todos os dias do intervalo. Não completar lacunas com informações presumidas.
 
 ```yaml
 date: '2027-01-23'
@@ -147,7 +151,7 @@ Dentro de `activities`:
   time: '10:00'
   endTime: '11:30'
   timezone: Asia/Tokyo
-    travelBufferMinutes: 30
+  travelBufferMinutes: 30
   notes: Horário demonstrativo; validar antes de usar.
 ```
 
@@ -175,9 +179,9 @@ O resort atual tem reserva informada, mas nome e endereço vazios. A UI indica �
 
 Copie o exemplo do arquivo correspondente. Cada endpoint deve ter `cityId`, `placeId`, `date`, `time` (ou `null`), `timezone` e `terminal` (ou `null`). Cada lado exige uma cidade. `placeId: null` representa aeroporto/estação ainda desconhecido; não use ID fictício. Voo com local cadastrado exige `airportCode` e `airportName`; trem com local cadastrado exige `station` com nomes padrão e local. Um ID não nulo deve apontar para aeroporto/estação existente da mesma cidade. `airportCode`, `airportName` e `station` podem ser `null` quando esse local não está definido.
 
-Cada lado mantém seu horário e fuso: Shanghai usa `Asia/Shanghai` e Tokyo usa `Asia/Tokyo`. Os horários atuais estão `null`; não copie os horários da antiga demonstração para o plano real. A UI não os converte para o horário brasileiro. Datas/horas incompatíveis com chegada posterior à partida são rejeitadas.
+Cada lado mantém seu horário e fuso: Shanghai usa `Asia/Shanghai` e Tokyo usa `Asia/Tokyo`. Os seis voos do bilhete têm horários locais confirmados. Os horários de Shanghai → Haneda e do trem permanecem `null`; não copiar horários da antiga demonstração. A UI não os converte para o horário brasileiro. Datas/horas incompatíveis com chegada posterior à partida são rejeitadas.
 
-Número do voo, trem, companhia e classe permanecem `null` enquanto não conhecidos. `recommendedArrivalMinutes` pode ser `null` enquanto a antecedência não foi definida; quando preenchido, é a antecedência na estação; o trajeto até ela é adicional. `offlineInstructions` é obrigatório.
+`airline` identifica a companhia comercializadora; `operatedBy`, a operadora. `cabin`, `baggage.pieces` e `baggage.weightKg` preservam apenas o que foi informado. `durationMinutes` deve corresponder ao tempo decorrido entre fusos. `travelerIds` referencia os viajantes que seguem o voo. `nextFlightId` encadeia conexões no mesmo aeroporto, sem ciclos ou partida anterior à chegada. O intervalo exibido é calculado; não certifica tempo mínimo de conexão. Número do voo, trem, companhia e classe permanecem `null` enquanto não conhecidos. `recommendedArrivalMinutes` pode ser `null` enquanto a antecedência não foi definida; quando preenchido, é a antecedência na estação; o trajeto até ela é adicional. `offlineInstructions` é obrigatório.
 
 Não há voo de retorno registrado no plano atual. Não crie um retorno ou preencha `endDate` a partir da última data conhecida do roteiro.
 
@@ -208,7 +212,7 @@ Para cada dia, a aplicação calcula a data de agora no fuso IANA da cidade-base
 
 Com limites gerais conhecidos, antes do início mostra preparação e depois do fim mostra histórico. Com limites desconhecidos, exibe “Plano parcial” e o dia registrado mais próximo; nunca chama o primeiro registro de data de saída ou o último de fim da viagem. Calendário e setas permitem consulta manual; “Voltar ao dia automático” desfaz a consulta. A hora é recalculada a cada 30 segundos e ao voltar à tela. A data de chegada numa cidade pode precisar de seleção manual durante voos, conexões ou alteração do roteiro.
 
-Atividades com horário são ordenadas por relógio local; itens sem horário ficam no fim. Em um dia de troca de fuso, mantenha os trechos em sequência coerente e confira os fusos exibidos. No plano atual há pernoite entre o voo de 18/01 e o trem de 19/01; nenhum horário de conexão foi presumido.
+Atividades com horário são ordenadas por relógio local; itens sem horário ficam no fim. Em um dia de troca de fuso, mantenha os trechos em sequência coerente e confira os fusos exibidos. No plano atual há pernoite entre o voo de 18/01 e o trem de 19/01. As conexões Qatar são calculadas a partir dos horários do bilhete, inclusive quando atravessam meia-noite.
 
 ## Mapas
 
@@ -312,7 +316,7 @@ Estar em outro domínio não garante acesso na China; teste disponibilidade ante
 
 ## Privacidade
 
-O site e o repositório são potencialmente públicos. Inclua somente informações operacionais adequadas à publicação. Não coloque passaportes, cartões, dados médicos/bancários, documentos, QR privados, vouchers ou códigos que deem acesso às reservas. `bookingReferenceHint` só aceita `null`, evitando publicação acidental de localizadores nesse campo.
+O site e o repositório são potencialmente públicos. Inclua somente informações operacionais adequadas à publicação. Não coloque passaportes, cartões, dados médicos/bancários, documentos, QR privados, vouchers, números de passageiro frequente, dados tarifários ou códigos que deem acesso às reservas. `bookingReferenceHint` só aceita `null`, evitando publicação acidental de localizadores nesse campo.
 
 PWA: roteiro, endereços, horários e instruções públicos. Apple Notes: anotações e contatos privados. iCloud Drive: documentos, ingressos e comprovantes. Nenhuma integração ou sincronização é implementada. Os outros três viajantes apenas consultam.
 
@@ -341,7 +345,7 @@ PWA: roteiro, endereços, horários e instruções públicos. Apple Notes: anota
 - [ ] Confirmar voos, datas de chegada, aeroportos e terminais.
 - [ ] Confirmar trens, estações, classe, conexões e antecedências.
 - [ ] Registrar nome, endereço e checkout do resort reservado; definir os destinos posteriores.
-- [ ] Completar os dias e os limites gerais da viagem; revisar os fusos Shanghai/Tokyo.
+- [ ] Completar a programação dos dias em aberto; revisar os fusos de todos os trechos.
 - [ ] Testar Apple Maps, AMap e Baidu nos aparelhos; conferir cada POI real.
 - [ ] Abrir a PWA nos quatro iPhones e instalar na Tela de Início.
 - [ ] Verificar cache, fechar, ativar modo avião com Wi-Fi desligado e reabrir pelo ícone.

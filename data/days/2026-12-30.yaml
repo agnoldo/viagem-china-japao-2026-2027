@@ -1,0 +1,23 @@
+date: 2026-12-30
+cityId: doha
+regionId: qatar
+summary: Guarulhos → Doha
+status: confirmed
+notes: A chegada é às 21:40 no fuso de Doha. Conexão até a madrugada de 31/12.
+activities:
+  - id: depart-qr774
+    type: flight
+    title: QR774 · GRU → DOH
+    transportId: flight-qr774-2026-12-30
+    status: confirmed
+    time: 02:10
+    timezone: America/Sao_Paulo
+    notes: Partida do terminal 3.
+  - id: arrive-qr774
+    type: arrival
+    title: Chegada · DOH
+    placeId: doh-airport
+    status: confirmed
+    time: 21:40
+    timezone: Asia/Qatar
+    notes: 'Conexão em Doha: 4h25. O voo para Beijing parte às 02:05 de 31/12.'

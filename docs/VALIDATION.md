@@ -4,21 +4,25 @@ Atualização em 14/10/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Conteúdo
 
-- 2 dias registrados, 3 destinos (Shanghai, Tokyo, Echigo-Yuzawa), 2 locais (Haneda e estação Echigo-Yuzawa).
+- 7 dias registrados, 7 cidades e 7 locais. Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
+- Seis voos do bilhete confirmados para os quatro viajantes: QR7251, QR774, QR892, QR809, QR785, QR4834. Horários locais e durações conferidos entre Brasil, Doha, China e Japão.
+- Conexões calculadas: GRU 9h35, DOH 4h25 na ida; DOH 45 minutos e GRU 1h45 na volta. Trocas de terminal em GRU 2→3 e 3→2.
+- Beijing Daxing (PKX), Haneda (HND) e Narita (NRT) são aeroportos distintos. Economy, 2 volumes por passageiro, peso desconhecido. Operação LATAM nos trechos domésticos.
+- Recibo integral, número de passageiro frequente e códigos tarifários não armazenados.
 - Dia 18/01: voo Shanghai → Haneda e pernoite em Tokyo, hospedagem indefinida.
 - Dia 19/01: Joetsu Shinkansen e início de resort reservado.
 - `booked` normalizado para `confirmed`; nome/endereço/checkout continuam nulos.
-- Datas gerais da viagem, aeroporto em Shanghai, estação de Tokyo, horários e destinos posteriores permanecem desconhecidos.
+- Aeroporto em Shanghai, estação de Tokyo, horários de 18–19/01 e programação dos dias sem registro permanecem desconhecidos.
 - Nenhum horário de demonstração, hotel fictício, retorno presumido ou alternativa antiga entra no conteúdo publicado.
 - A fixture anterior fica isolada em `tests/fixtures/` e não é importada pela aplicação.
 
 ## Verificações
 
-Resultado local: 48 testes Vitest e 14 testes Playwright aprovados, além de lint, validação e build.
+Resultado local: 54 testes Vitest e 16 testes Playwright aprovados, além de lint, validação e build. Revisão visual em desktop e WebKit com viewport de iPhone, sem rolagem horizontal.
 
 Lint e TypeScript strict; YAML, schemas e referências; Vitest com fixture completa e plano parcial; build e auditoria de assets locais. Os testes de conteúdo verificam a diferença entre limite geral e data de um dia registrado, reserva confirmada sem nome e local de embarque desconhecido sem perder a validação de IDs reais.
 
-Playwright em Chromium e WebKit com viewport de iPhone: navegação por todos os dias/cidades registrados, detalhes de voo/trem/hotel, endereço japonês, busca local, ausência de dependências externas, reabertura sem rede, recuperação de entradas/caches, atualização interrompida, atualização explícita e rollback. A suíte também verifica o resort sem nome e a cópia desabilitada quando não há nome/endereço real.
+Playwright em Chromium e WebKit com viewport de iPhone: navegação por todos os dias/cidades registrados, detalhes de voo/trem/hotel, endereço japonês, busca local, ausência de dependências externas, reabertura sem rede, recuperação de entradas/caches, atualização interrompida, atualização explícita e rollback. A suíte verifica os dados dos voos e conexões em modo offline, além do resort sem nome e a cópia desabilitada quando não há nome/endereço real.
 
 ## Limites
 

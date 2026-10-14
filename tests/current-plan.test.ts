@@ -5,26 +5,41 @@ import { currentTripDay, formatDate } from '../src/lib/time';
 import { buildMapLinks } from '../src/features/maps/links';
 const content = readContent();
 describe('plano atual com dados incompletos', () => {
-  it('não transforma datas não registradas em início ou fim da viagem', () => {
-    expect(content.trip.startDate).toBeNull();
-    expect(content.trip.endDate).toBeNull();
+  it('usa as datas do bilhete sem preencher lacunas da programação', () => {
+    expect(content.trip.startDate).toBe('2026-12-29');
+    expect(content.trip.endDate).toBe('2027-01-28');
+    expect(content.trip.itineraryCoverage).toBe('partial');
     expect(currentTripDay(content, new Date('2026-10-14T12:00:00Z'))).toEqual({
-      date: '2027-01-18',
-      phase: 'incomplete',
+      date: '2026-12-29',
+      phase: 'before',
     });
-    expect(currentTripDay(content, new Date('2027-02-01T12:00:00Z')).phase).toBe('incomplete');
+    expect(currentTripDay(content, new Date('2027-02-01T12:00:00Z')).phase).toBe('after');
+    expect(currentTripDay(content, new Date('2027-01-10T12:00:00Z')).phase).toBe('incomplete');
+    expect(content.days.map((d) => d.date)).toEqual([
+      '2026-12-29',
+      '2026-12-30',
+      '2026-12-31',
+      '2027-01-18',
+      '2027-01-19',
+      '2027-01-27',
+      '2027-01-28',
+    ]);
     expect(formatDate(null)).toBe('A definir');
+    const copy = structuredClone(content);
+    copy.trip.itineraryCoverage = 'complete';
+    expect(() => validateContent(copy)).toThrow(/dia 2027-01-01/);
   });
   it('mantém pernoite em Tokyo no dia 18 e início do resort no dia 19', () => {
-    expect(content.days.map((d) => d.date)).toEqual(['2027-01-18', '2027-01-19']);
-    expect(content.days[0].cityId).toBe('tokyo');
-    expect(content.days[0].hotelId).toBeUndefined();
-    expect(content.days[1].cityId).toBe('echigo-yuzawa');
-    expect(content.days[1].hotelId).toBe('echigo-yuzawa-resort');
-    expect(content.days[0].activities.some((a) => a.type === 'train')).toBe(false);
+    const arrival = content.days.find((d) => d.date === '2027-01-18')!;
+    const snow = content.days.find((d) => d.date === '2027-01-19')!;
+    expect(arrival.cityId).toBe('tokyo');
+    expect(arrival.hotelId).toBeUndefined();
+    expect(snow.cityId).toBe('echigo-yuzawa');
+    expect(snow.hotelId).toBe('echigo-yuzawa-resort');
+    expect(arrival.activities.some((a) => a.type === 'train')).toBe(false);
   });
   it('preserva Haneda, deixando aeroporto de Shanghai e horários em aberto', () => {
-    const flight = content.flights[0];
+    const flight = content.flights.find((f) => f.id === 'flight-shanghai-tokyo-2027-01-18')!;
     expect(flight.status).toBe('planned');
     expect(flight.from.placeId).toBeNull();
     expect(flight.from.airportCode).toBeNull();
@@ -52,7 +67,15 @@ describe('plano atual com dados incompletos', () => {
     expect(buildMapLinks(hotel, 'apple').url).toBeNull();
   });
   it('não publica demos antigas, alternativas ou conexões não informadas', () => {
-    expect(content.trip.cities.map((c) => c.id)).toEqual(['shanghai', 'tokyo', 'echigo-yuzawa']);
+    expect(content.trip.cities.map((c) => c.id)).toEqual([
+      'belo-horizonte',
+      'sao-paulo',
+      'doha',
+      'beijing',
+      'shanghai',
+      'tokyo',
+      'echigo-yuzawa',
+    ]);
     expect(content.trip.alternatives).toEqual([]);
     expect(content.transfers).toEqual([]);
     expect(

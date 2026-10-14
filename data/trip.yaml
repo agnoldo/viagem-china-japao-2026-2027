@@ -2,15 +2,17 @@ id: china-japan-2027
 name: China + Japão 2027
 year: 2027
 status: planning
-startDate: null
-endDate: null
+startDate: 2026-12-29
+endDate: 2027-01-28
 homeCity: Belo Horizonte
 countries:
+  - BR
+  - QA
   - CN
   - JP
 defaultLocale: pt-BR
 defaultTimeZone: America/Sao_Paulo
-contentVersion: '2026-10-14'
+contentVersion: 2026-10-14
 travelers:
   - id: adult-1
     label: Adulto 1
@@ -21,11 +23,22 @@ travelers:
   - id: teen-2
     label: Adolescente 2
 notes:
-  - Viagem familiar à China e ao Japão em janeiro de 2027.
-  - Casal com dois filhos adolescentes, com 16 e 15 anos durante o planejamento.
-  - Dados ainda incompletos. Datas de saída do Brasil e de retorno não registradas.
-  - Cidades chinesas anteriores a Shanghai e destinos japoneses posteriores a Echigo-Yuzawa ainda não registrados.
+  - Viagem familiar de 29/12/2026 a 28/01/2027. Seis voos de ida e volta confirmados para os quatro
+    viajantes.
+  - Chegada à China por Beijing Daxing (PKX) em 31/12. Saída do Japão por Tokyo Narita (NRT) em
+    27/01. Haneda (HND) permanece a chegada prevista em 18/01, vindo de Shanghai.
+  - 'Programação parcial: deslocamentos e estadias entre os dias registrados continuam em aberto.'
+  - Na volta, conexão em Doha de 45 minutos e em Guarulhos de 1h45, com troca do terminal 3 para o
+    2. Confirmar com as companhias as orientações de conexão.
 regions:
+  - id: brazil
+    name: Brasil
+    localName: Brasil
+    country: BR
+  - id: qatar
+    name: Catar
+    localName: null
+    country: QA
   - id: china
     name: China
     localName: 中国
@@ -35,6 +48,58 @@ regions:
     localName: 日本
     country: JP
 cities:
+  - id: belo-horizonte
+    name:
+      default: Belo Horizonte
+      local: Belo Horizonte
+    regionId: brazil
+    country: BR
+    aliases: []
+    timezone: America/Sao_Paulo
+    startDate: null
+    endDate: null
+    status: confirmed
+    notes:
+      Saída por Confins em 29/12/2026 e retorno em 28/01/2027. As duas passagens não representam
+      uma estadia contínua.
+  - id: sao-paulo
+    name:
+      default: São Paulo / Guarulhos
+      local: São Paulo / Guarulhos
+    regionId: brazil
+    country: BR
+    aliases: []
+    timezone: America/Sao_Paulo
+    startDate: null
+    endDate: null
+    status: confirmed
+    notes: Conexões em Guarulhos em 29–30/12/2026 e 28/01/2027. Sem estadia cadastrada.
+  - id: doha
+    name:
+      default: Doha
+      local: null
+    regionId: qatar
+    country: QA
+    aliases: []
+    timezone: Asia/Qatar
+    startDate: null
+    endDate: null
+    status: confirmed
+    notes: Conexões em Hamad em 30–31/12/2026 e 27–28/01/2027. Sem estadia cadastrada.
+  - id: beijing
+    name:
+      default: Beijing
+      local: 北京
+    regionId: china
+    country: CN
+    aliases: []
+    timezone: Asia/Shanghai
+    startDate: 2026-12-31
+    endDate: null
+    status: confirmed
+    notes:
+      Chegada confirmada em Daxing em 31/12/2026. Duração da estadia e deslocamento até Shanghai
+      ainda não registrados.
   - id: shanghai
     name:
       default: Shanghai
@@ -44,7 +109,7 @@ cities:
     aliases: []
     timezone: Asia/Shanghai
     startDate: null
-    endDate: '2027-01-18'
+    endDate: 2027-01-18
     status: planned
     notes: Estadia anterior à saída para Tokyo; início e demais trechos da China ainda não registrados.
   - id: tokyo
@@ -55,12 +120,12 @@ cities:
     country: JP
     aliases: []
     timezone: Asia/Tokyo
-    startDate: '2027-01-18'
-    endDate: '2027-01-19'
+    startDate: 2027-01-18
+    endDate: 2027-01-19
     status: planned
-    notes:
-      Pernoite de trânsito em 18/01 antes de seguir à neve. Hotel ainda não definido. Outras estadias
-      em Tokyo ainda não registradas.
+    notes: Pernoite de trânsito em 18/01 antes de seguir à neve. Hotel ainda não definido. Outras
+      estadias em Tokyo ainda não registradas. Retorno por Narita em 27/01 confirmado; chegada a
+      Tokyo antes desse voo ainda não registrada.
   - id: echigo-yuzawa
     name:
       default: Echigo-Yuzawa
@@ -69,27 +134,24 @@ cities:
     country: JP
     aliases: []
     timezone: Asia/Tokyo
-    startDate: '2027-01-19'
+    startDate: 2027-01-19
     endDate: null
     status: planned
-    notes:
-      Destino de neve. Hospedagem em resort reservada a partir de 19/01/2027. Nome, endereço e checkout
-      ainda não registrados.
+    notes: Destino de neve. Hospedagem em resort reservada a partir de 19/01/2027. Nome, endereço e
+      checkout ainda não registrados.
 alternatives: []
 usefulInfo:
   - title: Antes de sair do hotel
-    body:
-      Confira o próximo endereço local, a estação exata e a antecedência de saída. Guarde uma captura
-      da tela de endereço.
+    body: Confira o próximo endereço local, a estação exata e a antecedência de saída. Guarde uma
+      captura da tela de endereço.
   - title: Se um mapa não abrir
-    body:
-      Volte à PWA e mostre o nome e o endereço no idioma local. Os mapas são externos e podem precisar
-      de internet ou de um aplicativo instalado.
+    body: Volte à PWA e mostre o nome e o endereço no idioma local. Os mapas são externos e podem
+      precisar de internet ou de um aplicativo instalado.
   - title: Emergência e ajuda presencial
-    body:
-      Peça ajuda à recepção do hotel, à equipe da estação ou às autoridades locais. Confirme contatos
-      públicos oficiais antes da viagem e mantenha contatos privados no Apple Notes.
+    body: Peça ajuda à recepção do hotel, à equipe da estação ou às autoridades locais. Confirme
+      contatos públicos oficiais antes da viagem e mantenha contatos privados no Apple Notes.
   - title: Documentos privados
     body:
       Passaportes, vouchers, ingressos, contatos pessoais e reservas ficam no Apple Notes ou iCloud
       Drive, disponíveis offline. Nunca publique códigos de reserva no repositório.
+itineraryCoverage: partial

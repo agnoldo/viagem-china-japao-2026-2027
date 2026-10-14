@@ -1,3 +1,4 @@
+import { endpointInstant } from '../lib/flights';
 import { parseDocument } from 'yaml';
 import { contentSchema, type Content } from './schema';
 export function parseYaml(source: string, file = 'YAML'): unknown {
@@ -93,7 +94,7 @@ export function validateContent(input: unknown): Content {
       }
     }
   }
-  for (const date of c.trip.startDate && c.trip.endDate
+  for (const date of c.trip.itineraryCoverage === 'complete' && c.trip.startDate && c.trip.endDate
     ? datesBetween(c.trip.startDate, c.trip.endDate)
     : [])
     reference(
@@ -129,19 +130,46 @@ export function validateContent(input: unknown): Content {
     }
     if (route.to.date < route.from.date) errors.push(`Chegada anterior à partida: ${route.id}`);
     if (route.from.time && route.to.time) {
-      const instant = (side: typeof route.from) => {
-        const utc = Date.parse(`${side.date}T${side.time}:00Z`);
-        const local = new Intl.DateTimeFormat('sv-SE', {
-          timeZone: side.timezone,
-          dateStyle: 'short',
-          timeStyle: 'medium',
-        })
-          .format(new Date(utc))
-          .replace(' ', 'T');
-        return utc - (Date.parse(`${local}Z`) - utc);
-      };
-      if (instant(route.to) < instant(route.from))
+      if (endpointInstant(route.to)! < endpointInstant(route.from)!)
         errors.push(`Horários de chegada/partida invertidos: ${route.id}`);
+    }
+  }
+  const flights = new Map(c.flights.map((f) => [f.id, f]));
+  for (const flight of c.flights) {
+    for (const travelerId of flight.travelerIds)
+      reference(
+        c.trip.travelers.some((t) => t.id === travelerId),
+        `viajante de ${flight.id}`,
+      );
+    if (
+      flight.durationMinutes !== null &&
+      flight.from.time &&
+      flight.to.time &&
+      (endpointInstant(flight.to)! - endpointInstant(flight.from)!) / 60000 !==
+        flight.durationMinutes
+    )
+      errors.push(`Duração inconsistente: ${flight.id}`);
+    if (flight.nextFlightId) {
+      const next = flights.get(flight.nextFlightId);
+      reference(!!next, `conexão de ${flight.id}`);
+      if (next) {
+        if (!flight.to.placeId || flight.to.placeId !== next.from.placeId)
+          errors.push(`Aeroportos incompatíveis na conexão: ${flight.id}`);
+        const arrival = endpointInstant(flight.to),
+          departure = endpointInstant(next.from);
+        if (arrival !== null && departure !== null && departure < arrival)
+          errors.push(`Conexão anterior à chegada: ${flight.id}`);
+      }
+    }
+    const visited = new Set<string>();
+    let current: typeof flight | undefined = flight;
+    while (current) {
+      if (visited.has(current.id)) {
+        errors.push(`Ciclo de conexões: ${flight.id}`);
+        break;
+      }
+      visited.add(current.id);
+      current = current.nextFlightId ? flights.get(current.nextFlightId) : undefined;
     }
   }
   for (const a of c.trip.alternatives) {

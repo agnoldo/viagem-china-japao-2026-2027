@@ -1,0 +1,25 @@
+date: 2026-12-29
+cityId: belo-horizonte
+regionId: brazil
+summary: Saída de Belo Horizonte e conexão em Guarulhos
+status: confirmed
+notes: Próximo voo na madrugada de 30/12, no terminal 3 de Guarulhos.
+activities:
+  - id: depart-qr7251
+    type: flight
+    title: QR7251 · CNF → GRU
+    transportId: flight-qr7251-2026-12-29
+    status: confirmed
+    time: 15:20
+    timezone: America/Sao_Paulo
+    notes: Terminal a confirmar.
+  - id: arrive-qr7251
+    type: arrival
+    title: Chegada · GRU
+    placeId: gru-airport
+    status: confirmed
+    time: 16:35
+    timezone: America/Sao_Paulo
+    notes:
+      'Conexão em Guarulhos: 9h35, da chegada no terminal 2 à partida no terminal 3 na madrugada de
+      30/12.'

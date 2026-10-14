@@ -50,13 +50,14 @@ export function Itinerary() {
       />
       <div className="trip-summary">
         <span>
-          {formatDate(content.trip.startDate)} <ArrowRight size={17} />{' '}
-          {formatDate(content.trip.endDate)}
+          {formatDate(content.trip.startDate, { day: 'numeric', month: 'short', year: 'numeric' })}{' '}
+          <ArrowRight size={17} />{' '}
+          {formatDate(content.trip.endDate, { day: 'numeric', month: 'short', year: 'numeric' })}
         </span>
         {(!content.trip.startDate || !content.trip.endDate) && (
           <span>Datas gerais da viagem a definir</span>
         )}
-        <span>Japão · roteiro em definição</span>
+        <span>China e Japão · roteiro em definição</span>
       </div>
       <div className="notice">
         {content.trip.notes.map((note) => (

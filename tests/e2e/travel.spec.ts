@@ -58,6 +58,7 @@ test('roteiro, locais e endereços acessíveis sem assets externos', async ({ pa
     await page.goto(base + route);
     await expect(page.locator('h1')).toBeVisible();
   }
+  await page.goto(base + '#/trecho/flight-shanghai-tokyo-2027-01-18');
   await expect(page.getByText('Asia/Shanghai', { exact: true })).toBeVisible();
   await expect(page.getByText('Asia/Tokyo', { exact: true })).toBeVisible();
   await expect(
@@ -220,4 +221,36 @@ test('hospedagem reservada sem nome não inventa endereço ou datas', async ({ p
   await page.goto(base + `#/hoje/${firstDay.date}`);
   await expect(page.getByText('Plano parcial.', { exact: true })).toBeVisible();
   await expect(page.locator('.stay-panel')).toContainText('Hospedagem a definir');
+});
+
+test('voos da família e conexões permanecem completos offline', async ({ page, context }) => {
+  await installed(page);
+  await context.setOffline(true);
+  await page.goto(base + '#/logistica?tipo=flight');
+  await expect(page.getByRole('region', { name: 'Conexão entre voos' })).toContainText(
+    'Conexão curta · 45 min',
+  );
+  await page.goto(base + '#/trecho/flight-qr809-2027-01-27');
+  await expect(
+    page.getByRole('heading', { name: 'NRT · Tokyo Narita International Airport' }),
+  ).toBeVisible();
+  await expect(page.getByText('Terminal 2', { exact: true })).toBeVisible();
+  await expect(page.getByText('Mesmo voo para os 4 viajantes.', { exact: true })).toBeVisible();
+  await expect(page.getByText('Bagagem despachada:', { exact: false })).toContainText(
+    '2 volumes por passageiro',
+  );
+  await expect(page.getByRole('region', { name: 'Conexão entre voos' })).toContainText(
+    '28 de janeiro às 00:25',
+  );
+  await page.getByRole('link', { name: 'Ver próximo voo · QR785' }).click();
+  await expect(page.getByRole('region', { name: 'Conexão entre voos' })).toContainText(
+    'Terminal 3 → terminal 2',
+  );
+  await page.getByRole('link', { name: 'Ver próximo voo · QR4834' }).click();
+  await expect(page.getByText('Operado por:', { exact: false })).toContainText(
+    'LATAM AIRLINES BRASIL',
+  );
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
+    true,
+  );
 });

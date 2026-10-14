@@ -1,10 +1,144 @@
+- id: flight-qr7251-2026-12-29
+  kind: flight
+  status: confirmed
+  from:
+    cityId: belo-horizonte
+    placeId: cnf-airport
+    date: 2026-12-29
+    time: 15:20
+    timezone: America/Sao_Paulo
+    terminal: null
+    airportCode: CNF
+    airportName: &a3
+      default: Aeroporto Internacional de Belo Horizonte / Confins
+      local: Aeroporto Internacional de Belo Horizonte / Confins
+  to:
+    cityId: sao-paulo
+    placeId: gru-airport
+    date: 2026-12-29
+    time: 16:35
+    timezone: America/Sao_Paulo
+    terminal: '2'
+    airportCode: GRU
+    airportName: &a1
+      default: Aeroporto Internacional de São Paulo / Guarulhos
+      local: Aeroporto Internacional de São Paulo / Guarulhos
+  airline: Qatar Airways
+  flightNumber: QR7251
+  operatedBy: LATAM AIRLINES BRASIL
+  cabin: Economy
+  baggage:
+    pieces: 2
+    weightKg: null
+  durationMinutes: 75
+  travelerIds:
+    - adult-1
+    - adult-2
+    - teen-1
+    - teen-2
+  nextFlightId: flight-qr774-2026-12-30
+  bookingReferenceHint: null
+  notes:
+    'Conexão em Guarulhos: 9h35, da chegada no terminal 2 à partida no terminal 3 na madrugada de
+    30/12.'
+  offlineInstructions:
+    'Horários locais em cada aeroporto. Todos os quatro viajantes seguem este voo.
+    Conexão em Guarulhos: 9h35, da chegada no terminal 2 à partida no terminal 3 na madrugada de
+    30/12. Confira portão e eventuais alterações no bilhete atualizado ou com a companhia.'
+- id: flight-qr774-2026-12-30
+  kind: flight
+  status: confirmed
+  from:
+    cityId: sao-paulo
+    placeId: gru-airport
+    date: 2026-12-30
+    time: 02:10
+    timezone: America/Sao_Paulo
+    terminal: '3'
+    airportCode: GRU
+    airportName: *a1
+  to:
+    cityId: doha
+    placeId: doh-airport
+    date: 2026-12-30
+    time: 21:40
+    timezone: Asia/Qatar
+    terminal: null
+    airportCode: DOH
+    airportName: &a2
+      default: Hamad International Airport
+      local: null
+  airline: Qatar Airways
+  flightNumber: QR774
+  operatedBy: Qatar Airways
+  cabin: Economy
+  baggage:
+    pieces: 2
+    weightKg: null
+  durationMinutes: 810
+  travelerIds:
+    - adult-1
+    - adult-2
+    - teen-1
+    - teen-2
+  nextFlightId: flight-qr892-2026-12-31
+  bookingReferenceHint: null
+  notes: 'Conexão em Doha: 4h25. O voo para Beijing parte às 02:05 de 31/12.'
+  offlineInstructions:
+    'Horários locais em cada aeroporto. Todos os quatro viajantes seguem este voo.
+    Conexão em Doha: 4h25. O voo para Beijing parte às 02:05 de 31/12. Confira portão e eventuais
+    alterações no bilhete atualizado ou com a companhia.'
+- id: flight-qr892-2026-12-31
+  kind: flight
+  status: confirmed
+  from:
+    cityId: doha
+    placeId: doh-airport
+    date: 2026-12-31
+    time: 02:05
+    timezone: Asia/Qatar
+    terminal: null
+    airportCode: DOH
+    airportName: *a2
+  to:
+    cityId: beijing
+    placeId: beijing-daxing
+    date: 2026-12-31
+    time: 14:45
+    timezone: Asia/Shanghai
+    terminal: null
+    airportCode: PKX
+    airportName:
+      default: Beijing Daxing International Airport
+      local: 北京大兴国际机场
+  airline: Qatar Airways
+  flightNumber: QR892
+  operatedBy: Qatar Airways
+  cabin: Economy
+  baggage:
+    pieces: 2
+    weightKg: null
+  durationMinutes: 460
+  travelerIds:
+    - adult-1
+    - adult-2
+    - teen-1
+    - teen-2
+  nextFlightId: null
+  bookingReferenceHint: null
+  notes: Chegada à China pelo Aeroporto de Beijing Daxing (PKX). Hospedagem e continuação do roteiro
+    ainda não registradas.
+  offlineInstructions: Horários locais em cada aeroporto. Todos os quatro viajantes seguem este voo.
+    Chegada à China pelo Aeroporto de Beijing Daxing (PKX). Hospedagem e continuação do roteiro
+    ainda não registradas. Confira portão e eventuais alterações no bilhete atualizado ou com a
+    companhia.
 - id: flight-shanghai-tokyo-2027-01-18
   kind: flight
   status: planned
   from:
     cityId: shanghai
     placeId: null
-    date: '2027-01-18'
+    date: 2027-01-18
     time: null
     timezone: Asia/Shanghai
     terminal: null
@@ -13,7 +147,7 @@
   to:
     cityId: tokyo
     placeId: tokyo-haneda
-    date: '2027-01-18'
+    date: 2027-01-18
     time: null
     timezone: Asia/Tokyo
     terminal: null
@@ -29,5 +163,134 @@
     e horários ainda não registrados.
   offlineInstructions:
     Confirmar aeroporto de saída e horários no bilhete. Na chegada a Haneda, seguir
-    para a hospedagem de trânsito em Tokyo, ainda não definida. A ida a Echigo-Yuzawa está prevista para
-    o dia seguinte.
+    para a hospedagem de trânsito em Tokyo, ainda não definida. A ida a Echigo-Yuzawa está prevista
+    para o dia seguinte.
+- id: flight-qr809-2027-01-27
+  kind: flight
+  status: confirmed
+  from:
+    cityId: tokyo
+    placeId: tokyo-narita
+    date: 2027-01-27
+    time: 16:55
+    timezone: Asia/Tokyo
+    terminal: '2'
+    airportCode: NRT
+    airportName:
+      default: Tokyo Narita International Airport
+      local: 成田国際空港
+  to:
+    cityId: doha
+    placeId: doh-airport
+    date: 2027-01-27
+    time: 23:40
+    timezone: Asia/Qatar
+    terminal: null
+    airportCode: DOH
+    airportName: *a2
+  airline: Qatar Airways
+  flightNumber: QR809
+  operatedBy: Qatar Airways
+  cabin: Economy
+  baggage:
+    pieces: 2
+    weightKg: null
+  durationMinutes: 765
+  travelerIds:
+    - adult-1
+    - adult-2
+    - teen-1
+    - teen-2
+  nextFlightId: flight-qr785-2027-01-28
+  bookingReferenceHint: null
+  notes: 'Conexão curta em Doha: 45 minutos. Chegada às 23:40 de 27/01 e partida às 00:25 de 28/01.
+    Confirmar a conexão e as orientações com a Qatar Airways.'
+  offlineInstructions:
+    'Horários locais em cada aeroporto. Todos os quatro viajantes seguem este voo.
+    Conexão curta em Doha: 45 minutos. Chegada às 23:40 de 27/01 e partida às 00:25 de 28/01.
+    Confirmar a conexão e as orientações com a Qatar Airways. Confira portão e eventuais alterações
+    no bilhete atualizado ou com a companhia.'
+- id: flight-qr785-2027-01-28
+  kind: flight
+  status: confirmed
+  from:
+    cityId: doha
+    placeId: doh-airport
+    date: 2027-01-28
+    time: 00:25
+    timezone: Asia/Qatar
+    terminal: null
+    airportCode: DOH
+    airportName: *a2
+  to:
+    cityId: sao-paulo
+    placeId: gru-airport
+    date: 2027-01-28
+    time: 09:30
+    timezone: America/Sao_Paulo
+    terminal: '3'
+    airportCode: GRU
+    airportName: *a1
+  airline: Qatar Airways
+  flightNumber: QR785
+  operatedBy: Qatar Airways
+  cabin: Economy
+  baggage:
+    pieces: 2
+    weightKg: null
+  durationMinutes: 905
+  travelerIds:
+    - adult-1
+    - adult-2
+    - teen-1
+    - teen-2
+  nextFlightId: flight-qr4834-2027-01-28
+  bookingReferenceHint: null
+  notes:
+    'Conexão em Guarulhos: 1h45, da chegada no terminal 3 à partida no terminal 2. Confirmar com
+    Qatar/LATAM as etapas de conexão e o procedimento da bagagem.'
+  offlineInstructions:
+    'Horários locais em cada aeroporto. Todos os quatro viajantes seguem este voo.
+    Conexão em Guarulhos: 1h45, da chegada no terminal 3 à partida no terminal 2. Confirmar com
+    Qatar/LATAM as etapas de conexão e o procedimento da bagagem. Confira portão e eventuais
+    alterações no bilhete atualizado ou com a companhia.'
+- id: flight-qr4834-2027-01-28
+  kind: flight
+  status: confirmed
+  from:
+    cityId: sao-paulo
+    placeId: gru-airport
+    date: 2027-01-28
+    time: 11:15
+    timezone: America/Sao_Paulo
+    terminal: '2'
+    airportCode: GRU
+    airportName: *a1
+  to:
+    cityId: belo-horizonte
+    placeId: cnf-airport
+    date: 2027-01-28
+    time: 12:25
+    timezone: America/Sao_Paulo
+    terminal: null
+    airportCode: CNF
+    airportName: *a3
+  airline: Qatar Airways
+  flightNumber: QR4834
+  operatedBy: LATAM AIRLINES BRASIL
+  cabin: Economy
+  baggage:
+    pieces: 2
+    weightKg: null
+  durationMinutes: 70
+  travelerIds:
+    - adult-1
+    - adult-2
+    - teen-1
+    - teen-2
+  nextFlightId: null
+  bookingReferenceHint: null
+  notes: Chegada final a Belo Horizonte / Confins em 28/01/2027 às 12:25.
+  offlineInstructions: Horários locais em cada aeroporto. Todos os quatro viajantes seguem este voo.
+    Chegada final a Belo Horizonte / Confins em 28/01/2027 às 12:25. Confira portão e eventuais
+    alterações no bilhete atualizado ou com a companhia.

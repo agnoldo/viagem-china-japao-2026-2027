@@ -1,0 +1,25 @@
+date: 2026-12-31
+cityId: beijing
+regionId: china
+summary: 'Doha → Beijing Daxing: chegada à China'
+status: confirmed
+notes: Chegada a Daxing, não ao Aeroporto Capital. Programação após a chegada ainda em aberto.
+activities:
+  - id: depart-qr892
+    type: flight
+    title: QR892 · DOH → PKX
+    transportId: flight-qr892-2026-12-31
+    status: confirmed
+    time: 02:05
+    timezone: Asia/Qatar
+    notes: Terminal a confirmar.
+  - id: arrive-qr892
+    type: arrival
+    title: Chegada · PKX
+    placeId: beijing-daxing
+    status: confirmed
+    time: 14:45
+    timezone: Asia/Shanghai
+    notes:
+      Chegada à China pelo Aeroporto de Beijing Daxing (PKX). Hospedagem e continuação do roteiro
+      ainda não registradas.

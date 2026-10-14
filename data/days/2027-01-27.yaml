@@ -1,0 +1,25 @@
+date: 2027-01-27
+cityId: tokyo
+regionId: japan
+summary: 'Início da volta: Narita → Doha'
+status: confirmed
+notes: Partida por Narita, terminal 2. Conexão de 45 minutos em Doha; confirmar orientações com a Qatar.
+activities:
+  - id: depart-qr809
+    type: flight
+    title: QR809 · NRT → DOH
+    transportId: flight-qr809-2027-01-27
+    status: confirmed
+    time: 16:55
+    timezone: Asia/Tokyo
+    notes: Partida do terminal 2.
+  - id: arrive-qr809
+    type: arrival
+    title: Chegada · DOH
+    placeId: doh-airport
+    status: confirmed
+    time: 23:40
+    timezone: Asia/Qatar
+    notes:
+      'Conexão curta em Doha: 45 minutos. Chegada às 23:40 de 27/01 e partida às 00:25 de 28/01.
+      Confirmar a conexão e as orientações com a Qatar Airways.'

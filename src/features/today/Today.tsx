@@ -117,10 +117,10 @@ export function Today({ now }: { now: Date }) {
           <ChevronRight size={23} />
         </button>
       </div>
-      {current.phase === 'incomplete' && (
+      {(current.phase === 'incomplete' || content.trip.itineraryCoverage === 'partial') && (
         <div className="notice">
-          <strong>Plano parcial.</strong> Início e fim da viagem ainda não registrados. Exibindo os
-          dias disponíveis; os demais trechos continuam em aberto.
+          <strong>Plano parcial.</strong> Exibindo os dias registrados. A programação dos demais
+          dias continua em aberto.
         </div>
       )}
       {current.phase === 'before' && !preview && (

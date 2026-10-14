@@ -66,3 +66,168 @@
   notes:
     Endereço e detalhes de acesso ainda não registrados. Busca de mapa por nome local; confirmar
     o destino antes de usar.
+- id: cnf-airport
+  cityId: belo-horizonte
+  name:
+    default: Aeroporto Internacional de Belo Horizonte / Confins
+    local: Aeroporto Internacional de Belo Horizonte / Confins
+  category: airport
+  status: confirmed
+  aliases:
+    - CNF
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: Aeroporto Internacional de Belo Horizonte / Confins
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  officialUrl: https://site.bh-airport.com.br/pt-BR
+  notes: Aeroporto conforme bilhete. Terminais variam por trecho; consulte os detalhes do voo.
+    Endereço e coordenadas não registrados; mapas usam busca pelo nome.
+- id: gru-airport
+  cityId: sao-paulo
+  name:
+    default: Aeroporto Internacional de São Paulo / Guarulhos
+    local: Aeroporto Internacional de São Paulo / Guarulhos
+  category: airport
+  status: confirmed
+  aliases:
+    - GRU
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: Aeroporto Internacional de São Paulo / Guarulhos
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  officialUrl: https://www.gru.com.br/pt/
+  notes: Aeroporto conforme bilhete. Terminais variam por trecho; consulte os detalhes do voo.
+    Endereço e coordenadas não registrados; mapas usam busca pelo nome.
+- id: doh-airport
+  cityId: doha
+  name:
+    default: Hamad International Airport
+    local: null
+  category: airport
+  status: confirmed
+  aliases:
+    - DOH
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: Hamad International Airport
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  officialUrl: https://dohahamadairport.com/
+  notes: Aeroporto conforme bilhete. Terminais variam por trecho; consulte os detalhes do voo.
+    Endereço e coordenadas não registrados; mapas usam busca pelo nome.
+- id: beijing-daxing
+  cityId: beijing
+  name:
+    default: Beijing Daxing International Airport
+    local: 北京大兴国际机场
+  category: airport
+  status: confirmed
+  aliases:
+    - PKX
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 北京大兴国际机场
+    amapKeyword: 北京大兴国际机场
+    amapCity: 北京
+    baiduKeyword: 北京大兴国际机场
+    baiduCity: 北京
+  mapLinks: {}
+  officialUrl: null
+  notes: Aeroporto conforme bilhete. Terminais variam por trecho; consulte os detalhes do voo.
+    Endereço e coordenadas não registrados; mapas usam busca pelo nome.
+- id: tokyo-narita
+  cityId: tokyo
+  name:
+    default: Tokyo Narita International Airport
+    local: 成田国際空港
+  category: airport
+  status: confirmed
+  aliases:
+    - NRT
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 成田国際空港
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  officialUrl: https://www.narita-airport.jp/en/
+  notes: Aeroporto conforme bilhete. Terminais variam por trecho; consulte os detalhes do voo.
+    Endereço e coordenadas não registrados; mapas usam busca pelo nome.
