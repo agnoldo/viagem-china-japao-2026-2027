@@ -6,13 +6,10 @@ const catalog = preparePosts();
 export async function expectOperationalGallery(page: Page) {
   const { categories } = await catalog;
   const images = categories.flatMap((category) => category.images);
-  const links = page.locator('.post-item a');
+  const links = page.locator('.post-item');
   await expect(links).toHaveCount(images.length);
   for (const [index, image] of images.entries()) {
-    await expect(links.nth(index)).toHaveAttribute(
-      'href',
-      new RegExp(`/posts/imagem/${image.id}(?:\\?|$)`),
-    );
+    await expect(links.nth(index)).toHaveAttribute('data-post-id', image.id);
     await expect(links.nth(index).getByRole('img')).toHaveAttribute(
       'src',
       new RegExp(`${image.src}$`),

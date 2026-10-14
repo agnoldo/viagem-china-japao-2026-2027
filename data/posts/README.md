@@ -16,7 +16,7 @@ Formatos aceitos: **JPG, JPEG, PNG e WebP**. HEIC, GIF, vídeos, PDFs e links do
 
 ## Nomes e ordem
 
-O nome da pasta aparece como título da categoria. O nome do arquivo, sem extensão, vira a legenda; hífens e sublinhados são trocados por espaços. Os arquivos são ordenados pelo nome, com números em ordem numérica.
+O nome da pasta aparece como título da categoria. O nome do arquivo, sem extensão, identifica a imagem para acessibilidade; hífens e sublinhados são trocados por espaços. Os arquivos são ordenados pelo nome, com números em ordem numérica.
 
 ```text
 data/posts/
@@ -33,13 +33,15 @@ As imagens acima são apenas exemplos de nomes; não existem na galeria.
 
 Para criar outra categoria no GitHub, use **Add file → Create new file** e digite, por exemplo, `Hong Kong/.gitkeep` dentro de `data/posts`. Confirme o commit, entre na nova pasta e faça o upload. Não crie subpastas dentro de categorias.
 
-Para retirar um print, exclua seu arquivo e faça o commit. Para trocar a legenda, renomeie o arquivo. Para substituir uma imagem, envie a nova versão com o mesmo nome. A PWA continuará usando sua versão anterior até a atualização explícita.
+Para retirar um print, exclua seu arquivo e faça o commit. Para trocar o nome acessível, renomeie o arquivo. Para substituir uma imagem, envie a nova versão com o mesmo nome. A PWA continuará usando sua versão anterior até a atualização explícita.
 
 ## Consultar no iPhone
 
-Abra **Posts**, escolha uma categoria (ou Todos) e toque em um print. Com a imagem ajustada à tela, deslize para a esquerda para avançar e para a direita para voltar. Os botões Anterior/Próxima e o contador indicam a posição. A navegação para nas extremidades, sem pular para outra categoria. Em Todos, percorre todas as imagens.
+Abra **Posts**, escolha uma categoria (ou Todos) e toque em uma miniatura. A imagem abre em tela cheia sobre a galeria, sem página própria. Deslize para a esquerda para avançar e para a direita para voltar. O botão **Fechar imagens** retorna à mesma categoria e posição.
 
-Com **Ampliar imagem** ativo ou após zoom por pinça, os gestos ficam reservados à leitura. Use **Ajustar à tela** ou reduza o zoom da página para voltar ao swipe. No computador, as setas do teclado funcionam quando a área da imagem está focada e sem zoom. A navegação também funciona offline.
+O visualizador mostra apenas a imagem, um contador discreto, fechar e setas de navegação. As imagens ficam inteiras, sem recorte. Não há legenda/nome do arquivo na tela; o nome continua sendo usado para ordenação e acessibilidade.
+
+O gesto de pinça amplia a imagem. Com zoom ativo, o arrasto fica reservado à leitura; reduza o zoom para voltar ao swipe. No computador, use as setas e Escape para fechar. A navegação também funciona offline.
 
 ## Publicação e offline
 

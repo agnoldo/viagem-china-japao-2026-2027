@@ -1,28 +1,11 @@
-import { useRef, useState } from 'react';
-import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import {
-  ArrowLeft,
-  ChevronLeft,
-  ChevronRight,
-  ImageOff,
-  Images,
-  ZoomIn,
-  ZoomOut,
-} from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { ChevronLeft, ChevronRight, ImageOff, Images, X } from 'lucide-react';
 import { content } from '../../content';
 import { PageHeading } from '../../components/shared';
 
-function PostImage({
-  src,
-  title,
-  width,
-  height,
-}: {
-  src: string;
-  title: string;
-  width: number;
-  height: number;
-}) {
+type GalleryImage = (typeof content.posts)[number]['images'][number];
+function PostImage({ src, title, width, height }: GalleryImage) {
   const [failed, setFailed] = useState(false);
   return failed ? (
     <div className="post-image-error">
@@ -42,170 +25,62 @@ function PostImage({
   );
 }
 
-export function Posts() {
-  const [params] = useSearchParams();
-  const selected = params.get('categoria');
-  const category = content.posts.find((item) => item.id === selected);
-  const images = content.posts
-    .filter((item) => !category || item.id === category.id)
-    .flatMap((item) => item.images.map((image) => ({ ...image, category: item })));
-  const total = content.posts.reduce((sum, item) => sum + item.images.length, 0);
-  return (
-    <>
-      <PageHeading
-        title="Posts"
-        description="Prints e referências para consultar durante a viagem."
-      />
-      <nav className="post-categories" aria-label="Categorias de posts">
-        <Link to="/posts" aria-current={!category ? 'page' : undefined}>
-          Todos <span>{total}</span>
-        </Link>
-        {content.posts.map((item) => (
-          <Link
-            key={item.id}
-            to={`/posts?categoria=${encodeURIComponent(item.id)}`}
-            aria-current={category?.id === item.id ? 'page' : undefined}
-          >
-            {item.title} <span>{item.images.length}</span>
-          </Link>
-        ))}
-      </nav>
-      <div className="post-section-heading">
-        <h2>{category?.title ?? 'Todos os posts'}</h2>
-        <span>
-          {images.length} {images.length === 1 ? 'imagem' : 'imagens'}
-        </span>
-      </div>
-      {images.length ? (
-        <div className="post-gallery">
-          {images.map((image) => (
-            <figure key={image.id} className="post-item">
-              <Link
-                to={`/posts/imagem/${image.id}${category ? `?categoria=${encodeURIComponent(category.id)}` : ''}`}
-                aria-label={`Ampliar ${image.title} · ${image.category.title}`}
-              >
-                <div className="post-thumbnail">
-                  <PostImage {...image} />
-                </div>
-                <figcaption>
-                  <strong>{image.title}</strong>
-                  {!category && <span>{image.category.title}</span>}
-                </figcaption>
-              </Link>
-            </figure>
-          ))}
-        </div>
-      ) : (
-        <div className="post-empty">
-          <Images size={32} aria-hidden="true" />
-          <h3>
-            {category ? 'Esta categoria ainda não tem prints' : 'Nenhum print adicionado ainda'}
-          </h3>
-          <p>As imagens aparecerão aqui quando forem adicionadas à galeria.</p>
-        </div>
-      )}
-    </>
-  );
-}
-
-export function PostDetail() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [params] = useSearchParams();
-  const [actualSize, setActualSize] = useState(false);
+function ImageViewer({
+  images,
+  initialIndex,
+  close,
+}: {
+  images: GalleryImage[];
+  initialIndex: number;
+  close: () => void;
+}) {
+  const dialog = useRef<HTMLDialogElement>(null);
   const touch = useRef<{ x: number; y: number } | null>(null);
-  const category = content.posts.find((item) => item.images.some((image) => image.id === id));
-  const image = category?.images.find((item) => item.id === id);
-  const selected = params.get('categoria');
-  const scope = selected === category?.id ? selected : null;
-  const query = scope ? `?categoria=${encodeURIComponent(scope)}` : '';
-  const back = `/posts${query}`;
-  const images = content.posts
-    .filter((item) => !scope || item.id === scope)
-    .flatMap((item) => item.images);
-  const index = images.findIndex((item) => item.id === id);
-  const canSwipe = () =>
-    !actualSize && images.length > 1 && (window.visualViewport?.scale ?? 1) <= 1.01;
-  const visit = (step: number) => {
-    const next = images[index + step];
-    if (next) navigate(`/posts/imagem/${next.id}${query}`, { replace: true });
-  };
-  if (!image || !category)
-    return (
-      <>
-        <PageHeading title="Print não encontrado" />
-        <Link className="back-link" to={back}>
-          Voltar aos posts
-        </Link>
-      </>
-    );
+  const [index, setIndex] = useState(initialIndex);
+  const image = images[index];
+  useEffect(() => {
+    const element = dialog.current!;
+    const overflow = document.body.style.overflow;
+    element.showModal();
+    document.body.style.overflow = 'hidden';
+    return () => {
+      element.close();
+      document.body.style.overflow = overflow;
+    };
+  }, []);
+  const canSwipe = () => images.length > 1 && (window.visualViewport?.scale ?? 1) <= 1.01;
+  const visit = (step: number) =>
+    setIndex((current) => Math.max(0, Math.min(images.length - 1, current + step)));
   return (
-    <>
-      <Link className="back-link" to={back}>
-        <ArrowLeft size={18} aria-hidden="true" />
-        Voltar aos posts
-      </Link>
-      <PageHeading title={image.title} description={category.title} />
-      <div className="post-viewer-toolbar">
-        <button
-          type="button"
-          className="button button-secondary"
-          aria-pressed={actualSize}
-          onClick={() => setActualSize((value) => !value)}
-        >
-          {actualSize ? (
-            <ZoomOut size={18} aria-hidden="true" />
-          ) : (
-            <ZoomIn size={18} aria-hidden="true" />
-          )}
-          {actualSize ? 'Ajustar à tela' : 'Ampliar imagem'}
-        </button>
-        <p>
-          {actualSize
-            ? 'Deslize para ler os detalhes da imagem.'
-            : images.length > 1
-              ? 'Deslize a imagem para os lados para trocar de print. Amplie para ler os detalhes.'
-              : 'Amplie para ler os detalhes. No iPhone, você também pode usar o gesto de pinça.'}
-        </p>
-      </div>
-      {images.length > 1 && (
-        <nav className="post-image-nav" aria-label="Navegação entre imagens">
-          <button
-            type="button"
-            className="button button-secondary"
-            aria-label="Imagem anterior"
-            disabled={index <= 0}
-            onClick={() => visit(-1)}
-          >
-            <ChevronLeft size={18} aria-hidden="true" />
-            Anterior
-          </button>
-          <span aria-live="polite" aria-atomic="true">
-            {index + 1} de {images.length}
-          </span>
-          <button
-            type="button"
-            className="button button-secondary"
-            aria-label="Próxima imagem"
-            disabled={index === images.length - 1}
-            onClick={() => visit(1)}
-          >
-            Próxima
-            <ChevronRight size={18} aria-hidden="true" />
-          </button>
-        </nav>
-      )}
-      <div
-        className={`post-viewer${actualSize ? ' post-viewer-actual' : ''}`}
-        role="region"
-        aria-label="Imagem ampliada"
-        tabIndex={0}
-        key={image.id}
-        onKeyDown={(event) => {
-          if (!canSwipe() || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    <dialog
+      ref={dialog}
+      className="post-lightbox"
+      aria-label="Visualizador de imagens"
+      onCancel={(event) => {
+        event.preventDefault();
+        close();
+      }}
+      onKeyDown={(event) => {
+        if (event.key === 'Tab') {
+          const controls = [
+            ...event.currentTarget.querySelectorAll<HTMLButtonElement>('button:not(:disabled)'),
+          ];
+          const current = controls.indexOf(document.activeElement as HTMLButtonElement);
           event.preventDefault();
-          visit(event.key === 'ArrowLeft' ? -1 : 1);
-        }}
+          controls[
+            (current + (event.shiftKey ? -1 : 1) + controls.length) % controls.length
+          ]?.focus();
+          return;
+        }
+        if (!canSwipe() || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+        event.preventDefault();
+        visit(event.key === 'ArrowLeft' ? -1 : 1);
+      }}
+    >
+      <div
+        className="post-lightbox-stage"
+        role="group"
+        aria-label="Imagem em tela cheia"
         onTouchStart={(event) => {
           touch.current =
             canSwipe() && event.touches.length === 1
@@ -220,7 +95,6 @@ export function PostDetail() {
           }
           const dx = event.touches[0].clientX - touch.current.x;
           const dy = event.touches[0].clientY - touch.current.y;
-          // Once a gesture becomes vertical, reserve it for scrolling to its end.
           if (Math.abs(dy) > 10 && Math.abs(dy) >= Math.abs(dx)) touch.current = null;
         }}
         onTouchCancel={() => {
@@ -236,8 +110,121 @@ export function PostDetail() {
           if (Math.abs(dx) >= 60 && Math.abs(dx) > Math.abs(dy) * 2) visit(dx < 0 ? 1 : -1);
         }}
       >
-        <PostImage {...image} />
+        <PostImage key={image.id} {...image} />
       </div>
+      <span
+        className="post-lightbox-count"
+        role="status"
+        aria-label="Posição da imagem"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {index + 1} de {images.length}
+      </span>
+      <button
+        className="post-lightbox-close"
+        type="button"
+        aria-label="Fechar imagens"
+        onClick={close}
+      >
+        <X size={24} aria-hidden="true" />
+      </button>
+      {images.length > 1 && (
+        <>
+          <button
+            className="post-lightbox-prev"
+            type="button"
+            aria-label="Imagem anterior"
+            disabled={index === 0}
+            onClick={() => visit(-1)}
+          >
+            <ChevronLeft size={28} aria-hidden="true" />
+          </button>
+          <button
+            className="post-lightbox-next"
+            type="button"
+            aria-label="Próxima imagem"
+            disabled={index === images.length - 1}
+            onClick={() => visit(1)}
+          >
+            <ChevronRight size={28} aria-hidden="true" />
+          </button>
+        </>
+      )}
+    </dialog>
+  );
+}
+
+function Gallery({ categoryId }: { categoryId?: string }) {
+  const [active, setActive] = useState<number | null>(null);
+  const opener = useRef<HTMLButtonElement | null>(null);
+  const category = content.posts.find((item) => item.id === categoryId);
+  const images = content.posts
+    .filter((item) => !category || item.id === category.id)
+    .flatMap((item) => item.images.map((image) => ({ ...image, category: item })));
+  const close = () => {
+    setActive(null);
+    requestAnimationFrame(() => opener.current?.focus({ preventScroll: true }));
+  };
+  return (
+    <>
+      {images.length ? (
+        <div className="post-gallery" aria-label={category?.title ?? 'Todos os posts'}>
+          {images.map((image, index) => (
+            <button
+              type="button"
+              key={image.id}
+              className="post-item"
+              data-post-id={image.id}
+              aria-label={`Ampliar ${image.title} · ${image.category.title}`}
+              onClick={(event) => {
+                opener.current = event.currentTarget;
+                setActive(index);
+              }}
+            >
+              <span className="post-thumbnail">
+                <PostImage {...image} />
+              </span>
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="post-empty">
+          <Images size={32} aria-hidden="true" />
+          <h2>
+            {category ? 'Esta categoria ainda não tem prints' : 'Nenhum print adicionado ainda'}
+          </h2>
+          <p>As imagens aparecerão aqui quando forem adicionadas à galeria.</p>
+        </div>
+      )}
+      {active !== null && <ImageViewer images={images} initialIndex={active} close={close} />}
+    </>
+  );
+}
+
+export function Posts() {
+  const [params] = useSearchParams();
+  const selected = params.get('categoria');
+  const category = content.posts.find((item) => item.id === selected);
+  const total = content.posts.reduce((sum, item) => sum + item.images.length, 0);
+  return (
+    <>
+      <PageHeading title="Posts" />
+      <nav className="post-categories" aria-label="Categorias de posts">
+        <Link to="/posts" aria-current={!category ? 'page' : undefined}>
+          Todos <span>{total}</span>
+        </Link>
+        {content.posts.map((item) => (
+          <Link
+            key={item.id}
+            to={`/posts?categoria=${encodeURIComponent(item.id)}`}
+            aria-current={category?.id === item.id ? 'page' : undefined}
+          >
+            {item.title} <span>{item.images.length}</span>
+          </Link>
+        ))}
+      </nav>
+      <Gallery key={category?.id ?? ''} categoryId={category?.id} />
     </>
   );
 }
