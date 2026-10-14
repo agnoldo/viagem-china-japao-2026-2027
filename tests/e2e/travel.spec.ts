@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { readContent } from '../../scripts/read-content';
+import { expectOperationalGallery } from './operational-gallery';
 const content = readContent();
 const firstDay = content.days[0];
 const firstCity = content.trip.cities.find((c) => c.id === firstDay.cityId)!.name.default;
@@ -191,7 +192,7 @@ test('instalação interrompida preserva versão; atualização e rollback exige
   await installed(page);
   const old = (await health(page)).version;
   await page.goto(base + '#/posts');
-  await expect(page.getByRole('heading', { name: 'Nenhum print adicionado ainda' })).toBeVisible();
+  await expectOperationalGallery(page);
   await request.get('http://127.0.0.1:4178/__qa?version=next&interrupt=yes');
   await page.evaluate(async () => {
     const reg = await navigator.serviceWorker.getRegistration();
@@ -205,7 +206,7 @@ test('instalação interrompida preserva versão; atualização e rollback exige
   await expect(page.getByRole('button', { name: 'Atualizar agora' })).toHaveCount(0);
   await context.setOffline(true);
   await page.reload();
-  await expect(page.getByRole('heading', { name: 'Nenhum print adicionado ainda' })).toBeVisible();
+  await expectOperationalGallery(page);
   await context.setOffline(false);
   await request.get('http://127.0.0.1:4178/__qa?version=next');
   await page.evaluate(async () => {
@@ -214,7 +215,7 @@ test('instalação interrompida preserva versão; atualização e rollback exige
   });
   await expect(page.getByRole('button', { name: 'Atualizar agora' })).toBeVisible();
   expect((await health(page)).version).toBe(old);
-  await expect(page.locator('.post-item')).toHaveCount(0);
+  await expectOperationalGallery(page);
   await page.getByRole('button', { name: 'Atualizar agora' }).click();
   await expect(page.locator('meta[name="qa-version"]')).toHaveAttribute('content', 'next');
   const reportAfterUpdate = await health(page);
@@ -235,7 +236,7 @@ test('instalação interrompida preserva versão; atualização e rollback exige
   await page.getByRole('button', { name: 'Atualizar agora' }).click();
   await expect(page.locator('meta[name="qa-version"]')).toHaveCount(0);
   expect((await health(page)).version).toBe(old);
-  await expect(page.locator('.post-item')).toHaveCount(0);
+  await expectOperationalGallery(page);
 });
 test('sem estado local mantém navegação e layout utilizável', async ({ page }) => {
   await page.addInitScript(() => {

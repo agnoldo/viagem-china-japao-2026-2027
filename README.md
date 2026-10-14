@@ -35,7 +35,7 @@ O calendário inclui os dias ainda sem programação, sem atribuir cidade ou hot
 
 A galeria **Posts** mostra todas as imagens ou filtra por categoria com um toque. As categorias são pastas em [`data/posts`](data/posts/README.md), sem edição de YAML. Envie os prints pelo GitHub com **Add file → Upload files → Commit changes** dentro da pasta desejada. O nome da pasta vira categoria e o nome do arquivo vira legenda. [Instruções completas](data/posts/README.md).
 
-JPG/PNG/WebP são convertidos para WebP no build, sem recorte, com largura máxima de 1600 px e sem metadados na cópia publicada. Originais não entram no bundle, mas permanecem públicos no Git. Todas as imagens processadas são incluídas no cache offline atômico; nada depende do Instagram em runtime. O pacote principal conserva o limite de 2 MB, e a galeria tem limite separado de 30 MB processados (até 1,9 MB por imagem). A publicação rejeita arquivos inválidos ou limites excedidos.
+JPG/PNG/WebP são convertidos para WebP no build, sem recorte, com largura máxima de 1600 px e sem metadados na cópia publicada. Originais não entram no bundle, mas permanecem públicos no Git. Todas as imagens processadas são incluídas no cache offline atômico; nada depende do Instagram em runtime. Os testes acompanham os uploads automaticamente, sem exigir mudanças no código. O pacote principal conserva o limite de 2 MB, e a galeria tem limite separado de 30 MB processados (até 1,9 MB por imagem). A publicação rejeita arquivos inválidos ou limites excedidos.
 
 ## Arquitetura e decisões
 
@@ -43,7 +43,7 @@ JPG/PNG/WebP são convertidos para WebP no build, sem recorte, com largura máxi
 - YAML em `data/`, schemas Zod e referências validados antes de o conteúdo chegar aos componentes. Todos os arquivos operacionais em `data/` são importados de forma eager no build, sem download posterior de dias ou países.
 - Manifest e Service Worker com `vite-plugin-pwa` em `injectManifest`. A política de cache própria permite recuperação redundante e atualização por consentimento no aplicativo.
 - Nenhum backend, autenticação, API de conteúdo, banco remoto, analytics, CDN, fonte remota ou imagem externa. A rede só é necessária para instalar/atualizar e abrir mapas externos.
-- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 624 KiB, antes de gzip, com limite automático de 2 MB, separado das imagens de Posts. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
+- Tipografia do sistema do iPhone; ícones PNG locais. A aplicação principal tem aproximadamente 624 KiB antes de gzip, com limite automático de 2 MB; os prints de Posts são contabilizados separadamente. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
 - `base: './'` por padrão: funciona na raiz e em subpastas, incluindo repositórios GitHub Pages. `BASE_PATH=/repositorio/ npm run build` permite prefixo explícito. Use o mesmo prefixo no preview se escolher um base absoluto. Hashes evitam 404 nas páginas internas.
 - `localStorage` serve apenas para último dia consultado; ausência, bloqueio ou corrupção não impedem a consulta. A abertura de Hoje usa sempre o dia automático; Mais oferece a última consulta.
 

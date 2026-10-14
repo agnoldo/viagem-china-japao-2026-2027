@@ -34,11 +34,15 @@ Cobertura: virada de ano, alinhamento dos dias da semana, fevereiro bissexto, li
 
 ## Posts
 
-Menu com seis destinos, galeria por pasta/categoria, opção Todos, contagem, categoria vazia, legenda derivada do arquivo e leitura com ampliação. Dez categorias vazias criadas para países/cidades; nenhum print real foi fornecido ou inventado.
+Menu com seis destinos, galeria por pasta/categoria, opção Todos, contagem, categoria vazia, legenda derivada do arquivo e leitura com ampliação. Dez categorias criadas para países/cidades; três prints enviados pelo mantenedor estão em `data/posts/Japão`. Nenhuma imagem demonstrativa foi inserida no conteúdo operacional.
 
 Pipeline de build com Sharp para JPG/JPEG/PNG/WebP: orientação, compressão WebP, largura máxima 1600 px sem recorte/ampliação, remoção de metadados na cópia publicada, nomes de assets por hash e validação do catálogo antes da UI. Originais ficam fora do bundle e permanecem no Git. Orçamentos separados: aplicação 2 MB; galeria 30 MB; imagem otimizada 1,9 MB; origem 20 MB.
 
-Vitest cobre ordenação/categorias vazias, legendas, deduplicação, redução sem recorte, metadados, troca de URL ao substituir uma imagem, formatos inválidos/corrompidos e validação de URLs/IDs. E2E Chromium/WebKit cobre filtro, retorno ao filtro ou Todos, ampliação, URL inválida, reabertura offline de imagens nunca visitadas, recuperação de cache de imagem, 320 px e atualização interrompida/ativação explícita/rollback entre builds com e sem prints. Imagens demonstrativas existem somente em `.qa-builds/`, nunca em `data/` ou no `dist/` publicado. Inspeção visual desktop/mobile aprovada. Upload pelo GitHub documentado em `data/posts/README.md`; sem backend de upload ou dependência do Instagram.
+Vitest cobre ordenação/categorias vazias, legendas, deduplicação, redução sem recorte, metadados, troca de URL ao substituir uma imagem, formatos inválidos/corrompidos e validação de URLs/IDs. E2E Chromium/WebKit cobre filtro, retorno ao filtro ou Todos, ampliação, URL inválida, reabertura offline de imagens nunca visitadas, recuperação de cache de imagem, 320 px e atualização interrompida/ativação explícita/rollback entre o catálogo operacional e o catálogo isolado de teste. Imagens demonstrativas existem somente em `.qa-builds/`, nunca em `data/` ou no `dist/` publicado. Inspeção visual desktop/mobile aprovada. Upload pelo GitHub documentado em `data/posts/README.md`; sem backend de upload ou dependência do Instagram.
+
+## Regressão de upload
+
+A publicação dos primeiros prints foi bloqueada por testes que presumiam galeria operacional vazia. Os testes agora derivam categorias, quantidade, IDs e assets dos arquivos enviados, sem exigir zero imagens ou categorias específicas vazias. A cobertura verifica também abertura de imagem real, preservação do catálogo durante instalação interrompida e retorno ao catálogo correto após rollback. Novos uploads não exigem editar testes.
 
 ## Limites
 

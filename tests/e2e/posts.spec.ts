@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { expectOperationalGallery } from './operational-gallery';
 const base = 'http://127.0.0.1:4178/offline-check/';
 test.beforeEach(async ({ request }) => {
   await request.get('http://127.0.0.1:4178/__qa?version=next');
@@ -68,16 +69,28 @@ test('prints não visitados abrem offline e cache perdido é recuperado; cabe em
   );
 });
 
-test('galeria operacional tem categorias vazias sem publicar fixtures', async ({
-  page,
-  request,
-}) => {
+test('galeria operacional acompanha uploads e não publica fixtures', async ({ page, request }) => {
   await request.get('http://127.0.0.1:4178/__qa?version=current');
   await page.goto(base + '#/posts');
-  await expect(page.getByRole('heading', { name: 'Nenhum print adicionado ainda' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'China 0', exact: true })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Beijing 0', exact: true })).toBeVisible();
+  const categories = await expectOperationalGallery(page);
+  for (const category of categories) {
+    await expect(
+      page.getByRole('link', { name: `${category.title} ${category.images.length}`, exact: true }),
+    ).toBeVisible();
+  }
   await expect(page.getByRole('link', { name: /Teste China/ })).toHaveCount(0);
+  const populated = categories.find((category) => category.images.length > 0);
+  if (populated) {
+    await page
+      .getByRole('link', { name: `${populated.title} ${populated.images.length}`, exact: true })
+      .click();
+    await expect(page.locator('.post-item')).toHaveCount(populated.images.length);
+    await page.locator('.post-item a').first().click();
+    await expect(page.locator('.post-viewer img')).toHaveJSProperty(
+      'naturalWidth',
+      populated.images[0].width,
+    );
+  }
   await page.goto(base + '#/posts/imagem/inexistente');
   await expect(page.getByRole('heading', { name: 'Print não encontrado' })).toBeVisible();
 });
