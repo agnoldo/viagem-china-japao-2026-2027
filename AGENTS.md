@@ -32,6 +32,9 @@ Usar `status: example` em demonstrações. Se não há hotel, número, preço, t
 ## Fusos
 China `Asia/Shanghai`; Japão `Asia/Tokyo`; Brasil `America/Sao_Paulo`; Catar `Asia/Qatar`. Nunca usar o fuso do servidor/dispositivo como único critério para o dia da viagem. Preservar a estratégia de cidade-base em `src/lib/time.ts` e os testes de virada de dia. Cada lado do transporte mantém seu horário local.
 
+## Calendário
+`src/lib/calendar.ts` opera datas civis em UTC, sem depender do fuso do dispositivo. O calendário em Viagem deriva meses dos limites gerais (ou dias registrados quando nulos), mostra lacunas sem inferir cidade/hotel e abre inicialmente o mês com mais dias da viagem. A seleção fica na URL. Transportes aparecem nas datas locais dos dois extremos; indicadores de confirmação dizem respeito aos itens, não ao dia inteiro. Abreviações mobile precisam de legenda com nomes completos. Não duplicar roteiro em dados próprios do calendário.
+
 ## Mapas chineses
 Manter WGS84, GCJ-02 e BD-09 separados. Nunca presumir equivalência ou enviar WGS84 como coordenada AMap/Baidu. Preferir nome chinês, endereço local, cidade e URL específica de POI validada. Não usar geocodificação em runtime. Links nativos iOS: `buildMapLinks` fornece app/web/fallback; `open-app.ts` gerencia clique, timer de 1,5 s e limpeza por `pagehide`/ocultação. WGS-84 no AMap nativo exige `dev=1`; GCJ-02 exige `dev=0`. Baidu exige `coord_type` correto e `src`. Nunca alterar Apple Maps como efeito colateral. Desktop continua web. Não declarar handoff em iPhone/standalone real com base somente em emulação. Apple Maps sempre disponível quando houver dado útil; AMap/Baidu quando configurados. Sem link, endereço e instrução textual precisam continuar funcionando. Adaptadores adicionais em `features/maps/links.ts`; `mapLinks` aceita chaves de provedores sem redesenhar as entidades.
 

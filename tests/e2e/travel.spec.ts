@@ -66,6 +66,7 @@ test('roteiro, locais e endereços acessíveis sem assets externos', async ({ pa
     page.getByRole('heading', { name: 'Aeroporto a definir', exact: true }),
   ).toBeVisible();
   await page.goto(base + '#/viagem');
+  await page.getByRole('button', { name: 'Lista', exact: true }).click();
   await expect(page.locator('.trip-day')).toHaveCount(content.days.length);
   await expect(page.locator('.alternative-panel')).toHaveCount(content.trip.alternatives.length);
   await page.goto(base + `#/buscar?q=${encodeURIComponent(airport.name.local!)}`);

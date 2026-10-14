@@ -20,11 +20,17 @@ Atualização em 14/10/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Verificações
 
-Resultado local: 81 testes Vitest e 22 testes Playwright aprovados, além de lint, validação e build. Fallback web exercitado em Chromium e WebKit, na mesma janela, com iPadOS e standalone simulados. URLs nativas AMap/Baidu, detecção de iOS/iPadOS, fallback de 1,5 s, cancelamento ao ocultar/sair, cliques repetidos/modificados e preservação do Apple Maps cobertos por testes. Standalone simulado não equivale a instalação na Tela de Início; handoff para apps nativos em iPhone físico continua pendente.
+Resultado local: 86 testes Vitest e 28 testes Playwright aprovados, além de lint, validação e build. Fallback web exercitado em Chromium e WebKit, na mesma janela, com iPadOS e standalone simulados. URLs nativas AMap/Baidu, detecção de iOS/iPadOS, fallback de 1,5 s, cancelamento ao ocultar/sair, cliques repetidos/modificados e preservação do Apple Maps cobertos por testes. Standalone simulado não equivale a instalação na Tela de Início; handoff para apps nativos em iPhone físico continua pendente.
 
 Lint e TypeScript strict; YAML, schemas e referências; Vitest com fixture completa e plano parcial; build e auditoria de assets locais. Os testes de conteúdo verificam a diferença entre limite geral e data de um dia registrado, reserva confirmada sem nome e local de embarque desconhecido sem perder a validação de IDs reais.
 
 Playwright em Chromium e WebKit com viewport de iPhone: navegação por todos os dias/cidades registrados, detalhes de voo/trem/hotel, endereços japonês e chinês, busca local, ausência de dependências externas, reabertura sem rede, recuperação de entradas/caches, atualização interrompida, atualização explícita e rollback. A suíte verifica os dados dos voos e conexões em modo offline, além do resort sem nome e a cópia desabilitada quando não há nome/endereço real.
+
+## Calendário
+
+Visão mensal em Viagem com alternância para lista; 31 datas dentro dos limites gerais e 24 dias registrados, preservando as sete lacunas de 20–26/01. Janeiro é o mês inicial por conter a maior parte da viagem. Sem duplicação de dados ou mudanças nas reservas.
+
+Cobertura: virada de ano, alinhamento dos dias da semana, fevereiro bissexto, limites gerais nulos, seleção persistida na URL, resumo de lacunas sem links inválidos, voo planejado junto a hotel confirmado, noites em trânsito, troca de mês, navegação para os detalhes, reabertura offline em subpasta e ausência de overflow em 320 px. Inspeção visual em desktop e mobile; abreviações e legenda mantêm os nomes legíveis em telas estreitas. Chromium e WebKit simulados, sem teste em iPhone físico.
 
 ## Limites
 
