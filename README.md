@@ -31,7 +31,7 @@ O roteiro demonstrativo anterior está apenas em `tests/fixtures/full-plan.json`
 - YAML em `data/`, schemas Zod e referências validados antes de o conteúdo chegar aos componentes. Todos os arquivos operacionais em `data/` são importados de forma eager no build, sem download posterior de dias ou países.
 - Manifest e Service Worker com `vite-plugin-pwa` em `injectManifest`. A política de cache própria permite recuperação redundante e atualização por consentimento no aplicativo.
 - Nenhum backend, autenticação, API de conteúdo, banco remoto, analytics, CDN, fonte remota ou imagem externa. A rede só é necessária para instalar/atualizar e abrir mapas externos.
-- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 604 KiB, antes de gzip, com limite automático de 2 MB. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
+- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 607 KiB, antes de gzip, com limite automático de 2 MB. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
 - `base: './'` por padrão: funciona na raiz e em subpastas, incluindo repositórios GitHub Pages. `BASE_PATH=/repositorio/ npm run build` permite prefixo explícito. Use o mesmo prefixo no preview se escolher um base absoluto. Hashes evitam 404 nas páginas internas.
 - `localStorage` serve apenas para último dia consultado; ausência, bloqueio ou corrupção não impedem a consulta. A abertura de Hoje usa sempre o dia automático; Mais oferece a última consulta.
 
@@ -244,6 +244,18 @@ mapSearch:
 ```
 
 Use links específicos de POI depois de verificar o destino. É possível acrescentar chaves em `mapLinks` sem alterar o schema principal; um novo provedor requer apenas o adaptador de links e sua opção na UI. Não armazene tokens privados em URLs.
+
+### Abrir AMap e Baidu no iOS/iPadOS
+
+`buildMapLinks` centraliza a URL web, a URL do app (`appUrl`) e o fallback (`fallbackUrl`). `MapActions` mantém `href` HTTPS e o comportamento de clique longo/cliques modificados. Um clique normal no iOS/iPadOS chama `handleMapClick` e `openMapApp`, em `src/features/maps/open-app.ts`, usando a própria janela, inclusive em standalone. Desktop mantém os links web anteriores. Apple Maps permanece sem alteração.
+
+AMap usa `iosamap://viewMap` quando há GCJ-02 (`dev=0`) ou WGS-84 (`dev=1`, conversão pelo app). Sem essas coordenadas, usa `iosamap://poi` com nome e cidade. Nunca envia BD-09 como GCJ-02. Baidu usa `baidumap://map/marker` com `coord_type=gcj02` ou `wgs84`; se somente BD-09 estiver disponível, preserva `bd09ll`. Sem coordenadas, usa `/map/place/search`, com nome e cidade. `src=ios.viagemchinajapao.app` acompanha todas as URLs nativas Baidu. Textos dos esquemas e do novo fallback passam por `encodeURIComponent`.
+
+Após 1,5 s com a página ainda visível, o fallback abre a busca web. AMap mantém sua URL HTTPS; Baidu no iOS usa `https://map.baidu.com/search/{nome}?querytype=s&wd={nome}` (ou o override HTTPS explícito). `pagehide` ou página oculta cancela o timer; os listeners são removidos, inclusive ao concluir o fallback ou repetir um clique. Não é uma consulta à lista de apps instalados: o comportamento é baseado na saída da página, sem API externa ou SDK.
+
+Validação física pendente: nos quatro iPhones, atualizar a PWA, abri-la pela Tela de Início e testar o hotel Pan Pacific Beijing com os apps instalados e ausentes. Aceitar o diálogo esperado de abertura; voltar à PWA e aguardar para conferir que nenhum site abre depois. Sem app, conferir fallback web. Repetir no Safari e no iPad, se disponível. WebKit desktop e standalone simulado não comprovam o handoff do iOS real.
+
+Referências dos parâmetros: [AMap iOS marker](https://lbs.amap.com/api/amap-mobile/guide/ios/marker), [AMap iOS search](https://lbs.amap.com/api/amap-mobile/guide/ios/search), [Baidu URI iOS](https://lbsyun.baidu.com/index.php?title=uri/api/ios).
 
 ### WGS84, GCJ-02 e BD-09
 

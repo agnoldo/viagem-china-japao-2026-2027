@@ -115,7 +115,7 @@ test('reabre sem rede e navega por todos os dias e cidades registrados', async (
   await reopened.goto(base + '#/local/chengdu-panda-base');
   await expect(reopened.getByRole('link', { name: 'Baidu Maps', exact: true })).toHaveAttribute(
     'href',
-    /region=/,
+    /region=|querytype=s/,
   );
   await reopened.getByRole('link', { name: 'Endereço local', exact: true }).click();
   await expect(reopened.locator('.big-address')).toContainText('成都大熊猫繁育研究基地');

@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import type { Status } from '../content/schema';
 import type { MapTarget } from '../features/maps/links';
 import { buildMapLinks } from '../features/maps/links';
+import { handleMapClick, mapWebHref } from '../features/maps/open-app';
 import { cities } from '../content';
 export const statuses: Record<Status, string> = {
   confirmed: 'Confirmado',
@@ -75,11 +76,15 @@ export function MapActions({
     <div className="map-actions">
       {providers.map((provider) => {
         const link = buildMapLinks(place, provider.id);
-        return link.url ? (
+        const href = mapWebHref(link);
+        return href ? (
           <a
             className="button button-small"
             key={provider.id}
-            href={link.url}
+            href={href}
+            onClick={(event) => {
+              handleMapClick(event, link);
+            }}
             target="_blank"
             rel="noopener noreferrer"
           >
