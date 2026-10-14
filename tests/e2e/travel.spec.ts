@@ -91,6 +91,11 @@ test('reabre sem rede e navega por todos os dias e cidades registrados', async (
     await reopened.goto(base + `#/hoje/${date}`);
     await expect(reopened.getByLabel('Escolher dia')).toHaveValue(date);
     await expect(reopened.locator('h1')).toBeVisible();
+    if (content.days.find((d) => d.date === date)!.overnightInTransit) {
+      await expect(reopened.locator('.stay-panel')).toContainText('Noite em trânsito');
+      await expect(reopened.locator('.stay-panel').getByRole('link')).toHaveCount(0);
+      await expect(reopened.locator('.stay-panel')).not.toContainText('Hospedagem a definir');
+    }
   }
   for (const { id } of content.trip.cities) {
     await reopened.goto(base + `#/cidades/${id}`);
@@ -252,6 +257,8 @@ test('hospedagem reservada sem nome não inventa endereço ou datas', async ({ p
   await expect(page.getByRole('button', { name: 'Copiar nome e endereço' })).toBeDisabled();
   await page.goto(base + `#/hoje/${firstDay.date}`);
   await expect(page.getByText('Plano parcial.', { exact: true })).toBeVisible();
+  await expect(page.locator('.stay-panel')).toContainText('Noite em trânsito');
+  await page.goto(base + '#/hoje/2027-01-04');
   await expect(page.locator('.stay-panel')).toContainText('Hospedagem a definir');
 });
 

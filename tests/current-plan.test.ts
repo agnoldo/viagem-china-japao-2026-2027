@@ -62,6 +62,17 @@ describe('plano atual com dados incompletos', () => {
       Object.values(hotel.coordinates).every((pair) => pair.lat === null && pair.lon === null),
     ).toBe(true);
   });
+  it('distingue noites em trânsito de hospedagem pendente e rejeita hotel simultâneo', () => {
+    expect(content.days.filter((d) => d.overnightInTransit).map((d) => d.date)).toEqual([
+      '2026-12-29',
+      '2026-12-30',
+      '2027-01-27',
+    ]);
+    expect(content.days.find((d) => d.date === '2027-01-04')!.overnightInTransit).toBe(false);
+    const copy = structuredClone(content);
+    copy.days.find((d) => d.date === '2027-01-18')!.overnightInTransit = true;
+    expect(() => validateContent(copy)).toThrow(/Pernoite em trânsito/);
+  });
   it('mantém pernoite em Tokyo no dia 18 e início do resort no dia 19', () => {
     const arrival = content.days.find((d) => d.date === '2027-01-18')!;
     const snow = content.days.find((d) => d.date === '2027-01-19')!;

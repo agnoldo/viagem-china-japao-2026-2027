@@ -151,11 +151,16 @@ export const daySchema = z
     summary: text,
     status: statusSchema,
     hotelId: id.optional(),
+    overnightInTransit: z.boolean().default(false),
     alternativeId: id.optional(),
     notes: z.string().default(''),
     activities: z.array(activitySchema),
   })
-  .strict();
+  .strict()
+  .refine(
+    (v) => !v.overnightInTransit || !v.hotelId,
+    'Pernoite em trânsito não pode ter hotel da noite',
+  );
 const endpoint = z
   .object({
     cityId: id,

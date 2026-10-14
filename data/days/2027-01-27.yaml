@@ -3,6 +3,7 @@ cityId: tokyo
 regionId: japan
 summary: 'Início da volta: Narita → Doha'
 status: confirmed
+overnightInTransit: true
 notes: Partida por Narita, terminal 2. Conexão de 45 minutos em Doha; confirmar orientações com a Qatar.
 activities:
   - id: depart-qr809

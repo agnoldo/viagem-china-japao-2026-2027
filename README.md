@@ -4,6 +4,8 @@
 
 PWA familiar de consulta, offline-first, para China e Japão em 2027. Quatro viajantes, quatro iPhones, um mantenedor dos dados.
 
+O repositório está privado. A publicação no GitHub Pages está suspensa por restrição do plano atual; o preview local permanece disponível durante sua execução.
+
 ## Plano atual
 
 - **29–31/12/2026:** Belo Horizonte (CNF) → Guarulhos (GRU) → Doha (DOH) → Beijing Daxing (PKX). Voos QR7251, QR774 e QR892 confirmados para os quatro viajantes.
@@ -26,7 +28,7 @@ O roteiro demonstrativo anterior está apenas em `tests/fixtures/full-plan.json`
 - YAML em `data/`, schemas Zod e referências validados antes de o conteúdo chegar aos componentes. Todos os arquivos operacionais em `data/` são importados de forma eager no build, sem download posterior de dias ou países.
 - Manifest e Service Worker com `vite-plugin-pwa` em `injectManifest`. A política de cache própria permite recuperação redundante e atualização por consentimento no aplicativo.
 - Nenhum backend, autenticação, API de conteúdo, banco remoto, analytics, CDN, fonte remota ou imagem externa. A rede só é necessária para instalar/atualizar e abrir mapas externos.
-- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 565 KiB, antes de gzip, com limite automático de 2 MB. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
+- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 566 KiB, antes de gzip, com limite automático de 2 MB. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
 - `base: './'` por padrão: funciona na raiz e em subpastas, incluindo repositórios GitHub Pages. `BASE_PATH=/repositorio/ npm run build` permite prefixo explícito. Use o mesmo prefixo no preview se escolher um base absoluto. Hashes evitam 404 nas páginas internas.
 - `localStorage` serve apenas para último dia consultado; ausência, bloqueio ou corrupção não impedem a consulta. A abertura de Hoje usa sempre o dia automático; Mais oferece a última consulta.
 
@@ -137,6 +139,8 @@ status: undecided
 notes: Exemplo de estrutura; não faz parte do plano publicado.
 activities: []
 ```
+
+`overnightInTransit: true` indica noite em voo/conexão: a tela mostra “Noite em trânsito” sem pendência ou link de hospedagem. Aplicado a 29/12, 30/12 e 27/01. O padrão é `false`; omitir hotel sem essa opção continua significando hospedagem a definir. Não combinar `overnightInTransit: true` com `hotelId` da noite.
 
 `hotelId` é opcional. Não associe um hotel de outra cidade. Ao confirmar uma alternativa, atualize os dias, hotéis e deslocamentos correspondentes; não deixe a base de referência Tokyo parecer uma estadia comprada.
 

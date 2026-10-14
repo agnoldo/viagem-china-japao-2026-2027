@@ -20,7 +20,7 @@ Atualização em 14/10/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Verificações
 
-Resultado local: 56 testes Vitest e 16 testes Playwright aprovados, além de lint, validação e build. Título geral “China e Japão 2027”, sem subtítulo no shell, documento e metadados da PWA. Revisão visual em desktop, iPhone emulado e largura de 320 px, sem rolagem horizontal. Teste offline confirma a janela de check-in do Ueno Woo Hotel, pernoite em 18/01 e manutenção do resort como hospedagem de 19/01.
+Resultado local: 57 testes Vitest e 16 testes Playwright aprovados, além de lint, validação e build. Preview local atualizado e conferido visualmente. A opção `overnightInTransit` distingue noites em voo/conexão de hospedagem pendente. Aplicada a 29/12/2026, 30/12/2026 e 27/01/2027; impede hotel simultâneo e mantém os demais pernoites.
 
 Lint e TypeScript strict; YAML, schemas e referências; Vitest com fixture completa e plano parcial; build e auditoria de assets locais. Os testes de conteúdo verificam a diferença entre limite geral e data de um dia registrado, reserva confirmada sem nome e local de embarque desconhecido sem perder a validação de IDs reais.
 
@@ -34,3 +34,7 @@ Perda total de armazenamento da origem pelo WebKit exige rede para reinstalar. A
 
 ## Regressão de atualização WebKit
 A inspeção de atualização encontrou entradas ausentes em gravações individuais do cache. A instalação passou a usar lotes atômicos `Cache.addAll`, URLs com versão e releitura completa das duas cópias antes de oferecer o worker. O teste continua exigindo interrupção, reabertura offline, atualização e rollback; não foi removido ou dispensado.
+
+## Estado da publicação
+
+Repositório privado. A republicação no GitHub Pages está bloqueada pelo plano atual (resposta da API: plano sem suporte para Pages neste repositório). Esta atualização foi validada no preview local; não declarar implantação pública concluída.

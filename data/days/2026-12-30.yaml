@@ -3,6 +3,7 @@ cityId: doha
 regionId: qatar
 summary: Guarulhos → Doha
 status: confirmed
+overnightInTransit: true
 notes: A chegada é às 21:40 no fuso de Doha. Conexão até a madrugada de 31/12.
 activities:
   - id: depart-qr774

@@ -3,6 +3,7 @@ cityId: belo-horizonte
 regionId: brazil
 summary: Saída de Belo Horizonte e conexão em Guarulhos
 status: confirmed
+overnightInTransit: true
 notes: Próximo voo na madrugada de 30/12, no terminal 3 de Guarulhos.
 activities:
   - id: depart-qr7251

@@ -16,6 +16,7 @@ Responder em português, sem enfeites. Linguagem direta. Entregar resultado, ver
 - Cidade: adicionar em `trip.yaml > cities`, com ID único, região, país, nomes, datas, status e fuso IANA.
 - Região: adicionar em `trip.yaml > regions` e referenciar seu ID na cidade/dia.
 - Dia: editar/criar `data/days/YYYY-MM-DD.yaml`. Nome deve coincidir com `date`; `itineraryCoverage: partial` permite mostrar somente os dias registrados, mesmo com limites conhecidos; `complete` exige todos os dias do intervalo.
+- Pernoite em trânsito: `overnightInTransit: true` no dia dispensa hospedagem; não associar `hotelId` da noite. Sem a opção e sem hotel, a hospedagem continua pendente. Não inferir trânsito somente pela existência de voo.
 - Hotel: copiar item de `hotels.yaml`, preencher endereço local real, horários e status, associar `hotelId` nos dias da mesma cidade.
 - Local: adicionar em `places.yaml`; aeroportos e estações são entidades próprias, com IDs distintos da cidade.
 - Voo/trem: adicionar no arquivo próprio, com cidades obrigatórias, local de aeroporto/estação nullable se desconhecido, datas/horários/fusos independentes e instrução offline. Não substituir estação por nome de cidade.

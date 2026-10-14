@@ -290,10 +290,19 @@ export function Today({ now }: { now: Date }) {
           <p className="muted day-notes">{day.notes}</p>
         </div>
         <aside className="day-aside">
-          <Section title="Hotel da noite">
+          <Section title={day.overnightInTransit ? 'Pernoite' : 'Hotel da noite'}>
             <div className="stay-panel">
-              <BedDouble size={25} aria-hidden="true" />
-              {hotel ? (
+              {day.overnightInTransit ? (
+                <Plane size={25} aria-hidden="true" />
+              ) : (
+                <BedDouble size={25} aria-hidden="true" />
+              )}
+              {day.overnightInTransit ? (
+                <>
+                  <h3>Noite em trânsito</h3>
+                  <p>Sem pernoite em hotel neste dia.</p>
+                </>
+              ) : hotel ? (
                 <>
                   <StatusBadge status={hotel.status} />
                   <h3>{entityName(hotel)}</h3>
