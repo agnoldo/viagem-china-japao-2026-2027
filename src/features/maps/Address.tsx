@@ -67,7 +67,7 @@ export function Address() {
         {message.startsWith('Endereço copiado') ? <Check size={20} /> : <Copy size={20} />}Copiar
         nome e endereço
       </button>
-      <p className="copy-feedback" role="status">
+      <p className="copy-feedback" role="status" aria-label="Resultado da cópia">
         {message}
       </p>
       <details>

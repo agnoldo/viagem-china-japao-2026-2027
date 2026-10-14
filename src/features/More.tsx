@@ -64,7 +64,11 @@ export function More() {
                 Verificar atualização
               </button>
             </div>
-            <p className="operation-result" role="status">
+            <p
+              className="operation-result"
+              role="status"
+              aria-label="Resultado da verificação offline"
+            >
               {result}
             </p>
           </div>

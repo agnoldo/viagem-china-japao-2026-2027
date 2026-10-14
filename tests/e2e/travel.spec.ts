@@ -46,7 +46,9 @@ test('roteiro, locais e endereços acessíveis sem assets externos', async ({ pa
   await page.getByRole('link', { name: 'Endereço local', exact: true }).click();
   await expect(page.locator('.big-address')).toContainText(airport.name.local!);
   await page.getByRole('button', { name: 'Copiar nome e endereço' }).click();
-  await expect(page.getByRole('status')).toContainText(/copiado|Selecione/);
+  await expect(page.getByRole('status', { name: 'Resultado da cópia' })).toContainText(
+    /copiado|Selecione/,
+  );
   for (const route of [
     ...content.hotels.map((h) => `#/hotel/${h.id}`),
     ...content.places.map((p) => `#/local/${p.id}`),
@@ -183,7 +185,9 @@ test('sem estado local mantém navegação e layout utilizável', async ({ page 
   await page.goto(base + '#/mais');
   await expect(page.getByRole('button', { name: 'Verificar offline', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Verificar offline', exact: true }).click();
-  await expect(page.getByRole('status')).toContainText('Pronto para teste');
+  await expect(
+    page.getByRole('status', { name: 'Resultado da verificação offline' }),
+  ).toContainText('Pronto para teste');
 });
 
 test('controlador instalado confirma offline mesmo se reinscrição falhar', async ({
