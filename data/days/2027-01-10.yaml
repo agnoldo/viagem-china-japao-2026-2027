@@ -1,0 +1,40 @@
+date: 2027-01-10
+cityId: chongqing
+regionId: china
+summary: 'Chongqing: cidade em encostas e opção de excursão'
+status: planned
+notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+activities:
+  - id: 2027-01-10-chongqing-liziba
+    title: Estação Liziba e metrô atravessando o prédio
+    type: attraction
+    status: planned
+    time: 09:00
+    timezone: Asia/Shanghai
+    placeId: chongqing-liziba
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-10-chongqing-ciqikou
+    title: Ciqikou Ancient Town
+    type: attraction
+    status: planned
+    time: 11:00
+    endTime: 14:00
+    timezone: Asia/Shanghai
+    placeId: chongqing-ciqikou
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: chongqing-elsewhere
+    title: Dazu ou Wulong
+    type: attraction
+    status: optional
+    time: 08:00
+    endTime: 17:00
+    timezone: Asia/Shanghai
+    notes: Alternativa de dia inteiro; não combinar com o roteiro urbano no mesmo dia.
+  - id: 2027-01-10-chongqing-night-view
+    title: Mirante noturno do Yangtze
+    type: attraction
+    status: planned
+    time: 19:00
+    timezone: Asia/Shanghai
+    placeId: chongqing-night-view
+    notes: Atividade proposta; confirmar antes da viagem.

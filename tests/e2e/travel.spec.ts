@@ -101,6 +101,27 @@ test('reabre sem rede e navega por todos os dias e cidades registrados', async (
     await reopened.goto(base + `#/cidades/${id}`);
     await expect(reopened.locator('h1')).toBeVisible();
   }
+  for (const route of content.trains.filter((t) => t.from.timezone === 'Asia/Shanghai')) {
+    await reopened.goto(base + `#/trecho/${route.id}`);
+    await expect(
+      reopened.getByRole('heading', { name: 'Estação a definir', exact: true }),
+    ).toHaveCount(2);
+    await expect(reopened.locator('.status-planned')).toBeVisible();
+  }
+  await reopened.goto(base + '#/trecho/zhangjiajie-shanghai-2027-01-14');
+  await expect(
+    reopened.getByRole('heading', { name: 'Aeroporto a definir', exact: true }),
+  ).toHaveCount(2);
+  await reopened.goto(base + '#/local/chengdu-panda-base');
+  await expect(reopened.getByRole('link', { name: 'Baidu Maps', exact: true })).toHaveAttribute(
+    'href',
+    /region=/,
+  );
+  await reopened.getByRole('link', { name: 'Endereço local', exact: true }).click();
+  await expect(reopened.locator('.big-address')).toContainText('成都大熊猫繁育研究基地');
+  expect(
+    await reopened.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+  ).toBe(true);
   await reopened.goto(base + '#/hotel/pan-pacific-beijing');
   await expect(reopened.locator('h1')).toHaveText('Pan Pacific Beijing');
   await expect(reopened.getByText('Check-in:', { exact: false })).toContainText(

@@ -4,7 +4,7 @@
   from:
     cityId: tokyo
     placeId: null
-    date: '2027-01-19'
+    date: 2027-01-19
     time: null
     timezone: Asia/Tokyo
     terminal: null
@@ -12,7 +12,7 @@
   to:
     cityId: echigo-yuzawa
     placeId: echigo-yuzawa-station
-    date: '2027-01-19'
+    date: 2027-01-19
     time: null
     timezone: Asia/Tokyo
     terminal: null
@@ -27,9 +27,129 @@
   class: null
   recommendedArrivalMinutes: null
   bookingReferenceHint: null
-  notes:
-    Deslocamento previsto de Tokyo para Echigo-Yuzawa pelo Joetsu Shinkansen. Estação de embarque,
-    horários, número e situação da reserva ainda não definidos.
+  notes: Deslocamento previsto de Tokyo para Echigo-Yuzawa pelo Joetsu Shinkansen. Estação de
+    embarque, horários, número e situação da reserva ainda não definidos.
   offlineInstructions:
     'Confirmar a estação de embarque em Tokyo, o horário e a reserva antes de sair.
     Destino previsto: 越後湯沢駅. Transporte da estação até o resort ainda não registrado.'
+- id: beijing-xian-2027-01-04
+  kind: train
+  status: planned
+  from:
+    cityId: beijing
+    placeId: null
+    date: 2027-01-04
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: null
+  to:
+    cityId: xian
+    placeId: null
+    date: 2027-01-04
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: null
+  bookingReferenceHint: null
+  notes: Deslocamento proposto entre Beijing e Xi'an; estação e horário ainda não definidos.
+  offlineInstructions: Trecho proposto Beijing → Xi'an. Confirme as estações de partida e chegada,
+    horário, número do trem e reserva antes de sair.
+  trainNumber: null
+  class: null
+  recommendedArrivalMinutes: null
+  service:
+    type: high-speed rail
+    line: null
+  reservationStatus: null
+- id: xian-chengdu-2027-01-06
+  kind: train
+  status: planned
+  from:
+    cityId: xian
+    placeId: null
+    date: 2027-01-06
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: null
+  to:
+    cityId: chengdu
+    placeId: null
+    date: 2027-01-06
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: null
+  bookingReferenceHint: null
+  notes: Deslocamento proposto entre Xi'an e Chengdu; estação e horário ainda não definidos.
+  offlineInstructions: Trecho proposto Xi'an → Chengdu. Confirme as estações de partida e chegada,
+    horário, número do trem e reserva antes de sair.
+  trainNumber: null
+  class: null
+  recommendedArrivalMinutes: null
+  service:
+    type: high-speed rail
+    line: null
+  reservationStatus: null
+- id: chengdu-chongqing-2027-01-09
+  kind: train
+  status: planned
+  from:
+    cityId: chengdu
+    placeId: null
+    date: 2027-01-09
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: null
+  to:
+    cityId: chongqing
+    placeId: null
+    date: 2027-01-09
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: null
+  bookingReferenceHint: null
+  notes: Deslocamento proposto entre Chengdu e Chongqing; estação e horário ainda não definidos.
+  offlineInstructions:
+    Trecho proposto Chengdu → Chongqing. Confirme as estações de partida e chegada,
+    horário, número do trem e reserva antes de sair.
+  trainNumber: null
+  class: null
+  recommendedArrivalMinutes: null
+  service:
+    type: high-speed rail
+    line: null
+  reservationStatus: null
+- id: chongqing-zhangjiajie-2027-01-11
+  kind: train
+  status: planned
+  from:
+    cityId: chongqing
+    placeId: null
+    date: 2027-01-11
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: null
+  to:
+    cityId: zhangjiajie
+    placeId: null
+    date: 2027-01-11
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    station: null
+  bookingReferenceHint: null
+  notes: Deslocamento proposto entre Chongqing e Zhangjiajie; confirmar operação e estação.
+  offlineInstructions: Trecho proposto Chongqing → Zhangjiajie. Confirme as estações de partida e
+    chegada, horário, número do trem e reserva antes de sair.
+  trainNumber: null
+  class: null
+  recommendedArrivalMinutes: null
+  service:
+    type: high-speed rail
+    line: null
+  reservationStatus: null

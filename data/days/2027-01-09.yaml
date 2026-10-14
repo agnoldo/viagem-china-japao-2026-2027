@@ -1,0 +1,28 @@
+date: 2027-01-09
+cityId: chongqing
+regionId: china
+summary: Chengdu → Chongqing e panorama noturno
+status: planned
+notes: Duas noites previstas em Chongqing. Hospedagem ainda não escolhida.
+activities:
+  - id: chengdu-chongqing-train
+    title: Trem Chengdu → Chongqing
+    type: train
+    status: planned
+    transportId: chengdu-chongqing-2027-01-09
+    notes: Deslocamento proposto; horário e estações a definir.
+  - id: 2027-01-09-chongqing-hongyadong
+    title: Hongyadong e Jiefangbei
+    type: attraction
+    status: planned
+    time: 18:00
+    timezone: Asia/Shanghai
+    placeId: chongqing-hongyadong
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: chongqing-hotpot
+    title: Hot pot de Chongqing
+    type: meal
+    status: planned
+    time: 19:30
+    timezone: Asia/Shanghai
+    notes: Atividade proposta; confirmar antes da viagem.

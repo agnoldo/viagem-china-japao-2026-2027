@@ -1,0 +1,27 @@
+date: 2027-01-16
+cityId: shanghai
+regionId: china
+summary: 'Shanghai: dia escolhido pela família'
+status: planned
+notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+activities:
+  - id: 2027-01-16-shanghai-disney
+    title: Shanghai Disneyland
+    type: attraction
+    status: optional
+    time: 08:00
+    endTime: 21:00
+    timezone: Asia/Shanghai
+    placeId: shanghai-disney
+    notes:
+      Opção especialmente adequada se os adolescentes quiserem um dia de parque; requer ingresso e
+      logística próprios.
+  - id: 2027-01-16-shanghai-pudong
+    title: Shanghai Tower e Pudong
+    type: attraction
+    status: optional
+    time: 10:00
+    endTime: 16:00
+    timezone: Asia/Shanghai
+    placeId: shanghai-pudong
+    notes: Alternativa ao dia de Disney.

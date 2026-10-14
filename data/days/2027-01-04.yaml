@@ -1,18 +1,28 @@
 date: 2027-01-04
-cityId: beijing
+cityId: xian
 regionId: china
-summary: Checkout do Pan Pacific Beijing
-status: confirmed
-notes: Encerramento da reserva de quatro noites. Destino seguinte, deslocamento e hospedagem desta
-  noite ainda não registrados.
+summary: "Beijing → Xi'an: checkout e chegada"
+status: planned
+notes: Duas noites previstas em Xi'an. Hospedagem ainda não escolhida.
 activities:
   - id: beijing-hotel-checkout
-    type: hotel
     title: Checkout do Pan Pacific Beijing até as 12:00
-    hotelId: pan-pacific-beijing
+    type: hotel
     status: confirmed
     time: 12:00
     timezone: Asia/Shanghai
-    notes:
-      Horário limite para checkout, não uma saída agendada da cidade. Próximo destino e transporte
-      ainda não definidos.
+    hotelId: pan-pacific-beijing
+    notes: Horário limite da reserva; não é horário de saída da cidade.
+  - id: beijing-xian-train
+    title: Trem Beijing → Xi'an
+    type: train
+    status: planned
+    transportId: beijing-xian-2027-01-04
+    notes: Deslocamento proposto. Estações, horário e trem ainda não definidos.
+  - id: xian-evening-arrival
+    title: Chegada e jantar no centro histórico de Xi'an
+    type: meal
+    status: planned
+    time: 19:00
+    timezone: Asia/Shanghai
+    notes: Atividade leve após o deslocamento; escolher restaurante perto do hotel.

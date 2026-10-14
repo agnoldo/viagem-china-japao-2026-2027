@@ -1,0 +1,26 @@
+date: 2027-01-12
+cityId: zhangjiajie
+regionId: china
+summary: 'Zhangjiajie: Wulingyuan e pilares de arenito'
+status: planned
+notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+activities:
+  - id: 2027-01-12-wulingyuan-yuanjiajie
+    title: 'Parque Nacional de Zhangjiajie: Yuanjiajie'
+    type: attraction
+    status: planned
+    time: 08:00
+    endTime: 15:00
+    timezone: Asia/Shanghai
+    placeId: wulingyuan-yuanjiajie
+    travelBufferMinutes: 90
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-12-wulingyuan-tianzi
+    title: Tianzi Mountain ou área panorâmica equivalente
+    type: attraction
+    status: planned
+    time: 15:00
+    endTime: 17:00
+    timezone: Asia/Shanghai
+    placeId: wulingyuan-tianzi
+    notes: Ajustar conforme clima, visibilidade e operação dos transportes do parque.

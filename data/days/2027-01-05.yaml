@@ -1,0 +1,41 @@
+date: 2027-01-05
+cityId: xian
+regionId: china
+summary: "Xi'an: Exército de Terracota e cidade histórica"
+status: planned
+notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+activities:
+  - id: xian-terracotta-warriors
+    title: Exército de Terracota
+    type: attraction
+    status: planned
+    time: 08:30
+    endTime: 13:00
+    timezone: Asia/Shanghai
+    placeId: terracotta-warriors
+    travelBufferMinutes: 90
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: xian-lunch
+    title: Almoço de culinária local
+    type: meal
+    status: planned
+    time: 13:30
+    timezone: Asia/Shanghai
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-05-xian-city-wall
+    title: Muralha de Xi'an
+    type: attraction
+    status: planned
+    time: 16:00
+    endTime: 18:00
+    timezone: Asia/Shanghai
+    placeId: xian-city-wall
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-05-xian-muslim-quarter
+    title: Bairro muçulmano e Torre do Tambor à noite
+    type: attraction
+    status: planned
+    time: 19:00
+    timezone: Asia/Shanghai
+    placeId: xian-muslim-quarter
+    notes: Atividade proposta; confirmar antes da viagem.

@@ -1,0 +1,28 @@
+date: 2027-01-14
+cityId: shanghai
+regionId: china
+summary: Zhangjiajie → Shanghai e Bund
+status: planned
+notes: Quatro noites previstas em Shanghai. Hospedagem ainda não escolhida.
+activities:
+  - id: zhangjiajie-shanghai-flight
+    title: Deslocamento Zhangjiajie → Shanghai
+    type: flight
+    status: planned
+    transportId: zhangjiajie-shanghai-2027-01-14
+    notes: Voo doméstico é a proposta-base; aeroporto e horário ainda não definidos.
+  - id: 2027-01-14-shanghai-bund
+    title: Bund e skyline de Pudong
+    type: attraction
+    status: planned
+    time: 18:00
+    timezone: Asia/Shanghai
+    placeId: shanghai-bund
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: shanghai-dinner
+    title: Jantar na região do Bund ou Nanjing Road
+    type: meal
+    status: planned
+    time: 19:30
+    timezone: Asia/Shanghai
+    notes: Atividade proposta; confirmar antes da viagem.

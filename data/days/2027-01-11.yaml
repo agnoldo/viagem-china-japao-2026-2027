@@ -1,0 +1,27 @@
+date: 2027-01-11
+cityId: zhangjiajie
+regionId: china
+summary: Chongqing → Zhangjiajie
+status: planned
+notes: Três noites previstas. Hospedagem ainda não escolhida.
+activities:
+  - id: chongqing-zhangjiajie-train
+    title: Trem Chongqing → Zhangjiajie
+    type: train
+    status: planned
+    transportId: chongqing-zhangjiajie-2027-01-11
+    notes: A ligação ferroviária é o deslocamento-base proposto; confirmar trem e estação.
+  - id: zhangjiajie-arrival
+    title: Chegada e check-in em Zhangjiajie
+    type: hotel
+    status: planned
+    time: 17:00
+    timezone: Asia/Shanghai
+    notes: Hospedagem ainda não escolhida; usar a tarde para descanso.
+  - id: zhangjiajie-dinner
+    title: Jantar local
+    type: meal
+    status: planned
+    time: 19:00
+    timezone: Asia/Shanghai
+    notes: Atividade proposta; confirmar antes da viagem.

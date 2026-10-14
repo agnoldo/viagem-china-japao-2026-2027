@@ -9,16 +9,19 @@ Repositório público, com publicação no GitHub Pages por GitHub Actions após
 ## Plano atual
 
 - **29–31/12/2026:** Belo Horizonte (CNF) → Guarulhos (GRU) → Doha (DOH) → Beijing Daxing (PKX). Voos QR7251, QR774 e QR892 confirmados para os quatro viajantes.
-- **31/12/2026–04/01/2027:** Pan Pacific Beijing confirmado, 4 noites para a família. Check-in a partir das 15h; checkout até 12h, no fuso `Asia/Shanghai`. Nome e endereço em chinês conferidos no [site oficial](https://www.panpacific.com/zh/hotels-and-resorts/pp-beijing/the-hotel.html) pela correspondência de endereço e telefone. Transfer de Daxing e destino após o checkout ainda indefinidos.
+- **31/12/2026–04/01/2027:** Pan Pacific Beijing confirmado, 4 noites para a família. Check-in a partir das 15h; checkout até 12h, no fuso `Asia/Shanghai`. Nome e endereço em chinês conferidos no [site oficial](https://www.panpacific.com/zh/hotels-and-resorts/pp-beijing/the-hotel.html) pela correspondência de endereço e telefone. Transfer de Daxing ainda indefinido; trem para Xi’an proposto em 04/01.
+- **China, proposta de roteiro:** Beijing 31/12–04/01 → Xi’an 04–06/01 → Chengdu 06–09/01 → Chongqing 09–11/01 → Zhangjiajie 11–14/01 → Shanghai 14–18/01. Inclui quatro trens planejados, voo doméstico Zhangjiajie–Shanghai e passeios com horários sugeridos. Hotéis após Beijing ainda sem nome ou reserva.
 - **18/01/2027:** Shanghai → Tokyo Haneda; pernoite confirmado no Ueno Woo Hotel, 1 noite em 2 quartos Double Room, sem refeições. Check-in 15h–21h; checkout em 19/01 até 11h. Endereço e telefone conferidos no [site do hotel](https://ueno-woo-hotel.mydirectstay.com/contact-us.html). Voo ainda planejado, sem aeroporto de origem ou horários registrados.
 - **19/01/2027:** Tokyo → Echigo-Yuzawa pelo Joetsu Shinkansen; início da hospedagem em resort reservado, ainda sem nome registrado.
 - **27–28/01/2027:** Tokyo Narita (NRT), terminal 2 → Doha → Guarulhos → Belo Horizonte. Voos QR809, QR785 e QR4834 confirmados para os quatro viajantes.
 - **Conexões:** ida GRU 9h35 (terminal 2 → 3), DOH 4h25; volta DOH **45 minutos**, GRU 1h45 (terminal 3 → 2). A conexão curta recebe destaque; confirmar orientações com Qatar e LATAM.
-- Limites da viagem: **29/12/2026 a 28/01/2027**, com **11 dias registrados**. `itineraryCoverage: partial` preserva as lacunas sem inventar estadias ou atividades.
-- Estação de embarque em Tokyo, nome/endereço/checkout do resort, horários dos transportes de 18–19/01 e programação dos demais dias permanecem **não informados**.
+- Limites da viagem: **29/12/2026 a 28/01/2027**, com **24 dias registrados**. `itineraryCoverage: partial` preserva as lacunas sem inventar estadias ou atividades.
+- Estação de embarque em Tokyo, nome/endereço/checkout do resort, horários dos transportes de 18–19/01 e programação japonesa de 20–26/01 permanecem **não informados**.
 - Bilhete: cabine Economy e 2 volumes despachados por passageiro, peso não informado. Os dois voos domésticos são comercializados pela Qatar e operados pela LATAM. Número de passageiro frequente, dados tarifários e recibo integral não são publicados.
 
 A informação `booked` recebida foi normalizada para `confirmed`, status já usado no projeto. Isso confirma a reserva informada, não preenche os detalhes ausentes. Nenhum horário ou estabelecimento foi inventado.
+
+A atualização foi limitada à China do arquivo `roteiro-completo-proposto-china-japao-2027.yaml`. Os passeios de Beijing constam como locais propostos, sem horários atribuídos aos dias 01–03/01, que vieram vazios no arquivo. Propostas japonesas adicionais do arquivo não foram incorporadas nesta atualização.
 
 O roteiro demonstrativo anterior está apenas em `tests/fixtures/full-plan.json`, para regressões de datas, alternativas e mapas chineses. Não entra no bundle da PWA. O histórico completo permanece no Git.
 
@@ -28,7 +31,7 @@ O roteiro demonstrativo anterior está apenas em `tests/fixtures/full-plan.json`
 - YAML em `data/`, schemas Zod e referências validados antes de o conteúdo chegar aos componentes. Todos os arquivos operacionais em `data/` são importados de forma eager no build, sem download posterior de dias ou países.
 - Manifest e Service Worker com `vite-plugin-pwa` em `injectManifest`. A política de cache própria permite recuperação redundante e atualização por consentimento no aplicativo.
 - Nenhum backend, autenticação, API de conteúdo, banco remoto, analytics, CDN, fonte remota ou imagem externa. A rede só é necessária para instalar/atualizar e abrir mapas externos.
-- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 566 KiB, antes de gzip, com limite automático de 2 MB. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
+- Tipografia do sistema do iPhone; ícones PNG locais. Sem fotos: o pacote offline completo tem aproximadamente 604 KiB, antes de gzip, com limite automático de 2 MB. A cópia redundante usa aproximadamente o dobro; durante uma atualização há também caches da versão anterior.
 - `base: './'` por padrão: funciona na raiz e em subpastas, incluindo repositórios GitHub Pages. `BASE_PATH=/repositorio/ npm run build` permite prefixo explícito. Use o mesmo prefixo no preview se escolher um base absoluto. Hashes evitam 404 nas páginas internas.
 - `localStorage` serve apenas para último dia consultado; ausência, bloqueio ou corrupção não impedem a consulta. A abertura de Hoje usa sempre o dia automático; Mais oferece a última consulta.
 

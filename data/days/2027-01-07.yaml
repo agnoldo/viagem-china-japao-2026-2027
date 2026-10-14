@@ -1,0 +1,41 @@
+date: 2027-01-07
+cityId: chengdu
+regionId: china
+summary: 'Chengdu: pandas e centro da cidade'
+status: planned
+notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+activities:
+  - id: 2027-01-07-chengdu-panda-base
+    title: Base de pesquisa e reprodução de pandas
+    type: attraction
+    status: planned
+    time: 08:00
+    endTime: 12:00
+    timezone: Asia/Shanghai
+    placeId: chengdu-panda-base
+    travelBufferMinutes: 60
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: chengdu-lunch
+    title: Almoço em Chengdu
+    type: meal
+    status: planned
+    time: 13:00
+    timezone: Asia/Shanghai
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-07-chengdu-kuanzhai
+    title: Kuanzhai Alley
+    type: attraction
+    status: planned
+    time: 15:00
+    endTime: 17:30
+    timezone: Asia/Shanghai
+    placeId: chengdu-kuanzhai
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-07-chengdu-taikoo-li
+    title: Taikoo Li e IFS
+    type: walk
+    status: planned
+    time: 18:00
+    timezone: Asia/Shanghai
+    placeId: chengdu-taikoo-li
+    notes: Atividade proposta; confirmar antes da viagem.

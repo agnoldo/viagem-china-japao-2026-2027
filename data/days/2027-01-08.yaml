@@ -1,0 +1,31 @@
+date: 2027-01-08
+cityId: chengdu
+regionId: china
+summary: 'Chengdu: Leshan ou dia flexível'
+status: planned
+notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+activities:
+  - id: leshan-option
+    title: Buda Gigante de Leshan
+    type: attraction
+    status: optional
+    time: 08:00
+    endTime: 16:00
+    timezone: Asia/Shanghai
+    placeId: leshan-buddha
+    travelBufferMinutes: 90
+    notes: Passeio opcional de dia inteiro; manter como alternativa se o grupo preferir um dia mais leve.
+  - id: chengdu-flexible-afternoon
+    title: Tarde flexível em Chengdu
+    type: free-time
+    status: planned
+    time: 16:30
+    timezone: Asia/Shanghai
+    notes: Usar como plano principal se Leshan não for escolhido.
+  - id: chengdu-dinner
+    title: Jantar de despedida em Chengdu
+    type: meal
+    status: planned
+    time: 19:30
+    timezone: Asia/Shanghai
+    notes: Atividade proposta; confirmar antes da viagem.

@@ -1,0 +1,41 @@
+date: 2027-01-15
+cityId: shanghai
+regionId: china
+summary: 'Shanghai: cidade histórica'
+status: planned
+notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+activities:
+  - id: 2027-01-15-shanghai-yu-garden
+    title: Yu Garden e bazar histórico
+    type: attraction
+    status: planned
+    time: 09:00
+    endTime: 11:30
+    timezone: Asia/Shanghai
+    placeId: shanghai-yu-garden
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-15-shanghai-old-city
+    title: Shanghai Old City e almoço
+    type: walk
+    status: planned
+    time: 12:00
+    timezone: Asia/Shanghai
+    placeId: shanghai-old-city
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-15-shanghai-museum
+    title: Shanghai Museum ou museu equivalente
+    type: attraction
+    status: planned
+    time: 15:00
+    endTime: 17:30
+    timezone: Asia/Shanghai
+    placeId: shanghai-museum
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-15-shanghai-xintiandi
+    title: Xintiandi
+    type: walk
+    status: planned
+    time: 19:00
+    timezone: Asia/Shanghai
+    placeId: shanghai-xintiandi
+    notes: Atividade proposta; confirmar antes da viagem.

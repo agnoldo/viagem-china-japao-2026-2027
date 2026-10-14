@@ -1,7 +1,7 @@
 # Instruções para manutenção
 
 ## Objetivo
-PWA familiar de consulta para China/Japão em 2027. Viagem de 29/12/2026 a 28/01/2027; seis voos confirmados para os quatro viajantes. Plano parcial: chegada a Daxing em 31/12, 18/01 Tokyo/Haneda, 19/01 início do resort em Echigo-Yuzawa, retorno por Narita em 27/01. Pan Pacific Beijing reservado de 31/12 a 04/01, com quatro pernoites e checkout sem pernoite extra. Ueno Woo Hotel reservado para a noite de 18/01, dois quartos; check-in 15h–21h e checkout até 11h de 19/01. Há lacunas na programação. Confiabilidade offline e leitura no iPhone são prioritárias. Um mantenedor edita YAML no Git; os outros viajantes apenas consultam.
+PWA familiar de consulta para China/Japão em 2027. Viagem de 29/12/2026 a 28/01/2027; seis voos confirmados para os quatro viajantes. Plano parcial: chegada a Daxing em 31/12, 18/01 Tokyo/Haneda, 19/01 início do resort em Echigo-Yuzawa, retorno por Narita em 27/01. Pan Pacific Beijing reservado de 31/12 a 04/01, com quatro pernoites e checkout sem pernoite extra. Ueno Woo Hotel reservado para a noite de 18/01, dois quartos; check-in 15h–21h e checkout até 11h de 19/01. Roteiro chinês proposto: Beijing → Xi’an → Chengdu → Chongqing → Zhangjiajie → Shanghai, de 31/12 a 18/01. Passeios/trens/voo doméstico planejados não são reservas. Há lacunas na programação japonesa de 20–26/01. Confiabilidade offline e leitura no iPhone são prioritárias. Um mantenedor edita YAML no Git; os outros viajantes apenas consultam.
 
 ## Comunicação
 Responder em português, sem enfeites. Linguagem direta. Entregar resultado, verificações e limitações materiais. Não pedir confirmação para decisões técnicas triviais já delegadas.

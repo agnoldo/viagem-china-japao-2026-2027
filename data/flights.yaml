@@ -133,6 +133,38 @@
     Na chegada a Daxing, consultar o nome e endereço em chinês do Pan Pacific Beijing na seção
     Hospedagens. Check-in disponível a partir das 15:00; chegada ao hotel e transfer ainda não
     definidos. Confira portão e eventuais alterações no bilhete atualizado ou com a companhia.
+- id: zhangjiajie-shanghai-2027-01-14
+  kind: flight
+  status: planned
+  from:
+    cityId: zhangjiajie
+    placeId: null
+    date: 2027-01-14
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    airportCode: null
+    airportName: null
+  to:
+    cityId: shanghai
+    placeId: null
+    date: 2027-01-14
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    airportCode: null
+    airportName: null
+  airline: null
+  flightNumber: null
+  operatedBy: null
+  cabin: null
+  baggage: null
+  durationMinutes: null
+  travelerIds: []
+  nextFlightId: null
+  bookingReferenceHint: null
+  notes: Voo doméstico proposto; aeroportos, companhia e horário ainda não definidos.
+  offlineInstructions: Confirmar aeroporto, terminal, horário e bilhete antes da viagem.
 - id: flight-shanghai-tokyo-2027-01-18
   kind: flight
   status: planned

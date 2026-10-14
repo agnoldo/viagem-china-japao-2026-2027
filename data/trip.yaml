@@ -25,15 +25,19 @@ travelers:
 notes:
   - Viagem familiar de 29/12/2026 a 28/01/2027. Seis voos de ida e volta confirmados para os quatro
     viajantes.
+  - "Roteiro-base proposto na China: Beijing 31/12–04/01, Xi'an 04–06/01, Chengdu 06–09/01,
+    Chongqing 09–11/01, Zhangjiajie 11–14/01 e Shanghai 14–18/01."
   - Chegada à China por Beijing Daxing (PKX) em 31/12. Saída do Japão por Tokyo Narita (NRT) em
     27/01. Haneda (HND) permanece a chegada prevista em 18/01, vindo de Shanghai.
   - 'Beijing: Pan Pacific Beijing reservado de 31/12/2026 a 04/01/2027, 4 noites. Check-in a partir
     das 15:00; checkout até as 12:00 (horários locais).'
-  - 'Programação parcial: deslocamentos e estadias entre os dias registrados continuam em aberto.'
   - Na volta, conexão em Doha de 45 minutos e em Guarulhos de 1h45, com troca do terminal 3 para o
     2. Confirmar com as companhias as orientações de conexão.
   - 'Tokyo: Ueno Woo Hotel reservado para a noite de 18/01, dois quartos Double Room para os quatro
     viajantes. Check-in de 15:00 a 21:00; checkout até 11:00 de 19/01, horários locais.'
+  - Passeios, horários sugeridos e deslocamentos chineses sem reserva são propostas, com status
+    Planejado ou Opcional. Hotéis de Xi’an, Chengdu, Chongqing, Zhangjiajie e Shanghai ainda a
+    escolher. Programação do Japão após 19/01 continua em aberto.
 regions:
   - id: brazil
     name: Brasil
@@ -96,16 +100,66 @@ cities:
       local: 北京
     regionId: china
     country: CN
-    aliases: []
+    aliases:
+      - Pequim
     timezone: Asia/Shanghai
     startDate: 2026-12-31
     endDate: 2027-01-04
     status: confirmed
+    notes: Quatro noites no Pan Pacific Beijing. Grande Muralha, Cidade Proibida, Templo do Céu e
+      hutongs são propostas de passeio.
+  - id: xian
+    name:
+      default: Xi'an
+      local: 西安
+    regionId: china
+    country: CN
+    aliases:
+      - Xian
+    timezone: Asia/Shanghai
+    startDate: 2027-01-04
+    endDate: 2027-01-06
+    status: planned
+    notes: Duas noites. Exército de Terracota, muralhas e bairro muçulmano são propostas de passeio.
+  - id: chengdu
+    name:
+      default: Chengdu
+      local: 成都
+    regionId: china
+    country: CN
+    aliases: []
+    timezone: Asia/Shanghai
+    startDate: 2027-01-06
+    endDate: 2027-01-09
+    status: planned
+    notes: Três noites. Base dos pandas, culinária de Sichuan e possível Buda Gigante de Leshan.
+  - id: chongqing
+    name:
+      default: Chongqing
+      local: 重庆
+    regionId: china
+    country: CN
+    aliases: []
+    timezone: Asia/Shanghai
+    startDate: 2027-01-09
+    endDate: 2027-01-11
+    status: planned
     notes:
-      Chegada a Daxing em 31/12/2026. Hospedagem confirmada no Pan Pacific Beijing por 4 noites,
-      com checkout até 12:00 de 04/01/2027. A data final representa o limite da hospedagem
-      registrada; não confirma saída da cidade. Transfer do aeroporto e continuação até Shanghai
-      ainda não registrados.
+      Duas noites. Centro em encostas, Hongyadong, metrô e culinária local; Dazu ou Wulong ficam
+      como possibilidades extras.
+  - id: zhangjiajie
+    name:
+      default: Zhangjiajie
+      local: 张家界
+    regionId: china
+    country: CN
+    aliases: []
+    timezone: Asia/Shanghai
+    startDate: 2027-01-11
+    endDate: 2027-01-14
+    status: planned
+    notes: Três noites. Wulingyuan e Tianmen Mountain dependem de clima, operação e visibilidade em
+      janeiro.
   - id: shanghai
     name:
       default: Shanghai
@@ -114,10 +168,11 @@ cities:
     country: CN
     aliases: []
     timezone: Asia/Shanghai
-    startDate: null
+    startDate: 2027-01-14
     endDate: 2027-01-18
     status: planned
-    notes: Estadia anterior à saída para Tokyo; início e demais trechos da China ainda não registrados.
+    notes: Quatro noites. Bund, Yu Garden, Pudong e uma possível Disneyland são propostas; voo para
+      Tokyo ainda planejado.
   - id: tokyo
     name:
       default: Tokyo

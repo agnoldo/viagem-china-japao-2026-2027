@@ -1,0 +1,30 @@
+date: 2027-01-17
+cityId: shanghai
+regionId: china
+summary: 'Shanghai: margem, compras e preparação para o Japão'
+status: planned
+notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+activities:
+  - id: shanghai-water-town
+    title: Zhujiajiao ou cidade aquática próxima
+    type: attraction
+    status: optional
+    time: 09:00
+    endTime: 16:00
+    timezone: Asia/Shanghai
+    placeId: zhujiajiao
+    notes: Passeio opcional; manter o dia flexível para compras e preparação do voo.
+  - id: shanghai-free-day
+    title: Compras, descanso e organização das malas
+    type: free-time
+    status: planned
+    time: 10:00
+    timezone: Asia/Shanghai
+    notes: Plano principal caso a cidade aquática não seja escolhida.
+  - id: shanghai-flight-prep
+    title: Confirmar voo Shanghai → Tokyo e deslocamento ao aeroporto
+    type: note
+    status: planned
+    time: 18:00
+    timezone: Asia/Shanghai
+    notes: Atividade proposta; confirmar antes da viagem.

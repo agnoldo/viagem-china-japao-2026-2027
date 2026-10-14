@@ -1,0 +1,28 @@
+date: 2027-01-06
+cityId: chengdu
+regionId: china
+summary: Xi'an → Chengdu e primeira noite em Chengdu
+status: planned
+notes: Três noites previstas em Chengdu. Hospedagem ainda não escolhida.
+activities:
+  - id: xian-chengdu-train
+    title: Trem Xi'an → Chengdu
+    type: train
+    status: planned
+    transportId: xian-chengdu-2027-01-06
+    notes: Deslocamento proposto; horário e estações a definir.
+  - id: chengdu-evening-people-park
+    title: People's Park e Kuixinglou à noite
+    type: walk
+    status: planned
+    time: 18:00
+    timezone: Asia/Shanghai
+    placeId: chengdu-peoples-park
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: chengdu-hotpot
+    title: Hot pot de Sichuan
+    type: meal
+    status: planned
+    time: 19:30
+    timezone: Asia/Shanghai
+    notes: Escolher nível de pimenta adequado para a família.

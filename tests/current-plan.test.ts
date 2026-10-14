@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { readContent } from '../scripts/read-content';
-import { validateContent } from '../src/content/validate';
+import { datesBetween, validateContent } from '../src/content/validate';
 import { currentTripDay, formatDate } from '../src/lib/time';
 import { buildMapLinks } from '../src/features/maps/links';
 const content = readContent();
@@ -14,24 +14,16 @@ describe('plano atual com dados incompletos', () => {
       phase: 'before',
     });
     expect(currentTripDay(content, new Date('2027-02-01T12:00:00Z')).phase).toBe('after');
-    expect(currentTripDay(content, new Date('2027-01-10T12:00:00Z')).phase).toBe('incomplete');
+    expect(currentTripDay(content, new Date('2027-01-23T12:00:00Z')).phase).toBe('incomplete');
     expect(content.days.map((d) => d.date)).toEqual([
-      '2026-12-29',
-      '2026-12-30',
-      '2026-12-31',
-      '2027-01-01',
-      '2027-01-02',
-      '2027-01-03',
-      '2027-01-04',
-      '2027-01-18',
-      '2027-01-19',
+      ...datesBetween('2026-12-29', '2027-01-19'),
       '2027-01-27',
       '2027-01-28',
     ]);
     expect(formatDate(null)).toBe('A definir');
     const copy = structuredClone(content);
     copy.trip.itineraryCoverage = 'complete';
-    expect(() => validateContent(copy)).toThrow(/dia 2027-01-05/);
+    expect(() => validateContent(copy)).toThrow(/dia 2027-01-20/);
   });
   it('cobre quatro noites em Beijing sem transformar disponibilidade de check-in em chegada agendada', () => {
     const hotel = content.hotels.find((h) => h.id === 'pan-pacific-beijing')!;
@@ -142,6 +134,10 @@ describe('plano atual com dados incompletos', () => {
       'sao-paulo',
       'doha',
       'beijing',
+      'xian',
+      'chengdu',
+      'chongqing',
+      'zhangjiajie',
       'shanghai',
       'tokyo',
       'echigo-yuzawa',
@@ -153,6 +149,71 @@ describe('plano atual com dados incompletos', () => {
         (v) => v.status === 'example',
       ),
     ).toBe(false);
+  });
+  it('incorpora a sequência chinesa como proposta sem confirmar bilhetes ou hotéis pendentes', () => {
+    expect(
+      content.trip.cities
+        .filter((c) => c.country === 'CN')
+        .map((c) => [c.id, c.startDate, c.endDate]),
+    ).toEqual([
+      ['beijing', '2026-12-31', '2027-01-04'],
+      ['xian', '2027-01-04', '2027-01-06'],
+      ['chengdu', '2027-01-06', '2027-01-09'],
+      ['chongqing', '2027-01-09', '2027-01-11'],
+      ['zhangjiajie', '2027-01-11', '2027-01-14'],
+      ['shanghai', '2027-01-14', '2027-01-18'],
+    ]);
+    const trains = content.trains.filter((t) => t.from.timezone === 'Asia/Shanghai');
+    expect(trains.map((t) => [t.from.cityId, t.to.cityId])).toEqual([
+      ['beijing', 'xian'],
+      ['xian', 'chengdu'],
+      ['chengdu', 'chongqing'],
+      ['chongqing', 'zhangjiajie'],
+    ]);
+    for (const t of trains) {
+      expect(t.status).toBe('planned');
+      expect(t.from.placeId).toBeNull();
+      expect(t.to.placeId).toBeNull();
+      expect(t.from.time).toBeNull();
+      expect(t.to.time).toBeNull();
+      expect(t.trainNumber).toBeNull();
+    }
+    const flight = content.flights.find((f) => f.id === 'zhangjiajie-shanghai-2027-01-14')!;
+    expect(flight.status).toBe('planned');
+    expect(flight.from.airportCode).toBeNull();
+    expect(flight.to.airportCode).toBeNull();
+    expect(flight.flightNumber).toBeNull();
+    expect(content.hotels.filter((h) => h.status === 'confirmed').map((h) => h.id)).toEqual([
+      'echigo-yuzawa-resort',
+      'pan-pacific-beijing',
+      'ueno-woo-hotel',
+    ]);
+    expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(5);
+    expect(content.trip.cities.filter((c) => c.country === 'JP').map((c) => c.id)).toEqual([
+      'tokyo',
+      'echigo-yuzawa',
+    ]);
+    expect(content.hotels.find((h) => h.id === 'echigo-yuzawa-resort')!.checkOutDate).toBeNull();
+  });
+  it('mantém opções como opções e permite mapas chineses sem inventar endereços ou coordenadas', () => {
+    for (const id of [
+      'leshan-option',
+      'chongqing-elsewhere',
+      '2027-01-16-shanghai-disney',
+      '2027-01-16-shanghai-pudong',
+      'shanghai-water-town',
+    ])
+      expect(content.days.flatMap((d) => d.activities).find((a) => a.id === id)!.status).toBe(
+        'optional',
+      );
+    const panda = content.places.find((p) => p.id === 'chengdu-panda-base')!;
+    expect(panda.address.local).toBeNull();
+    expect(
+      Object.values(panda.coordinates).every((pair) => pair.lat === null && pair.lon === null),
+    ).toBe(true);
+    expect(new URL(buildMapLinks(panda, 'baidu').url!).searchParams.get('region')).toBe('成都');
+    const leshan = content.places.find((p) => p.id === 'leshan-buddha')!;
+    expect(new URL(buildMapLinks(leshan, 'baidu').url!).searchParams.get('region')).toBe('乐山');
   });
   it('ainda rejeita referência inexistente, mesmo aceitando um local desconhecido', () => {
     const copy = structuredClone(content);

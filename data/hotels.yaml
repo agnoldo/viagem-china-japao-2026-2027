@@ -71,8 +71,9 @@
     Pick: 1 Comfort King Bed + 1 Single Bed, conforme reserva. Check-in a partir das 15:00 de
     31/12/2026; checkout até as 12:00 de 04/01/2027, no fuso Asia/Shanghai. O horário de check-in é
     o início da disponibilidade, não uma chegada agendada. Nome e endereço em chinês identificados
-    pela correspondência do endereço e telefone com o site oficial. Transfer de Daxing até o hotel e
-    destino após o checkout ainda não registrados.'
+    pela correspondência do endereço e telefone com o site oficial. Transfer de Daxing até o hotel
+    ainda não registrado. Após o checkout, trem para Xi’an proposto em 04/01, sem horário ou
+    reserva.'
 - id: ueno-woo-hotel
   cityId: tokyo
   name:
@@ -113,3 +114,173 @@
     janela de check-in quando o horário do voo Shanghai–Haneda estiver registrado. Nome, endereço e
     telefone correspondem ao site do hotel. Deslocamento de Haneda até o hotel e estação de embarque
     do trem do dia seguinte ainda não definidos.
+- id: xian-hotel
+  cityId: xian
+  name:
+    default: null
+    local: null
+  type: hotel
+  status: planned
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  checkInDate: 2027-01-04
+  checkIn: null
+  checkInUntil: null
+  checkOutDate: 2027-01-06
+  checkOut: null
+  notes: Hospedagem proposta; nome, endereço e reserva ainda não registrados.
+- id: chengdu-hotel
+  cityId: chengdu
+  name:
+    default: null
+    local: null
+  type: hotel
+  status: planned
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  checkInDate: 2027-01-06
+  checkIn: null
+  checkInUntil: null
+  checkOutDate: 2027-01-09
+  checkOut: null
+  notes: Hospedagem proposta; nome, endereço e reserva ainda não registrados.
+- id: chongqing-hotel
+  cityId: chongqing
+  name:
+    default: null
+    local: null
+  type: hotel
+  status: planned
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  checkInDate: 2027-01-09
+  checkIn: null
+  checkInUntil: null
+  checkOutDate: 2027-01-11
+  checkOut: null
+  notes: Hospedagem proposta; nome, endereço e reserva ainda não registrados.
+- id: zhangjiajie-hotel
+  cityId: zhangjiajie
+  name:
+    default: null
+    local: null
+  type: hotel
+  status: planned
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  checkInDate: 2027-01-11
+  checkIn: null
+  checkInUntil: null
+  checkOutDate: 2027-01-14
+  checkOut: null
+  notes: Hospedagem proposta; nome, endereço e reserva ainda não registrados.
+- id: shanghai-hotel
+  cityId: shanghai
+  name:
+    default: null
+    local: null
+  type: hotel
+  status: planned
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: null
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  checkInDate: 2027-01-14
+  checkIn: null
+  checkInUntil: null
+  checkOutDate: 2027-01-18
+  checkOut: null
+  notes: Hospedagem proposta; nome, endereço e reserva ainda não registrados.

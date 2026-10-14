@@ -231,3 +231,841 @@
   officialUrl: https://www.narita-airport.jp/en/
   notes: Aeroporto conforme bilhete. Terminais variam por trecho; consulte os detalhes do voo.
     Endereço e coordenadas não registrados; mapas usam busca pelo nome.
+- id: forbidden-city
+  cityId: beijing
+  name:
+    default: Forbidden City
+    local: 故宫
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 故宫 北京
+    amapKeyword: 故宫
+    amapCity: 北京
+    baiduKeyword: 故宫
+    baiduCity: 北京
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: great-wall-mutianyu
+  cityId: beijing
+  name:
+    default: Mutianyu Great Wall
+    local: 慕田峪长城
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 慕田峪长城 北京
+    amapKeyword: 慕田峪长城
+    amapCity: 北京
+    baiduKeyword: 慕田峪长城
+    baiduCity: 北京
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: temple-of-heaven
+  cityId: beijing
+  name:
+    default: Temple of Heaven
+    local: 天坛
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 天坛 北京
+    amapKeyword: 天坛
+    amapCity: 北京
+    baiduKeyword: 天坛
+    baiduCity: 北京
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: beijing-hutongs
+  cityId: beijing
+  name:
+    default: Beijing Hutongs
+    local: 北京胡同
+  category: region
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 北京胡同 北京
+    amapKeyword: 北京胡同
+    amapCity: 北京
+    baiduKeyword: 北京胡同
+    baiduCity: 北京
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: terracotta-warriors
+  cityId: xian
+  name:
+    default: Emperor Qinshihuang's Mausoleum Site Museum
+    local: 秦始皇帝陵博物院
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 秦始皇帝陵博物院 西安
+    amapKeyword: 秦始皇帝陵博物院
+    amapCity: 西安
+    baiduKeyword: 秦始皇帝陵博物院
+    baiduCity: 西安
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: xian-city-wall
+  cityId: xian
+  name:
+    default: Xi'an City Wall
+    local: 西安城墙
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 西安城墙 西安
+    amapKeyword: 西安城墙
+    amapCity: 西安
+    baiduKeyword: 西安城墙
+    baiduCity: 西安
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: xian-muslim-quarter
+  cityId: xian
+  name:
+    default: Muslim Quarter
+    local: 回民街
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 回民街 西安
+    amapKeyword: 回民街
+    amapCity: 西安
+    baiduKeyword: 回民街
+    baiduCity: 西安
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: chengdu-panda-base
+  cityId: chengdu
+  name:
+    default: Chengdu Research Base of Giant Panda Breeding
+    local: 成都大熊猫繁育研究基地
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 成都大熊猫繁育研究基地 成都
+    amapKeyword: 成都大熊猫繁育研究基地
+    amapCity: 成都
+    baiduKeyword: 成都大熊猫繁育研究基地
+    baiduCity: 成都
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: chengdu-peoples-park
+  cityId: chengdu
+  name:
+    default: People's Park
+    local: 人民公园
+  category: region
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 人民公园 成都
+    amapKeyword: 人民公园
+    amapCity: 成都
+    baiduKeyword: 人民公园
+    baiduCity: 成都
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: chengdu-kuanzhai
+  cityId: chengdu
+  name:
+    default: Kuanzhai Alley
+    local: 宽窄巷子
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 宽窄巷子 成都
+    amapKeyword: 宽窄巷子
+    amapCity: 成都
+    baiduKeyword: 宽窄巷子
+    baiduCity: 成都
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: chengdu-taikoo-li
+  cityId: chengdu
+  name:
+    default: Taikoo Li Chengdu
+    local: 成都太古里
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 成都太古里 成都
+    amapKeyword: 成都太古里
+    amapCity: 成都
+    baiduKeyword: 成都太古里
+    baiduCity: 成都
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: leshan-buddha
+  cityId: chengdu
+  name:
+    default: Leshan Giant Buddha
+    local: 乐山大佛
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 乐山大佛 乐山
+    amapKeyword: 乐山大佛
+    amapCity: 乐山
+    baiduKeyword: 乐山大佛
+    baiduCity: 乐山
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem. Passeio a Leshan a partir da
+    base em Chengdu.
+- id: chongqing-hongyadong
+  cityId: chongqing
+  name:
+    default: Hongyadong
+    local: 洪崖洞
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 洪崖洞 重庆
+    amapKeyword: 洪崖洞
+    amapCity: 重庆
+    baiduKeyword: 洪崖洞
+    baiduCity: 重庆
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: chongqing-liziba
+  cityId: chongqing
+  name:
+    default: Liziba Station
+    local: 李子坝站
+  category: station
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 李子坝站 重庆
+    amapKeyword: 李子坝站
+    amapCity: 重庆
+    baiduKeyword: 李子坝站
+    baiduCity: 重庆
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: chongqing-ciqikou
+  cityId: chongqing
+  name:
+    default: Ciqikou Ancient Town
+    local: 磁器口古镇
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 磁器口古镇 重庆
+    amapKeyword: 磁器口古镇
+    amapCity: 重庆
+    baiduKeyword: 磁器口古镇
+    baiduCity: 重庆
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: chongqing-night-view
+  cityId: chongqing
+  name:
+    default: Chongqing riverfront viewpoint
+    local: 重庆江景观景点
+  category: region
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 重庆江景观景点 重庆
+    amapKeyword: 重庆江景观景点
+    amapCity: 重庆
+    baiduKeyword: 重庆江景观景点
+    baiduCity: 重庆
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: wulingyuan-yuanjiajie
+  cityId: zhangjiajie
+  name:
+    default: Yuanjiajie, Wulingyuan
+    local: 袁家界
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 袁家界 张家界
+    amapKeyword: 袁家界
+    amapCity: 张家界
+    baiduKeyword: 袁家界
+    baiduCity: 张家界
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: wulingyuan-tianzi
+  cityId: zhangjiajie
+  name:
+    default: Tianzi Mountain
+    local: 天子山
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 天子山 张家界
+    amapKeyword: 天子山
+    amapCity: 张家界
+    baiduKeyword: 天子山
+    baiduCity: 张家界
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: tianmen-mountain
+  cityId: zhangjiajie
+  name:
+    default: Tianmen Mountain
+    local: 天门山
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 天门山 张家界
+    amapKeyword: 天门山
+    amapCity: 张家界
+    baiduKeyword: 天门山
+    baiduCity: 张家界
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: shanghai-bund
+  cityId: shanghai
+  name:
+    default: The Bund
+    local: 外滩
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 外滩 上海
+    amapKeyword: 外滩
+    amapCity: 上海
+    baiduKeyword: 外滩
+    baiduCity: 上海
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: shanghai-yu-garden
+  cityId: shanghai
+  name:
+    default: Yu Garden
+    local: 豫园
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 豫园 上海
+    amapKeyword: 豫园
+    amapCity: 上海
+    baiduKeyword: 豫园
+    baiduCity: 上海
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: shanghai-old-city
+  cityId: shanghai
+  name:
+    default: Shanghai Old City
+    local: 上海老城厢
+  category: region
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 上海老城厢 上海
+    amapKeyword: 上海老城厢
+    amapCity: 上海
+    baiduKeyword: 上海老城厢
+    baiduCity: 上海
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: shanghai-museum
+  cityId: shanghai
+  name:
+    default: Shanghai Museum
+    local: 上海博物馆
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 上海博物馆 上海
+    amapKeyword: 上海博物馆
+    amapCity: 上海
+    baiduKeyword: 上海博物馆
+    baiduCity: 上海
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: shanghai-xintiandi
+  cityId: shanghai
+  name:
+    default: Xintiandi
+    local: 新天地
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 新天地 上海
+    amapKeyword: 新天地
+    amapCity: 上海
+    baiduKeyword: 新天地
+    baiduCity: 上海
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: shanghai-disney
+  cityId: shanghai
+  name:
+    default: Shanghai Disneyland
+    local: 上海迪士尼度假区
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 上海迪士尼度假区 上海
+    amapKeyword: 上海迪士尼度假区
+    amapCity: 上海
+    baiduKeyword: 上海迪士尼度假区
+    baiduCity: 上海
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: shanghai-pudong
+  cityId: shanghai
+  name:
+    default: Shanghai Tower / Pudong
+    local: 上海中心大厦
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 上海中心大厦 上海
+    amapKeyword: 上海中心大厦
+    amapCity: 上海
+    baiduKeyword: 上海中心大厦
+    baiduCity: 上海
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: zhujiajiao
+  cityId: shanghai
+  name:
+    default: Zhujiajiao Water Town
+    local: 朱家角古镇
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 朱家角古镇 上海
+    amapKeyword: 朱家角古镇
+    amapCity: 上海
+    baiduKeyword: 朱家角古镇
+    baiduCity: 上海
+  mapLinks: {}
+  officialUrl: null
+  notes: Local proposto; confirmar operação e endereço antes da viagem.

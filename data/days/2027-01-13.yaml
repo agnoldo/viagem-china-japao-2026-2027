@@ -1,0 +1,31 @@
+date: 2027-01-13
+cityId: zhangjiajie
+regionId: china
+summary: 'Zhangjiajie: Tianmen Mountain ou plano de contingência'
+status: planned
+notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+activities:
+  - id: 2027-01-13-tianmen-mountain
+    title: Tianmen Mountain
+    type: attraction
+    status: planned
+    time: 08:00
+    endTime: 15:00
+    timezone: Asia/Shanghai
+    placeId: tianmen-mountain
+    travelBufferMinutes: 60
+    notes: Confirmar teleférico, passarelas e operação em janeiro.
+  - id: zhangjiajie-weather-flex
+    title: Plano de contingência por clima
+    type: free-time
+    status: optional
+    time: 10:00
+    timezone: Asia/Shanghai
+    notes: Se houver neblina intensa ou fechamento, substituir por atividade urbana e descanso.
+  - id: 2027-01-13-zhangjiajie-dinner
+    title: Jantar e organização da saída para Shanghai
+    type: meal
+    status: planned
+    time: 19:00
+    timezone: Asia/Shanghai
+    notes: Atividade proposta; confirmar antes da viagem.
