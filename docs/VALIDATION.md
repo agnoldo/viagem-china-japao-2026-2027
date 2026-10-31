@@ -80,3 +80,7 @@ Dezembro/2026 e janeiro/2027 aparecem juntos em ordem cronológica, sem alternâ
 ## TripAdvisor — 31/10/2026
 
 Links de atrações conferidos no TripAdvisor para os oito destinos CN/JP, incluindo Yuzawa-machi em Niigata. URLs HTTPS opcionais validadas no conteúdo; sem carregamento externo até o clique. E2E percorre todos os links cadastrados e confere destino, abertura em nova aba e disponibilidade do link após reabrir offline.
+
+## Reserva de Shanghai — 31/10/2026
+
+Novotel Shanghai Atlantis confirmado de 14 a 18/01, associado somente aos quatro pernoites de 14–17/01. Dia 18 mantém Ueno Woo Hotel em Tokyo. Junior Suite com vista para o Huangpu e happy hour para duas pessoas 17h30–20h registrados como benefício, sem atividade diária automática. Endereço chinês, telefone e horários gerais conferidos na [Accor](https://all.accor.com/hotel/3019/index.en.shtml); condições específicas da reserva não fornecidas. Coordenadas mantidas desconhecidas, mapas por nome/endereço. Links Booking com identificadores de sessão não publicados.

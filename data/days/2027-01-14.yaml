@@ -3,7 +3,9 @@ cityId: shanghai
 regionId: china
 summary: Zhangjiajie → Shanghai e Bund
 status: planned
-notes: Quatro noites previstas em Shanghai. Hospedagem ainda não escolhida.
+notes: Quatro noites confirmadas no Novotel Shanghai Atlantis, com checkout em
+  18/01. Horário de chegada ainda não definido; voo doméstico e passeios
+  continuam planejados.
 activities:
   - id: zhangjiajie-shanghai-flight
     title: Deslocamento Zhangjiajie → Shanghai
@@ -26,3 +28,4 @@ activities:
     time: 19:30
     timezone: Asia/Shanghai
     notes: Atividade proposta; confirmar antes da viagem.
+hotelId: shanghai-hotel

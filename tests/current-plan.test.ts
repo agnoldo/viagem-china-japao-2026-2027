@@ -187,8 +187,19 @@ describe('plano atual com dados incompletos', () => {
       'echigo-yuzawa-resort',
       'pan-pacific-beijing',
       'ueno-woo-hotel',
+      'shanghai-hotel',
     ]);
-    expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(5);
+    expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(4);
+    expect(content.days.filter((d) => d.hotelId === 'shanghai-hotel').map((d) => d.date)).toEqual([
+      '2027-01-14',
+      '2027-01-15',
+      '2027-01-16',
+      '2027-01-17',
+    ]);
+    const shanghaiHotel = content.hotels.find((h) => h.id === 'shanghai-hotel')!;
+    expect(shanghaiHotel.checkInDate).toBe('2027-01-14');
+    expect(shanghaiHotel.checkOutDate).toBe('2027-01-18');
+    expect(content.days.find((d) => d.date === '2027-01-18')!.hotelId).toBe('ueno-woo-hotel');
     expect(content.trip.cities.filter((c) => c.country === 'JP').map((c) => c.id)).toEqual([
       'tokyo',
       'echigo-yuzawa',

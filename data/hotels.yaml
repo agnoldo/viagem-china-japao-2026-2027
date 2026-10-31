@@ -253,14 +253,14 @@
 - id: shanghai-hotel
   cityId: shanghai
   name:
-    default: null
-    local: null
+    default: Novotel Shanghai Atlantis
+    local: 上海海神诺富特大酒店
   type: hotel
-  status: planned
+  status: confirmed
   address:
-    default: null
-    local: null
-  phone: null
+    default: 728 Pudong Avenue, Pudong, Shanghai, 200120, China
+    local: 中国上海市浦东新区浦东大道728号，邮编200120
+  phone: +86 21 5036 6666
   coordinates:
     wgs84:
       lat: null
@@ -272,15 +272,24 @@
       lat: null
       lon: null
   mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
+    apple: 上海海神诺富特大酒店 浦东大道728号
+    amapKeyword: 上海海神诺富特大酒店 浦东大道728号
+    amapCity: 上海
+    baiduKeyword: 上海海神诺富特大酒店 浦东大道728号
+    baiduCity: 上海
   mapLinks: {}
   checkInDate: 2027-01-14
-  checkIn: null
+  checkIn: 14:00
   checkInUntil: null
   checkOutDate: 2027-01-18
-  checkOut: null
-  notes: Hospedagem proposta; nome, endereço e reserva ainda não registrados.
+  checkOut: 12:00
+  notes: 'Reserva confirmada informada pela família: 4 noites, de 14 a 18/01/2027.
+    Junior Suite com vista para o rio Huangpu; inclui happy hour para duas
+    pessoas no restaurante giratório, das 17:30 às 20:00, conforme descrição da
+    opção reservada. Não implica benefício para os quatro viajantes nem
+    compromisso diário no roteiro. Endereço, telefone e nome chinês conferidos
+    no site oficial da Accor. Check-in a partir das 14:00 e checkout até 12:00
+    são os horários gerais publicados pelo hotel, no fuso Asia/Shanghai;
+    conferir eventuais condições específicas da reserva. Horário de chegada
+    ainda não definido.'
+  officialUrl: https://all.accor.com/hotel/3019/index.en.shtml
