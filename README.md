@@ -388,3 +388,9 @@ PWA: roteiro, endereços, horários e instruções públicos. Apple Notes: anota
 - [ ] Guardar documentos e reservas privadas no iCloud Drive ou Apple Notes, disponíveis offline.
 - [ ] Confirmar endereço reserva e instalar o cache dele separadamente.
 - [ ] Registrar os testes físicos em `docs/VALIDATION.md`.
+
+## Exclusão de indexação
+
+O HTML declara `noindex, nofollow, noarchive, nosnippet, noimageindex`. `public/robots.txt` solicita bloqueio de todos os crawlers, incluindo bots de IA que respeitam robots.txt. Não há garantia contra bots que ignoram essas instruções; o site e o repositório continuam públicos.
+
+No GitHub Pages de projeto, o robots.txt publicado na subpasta não controla o domínio. Para bloquear rastreamento, publicar o conteúdo de `docs/robots-domain-root.txt` em `https://agnoldo.github.io/robots.txt`, pelo repositório que serve a raiz do domínio. Se já existir robots.txt na raiz, integrar a regra sem substituir outras regras. O meta noindex funciona no HTML desta aplicação independentemente dessa configuração. Bloquear rastreamento pode impedir que buscadores leiam o noindex; resultados já indexados podem exigir remoção no mecanismo de busca.

@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /viagem-china-japao-2026-2027/

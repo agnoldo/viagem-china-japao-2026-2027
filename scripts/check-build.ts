@@ -56,3 +56,7 @@ if (total - imageBytes > 2_000_000)
 console.log(
   `Build verificado: conteúdo registrado, ícones e SW locais; ${(total / 1024).toFixed(0)} KiB sem gzip.`,
 );
+
+const html = readFileSync('dist/index.html', 'utf8');
+if (!/<meta[^>]+name="robots"[^>]+content="[^"]*noindex/.test(html)) throw new Error('Meta noindex ausente');
+if (readFileSync('dist/robots.txt', 'utf8') !== 'User-agent: *\nDisallow: /\n') throw new Error('robots.txt divergente');

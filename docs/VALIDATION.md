@@ -64,3 +64,7 @@ A inspeção de atualização encontrou entradas ausentes em gravações individ
 ## Estado da publicação
 
 Repositório público novamente por solicitação do mantenedor. GitHub Pages reativado com build por GitHub Actions; `deploy.yml` publica a `main` após aprovação do job de validação.
+
+## Exclusão de indexação — 31/10/2026
+
+HTML com meta robots noindex e arquivo robots.txt local; regra para a raiz do domínio fornecida em docs/robots-domain-root.txt. O build confere a presença dessas instruções. Robots na subpasta do Pages não controla rastreamento; configuração da raiz depende do site raiz. Não é controle de acesso nem garantia de exclusão de bots/índices existentes.
