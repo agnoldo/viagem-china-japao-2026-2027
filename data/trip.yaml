@@ -107,6 +107,7 @@ cities:
       lon: 51.529444
       source: https://www.wikidata.org/wiki/Q3861
   - id: beijing
+    tripAdvisorAttractionsUrl: https://www.tripadvisor.com/Attractions-g294212-Activities-Beijing.html
     name:
       default: Beijing
       local: 北京
@@ -125,6 +126,7 @@ cities:
       lon: 116.407526
       source: https://www.wikidata.org/wiki/Q956
   - id: xian
+    tripAdvisorAttractionsUrl: https://www.tripadvisor.com/Attractions-g298557-Activities-Xi_an_Shaanxi.html
     name:
       default: Xi'an
       local: 西安
@@ -142,6 +144,7 @@ cities:
       lon: 108.942222
       source: https://www.wikidata.org/wiki/Q5826
   - id: chengdu
+    tripAdvisorAttractionsUrl: https://www.tripadvisor.com/Attractions-g297463-Activities-Chengdu_Sichuan.html
     name:
       default: Chengdu
       local: 成都
@@ -158,6 +161,7 @@ cities:
       lon: 104.063333
       source: https://www.wikidata.org/wiki/Q30002
   - id: chongqing
+    tripAdvisorAttractionsUrl: https://www.tripadvisor.com/Attractions-g294213-Activities-Chongqing.html
     name:
       default: Chongqing
       local: 重庆
@@ -176,6 +180,7 @@ cities:
       lon: 106.506944
       source: https://www.wikidata.org/wiki/Q11725
   - id: zhangjiajie
+    tripAdvisorAttractionsUrl: https://www.tripadvisor.com/Attractions-g494933-Activities-Zhangjiajie_Hunan.html
     name:
       default: Zhangjiajie
       local: 张家界
@@ -193,6 +198,7 @@ cities:
       lon: 110.484444
       source: https://www.wikidata.org/wiki/Q197379
   - id: shanghai
+    tripAdvisorAttractionsUrl: https://www.tripadvisor.com/Attractions-g308272-Activities-Shanghai.html
     name:
       default: Shanghai
       local: 上海
@@ -210,6 +216,7 @@ cities:
       lon: 121.469167
       source: https://www.wikidata.org/wiki/Q8686
   - id: tokyo
+    tripAdvisorAttractionsUrl: https://www.tripadvisor.com/Attractions-g298184-Activities-Tokyo_Tokyo_Prefecture_Kanto.html
     name:
       default: Tokyo
       local: 東京
@@ -229,6 +236,7 @@ cities:
       lon: 139.691667
       source: https://www.wikidata.org/wiki/Q1490
   - id: echigo-yuzawa
+    tripAdvisorAttractionsUrl: https://www.tripadvisor.com/Attractions-g1119245-Activities-Yuzawa_machi_Minamiuonuma_gun_Niigata_Prefecture_Koshinetsu_Chubu.html
     name:
       default: Echigo-Yuzawa
       local: 越後湯沢

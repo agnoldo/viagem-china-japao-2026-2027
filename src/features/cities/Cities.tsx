@@ -78,6 +78,20 @@ export function CityDetail() {
         <span className="timezone">{city.timezone}</span>
       </div>
       <p className="city-notes">{city.notes}</p>
+      {city.tripAdvisorAttractionsUrl && (
+        <a
+          className="simple-row"
+          href={city.tripAdvisorAttractionsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div>
+            <strong>Atrações no TripAdvisor</strong>
+            <span>{city.name.default} · abre em nova aba</span>
+          </div>
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
+      )}
       <Alternatives cityId={city.id} />
       <div className="detail-grid">
         <div>

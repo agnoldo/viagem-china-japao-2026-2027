@@ -69,6 +69,7 @@ export const regionSchema = z
   .strict();
 export const citySchema = z
   .object({
+    tripAdvisorAttractionsUrl: safeUrl.nullable().default(null),
     mapPosition: z
       .object({
         lat: z.number().min(-90).max(90),

@@ -76,3 +76,7 @@ Base geográfica local Natural Earth; 11 referências urbanas WGS84 com fontes W
 ## Calendário reunido — 31/10/2026
 
 Dezembro/2026 e janeiro/2027 aparecem juntos em ordem cronológica, sem alternância mensal. Todos os 31 dias da viagem permanecem selecionáveis; sete lacunas preservadas. Semanas completas fora do período são omitidas, com alinhamento dos dias da semana preservado. A seleção continua na URL e no mapa. Verificação E2E inclui os dois títulos/31 datas, resumo, trânsito, lacunas e reabertura offline/320 px.
+
+## TripAdvisor — 31/10/2026
+
+Links de atrações conferidos no TripAdvisor para os oito destinos CN/JP, incluindo Yuzawa-machi em Niigata. URLs HTTPS opcionais validadas no conteúdo; sem carregamento externo até o clique. E2E percorre todos os links cadastrados e confere destino, abertura em nova aba e disponibilidade do link após reabrir offline.
