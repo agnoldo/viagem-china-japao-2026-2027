@@ -11,3 +11,5 @@ Em Viagem, calendário mensal e lista compartilham os mesmos dados. No calendár
 Posts usa categorias com contagem, Todos por padrão e miniaturas dos prints inteiros sem recorte/legendas técnicas. Duas colunas no telefone, três no desktop. Ao tocar, abre visualizador `dialog` em tela cheia sobre a galeria, com imagem, fechar, contador e setas discretas. Swipe horizontal troca prints do filtro; pinça permite leitura ampliada. Fechar restaura categoria, rolagem e foco. Sem página específica, barra de ferramentas, carrossel automático ou navegação circular. Administração somente pelo GitHub.
 
 Viagem oferece Calendário, Lista e Mapa. O mapa usa água verde clara, terra em papel, linhas verdes confirmadas/tracejadas em ocre planejadas; rótulos com líderes evitam colisões. Seleção escura coerente com navegação. Controle de data e detalhes derivados do roteiro, sem controles de navegação urbana ou geolocalização.
+
+Calendário de Viagem reúne os meses em sequência vertical, com título e grade para cada um. Semanas completamente fora da viagem ficam ocultas; manter dias da semana e um único resumo de seleção abaixo.

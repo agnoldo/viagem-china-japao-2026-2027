@@ -8,12 +8,12 @@ test.beforeEach(async ({ page, request }) => {
   await page.waitForFunction(() => !!navigator.serviceWorker.controller);
 });
 
-test('calendário abre janeiro, preserva lacunas e alterna para a lista', async ({ page }) => {
+test('calendário reúne os meses, preserva lacunas e alterna para a lista', async ({ page }) => {
   const calendar = page.getByRole('region', { name: 'Calendário da viagem', exact: true });
   await expect(calendar.getByRole('heading', { name: 'janeiro de 2027' })).toBeVisible();
-  await expect(calendar.locator('.calendar-day')).toHaveCount(28);
+  await expect(calendar.locator('.calendar-day')).toHaveCount(31);
+  await expect(calendar.getByRole('heading', { name: 'dezembro de 2026' })).toBeVisible();
   await expect(calendar.locator('.calendar-gap')).toHaveCount(7);
-  await expect(page.getByRole('button', { name: 'Próximo mês' })).toBeDisabled();
   await calendar.getByRole('button', { name: /20 de janeiro.*Sem programação cadastrada/ }).click();
   const summary = page.getByRole('region', { name: 'Resumo do dia selecionado' });
   await expect(summary).toContainText('Cidade, hospedagem e atividades permanecem em aberto');
@@ -35,10 +35,8 @@ test('mostra propostas, reservas e trânsito sem inventar hospedagens', async ({
   await expect(summary).toContainText('Ueno Woo Hotel');
   await expect(summary.locator('.calendar-route .status')).toHaveText('Planejado');
   await expect(summary.locator('.calendar-stay .status')).toHaveText('Confirmado');
-  await page.getByRole('button', { name: 'Mês anterior' }).click();
   await expect(calendar.getByRole('heading', { name: 'dezembro de 2026' })).toBeVisible();
-  await expect(calendar.locator('.calendar-day')).toHaveCount(3);
-  await expect(page.getByRole('button', { name: 'Mês anterior' })).toBeDisabled();
+  await expect(calendar.locator('.calendar-day')).toHaveCount(31);
   await calendar.getByRole('button', { name: /30 de dezembro.*Noite em trânsito/ }).click();
   await expect(summary).toContainText('Noite em trânsito · sem pernoite em hotel');
   await expect(summary).not.toContainText('Hospedagem a definir');

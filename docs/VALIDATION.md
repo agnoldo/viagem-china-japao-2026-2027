@@ -28,7 +28,7 @@ Playwright em Chromium e WebKit com viewport de iPhone: navegação por todos os
 
 ## Calendário
 
-Visão mensal em Viagem com alternância para lista; 31 datas dentro dos limites gerais e 24 dias registrados, preservando as sete lacunas de 20–26/01. Janeiro é o mês inicial por conter a maior parte da viagem. Sem duplicação de dados ou mudanças nas reservas.
+Visão mensal em Viagem com alternância para lista; 31 datas dentro dos limites gerais e 24 dias registrados, preservando as sete lacunas de 20–26/01. Os meses são mostrados juntos em ordem cronológica; a seleção inicial prioriza o mês com mais dias da viagem. Sem duplicação de dados ou mudanças nas reservas.
 
 Cobertura: virada de ano, alinhamento dos dias da semana, fevereiro bissexto, limites gerais nulos, seleção persistida na URL, resumo de lacunas sem links inválidos, voo planejado junto a hotel confirmado, noites em trânsito, troca de mês, navegação para os detalhes, reabertura offline em subpasta e ausência de overflow em 320 px. Inspeção visual em desktop e mobile; abreviações e legenda mantêm os nomes legíveis em telas estreitas. Chromium e WebKit simulados, sem teste em iPhone físico.
 
@@ -72,3 +72,7 @@ HTML com meta robots noindex e arquivo robots.txt local; regra para a raiz do do
 ## Mapa de Viagem — 31/10/2026
 
 Base geográfica local Natural Earth; 11 referências urbanas WGS84 com fontes Wikidata, independentes dos links de navegação e locais de embarque. Pontos derivados dos dias/extremos de transportes; linhas só dos transportes não cancelados. Datas compartilhadas com calendário, sete lacunas preservadas, hospedagem e status vindos do conteúdo validado. Testes cobrem atualização dos dias, conexões sem dia-base, exclusão de cancelados, projeção/rótulos, navegação data/calendário, lacunas, trânsito, todo o percurso e reabertura offline em subpasta/320 px, sem rede externa essencial. Não testado em iPhone físico.
+
+## Calendário reunido — 31/10/2026
+
+Dezembro/2026 e janeiro/2027 aparecem juntos em ordem cronológica, sem alternância mensal. Todos os 31 dias da viagem permanecem selecionáveis; sete lacunas preservadas. Semanas completas fora do período são omitidas, com alinhamento dos dias da semana preservado. A seleção continua na URL e no mapa. Verificação E2E inclui os dois títulos/31 datas, resumo, trânsito, lacunas e reabertura offline/320 px.

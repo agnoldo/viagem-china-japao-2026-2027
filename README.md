@@ -27,7 +27,7 @@ O roteiro demonstrativo anterior está apenas em `tests/fixtures/full-plan.json`
 
 ## Calendário da viagem
 
-Em **Viagem**, alterne entre **Calendário** e **Lista**. O calendário abre no mês com mais dias dentro dos limites da viagem (janeiro no plano atual). Use as setas para mudar de mês e toque em um dia para consultar o resumo e abrir sua programação. Mês, dia e visualização ficam na URL, inclusive ao retornar de um detalhe.
+Em **Viagem**, alterne entre **Calendário** e **Lista**. O calendário reúne todos os meses da viagem na mesma tela, em ordem cronológica. Semanas inteiras fora do período ficam ocultas. Toque em um dia para consultar o resumo e abrir sua programação. Mês, dia e visualização ficam na URL, inclusive ao retornar de um detalhe.
 
 O calendário inclui os dias ainda sem programação, sem atribuir cidade ou hotel às lacunas. Mostra transportes nas datas locais de partida e chegada, propostas, itens confirmados e noites em trânsito. Uma reserva confirmada não confirma os demais itens do dia. No telefone, abreviações de cidades têm legenda com os nomes completos. Tudo usa o mesmo YAML validado e funciona offline.
 
