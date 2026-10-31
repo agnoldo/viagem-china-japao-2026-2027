@@ -2509,10 +2509,10 @@ details p {
 }
 @media (max-width: 600px) {
   .itinerary-views button {
-    padding: 8px 12px;
-    flex: 1;
+    padding: 8px 6px;
+    flex: 1 1 auto;
     font-size: 14px;
-    gap: 5px;
+    gap: 4px;
   }
   .journey-map-heading {
     align-items: flex-start;

@@ -37,7 +37,8 @@ export function TripMap() {
   const date = model.dates.includes(requested) ? requested : initial;
   const day = content.days.find((d) => d.date === date);
   const chosen =
-    visible.find((c) => c.id === params.get('cidade')) ?? visible.find((c) => c.id === day?.cityId);
+    visible.find((c) => !model.dates.includes(requested) && c.id === params.get('cidade')) ??
+    visible.find((c) => c.id === day?.cityId);
   const cityDays = content.days.filter((d) => d.cityId === chosen?.id);
   const hotel = hotels.get(day?.hotelId ?? '');
   const update = (values: Record<string, string>) => {
