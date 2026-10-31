@@ -12,7 +12,7 @@ countries:
   - JP
 defaultLocale: pt-BR
 defaultTimeZone: America/Sao_Paulo
-contentVersion: 2026-10-14
+contentVersion: 2026-10-31
 travelers:
   - id: adult-1
     label: Adulto 1
@@ -70,6 +70,10 @@ cities:
     notes:
       Saída por Confins em 29/12/2026 e retorno em 28/01/2027. As duas passagens não representam
       uma estadia contínua.
+    mapPosition:
+      lat: -19.928056
+      lon: -43.941944
+      source: https://www.wikidata.org/wiki/Q42800
   - id: sao-paulo
     name:
       default: São Paulo / Guarulhos
@@ -82,6 +86,10 @@ cities:
     endDate: null
     status: confirmed
     notes: Conexões em Guarulhos em 29–30/12/2026 e 28/01/2027. Sem estadia cadastrada.
+    mapPosition:
+      lat: -23.550394
+      lon: -46.633947
+      source: https://www.wikidata.org/wiki/Q174
   - id: doha
     name:
       default: Doha
@@ -94,6 +102,10 @@ cities:
     endDate: null
     status: confirmed
     notes: Conexões em Hamad em 30–31/12/2026 e 27–28/01/2027. Sem estadia cadastrada.
+    mapPosition:
+      lat: 25.286111
+      lon: 51.529444
+      source: https://www.wikidata.org/wiki/Q3861
   - id: beijing
     name:
       default: Beijing
@@ -108,6 +120,10 @@ cities:
     status: confirmed
     notes: Quatro noites no Pan Pacific Beijing. Grande Muralha, Cidade Proibida, Templo do Céu e
       hutongs são propostas de passeio.
+    mapPosition:
+      lat: 39.90403
+      lon: 116.407526
+      source: https://www.wikidata.org/wiki/Q956
   - id: xian
     name:
       default: Xi'an
@@ -121,6 +137,10 @@ cities:
     endDate: 2027-01-06
     status: planned
     notes: Duas noites. Exército de Terracota, muralhas e bairro muçulmano são propostas de passeio.
+    mapPosition:
+      lat: 34.261111
+      lon: 108.942222
+      source: https://www.wikidata.org/wiki/Q5826
   - id: chengdu
     name:
       default: Chengdu
@@ -133,6 +153,10 @@ cities:
     endDate: 2027-01-09
     status: planned
     notes: Três noites. Base dos pandas, culinária de Sichuan e possível Buda Gigante de Leshan.
+    mapPosition:
+      lat: 30.66
+      lon: 104.063333
+      source: https://www.wikidata.org/wiki/Q30002
   - id: chongqing
     name:
       default: Chongqing
@@ -147,6 +171,10 @@ cities:
     notes:
       Duas noites. Centro em encostas, Hongyadong, metrô e culinária local; Dazu ou Wulong ficam
       como possibilidades extras.
+    mapPosition:
+      lat: 29.55
+      lon: 106.506944
+      source: https://www.wikidata.org/wiki/Q11725
   - id: zhangjiajie
     name:
       default: Zhangjiajie
@@ -160,6 +188,10 @@ cities:
     status: planned
     notes: Três noites. Wulingyuan e Tianmen Mountain dependem de clima, operação e visibilidade em
       janeiro.
+    mapPosition:
+      lat: 29.125556
+      lon: 110.484444
+      source: https://www.wikidata.org/wiki/Q197379
   - id: shanghai
     name:
       default: Shanghai
@@ -173,6 +205,10 @@ cities:
     status: planned
     notes: Quatro noites. Bund, Yu Garden, Pudong e uma possível Disneyland são propostas; voo para
       Tokyo ainda planejado.
+    mapPosition:
+      lat: 31.2325
+      lon: 121.469167
+      source: https://www.wikidata.org/wiki/Q8686
   - id: tokyo
     name:
       default: Tokyo
@@ -188,6 +224,10 @@ cities:
       Check-in entre 15:00 e 21:00, checkout até 11:00. Chegada prevista por Haneda em 18/01 e trem
       para Echigo-Yuzawa em 19/01, ambos ainda sem horários registrados. Retorno por Narita em 27/01
       confirmado; outras estadias em Tokyo ainda não registradas.
+    mapPosition:
+      lat: 35.689444
+      lon: 139.691667
+      source: https://www.wikidata.org/wiki/Q1490
   - id: echigo-yuzawa
     name:
       default: Echigo-Yuzawa
@@ -201,6 +241,10 @@ cities:
     status: planned
     notes: Destino de neve. Hospedagem em resort reservada a partir de 19/01/2027. Nome, endereço e
       checkout ainda não registrados.
+    mapPosition:
+      lat: 36.934083
+      lon: 138.817389
+      source: https://www.wikidata.org/wiki/Q1204269
 alternatives: []
 usefulInfo:
   - title: Antes de sair do hotel

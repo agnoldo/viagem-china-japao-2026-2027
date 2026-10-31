@@ -20,7 +20,7 @@ Atualização em 14/10/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Verificações
 
-Resultado local: 90 testes Vitest e 40 testes Playwright aprovados, além de lint, validação e build. Fallback web exercitado em Chromium e WebKit, na mesma janela, com iPadOS e standalone simulados. URLs nativas AMap/Baidu, detecção de iOS/iPadOS, fallback de 1,5 s, cancelamento ao ocultar/sair, cliques repetidos/modificados e preservação do Apple Maps cobertos por testes. Standalone simulado não equivale a instalação na Tela de Início; handoff para apps nativos em iPhone físico continua pendente.
+Resultado local: 94 testes Vitest e 44 testes Playwright aprovados, além de lint, validação e build. Fallback web exercitado em Chromium e WebKit, na mesma janela, com iPadOS e standalone simulados. URLs nativas AMap/Baidu, detecção de iOS/iPadOS, fallback de 1,5 s, cancelamento ao ocultar/sair, cliques repetidos/modificados e preservação do Apple Maps cobertos por testes. Standalone simulado não equivale a instalação na Tela de Início; handoff para apps nativos em iPhone físico continua pendente.
 
 Lint e TypeScript strict; YAML, schemas e referências; Vitest com fixture completa e plano parcial; build e auditoria de assets locais. Os testes de conteúdo verificam a diferença entre limite geral e data de um dia registrado, reserva confirmada sem nome e local de embarque desconhecido sem perder a validação de IDs reais.
 
@@ -68,3 +68,7 @@ Repositório público novamente por solicitação do mantenedor. GitHub Pages re
 ## Exclusão de indexação — 31/10/2026
 
 HTML com meta robots noindex e arquivo robots.txt local; regra para a raiz do domínio fornecida em docs/robots-domain-root.txt. O build confere a presença dessas instruções. Robots na subpasta do Pages não controla rastreamento; configuração da raiz depende do site raiz. Não é controle de acesso nem garantia de exclusão de bots/índices existentes.
+
+## Mapa de Viagem — 31/10/2026
+
+Base geográfica local Natural Earth; 11 referências urbanas WGS84 com fontes Wikidata, independentes dos links de navegação e locais de embarque. Pontos derivados dos dias/extremos de transportes; linhas só dos transportes não cancelados. Datas compartilhadas com calendário, sete lacunas preservadas, hospedagem e status vindos do conteúdo validado. Testes cobrem atualização dos dias, conexões sem dia-base, exclusão de cancelados, projeção/rótulos, navegação data/calendário, lacunas, trânsito, todo o percurso e reabertura offline em subpasta/320 px, sem rede externa essencial. Não testado em iPhone físico.

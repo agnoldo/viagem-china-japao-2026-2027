@@ -1,6 +1,7 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import { Calendar } from './Calendar';
-import { CalendarDays, List } from 'lucide-react';
+import { TripMap } from './TripMap';
+import { CalendarDays, List, Map } from 'lucide-react';
 import { ArrowRight, BedDouble, Plane, TrainFront, MapPin, GitBranch } from 'lucide-react';
 import { content, cities } from '../../content';
 import { PageHeading, StatusBadge, Section } from '../../components/shared';
@@ -45,7 +46,9 @@ export function Alternatives({ cityId }: { cityId?: string }) {
 }
 export function Itinerary() {
   const [params, setParams] = useSearchParams();
-  const view = params.get('visao') === 'lista' ? 'lista' : 'calendario';
+  const view = ['lista', 'mapa'].includes(params.get('visao') ?? '')
+    ? params.get('visao')
+    : 'calendario';
   return (
     <>
       <PageHeading
@@ -68,6 +71,7 @@ export function Itinerary() {
           [
             ['calendario', 'Calendário', CalendarDays],
             ['lista', 'Lista', List],
+            ['mapa', 'Mapa', Map],
           ] as const
         ).map(([value, label, Icon]) => (
           <button
@@ -87,6 +91,8 @@ export function Itinerary() {
       </div>
       {view === 'calendario' ? (
         <Calendar />
+      ) : view === 'mapa' ? (
+        <TripMap />
       ) : (
         <Section title="Dia a dia">
           <div className="trip-timeline">

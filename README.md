@@ -31,6 +31,12 @@ Em **Viagem**, alterne entre **Calendário** e **Lista**. O calendário abre no 
 
 O calendário inclui os dias ainda sem programação, sem atribuir cidade ou hotel às lacunas. Mostra transportes nas datas locais de partida e chegada, propostas, itens confirmados e noites em trânsito. Uma reserva confirmada não confirma os demais itens do dia. No telefone, abreviações de cidades têm legenda com os nomes completos. Tudo usa o mesmo YAML validado e funciona offline.
 
+## Mapa da viagem
+
+Em **Viagem → Mapa**, explore cidades, datas e transportes com base geográfica local do Natural Earth. O mapa usa os mesmos dias do calendário, preserva lacunas e diferencia trechos confirmados/planejados. Selecione uma cidade ou data para abrir os dias e a logística correspondente. **Toda a viagem** inclui Brasil e Doha; o enquadramento inicial privilegia China/Japão.
+
+A base funciona offline, sem mosaicos externos ou API de mapas. As coordenadas são referências aproximadas das cidades, sem uso nos links de navegação chineses. As linhas são ilustrativas, não trajetos reais. [Fontes e manutenção](docs/MAP-SOURCES.md).
+
 ## Posts: upload por pastas
 
 A galeria **Posts** mostra apenas as miniaturas das imagens da categoria, ou todas em **Todos**. Ao tocar em um print, ele ocupa a tela em um visualizador sobre a galeria, sem abrir outra página ou mudar a URL. Deslize para os lados para trocar; o botão Fechar ou Escape retorna à mesma categoria e posição. Pinça permite ampliar; enquanto a página estiver com zoom, o arrasto fica reservado à leitura. Setas discretas e teclado são alternativas ao swipe. As categorias são pastas em [`data/posts`](data/posts/README.md), sem edição de YAML. Envie os prints pelo GitHub com **Add file → Upload files → Commit changes** dentro da pasta desejada. O nome da pasta vira categoria; o nome do arquivo identifica o print para acessibilidade e ordenação, sem aparecer como legenda. [Instruções completas](data/posts/README.md).

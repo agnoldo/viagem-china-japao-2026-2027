@@ -69,6 +69,15 @@ export const regionSchema = z
   .strict();
 export const citySchema = z
   .object({
+    mapPosition: z
+      .object({
+        lat: z.number().min(-90).max(90),
+        lon: z.number().min(-180).max(180),
+        source: safeUrl,
+      })
+      .strict()
+      .nullable()
+      .default(null),
     id,
     regionId: id,
     country: z.enum(['BR', 'CN', 'JP', 'QA']),
