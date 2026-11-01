@@ -64,16 +64,16 @@
   officialUrl: https://www.panpacific.com/en/hotels-and-resorts/pp-beijing.html
   checkInDate: 2026-12-31
   checkIn: 15:00
-  checkOutDate: 2027-01-04
+  checkOutDate: 2027-01-05
   checkOut: 12:00
   notes:
-    'Reserva confirmada de 4 noites para 2 adultos e 2 filhos. Quarto Deluxe Family Room | Family
+    'Reserva confirmada de 5 noites para 2 adultos e 2 filhos. Quarto Deluxe Family Room | Family
     Pick: 1 Comfort King Bed + 1 Single Bed, conforme reserva. Check-in a partir das 15:00 de
-    31/12/2026; checkout até as 12:00 de 04/01/2027, no fuso Asia/Shanghai. O horário de check-in é
+    31/12/2026; checkout até as 12:00 de 05/01/2027, no fuso Asia/Shanghai. O horário de check-in é
     o início da disponibilidade, não uma chegada agendada. Nome e endereço em chinês identificados
     pela correspondência do endereço e telefone com o site oficial. Transfer de Daxing até o hotel
-    ainda não registrado. Após o checkout, trem para Xi’an proposto em 04/01, sem horário ou
-    reserva.'
+    ainda não registrado. Após o checkout, voo para Chengdu previsto em 05/01, ainda a comprar, sem
+    aeroportos ou horários definidos.'
 - id: ueno-woo-hotel
   cityId: tokyo
   name:
@@ -114,40 +114,6 @@
     janela de check-in quando o horário do voo Shanghai–Haneda estiver registrado. Nome, endereço e
     telefone correspondem ao site do hotel. Deslocamento de Haneda até o hotel e estação de embarque
     do trem do dia seguinte ainda não definidos.
-- id: xian-hotel
-  cityId: xian
-  name:
-    default: null
-    local: null
-  type: hotel
-  status: planned
-  address:
-    default: null
-    local: null
-  phone: null
-  coordinates:
-    wgs84:
-      lat: null
-      lon: null
-    gcj02:
-      lat: null
-      lon: null
-    bd09:
-      lat: null
-      lon: null
-  mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
-  mapLinks: {}
-  checkInDate: 2027-01-04
-  checkIn: null
-  checkInUntil: null
-  checkOutDate: 2027-01-06
-  checkOut: null
-  notes: Hospedagem proposta; nome, endereço e reserva ainda não registrados.
 - id: chengdu-hotel
   cityId: chengdu
   name:
@@ -176,10 +142,10 @@
     baiduKeyword: null
     baiduCity: null
   mapLinks: {}
-  checkInDate: 2027-01-06
+  checkInDate: 2027-01-05
   checkIn: null
   checkInUntil: null
-  checkOutDate: 2027-01-09
+  checkOutDate: 2027-01-08
   checkOut: null
   notes: Hospedagem proposta; nome, endereço e reserva ainda não registrados.
 - id: chongqing-hotel
@@ -210,7 +176,7 @@
     baiduKeyword: null
     baiduCity: null
   mapLinks: {}
-  checkInDate: 2027-01-09
+  checkInDate: 2027-01-08
   checkIn: null
   checkInUntil: null
   checkOutDate: 2027-01-11
@@ -283,13 +249,11 @@
   checkInUntil: null
   checkOutDate: 2027-01-18
   checkOut: 12:00
-  notes: 'Reserva confirmada informada pela família: 4 noites, de 14 a 18/01/2027.
-    Junior Suite com vista para o rio Huangpu; inclui happy hour para duas
-    pessoas no restaurante giratório, das 17:30 às 20:00, conforme descrição da
-    opção reservada. Não implica benefício para os quatro viajantes nem
-    compromisso diário no roteiro. Endereço, telefone e nome chinês conferidos
-    no site oficial da Accor. Check-in a partir das 14:00 e checkout até 12:00
-    são os horários gerais publicados pelo hotel, no fuso Asia/Shanghai;
-    conferir eventuais condições específicas da reserva. Horário de chegada
-    ainda não definido.'
+  notes: 'Reserva confirmada informada pela família: 4 noites, de 14 a 18/01/2027. Junior Suite com
+    vista para o rio Huangpu; inclui happy hour para duas pessoas no restaurante giratório, das
+    17:30 às 20:00, conforme descrição da opção reservada. Não implica benefício para os quatro
+    viajantes nem compromisso diário no roteiro. Endereço, telefone e nome chinês conferidos no site
+    oficial da Accor. Check-in a partir das 14:00 e checkout até 12:00 são os horários gerais
+    publicados pelo hotel, no fuso Asia/Shanghai; conferir eventuais condições específicas da
+    reserva. Horário de chegada ainda não definido.'
   officialUrl: https://all.accor.com/hotel/3019/index.en.shtml

@@ -1,16 +1,16 @@
 # Verificação do plano atual
 
-Atualização em 14/10/2026 a partir dos dados fornecidos pelo mantenedor.
+Atualização em 01/11/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Conteúdo
 
-- 24 dias registrados, 11 cidades, 34 locais e 8 hospedagens (3 confirmadas, 5 propostas ainda sem nome). Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
+- 24 dias registrados, 10 cidades, 31 locais e 7 hospedagens (4 confirmadas, 3 propostas ainda sem nome). Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
 - Seis voos do bilhete confirmados para os quatro viajantes: QR7251, QR774, QR892, QR809, QR785, QR4834. Horários locais e durações conferidos entre Brasil, Doha, China e Japão.
 - Conexões calculadas: GRU 9h35, DOH 4h25 na ida; DOH 45 minutos e GRU 1h45 na volta. Trocas de terminal em GRU 2→3 e 3→2.
 - Beijing Daxing (PKX), Haneda (HND) e Narita (NRT) são aeroportos distintos. Economy, 2 volumes por passageiro, peso desconhecido. Operação LATAM nos trechos domésticos.
 - Recibo integral, número de passageiro frequente e códigos tarifários não armazenados.
-- Pan Pacific Beijing: 4 noites, de 31/12/2026 a 04/01/2027; check-in a partir das 15h e checkout até 12h, fuso Asia/Shanghai. Endereço/telefone da reserva correspondem ao [site oficial](https://www.panpacific.com/zh/hotels-and-resorts/pp-beijing/the-hotel.html), usado para nome e endereço em chinês.
-- Hotel associado somente às quatro noites; 04/01 tem checkout sem pernoite presumido. Transfer de Daxing não definido; continuação proposta por trem para Xi’an. Valores, política financeira e contato privado excluídos.
+- Pan Pacific Beijing: 5 noites, de 31/12/2026 a 05/01/2027; check-in a partir das 15h e checkout até 12h, fuso Asia/Shanghai. Endereço/telefone da reserva correspondem ao [site oficial](https://www.panpacific.com/zh/hotels-and-resorts/pp-beijing/the-hotel.html), usado para nome e endereço em chinês.
+- Hotel associado somente às cinco noites; 05/01 tem checkout sem pernoite presumido. Transfer de Daxing não definido; continuação prevista por voo para Chengdu em 05/01, ainda a comprar. Valores, política financeira e contato privado excluídos.
 - Dia 18/01: voo Shanghai → Haneda e pernoite confirmado no Ueno Woo Hotel, dois quartos Double Room, sem refeições. Check-in 15h–21h; checkout até 11h de 19/01. Endereço/telefone conferidos no [site do hotel](https://ueno-woo-hotel.mydirectstay.com/contact-us.html). Nome da hóspede, valores e dados de pagamento não publicados.
 - Dia 19/01: Joetsu Shinkansen e início de resort reservado.
 - No resort de Echigo-Yuzawa, `booked` foi normalizado para `confirmed`; nome/endereço/checkout continuam nulos.
@@ -84,3 +84,9 @@ Links de atrações conferidos no TripAdvisor para os oito destinos CN/JP, inclu
 ## Reserva de Shanghai — 31/10/2026
 
 Novotel Shanghai Atlantis confirmado de 14 a 18/01, associado somente aos quatro pernoites de 14–17/01. Dia 18 mantém Ueno Woo Hotel em Tokyo. Junior Suite com vista para o Huangpu e happy hour para duas pessoas 17h30–20h registrados como benefício, sem atividade diária automática. Endereço chinês, telefone e horários gerais conferidos na [Accor](https://all.accor.com/hotel/3019/index.en.shtml); condições específicas da reserva não fornecidas. Coordenadas mantidas desconhecidas, mapas por nome/endereço. Links Booking com identificadores de sessão não publicados.
+
+## Alteração do roteiro em 01/11/2026
+
+Xi’an removido do conteúdo operacional, incluindo hotel, locais e trens. Beijing confirmado por cinco noites (31/12–05/01); voo Beijing–Chengdu de 05/01 ainda a comprar, sem aeroportos ou horários presumidos. Chengdu 05–08/01, Chongqing 08–11/01, Zhangjiajie 11–14/01 e Shanghai 14–18/01. Dia extra de Chongqing flexível; Dazu/Wulong opcionais. Calendário, mapa e telas derivam dos mesmos dados.
+
+Verificações desta alteração: lint, validação de conteúdo, 95 testes unitários e build aprovados; 46 testes E2E Chromium/WebKit aprovados, incluindo subpasta, reabertura offline, recuperação de cache, atualização explícita e rollback. WebKit com perfil iPhone é emulação; não houve teste em iPhone físico. Perda total do armazenamento exige nova preparação com internet.

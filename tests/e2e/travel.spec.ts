@@ -130,7 +130,7 @@ test('reabre sem rede e navega por todos os dias e cidades registrados', async (
     '31 de dezembro · 15:00',
   );
   await expect(reopened.getByText('Check-out:', { exact: false })).toContainText(
-    '4 de janeiro · 12:00',
+    '5 de janeiro · 12:00',
   );
   await expect(reopened.getByRole('link', { name: 'AMap', exact: true })).toHaveAttribute(
     'href',
@@ -290,7 +290,8 @@ test('hospedagem reservada sem nome não inventa endereço ou datas', async ({ p
   await page.goto(base + `#/hoje/${firstDay.date}`);
   await expect(page.getByText('Plano parcial.', { exact: true })).toBeVisible();
   await expect(page.locator('.stay-panel')).toContainText('Noite em trânsito');
-  await page.goto(base + '#/hoje/2027-01-04');
+  const pendingStay = content.days.find((d) => !d.hotelId && !d.overnightInTransit)!;
+  await page.goto(base + `#/hoje/${pendingStay.date}`);
   await expect(page.locator('.stay-panel')).toContainText('Hospedagem a definir');
 });
 

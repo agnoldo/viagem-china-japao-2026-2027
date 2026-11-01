@@ -25,12 +25,12 @@ describe('plano atual com dados incompletos', () => {
     copy.trip.itineraryCoverage = 'complete';
     expect(() => validateContent(copy)).toThrow(/dia 2027-01-20/);
   });
-  it('cobre quatro noites em Beijing sem transformar disponibilidade de check-in em chegada agendada', () => {
+  it('cobre cinco noites em Beijing sem transformar disponibilidade de check-in em chegada agendada', () => {
     const hotel = content.hotels.find((h) => h.id === 'pan-pacific-beijing')!;
     expect([hotel.checkInDate, hotel.checkIn, hotel.checkOutDate, hotel.checkOut]).toEqual([
       '2026-12-31',
       '15:00',
-      '2027-01-04',
+      '2027-01-05',
       '12:00',
     ]);
     expect(content.days.filter((d) => d.hotelId === hotel.id).map((d) => d.date)).toEqual([
@@ -38,12 +38,13 @@ describe('plano atual com dados incompletos', () => {
       '2027-01-01',
       '2027-01-02',
       '2027-01-03',
+      '2027-01-04',
     ]);
     const checkin = content.days
       .find((d) => d.date === '2026-12-31')!
       .activities.find((a) => a.hotelId === hotel.id)!;
     expect(checkin.time).toBeUndefined();
-    const checkout = content.days.find((d) => d.date === '2027-01-04')!;
+    const checkout = content.days.find((d) => d.date === '2027-01-05')!;
     expect(checkout.hotelId).toBeUndefined();
     expect(checkout.activities[0].time).toBe('12:00');
     expect(hotel.name.local).toBe('北京泛太平洋酒店');
@@ -134,7 +135,6 @@ describe('plano atual com dados incompletos', () => {
       'sao-paulo',
       'doha',
       'beijing',
-      'xian',
       'chengdu',
       'chongqing',
       'zhangjiajie',
@@ -156,17 +156,14 @@ describe('plano atual com dados incompletos', () => {
         .filter((c) => c.country === 'CN')
         .map((c) => [c.id, c.startDate, c.endDate]),
     ).toEqual([
-      ['beijing', '2026-12-31', '2027-01-04'],
-      ['xian', '2027-01-04', '2027-01-06'],
-      ['chengdu', '2027-01-06', '2027-01-09'],
-      ['chongqing', '2027-01-09', '2027-01-11'],
+      ['beijing', '2026-12-31', '2027-01-05'],
+      ['chengdu', '2027-01-05', '2027-01-08'],
+      ['chongqing', '2027-01-08', '2027-01-11'],
       ['zhangjiajie', '2027-01-11', '2027-01-14'],
       ['shanghai', '2027-01-14', '2027-01-18'],
     ]);
     const trains = content.trains.filter((t) => t.from.timezone === 'Asia/Shanghai');
     expect(trains.map((t) => [t.from.cityId, t.to.cityId])).toEqual([
-      ['beijing', 'xian'],
-      ['xian', 'chengdu'],
       ['chengdu', 'chongqing'],
       ['chongqing', 'zhangjiajie'],
     ]);
@@ -189,7 +186,7 @@ describe('plano atual com dados incompletos', () => {
       'ueno-woo-hotel',
       'shanghai-hotel',
     ]);
-    expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(4);
+    expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(3);
     expect(content.days.filter((d) => d.hotelId === 'shanghai-hotel').map((d) => d.date)).toEqual([
       '2027-01-14',
       '2027-01-15',
@@ -205,6 +202,25 @@ describe('plano atual com dados incompletos', () => {
       'echigo-yuzawa',
     ]);
     expect(content.hotels.find((h) => h.id === 'echigo-yuzawa-resort')!.checkOutDate).toBeNull();
+  });
+  it('remove Xi’an e mantém o novo voo sem compra ou aeroportos presumidos', () => {
+    expect(content.places.some((p) => p.cityId === 'xian')).toBe(false);
+    expect(content.days.some((d) => d.cityId === 'xian')).toBe(false);
+    const flight = content.flights.find((f) => f.id === 'beijing-chengdu-2027-01-05')!;
+    expect(flight.status).toBe('planned');
+    expect([flight.from.cityId, flight.to.cityId]).toEqual(['beijing', 'chengdu']);
+    for (const end of [flight.from, flight.to]) {
+      expect(end.date).toBe('2027-01-05');
+      expect(end.airportCode).toBeNull();
+      expect(end.placeId).toBeNull();
+      expect(end.time).toBeNull();
+    }
+    expect(flight.flightNumber).toBeNull();
+    expect(content.days.filter((d) => d.cityId === 'chongqing').map((d) => d.date)).toEqual([
+      '2027-01-08',
+      '2027-01-09',
+      '2027-01-10',
+    ]);
   });
   it('mantém opções como opções e permite mapas chineses sem inventar endereços ou coordenadas', () => {
     for (const id of [

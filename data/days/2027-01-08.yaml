@@ -1,29 +1,26 @@
 date: 2027-01-08
-cityId: chengdu
+cityId: chongqing
 regionId: china
-summary: 'Chengdu: Leshan ou dia flexível'
+summary: Chengdu → Chongqing e panorama noturno
 status: planned
-notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+notes: Duas noites previstas em Chongqing. Hospedagem ainda não escolhida.
 activities:
-  - id: leshan-option
-    title: Buda Gigante de Leshan
-    type: attraction
-    status: optional
-    time: 08:00
-    endTime: 16:00
-    timezone: Asia/Shanghai
-    placeId: leshan-buddha
-    travelBufferMinutes: 90
-    notes: Passeio opcional de dia inteiro; manter como alternativa se o grupo preferir um dia mais leve.
-  - id: chengdu-flexible-afternoon
-    title: Tarde flexível em Chengdu
-    type: free-time
+  - id: chengdu-chongqing-train
+    title: Trem Chengdu → Chongqing
+    type: train
     status: planned
-    time: 16:30
+    transportId: chengdu-chongqing-2027-01-08
+    notes: Deslocamento proposto; horário e estações a definir.
+  - id: 2027-01-08-chongqing-hongyadong
+    title: Hongyadong e Jiefangbei
+    type: attraction
+    status: planned
+    time: 18:00
     timezone: Asia/Shanghai
-    notes: Usar como plano principal se Leshan não for escolhido.
-  - id: chengdu-dinner
-    title: Jantar de despedida em Chengdu
+    placeId: chongqing-hongyadong
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: chongqing-hotpot
+    title: Hot pot de Chongqing
     type: meal
     status: planned
     time: 19:30

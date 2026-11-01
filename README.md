@@ -9,8 +9,8 @@ Repositório público, com publicação no GitHub Pages por GitHub Actions após
 ## Plano atual
 
 - **29–31/12/2026:** Belo Horizonte (CNF) → Guarulhos (GRU) → Doha (DOH) → Beijing Daxing (PKX). Voos QR7251, QR774 e QR892 confirmados para os quatro viajantes.
-- **31/12/2026–04/01/2027:** Pan Pacific Beijing confirmado, 4 noites para a família. Check-in a partir das 15h; checkout até 12h, no fuso `Asia/Shanghai`. Nome e endereço em chinês conferidos no [site oficial](https://www.panpacific.com/zh/hotels-and-resorts/pp-beijing/the-hotel.html) pela correspondência de endereço e telefone. Transfer de Daxing ainda indefinido; trem para Xi’an proposto em 04/01.
-- **China, proposta de roteiro:** Beijing 31/12–04/01 → Xi’an 04–06/01 → Chengdu 06–09/01 → Chongqing 09–11/01 → Zhangjiajie 11–14/01 → Shanghai 14–18/01. Inclui quatro trens planejados, voo doméstico Zhangjiajie–Shanghai e passeios com horários sugeridos. Hotéis de Xi’an, Chengdu, Chongqing e Zhangjiajie ainda sem nome ou reserva.
+- **31/12/2026–05/01/2027:** Pan Pacific Beijing confirmado, 5 noites para a família. Check-in a partir das 15h; checkout até 12h, no fuso `Asia/Shanghai`. Nome e endereço em chinês conferidos no [site oficial](https://www.panpacific.com/zh/hotels-and-resorts/pp-beijing/the-hotel.html) pela correspondência de endereço e telefone. Transfer de Daxing ainda indefinido; voo para Chengdu previsto em 05/01, ainda a comprar.
+- **China, proposta de roteiro:** Beijing 31/12–05/01 → Chengdu 05–08/01 → Chongqing 08–11/01 → Zhangjiajie 11–14/01 → Shanghai 14–18/01. Inclui dois trens chineses planejados e voos domésticos Beijing–Chengdu (05/01, a comprar) e Zhangjiajie–Shanghai e passeios com horários sugeridos. Hotéis de Chengdu, Chongqing e Zhangjiajie ainda sem nome ou reserva.
 - **18/01/2027:** Shanghai → Tokyo Haneda; pernoite confirmado no Ueno Woo Hotel, 1 noite em 2 quartos Double Room, sem refeições. Check-in 15h–21h; checkout em 19/01 até 11h. Endereço e telefone conferidos no [site do hotel](https://ueno-woo-hotel.mydirectstay.com/contact-us.html). Voo ainda planejado, sem aeroporto de origem ou horários registrados.
 - **19/01/2027:** Tokyo → Echigo-Yuzawa pelo Joetsu Shinkansen; início da hospedagem em resort reservado, ainda sem nome registrado.
 - **27–28/01/2027:** Tokyo Narita (NRT), terminal 2 → Doha → Guarulhos → Belo Horizonte. Voos QR809, QR785 e QR4834 confirmados para os quatro viajantes.
@@ -199,7 +199,7 @@ Quando o endereço de rua não é conhecido, `address.local` fica `null`; o nome
 
 Copie um item de `hotels.yaml`, associe uma cidade e complete o endereço local real. `name.default` e `name.local` podem ser `null`; `checkInDate` e `checkOutDate` são datas ou `null`; `checkIn` e `checkOut` são horários `HH:mm` ou `null`; `checkInUntil` é o fim opcional da janela de check-in, também `HH:mm` ou `null`; `phone` é público ou `null`. Use `status: example` para dados demonstrativos, `undecided` para pendência e `confirmed` somente após confirmação real. Associe o `hotelId` nos dias da estadia.
 
-A reserva de Beijing ocupa as noites de 31/12, 01/01, 02/01 e 03/01. Em 04/01 há atividade de checkout, sem associar o hotel à noite seguinte. O horário de check-in indica disponibilidade, sem agendar chegada às 15h após o voo das 14h45. Valores, condições de cancelamento e endereço privado de contato não entram na publicação.
+A reserva de Beijing ocupa as noites de 31/12, 01/01, 02/01, 03/01 e 04/01. Em 05/01 há atividade de checkout, sem associar o hotel à noite seguinte. O horário de check-in indica disponibilidade, sem agendar chegada às 15h após o voo das 14h45. Valores, condições de cancelamento e endereço privado de contato não entram na publicação.
 
 O resort atual tem reserva informada, mas nome e endereço vazios. A UI indica “Resort · nome a registrar”; esse rótulo não é o nome de um estabelecimento. Sem nome/endereço real, mapa e cópia não inventam um destino. A data de check-in não preenche automaticamente o checkout ou dias adicionais.
 
@@ -401,6 +401,6 @@ O HTML declara `noindex, nofollow, noarchive, nosnippet, noimageindex`. `public/
 
 No GitHub Pages de projeto, o robots.txt publicado na subpasta não controla o domínio. Para bloquear rastreamento, publicar o conteúdo de `docs/robots-domain-root.txt` em `https://agnoldo.github.io/robots.txt`, pelo repositório que serve a raiz do domínio. Se já existir robots.txt na raiz, integrar a regra sem substituir outras regras. O meta noindex funciona no HTML desta aplicação independentemente dessa configuração. Bloquear rastreamento pode impedir que buscadores leiam o noindex; resultados já indexados podem exigir remoção no mecanismo de busca.
 
-Os guias em **Cidades** incluem links para as atrações no TripAdvisor nos oito destinos da China e do Japão. URLs em `data/trip.yaml`, campo opcional `tripAdvisorAttractionsUrl`; páginas externas exigem rede.
+Os guias em **Cidades** incluem links para as atrações no TripAdvisor nos destinos da China e do Japão. URLs em `data/trip.yaml`, campo opcional `tripAdvisorAttractionsUrl`; páginas externas exigem rede.
 
 **14–18/01/2027:** Novotel Shanghai Atlantis confirmado, quatro noites em Junior Suite com vista para o Huangpu. Happy hour para duas pessoas, 17h30–20h. Endereço/contato e horários gerais de check-in (14h) e checkout (12h) conferidos na [Accor](https://all.accor.com/hotel/3019/index.en.shtml); condições específicas da reserva prevalecem.

@@ -1,41 +1,32 @@
 date: 2027-01-05
-cityId: xian
+cityId: chengdu
 regionId: china
-summary: "Xi'an: Exército de Terracota e cidade histórica"
+summary: 'Beijing → Chengdu: checkout e voo ainda a comprar'
 status: planned
-notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+notes: Três noites previstas em Chengdu. Hospedagem ainda não escolhida.
 activities:
-  - id: xian-terracotta-warriors
-    title: Exército de Terracota
-    type: attraction
-    status: planned
-    time: 08:30
-    endTime: 13:00
+  - id: beijing-hotel-checkout
+    title: Checkout do Pan Pacific Beijing até as 12:00
+    type: hotel
+    status: confirmed
+    time: 12:00
     timezone: Asia/Shanghai
-    placeId: terracotta-warriors
-    travelBufferMinutes: 90
-    notes: Atividade proposta; confirmar antes da viagem.
-  - id: xian-lunch
-    title: Almoço de culinária local
+    hotelId: pan-pacific-beijing
+    notes: Horário limite da reserva; não é horário de saída da cidade.
+  - id: beijing-chengdu-flight
+    title: Voo Beijing → Chengdu (a comprar)
+    type: flight
+    status: planned
+    transportId: beijing-chengdu-2027-01-05
+    notes: Voo previsto para 05/01/2027, ainda a comprar. Aeroportos, companhia e horários não definidos.
+  - id: chengdu-evening-people-park
+    title: People's Park e Kuixinglou à noite
+    type: walk
+    status: planned
+    placeId: chengdu-peoples-park
+    notes: Proposta condicionada ao horário do voo, ainda não comprado.
+  - id: chengdu-hotpot
+    title: Hot pot de Sichuan
     type: meal
     status: planned
-    time: 13:30
-    timezone: Asia/Shanghai
-    notes: Atividade proposta; confirmar antes da viagem.
-  - id: 2027-01-05-xian-city-wall
-    title: Muralha de Xi'an
-    type: attraction
-    status: planned
-    time: 16:00
-    endTime: 18:00
-    timezone: Asia/Shanghai
-    placeId: xian-city-wall
-    notes: Atividade proposta; confirmar antes da viagem.
-  - id: 2027-01-05-xian-muslim-quarter
-    title: Bairro muçulmano e Torre do Tambor à noite
-    type: attraction
-    status: planned
-    time: 19:00
-    timezone: Asia/Shanghai
-    placeId: xian-muslim-quarter
-    notes: Atividade proposta; confirmar antes da viagem.
+    notes: Proposta condicionada ao horário do voo, ainda não comprado.

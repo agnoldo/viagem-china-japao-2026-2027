@@ -1,28 +1,41 @@
 date: 2027-01-06
 cityId: chengdu
 regionId: china
-summary: Xi'an → Chengdu e primeira noite em Chengdu
+summary: 'Chengdu: pandas e centro da cidade'
 status: planned
-notes: Três noites previstas em Chengdu. Hospedagem ainda não escolhida.
+notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
 activities:
-  - id: xian-chengdu-train
-    title: Trem Xi'an → Chengdu
-    type: train
+  - id: 2027-01-06-chengdu-panda-base
+    title: Base de pesquisa e reprodução de pandas
+    type: attraction
     status: planned
-    transportId: xian-chengdu-2027-01-06
-    notes: Deslocamento proposto; horário e estações a definir.
-  - id: chengdu-evening-people-park
-    title: People's Park e Kuixinglou à noite
+    time: 08:00
+    endTime: 12:00
+    timezone: Asia/Shanghai
+    placeId: chengdu-panda-base
+    travelBufferMinutes: 60
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: chengdu-lunch
+    title: Almoço em Chengdu
+    type: meal
+    status: planned
+    time: 13:00
+    timezone: Asia/Shanghai
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-06-chengdu-kuanzhai
+    title: Kuanzhai Alley
+    type: attraction
+    status: planned
+    time: 15:00
+    endTime: 17:30
+    timezone: Asia/Shanghai
+    placeId: chengdu-kuanzhai
+    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-06-chengdu-taikoo-li
+    title: Taikoo Li e IFS
     type: walk
     status: planned
     time: 18:00
     timezone: Asia/Shanghai
-    placeId: chengdu-peoples-park
+    placeId: chengdu-taikoo-li
     notes: Atividade proposta; confirmar antes da viagem.
-  - id: chengdu-hotpot
-    title: Hot pot de Sichuan
-    type: meal
-    status: planned
-    time: 19:30
-    timezone: Asia/Shanghai
-    notes: Escolher nível de pimenta adequado para a família.

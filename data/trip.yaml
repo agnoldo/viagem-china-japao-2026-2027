@@ -12,7 +12,7 @@ countries:
   - JP
 defaultLocale: pt-BR
 defaultTimeZone: America/Sao_Paulo
-contentVersion: 2026-10-31
+contentVersion: 2026-11-01
 travelers:
   - id: adult-1
     label: Adulto 1
@@ -25,20 +25,24 @@ travelers:
 notes:
   - Viagem familiar de 29/12/2026 a 28/01/2027. Seis voos de ida e volta confirmados para os quatro
     viajantes.
-  - "Roteiro-base proposto na China: Beijing 31/12–04/01, Xi'an 04–06/01, Chengdu 06–09/01,
-    Chongqing 09–11/01, Zhangjiajie 11–14/01 e Shanghai 14–18/01."
+  - 'Roteiro-base proposto na China: Beijing 31/12–05/01, Chengdu 05–08/01, Chongqing 08–11/01,
+    Zhangjiajie 11–14/01 e Shanghai 14–18/01.'
   - Chegada à China por Beijing Daxing (PKX) em 31/12. Saída do Japão por Tokyo Narita (NRT) em
     27/01. Haneda (HND) permanece a chegada prevista em 18/01, vindo de Shanghai.
-  - 'Beijing: Pan Pacific Beijing reservado de 31/12/2026 a 04/01/2027, 4 noites. Check-in a partir
+  - 'Beijing: Pan Pacific Beijing reservado de 31/12/2026 a 05/01/2027, 5 noites. Check-in a partir
     das 15:00; checkout até as 12:00 (horários locais).'
   - Na volta, conexão em Doha de 45 minutos e em Guarulhos de 1h45, com troca do terminal 3 para o
     2. Confirmar com as companhias as orientações de conexão.
   - 'Tokyo: Ueno Woo Hotel reservado para a noite de 18/01, dois quartos Double Room para os quatro
     viajantes. Check-in de 15:00 a 21:00; checkout até 11:00 de 19/01, horários locais.'
   - Passeios, horários sugeridos e deslocamentos chineses sem reserva são propostas, com status
-    Planejado ou Opcional. Hotéis de Xi’an, Chengdu, Chongqing e Zhangjiajie ainda a
-    escolher. Programação do Japão após 19/01 continua em aberto.
-  - Novotel Shanghai Atlantis confirmado de 14 a 18/01/2027, quatro noites em Junior Suite com vista para o rio Huangpu. Happy hour para duas pessoas no restaurante giratório, 17:30–20:00, conforme opção reservada.
+    Planejado ou Opcional. Hotéis de Chengdu, Chongqing e Zhangjiajie ainda a escolher. Programação
+    do Japão após 19/01 continua em aberto.
+  - Novotel Shanghai Atlantis confirmado de 14 a 18/01/2027, quatro noites em Junior Suite com vista
+    para o rio Huangpu. Happy hour para duas pessoas no restaurante giratório, 17:30–20:00, conforme
+    opção reservada.
+  - Xi’an retirado do itinerário. Voo Beijing → Chengdu previsto para 05/01/2027, ainda a comprar;
+    aeroportos e horários não definidos.
 regions:
   - id: brazil
     name: Brasil
@@ -118,32 +122,15 @@ cities:
       - Pequim
     timezone: Asia/Shanghai
     startDate: 2026-12-31
-    endDate: 2027-01-04
+    endDate: 2027-01-05
     status: confirmed
-    notes: Quatro noites no Pan Pacific Beijing. Grande Muralha, Cidade Proibida, Templo do Céu e
-      hutongs são propostas de passeio.
+    notes:
+      Cinco noites no Pan Pacific Beijing. Grande Muralha, Cidade Proibida, Templo do Céu e hutongs
+      são propostas de passeio.
     mapPosition:
       lat: 39.90403
       lon: 116.407526
       source: https://www.wikidata.org/wiki/Q956
-  - id: xian
-    tripAdvisorAttractionsUrl: https://www.tripadvisor.com/Attractions-g298557-Activities-Xi_an_Shaanxi.html
-    name:
-      default: Xi'an
-      local: 西安
-    regionId: china
-    country: CN
-    aliases:
-      - Xian
-    timezone: Asia/Shanghai
-    startDate: 2027-01-04
-    endDate: 2027-01-06
-    status: planned
-    notes: Duas noites. Exército de Terracota, muralhas e bairro muçulmano são propostas de passeio.
-    mapPosition:
-      lat: 34.261111
-      lon: 108.942222
-      source: https://www.wikidata.org/wiki/Q5826
   - id: chengdu
     tripAdvisorAttractionsUrl: https://www.tripadvisor.com/Attractions-g297463-Activities-Chengdu_Sichuan.html
     name:
@@ -153,8 +140,8 @@ cities:
     country: CN
     aliases: []
     timezone: Asia/Shanghai
-    startDate: 2027-01-06
-    endDate: 2027-01-09
+    startDate: 2027-01-05
+    endDate: 2027-01-08
     status: planned
     notes: Três noites. Base dos pandas, culinária de Sichuan e possível Buda Gigante de Leshan.
     mapPosition:
@@ -170,11 +157,11 @@ cities:
     country: CN
     aliases: []
     timezone: Asia/Shanghai
-    startDate: 2027-01-09
+    startDate: 2027-01-08
     endDate: 2027-01-11
     status: planned
     notes:
-      Duas noites. Centro em encostas, Hongyadong, metrô e culinária local; Dazu ou Wulong ficam
+      Três noites. Centro em encostas, Hongyadong, metrô e culinária local; Dazu ou Wulong ficam
       como possibilidades extras.
     mapPosition:
       lat: 29.55

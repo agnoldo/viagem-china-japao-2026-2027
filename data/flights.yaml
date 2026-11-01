@@ -128,11 +128,48 @@
   bookingReferenceHint: null
   notes:
     Chegada à China pelo Aeroporto de Beijing Daxing (PKX). Hospedagem confirmada no Pan Pacific
-    Beijing de 31/12 a 04/01. Transporte do aeroporto ao hotel ainda não definido.
+    Beijing de 31/12 a 05/01. Transporte do aeroporto ao hotel ainda não definido.
   offlineInstructions: Horários locais em cada aeroporto. Todos os quatro viajantes seguem este voo.
     Na chegada a Daxing, consultar o nome e endereço em chinês do Pan Pacific Beijing na seção
     Hospedagens. Check-in disponível a partir das 15:00; chegada ao hotel e transfer ainda não
     definidos. Confira portão e eventuais alterações no bilhete atualizado ou com a companhia.
+- id: beijing-chengdu-2027-01-05
+  kind: flight
+  status: planned
+  from:
+    cityId: beijing
+    placeId: null
+    date: 2027-01-05
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    airportCode: null
+    airportName: null
+  to:
+    cityId: chengdu
+    placeId: null
+    date: 2027-01-05
+    time: null
+    timezone: Asia/Shanghai
+    terminal: null
+    airportCode: null
+    airportName: null
+  airline: null
+  flightNumber: null
+  operatedBy: null
+  cabin: null
+  baggage: null
+  durationMinutes: null
+  travelerIds:
+    - adult-1
+    - adult-2
+    - teen-1
+    - teen-2
+  nextFlightId: null
+  bookingReferenceHint: null
+  notes: Voo previsto para 05/01/2027, ainda a comprar. Aeroportos, companhia e horários não definidos.
+  offlineInstructions: Trecho Beijing → Chengdu ainda sem compra. Confirmar aeroportos, horários,
+    bagagem e bilhetes antes de sair do hotel.
 - id: zhangjiajie-shanghai-2027-01-14
   kind: flight
   status: planned
