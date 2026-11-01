@@ -58,3 +58,5 @@ Executar lint, validação, testes e build. Confirmar todos os dias registrados 
 
 ## Fixtures
 `tests/fixtures/full-plan.json` é o roteiro demonstrativo anterior, usado apenas em testes. Nunca importar essa fixture pela UI ou copiá-la para `data/` como plano real. Testes E2E percorrem dinamicamente o conteúdo operacional; testes de regressão verificam limites nulos, lugares desconhecidos e reserva sem detalhes.
+
+Chengdu: Kaiman Top Floor High Altitude Hotel (Taikoo Li Branch) confirmado de 05 a 08/01/2027, três noites. Cancelamento informado até 04/01/2027; horário limite e fuso não fornecidos. Check-in geral 14h, checkout 12h; conferir condições da reserva.

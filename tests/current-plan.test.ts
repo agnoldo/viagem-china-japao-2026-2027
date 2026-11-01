@@ -45,7 +45,7 @@ describe('plano atual com dados incompletos', () => {
       .activities.find((a) => a.hotelId === hotel.id)!;
     expect(checkin.time).toBeUndefined();
     const checkout = content.days.find((d) => d.date === '2027-01-05')!;
-    expect(checkout.hotelId).toBeUndefined();
+    expect(checkout.hotelId).toBe('chengdu-hotel');
     expect(checkout.activities[0].time).toBe('12:00');
     expect(hotel.name.local).toBe('北京泛太平洋酒店');
     expect(hotel.address.local).toContain('华远街2号');
@@ -184,9 +184,10 @@ describe('plano atual com dados incompletos', () => {
       'echigo-yuzawa-resort',
       'pan-pacific-beijing',
       'ueno-woo-hotel',
+      'chengdu-hotel',
       'shanghai-hotel',
     ]);
-    expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(3);
+    expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(2);
     expect(content.days.filter((d) => d.hotelId === 'shanghai-hotel').map((d) => d.date)).toEqual([
       '2027-01-14',
       '2027-01-15',

@@ -5,6 +5,14 @@ summary: Chengdu → Chongqing e panorama noturno
 status: planned
 notes: Duas noites previstas em Chongqing. Hospedagem ainda não escolhida.
 activities:
+  - id: chengdu-hotel-checkout
+    title: Checkout do Kaiman Top Floor High Altitude Hotel até as 12:00
+    type: hotel
+    status: confirmed
+    time: 12:00
+    timezone: Asia/Shanghai
+    hotelId: chengdu-hotel
+    notes: Horário geral publicado; não é horário de saída para Chongqing.
   - id: chengdu-chongqing-train
     title: Trem Chengdu → Chongqing
     type: train

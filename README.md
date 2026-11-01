@@ -10,7 +10,7 @@ Repositório público, com publicação no GitHub Pages por GitHub Actions após
 
 - **29–31/12/2026:** Belo Horizonte (CNF) → Guarulhos (GRU) → Doha (DOH) → Beijing Daxing (PKX). Voos QR7251, QR774 e QR892 confirmados para os quatro viajantes.
 - **31/12/2026–05/01/2027:** Pan Pacific Beijing confirmado, 5 noites para a família. Check-in a partir das 15h; checkout até 12h, no fuso `Asia/Shanghai`. Nome e endereço em chinês conferidos no [site oficial](https://www.panpacific.com/zh/hotels-and-resorts/pp-beijing/the-hotel.html) pela correspondência de endereço e telefone. Transfer de Daxing ainda indefinido; voo para Chengdu previsto em 05/01, ainda a comprar.
-- **China, proposta de roteiro:** Beijing 31/12–05/01 → Chengdu 05–08/01 → Chongqing 08–11/01 → Zhangjiajie 11–14/01 → Shanghai 14–18/01. Inclui dois trens chineses planejados e voos domésticos Beijing–Chengdu (05/01, a comprar) e Zhangjiajie–Shanghai e passeios com horários sugeridos. Hotéis de Chengdu, Chongqing e Zhangjiajie ainda sem nome ou reserva.
+- **China, proposta de roteiro:** Beijing 31/12–05/01 → Chengdu 05–08/01 → Chongqing 08–11/01 → Zhangjiajie 11–14/01 → Shanghai 14–18/01. Inclui dois trens chineses planejados e voos domésticos Beijing–Chengdu (05/01, a comprar) e Zhangjiajie–Shanghai e passeios com horários sugeridos. Hotéis de Chongqing e Zhangjiajie ainda sem nome ou reserva.
 - **18/01/2027:** Shanghai → Tokyo Haneda; pernoite confirmado no Ueno Woo Hotel, 1 noite em 2 quartos Double Room, sem refeições. Check-in 15h–21h; checkout em 19/01 até 11h. Endereço e telefone conferidos no [site do hotel](https://ueno-woo-hotel.mydirectstay.com/contact-us.html). Voo ainda planejado, sem aeroporto de origem ou horários registrados.
 - **19/01/2027:** Tokyo → Echigo-Yuzawa pelo Joetsu Shinkansen; início da hospedagem em resort reservado, ainda sem nome registrado.
 - **27–28/01/2027:** Tokyo Narita (NRT), terminal 2 → Doha → Guarulhos → Belo Horizonte. Voos QR809, QR785 e QR4834 confirmados para os quatro viajantes.
@@ -404,3 +404,5 @@ No GitHub Pages de projeto, o robots.txt publicado na subpasta não controla o d
 Os guias em **Cidades** incluem links para as atrações no TripAdvisor nos destinos da China e do Japão. URLs em `data/trip.yaml`, campo opcional `tripAdvisorAttractionsUrl`; páginas externas exigem rede.
 
 **14–18/01/2027:** Novotel Shanghai Atlantis confirmado, quatro noites em Junior Suite com vista para o Huangpu. Happy hour para duas pessoas, 17h30–20h. Endereço/contato e horários gerais de check-in (14h) e checkout (12h) conferidos na [Accor](https://all.accor.com/hotel/3019/index.en.shtml); condições específicas da reserva prevalecem.
+
+Chengdu: Kaiman Top Floor High Altitude Hotel (Taikoo Li Branch) confirmado de 05 a 08/01/2027, três noites. Cancelamento informado até 04/01/2027; horário limite e fuso não fornecidos. Check-in geral 14h, checkout 12h; conferir condições da reserva.
