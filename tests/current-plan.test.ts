@@ -46,7 +46,7 @@ describe('plano atual com dados incompletos', () => {
     expect(checkin.time).toBeUndefined();
     const checkout = content.days.find((d) => d.date === '2027-01-05')!;
     expect(checkout.hotelId).toBe('chengdu-hotel');
-    expect(checkout.activities[0].time).toBe('12:00');
+    expect(checkout.activities[0].time).toBeUndefined();
     expect(hotel.name.local).toBe('北京泛太平洋酒店');
     expect(hotel.address.local).toContain('华远街2号');
     for (const provider of ['apple', 'amap', 'baidu'])
@@ -204,19 +204,27 @@ describe('plano atual com dados incompletos', () => {
     ]);
     expect(content.hotels.find((h) => h.id === 'echigo-yuzawa-resort')!.checkOutDate).toBeNull();
   });
-  it('remove Xi’an e mantém o novo voo sem compra ou aeroportos presumidos', () => {
+  it('remove Xi’an e preserva o voo doméstico confirmado sem inventar volumes de bagagem', () => {
     expect(content.places.some((p) => p.cityId === 'xian')).toBe(false);
     expect(content.days.some((d) => d.cityId === 'xian')).toBe(false);
     const flight = content.flights.find((f) => f.id === 'beijing-chengdu-2027-01-05')!;
-    expect(flight.status).toBe('planned');
-    expect([flight.from.cityId, flight.to.cityId]).toEqual(['beijing', 'chengdu']);
-    for (const end of [flight.from, flight.to]) {
-      expect(end.date).toBe('2027-01-05');
-      expect(end.airportCode).toBeNull();
-      expect(end.placeId).toBeNull();
-      expect(end.time).toBeNull();
-    }
-    expect(flight.flightNumber).toBeNull();
+    expect(flight.status).toBe('confirmed');
+    expect(flight.flightNumber).toBe('3U8894');
+    expect([flight.from.airportCode, flight.from.terminal, flight.from.time]).toEqual([
+      'PEK',
+      '2',
+      '11:40',
+    ]);
+    expect([flight.to.airportCode, flight.to.terminal, flight.to.time]).toEqual([
+      'CTU',
+      '1',
+      '14:40',
+    ]);
+    expect(flight.durationMinutes).toBe(180);
+    expect(flight.baggage).toBeNull();
+    expect(flight.notes).toContain('20 kg por pessoa');
+    expect(flight.travelerIds).toEqual(content.trip.travelers.map((t) => t.id));
+    expect(flight.bookingReferenceHint).toBeNull();
     expect(content.days.filter((d) => d.cityId === 'chongqing').map((d) => d.date)).toEqual([
       '2027-01-08',
       '2027-01-09',

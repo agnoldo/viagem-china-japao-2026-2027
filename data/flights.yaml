@@ -135,31 +135,35 @@
     definidos. Confira portão e eventuais alterações no bilhete atualizado ou com a companhia.
 - id: beijing-chengdu-2027-01-05
   kind: flight
-  status: planned
+  status: confirmed
   from:
     cityId: beijing
-    placeId: null
+    placeId: beijing-capital
     date: 2027-01-05
-    time: null
+    time: 11:40
     timezone: Asia/Shanghai
-    terminal: null
-    airportCode: null
-    airportName: null
+    terminal: '2'
+    airportCode: PEK
+    airportName:
+      default: Beijing Capital International Airport
+      local: 北京首都国际机场
   to:
     cityId: chengdu
-    placeId: null
+    placeId: chengdu-shuangliu
     date: 2027-01-05
-    time: null
+    time: 14:40
     timezone: Asia/Shanghai
-    terminal: null
-    airportCode: null
-    airportName: null
-  airline: null
-  flightNumber: null
+    terminal: '1'
+    airportCode: CTU
+    airportName:
+      default: Chengdu Shuangliu International Airport
+      local: 成都双流国际机场
+  airline: Sichuan Airlines
+  flightNumber: 3U8894
   operatedBy: null
-  cabin: null
+  cabin: Economy
   baggage: null
-  durationMinutes: null
+  durationMinutes: 180
   travelerIds:
     - adult-1
     - adult-2
@@ -167,9 +171,17 @@
     - teen-2
   nextFlightId: null
   bookingReferenceHint: null
-  notes: Voo previsto para 05/01/2027, ainda a comprar. Aeroportos, companhia e horários não definidos.
-  offlineInstructions: Trecho Beijing → Chengdu ainda sem compra. Confirmar aeroportos, horários,
-    bagagem e bilhetes antes de sair do hotel.
+  notes: 'Bilhetes emitidos para os quatro viajantes. Airbus A320-200; refeição indicada no
+    comprovante. Bagagem despachada: 20 kg por pessoa, quantidade de volumes não informada. Bagagem
+    de mão: 1 volume de até 8 kg por pessoa (20 × 40 × 55 cm). Dimensões indicadas para bagagem
+    despachada: 40 × 60 × 100 cm. Franquia registrada em texto para não confundir peso por pessoa
+    com peso por volume.'
+  offlineInstructions: '05/01/2027: voo Sichuan Airlines 3U8894, PEK terminal 2 às 11:40 → CTU
+    terminal 1 às 14:40, horários locais Asia/Shanghai. Partida por Beijing Capital (北京首都国际机场), não
+    por Daxing. O comprovante recomenda chegar ao aeroporto 3 horas antes: 08:40. Planejar saída
+    antecipada do Pan Pacific; transfer e horário de saída do hotel ainda não definidos. Após
+    desembarque e bagagem, seguir para o Kaiman em Chengdu; chegada ao hotel sem horário agendado.
+    Documentos e localizador permanecem no arquivo privado.'
 - id: zhangjiajie-shanghai-2027-01-14
   kind: flight
   status: planned

@@ -3,7 +3,9 @@ import { readContent } from '../scripts/read-content';
 import { validateContent } from '../src/content/validate';
 import { connectionMinutes, durationLabel, endpointInstant } from '../src/lib/flights';
 const content = readContent();
-const confirmed = content.flights.filter((f) => f.status === 'confirmed');
+const confirmed = content.flights.filter(
+  (f) => f.status === 'confirmed' && f.flightNumber?.startsWith('QR'),
+);
 const flight = (number: string) => content.flights.find((f) => f.flightNumber === number)!;
 describe('bilhete familiar de ida e volta', () => {
   it('preserva seis voos, horários locais, duração e quatro passageiros', () => {

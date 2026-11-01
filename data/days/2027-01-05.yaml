@@ -1,40 +1,45 @@
 date: 2027-01-05
 cityId: chengdu
 regionId: china
-summary: 'Beijing → Chengdu: checkout e voo ainda a comprar'
+summary: 'Beijing → Chengdu: voo confirmado 3U8894'
 status: planned
-notes: Três noites confirmadas no Kaiman Top Floor High Altitude Hotel (Taikoo Li Branch). Voo de
-  Beijing ainda a comprar; chegada ao hotel sem horário definido.
+notes: Três noites confirmadas no Kaiman. Voo PEK T2 11:40 → CTU T1 14:40; planejar saída antecipada
+  do Pan Pacific, com chegada recomendada ao aeroporto às 08:40.
 activities:
   - id: beijing-hotel-checkout
     title: Checkout do Pan Pacific Beijing até as 12:00
     type: hotel
     status: confirmed
-    time: 12:00
     timezone: Asia/Shanghai
     hotelId: pan-pacific-beijing
-    notes: Horário limite da reserva; não é horário de saída da cidade.
+    notes: Checkout até 12:00, mas a saída deve ocorrer antes do voo das 11:40. Horário de saída do
+      hotel e transfer ainda não definidos.
   - id: beijing-chengdu-flight
-    title: Voo Beijing → Chengdu (a comprar)
+    title: Sichuan Airlines 3U8894 · Beijing Capital → Chengdu Shuangliu
     type: flight
-    status: planned
+    status: confirmed
     transportId: beijing-chengdu-2027-01-05
-    notes: Voo previsto para 05/01/2027, ainda a comprar. Aeroportos, companhia e horários não definidos.
+    notes: PEK terminal 2 → CTU terminal 1. Chegar ao aeroporto às 08:40, conforme antecedência de 3
+      horas recomendada no comprovante; transfer ainda não definido.
+    time: 11:40
+    endTime: 14:40
+    timezone: Asia/Shanghai
   - id: chengdu-hotel-checkin
     title: Check-in no Kaiman Top Floor High Altitude Hotel
     type: hotel
     status: confirmed
     hotelId: chengdu-hotel
-    notes: Disponível a partir das 14:00; não representa chegada agendada. Ajustar ao voo ainda a comprar.
+    notes: Check-in disponível a partir das 14:00. Voo chega às 14:40; entrada no hotel após
+      desembarque, bagagens e transfer, sem horário agendado.
   - id: chengdu-evening-people-park
     title: People's Park e Kuixinglou à noite
     type: walk
     status: planned
     placeId: chengdu-peoples-park
-    notes: Proposta condicionada ao horário do voo, ainda não comprado.
+    notes: Proposta flexível após chegada às 14:40, desembarque, bagagens e transfer.
   - id: chengdu-hotpot
     title: Hot pot de Sichuan
     type: meal
     status: planned
-    notes: Proposta condicionada ao horário do voo, ainda não comprado.
+    notes: Proposta flexível após chegada às 14:40, desembarque, bagagens e transfer.
 hotelId: chengdu-hotel

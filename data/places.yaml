@@ -976,3 +976,69 @@
   mapLinks: {}
   officialUrl: null
   notes: Local proposto; confirmar operação e endereço antes da viagem.
+- id: beijing-capital
+  cityId: beijing
+  name:
+    default: Beijing Capital International Airport
+    local: 北京首都国际机场
+  category: airport
+  status: confirmed
+  aliases:
+    - PEK
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 北京首都国际机场 北京
+    amapKeyword: 北京首都国际机场
+    amapCity: 北京
+    baiduKeyword: 北京首都国际机场
+    baiduCity: 北京
+  mapLinks: {}
+  officialUrl: null
+  notes: Aeroporto confirmado no comprovante do voo 3U8894 de 05/01/2027. Endereço, coordenadas e
+    trajeto terrestre ainda não registrados.
+- id: chengdu-shuangliu
+  cityId: chengdu
+  name:
+    default: Chengdu Shuangliu International Airport
+    local: 成都双流国际机场
+  category: airport
+  status: confirmed
+  aliases:
+    - CTU
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 成都双流国际机场 成都
+    amapKeyword: 成都双流国际机场
+    amapCity: 成都
+    baiduKeyword: 成都双流国际机场
+    baiduCity: 成都
+  mapLinks: {}
+  officialUrl: null
+  notes: Aeroporto confirmado no comprovante do voo 3U8894 de 05/01/2027. Endereço, coordenadas e
+    trajeto terrestre ainda não registrados.

@@ -4,13 +4,13 @@ Atualização em 01/11/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Conteúdo
 
-- 24 dias registrados, 10 cidades, 31 locais e 7 hospedagens (5 confirmadas, 2 propostas ainda sem nome). Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
+- 24 dias registrados, 10 cidades, 33 locais e 7 hospedagens (5 confirmadas, 2 propostas ainda sem nome). Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
 - Seis voos do bilhete confirmados para os quatro viajantes: QR7251, QR774, QR892, QR809, QR785, QR4834. Horários locais e durações conferidos entre Brasil, Doha, China e Japão.
 - Conexões calculadas: GRU 9h35, DOH 4h25 na ida; DOH 45 minutos e GRU 1h45 na volta. Trocas de terminal em GRU 2→3 e 3→2.
 - Beijing Daxing (PKX), Haneda (HND) e Narita (NRT) são aeroportos distintos. Economy, 2 volumes por passageiro, peso desconhecido. Operação LATAM nos trechos domésticos.
 - Recibo integral, número de passageiro frequente e códigos tarifários não armazenados.
 - Pan Pacific Beijing: 5 noites, de 31/12/2026 a 05/01/2027; check-in a partir das 15h e checkout até 12h, fuso Asia/Shanghai. Endereço/telefone da reserva correspondem ao [site oficial](https://www.panpacific.com/zh/hotels-and-resorts/pp-beijing/the-hotel.html), usado para nome e endereço em chinês.
-- Hotel associado somente às cinco noites; 05/01 tem checkout sem pernoite presumido. Transfer de Daxing não definido; continuação prevista por voo para Chengdu em 05/01, ainda a comprar. Valores, política financeira e contato privado excluídos.
+- Hotel associado somente às cinco noites; 05/01 tem checkout sem pernoite presumido. Transfer de Daxing não definido; continuação confirmada por voo 3U8894 para Chengdu em 05/01, PEK T2 11h40 → CTU T1 14h40. Valores, política financeira e contato privado excluídos.
 - Dia 18/01: voo Shanghai → Haneda e pernoite confirmado no Ueno Woo Hotel, dois quartos Double Room, sem refeições. Check-in 15h–21h; checkout até 11h de 19/01. Endereço/telefone conferidos no [site do hotel](https://ueno-woo-hotel.mydirectstay.com/contact-us.html). Nome da hóspede, valores e dados de pagamento não publicados.
 - Dia 19/01: Joetsu Shinkansen e início de resort reservado.
 - No resort de Echigo-Yuzawa, `booked` foi normalizado para `confirmed`; nome/endereço/checkout continuam nulos.
@@ -87,10 +87,12 @@ Novotel Shanghai Atlantis confirmado de 14 a 18/01, associado somente aos quatro
 
 ## Alteração do roteiro em 01/11/2026
 
-Xi’an removido do conteúdo operacional, incluindo hotel, locais e trens. Beijing confirmado por cinco noites (31/12–05/01); voo Beijing–Chengdu de 05/01 ainda a comprar, sem aeroportos ou horários presumidos. Chengdu 05–08/01, Chongqing 08–11/01, Zhangjiajie 11–14/01 e Shanghai 14–18/01. Dia extra de Chongqing flexível; Dazu/Wulong opcionais. Calendário, mapa e telas derivam dos mesmos dados.
+Xi’an removido do conteúdo operacional, incluindo hotel, locais e trens. Beijing confirmado por cinco noites (31/12–05/01); voo Beijing–Chengdu de 05/01 agora confirmado: 3U8894, PEK T2 11h40 → CTU T1 14h40. Chengdu 05–08/01, Chongqing 08–11/01, Zhangjiajie 11–14/01 e Shanghai 14–18/01. Dia extra de Chongqing flexível; Dazu/Wulong opcionais. Calendário, mapa e telas derivam dos mesmos dados.
 
 Verificações desta alteração: lint, validação de conteúdo, 95 testes unitários e build aprovados; 46 testes E2E Chromium/WebKit aprovados, incluindo subpasta, reabertura offline, recuperação de cache, atualização explícita e rollback. WebKit com perfil iPhone é emulação; não houve teste em iPhone físico. Perda total do armazenamento exige nova preparação com internet.
 
 ## Hospedagem de Chengdu
 
 Kaiman Top Floor High Altitude Hotel (Taikoo Li Branch), confirmado em 05–08/01/2027. Associado às noites de 05, 06 e 07/01; checkout em 08/01 mantém hospedagem pendente em Chongqing. Endereço e horários gerais (14h/12h) conferidos na [Traveloka](https://www.traveloka.com/en-en/hotel/china/kaiman-top-floor-high-altitude-hotel-taikoo-li-branch-9000005950175); endereço também na Trip.com. Nome chinês, telefone e coordenadas não validados. Data de cancelamento publicada a pedido explícito da família, sem presumir horário ou fuso. Sem parâmetros de sessão, valores ou códigos privados.
+
+Voo doméstico confirmado em 05/01/2027: Sichuan Airlines 3U8894, Beijing Capital (PEK) T2 11h40 → Chengdu Shuangliu (CTU) T1 14h40, Asia/Shanghai, 3 horas, quatro viajantes. Comprovante recomenda antecedência de 3 horas (08h40 no aeroporto); checkout antecipado e transfer ainda sem horário. Despachada: 20 kg por pessoa, sem quantidade de volumes informada; mão: 1 volume até 8 kg. Franquia em notas para não presumir peso por volume. PDF, PNR, bilhetes e dados pessoais não publicados.
