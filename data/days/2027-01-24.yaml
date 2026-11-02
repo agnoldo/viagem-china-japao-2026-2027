@@ -1,0 +1,15 @@
+date: 2027-01-24
+cityId: tokyo
+regionId: japan
+summary: Tokyo — programação já definida
+status: planned
+hotelId: hotel-monterey-hanzomon
+notes: Hospedagem confirmada. Compromisso já informado para este dia; detalhes e horários não fornecidos.
+activities:
+  - id: monterey-breakfast-24
+    type: meal
+    title: Café da manhã incluído para quatro
+    status: confirmed
+    hotelId: hotel-monterey-hanzomon
+    timezone: Asia/Tokyo
+    notes: Incluído para dois hóspedes por quarto, quatro no total. Horário ainda não informado.

@@ -9,18 +9,19 @@ describe('mapa derivado do roteiro', () => {
       model = tripMapData(c);
     expect(model.cities.some((city) => city.id === 'doha')).toBe(true);
     expect(model.dates).toHaveLength(31);
-    expect(model.gaps).toHaveLength(3);
+    expect(model.gaps).toEqual(model.dates.filter((date) => !c.days.some((d) => d.date === date)));
     expect(model.routes).toHaveLength(c.flights.length + c.trains.length + c.transfers.length);
   });
   it('acompanha edição dos dias sem inventar transportes nas lacunas', () => {
     const c = readContent();
+    c.days = c.days.filter((d) => d.date !== '2027-01-24');
+    const before = tripMapData(c);
     c.days.push({
       ...c.days.find((d) => d.date === '2027-01-19')!,
       date: '2027-01-24',
       activities: [],
     });
-    const before = tripMapData(readContent()),
-      after = tripMapData(c);
+    const after = tripMapData(c);
     expect(after.gaps).toHaveLength(before.gaps.length - 1);
     expect(after.routes).toEqual(before.routes);
   });

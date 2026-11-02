@@ -4,7 +4,7 @@ Atualização em 01/11/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Conteúdo
 
-- 28 dias registrados, 10 cidades, 33 locais e 7 hospedagens (5 confirmadas, 2 propostas ainda sem nome). Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
+- 31 dias registrados, 10 cidades, 33 locais e 7 hospedagens (5 confirmadas, 2 propostas ainda sem nome). Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
 - Seis voos do bilhete confirmados para os quatro viajantes: QR7251, QR774, QR892, QR809, QR785, QR4834. Horários locais e durações conferidos entre Brasil, Doha, China e Japão.
 - Conexões calculadas: GRU 9h35, DOH 4h25 na ida; DOH 45 minutos e GRU 1h45 na volta. Trocas de terminal em GRU 2→3 e 3→2.
 - Beijing Daxing (PKX), Haneda (HND) e Narita (NRT) são aeroportos distintos. Economy, 2 volumes por passageiro, peso desconhecido. Operação LATAM nos trechos domésticos.
@@ -15,7 +15,7 @@ Atualização em 01/11/2026 a partir dos dados fornecidos pelo mantenedor.
 - Dia 19/01: Joetsu Shinkansen e início de resort reservado.
 - Purpose Resort Echigo-Yuzawa Kura confirmado de 19 a 21/01: duas noites, apartamento de dois quartos, quatro camas, sem refeições. Check-in 15h até meia-noite (fim preservado nas notas porque atravessa o dia); checkout até 10h. Endereço local conferido em https://www.purposeresort.com/echigoyuzawa/.
 - Hotel Regina Kawaguchiko confirmado de 21 a 23/01: duas noites, quarto quádruplo com vista para o Fuji, não fumantes; café da manhã para quatro em 22 e 23/01, 7h–10h. Check-in 15h–20h; checkout 7h–11h. Comprovantes privados lidos localmente; PDFs, códigos, hóspedes e valores não incorporados.
-- Dias 20–23 registrados; retorno a Tokyo em 23/01 sem transporte ou hotel confirmado. Compromissos de 23 e 24 preservados sem inventar detalhes. Passeios na região do Fuji pendentes.
+- Dias 20–23 registrados; retorno a Tokyo em 23/01 com Monterey Hanzomon confirmado e transporte a definir. Compromissos de 23 e 24 preservados sem inventar detalhes. Passeios na região do Fuji pendentes.
 - Aeroporto em Shanghai, estação de Tokyo, horários de 18–19/01 e programação dos dias sem registro permanecem desconhecidos.
 - Nenhum horário de demonstração, hotel fictício, retorno presumido ou alternativa antiga entra no conteúdo publicado.
 - A fixture anterior fica isolada em `tests/fixtures/` e não é importada pela aplicação.
@@ -30,7 +30,7 @@ Playwright em Chromium e WebKit com viewport de iPhone: navegação por todos os
 
 ## Calendário
 
-Visão mensal em Viagem com alternância para lista; 31 datas dentro dos limites gerais e 28 dias registrados, preservando as três lacunas de 24–26/01. Os meses são mostrados juntos em ordem cronológica; a seleção inicial prioriza o mês com mais dias da viagem. Sem duplicação de dados ou mudanças nas reservas.
+Visão mensal em Viagem com alternância para lista; 31 datas dentro dos limites gerais e 31 dias registrados, sem lacunas de datas após o registro das hospedagens de 24–26/01; passeios continuam parciais. Os meses são mostrados juntos em ordem cronológica; a seleção inicial prioriza o mês com mais dias da viagem. Sem duplicação de dados ou mudanças nas reservas.
 
 Cobertura: virada de ano, alinhamento dos dias da semana, fevereiro bissexto, limites gerais nulos, seleção persistida na URL, resumo de lacunas sem links inválidos, voo planejado junto a hotel confirmado, noites em trânsito, troca de mês, navegação para os detalhes, reabertura offline em subpasta e ausência de overflow em 320 px. Inspeção visual em desktop e mobile; abreviações e legenda mantêm os nomes legíveis em telas estreitas. Chromium e WebKit simulados, sem teste em iPhone físico.
 
@@ -73,11 +73,11 @@ HTML com meta robots noindex e arquivo robots.txt local; regra para a raiz do do
 
 ## Mapa de Viagem — 31/10/2026
 
-Base geográfica local Natural Earth; 11 referências urbanas WGS84 com fontes Wikidata, independentes dos links de navegação e locais de embarque. Pontos derivados dos dias/extremos de transportes; linhas só dos transportes não cancelados. Datas compartilhadas com calendário, três lacunas preservadas, hospedagem e status vindos do conteúdo validado. Testes cobrem atualização dos dias, conexões sem dia-base, exclusão de cancelados, projeção/rótulos, navegação data/calendário, lacunas, trânsito, todo o percurso e reabertura offline em subpasta/320 px, sem rede externa essencial. Não testado em iPhone físico.
+Base geográfica local Natural Earth; 11 referências urbanas WGS84 com fontes Wikidata, independentes dos links de navegação e locais de embarque. Pontos derivados dos dias/extremos de transportes; linhas só dos transportes não cancelados. Datas compartilhadas com calendário, datas completas e programação parcial preservada, hospedagem e status vindos do conteúdo validado. Testes cobrem atualização dos dias, conexões sem dia-base, exclusão de cancelados, projeção/rótulos, navegação data/calendário, lacunas, trânsito, todo o percurso e reabertura offline em subpasta/320 px, sem rede externa essencial. Não testado em iPhone físico.
 
 ## Calendário reunido — 31/10/2026
 
-Dezembro/2026 e janeiro/2027 aparecem juntos em ordem cronológica, sem alternância mensal. Todos os 31 dias da viagem permanecem selecionáveis; três lacunas preservadas. Semanas completas fora do período são omitidas, com alinhamento dos dias da semana preservado. A seleção continua na URL e no mapa. Verificação E2E inclui os dois títulos/31 datas, resumo, trânsito, lacunas e reabertura offline/320 px.
+Dezembro/2026 e janeiro/2027 aparecem juntos em ordem cronológica, sem alternância mensal. Todos os 31 dias da viagem permanecem selecionáveis; datas completas e programação parcial preservada. Semanas completas fora do período são omitidas, com alinhamento dos dias da semana preservado. A seleção continua na URL e no mapa. Verificação E2E inclui os dois títulos/31 datas, resumo, trânsito, lacunas e reabertura offline/320 px.
 
 ## TripAdvisor — 31/10/2026
 
@@ -112,3 +112,11 @@ Verificação desta atualização: lint, validação de conteúdo, 95 testes uni
 Comprovantes privados confirmam Purpose Resort Echigo-Yuzawa Kura em 19–21/01 e Hotel Regina Kawaguchiko em 21–23/01, duas noites cada. Datas de checkout não geram noite extra: Yuzawa nas noites de 19 e 20; Regina nas noites de 21 e 22. Dias 20–23 adicionados; dia 23 tem base Tokyo e hospedagem pendente. Os compromissos informados de 23 e 24 não receberam atividades ou horários inventados. Deslocamentos de 21 e 23 constam como atividades planejadas, sem modal, ligação direta ou bilhete presumido. Coordenada urbana de Fujikawaguchiko separada dos endereços de navegação; coordenadas dos hotéis mantidas nulas.
 
 Lint, validação, 96 testes unitários e build aprovados. E2E: 42/46 passaram na execução completa; quatro falhas eram expectativas antigas de resort sem nome/checkout e foram corrigidas. Os quatro testes afetados passaram na repetição em Chromium e WebKit, incluindo todos os dias/cidades offline, dados do Regina, endereços locais e hospedagem pendente. Calendário, mapa, subpasta, recuperação de cache, atualização e rollback passaram na execução completa. WebKit com perfil iPhone é emulação; sem teste em iPhone físico. Perda total do armazenamento exige reinstalação com internet. Sem alteração no SW ou publicação nesta atualização.
+
+## Tokyo / Monterey Hanzomon — 02/11/2026
+
+Dois comprovantes privados confirmam dois quartos de 23 a 27/01/2027, quatro noites: Hollywood Twin com duas camas de solteiro e Queen Double de 18 m² com cama queen de 160 cm. Café da manhã para quatro em 24–27/01, sem horário informado. Check-in após 15h, checkout antes de 11h; cancelamento gratuito antes de 20/01 às 23h59 no fuso Asia/Tokyo. Quartos próximos são solicitação sem garantia. Nome japonês, endereço e telefone transcritos dos comprovantes; códigos, PDFs, hóspedes e valores excluídos do conteúdo público.
+
+Hotel associado somente às noites 23, 24, 25 e 26. Dia 27 mantém pernoite em trânsito, com café da manhã e checkout do Monterey antes do voo de Narita. Tokyo tem duas estadias separadas, explicitadas nas notas da cidade. Todos os 31 dias têm registro, mantendo itineraryCoverage parcial porque atividades e transportes ainda não estão completos. Compromissos de 23 e 24 sem detalhes inventados; passeios de 25 e 26 e transfer para Narita pendentes. Regressões de lacunas passam a usar cópias sintéticas do conteúdo, sem depender de ausência de reservas no plano real.
+
+Validação local desta alteração: lint, conteúdo, 97 testes unitários, build e 46 E2E Chromium/WebKit aprovados. Reabertura offline em subpasta percorreu todos os dias e cidades, incluindo endereço local e check-in/checkout do Monterey. Calendário e mapa conferem hospedagem em 24/01; regressões sintéticas continuam cobrindo lacunas. Sem alteração de SW/cache nem teste em iPhone físico. Perda total do armazenamento exige nova preparação com internet.

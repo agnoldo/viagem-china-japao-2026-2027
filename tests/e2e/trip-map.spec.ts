@@ -7,7 +7,7 @@ test.beforeEach(async ({ page, request }) => {
   await page.waitForFunction(() => !!navigator.serviceWorker.controller);
 });
 
-test('mapa acompanha a data do calendário, lacunas e pernoite em trânsito', async ({ page }) => {
+test('mapa acompanha a data do calendário, hospedagem e pernoite em trânsito', async ({ page }) => {
   const map = page.getByRole('region', { name: 'Mapa da viagem', exact: true });
   await expect(map.getByRole('button', { name: 'Selecionar Beijing', exact: true })).toBeVisible();
   await page.getByLabel('Dia da viagem', { exact: true }).fill('2027-01-07');
@@ -24,8 +24,8 @@ test('mapa acompanha a data do calendário, lacunas e pernoite em trânsito', as
   await page.getByRole('button', { name: 'Mapa', exact: true }).click();
   await expect(map.locator('.journey-map-detail h3')).toContainText('Chengdu');
   await page.getByLabel('Dia da viagem', { exact: true }).fill('2027-01-24');
-  await expect(map).toContainText('Sem programação cadastrada');
-  await expect(map.locator('.journey-day-link')).toHaveCount(0);
+  await expect(map).toContainText('Hotel Monterey Hanzomon');
+  await expect(map.locator('.journey-day-link')).toHaveCount(1);
   await page.getByLabel('Dia da viagem', { exact: true }).fill('2027-01-27');
   await expect(map).toContainText('Noite em trânsito');
   await page.getByRole('button', { name: 'Toda a viagem', exact: true }).click();

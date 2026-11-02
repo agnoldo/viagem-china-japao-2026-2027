@@ -14,14 +14,12 @@ describe('plano atual com dados incompletos', () => {
       phase: 'before',
     });
     expect(currentTripDay(content, new Date('2027-02-01T12:00:00Z')).phase).toBe('after');
-    expect(currentTripDay(content, new Date('2027-01-24T12:00:00Z')).phase).toBe('incomplete');
-    expect(content.days.map((d) => d.date)).toEqual([
-      ...datesBetween('2026-12-29', '2027-01-23'),
-      '2027-01-27',
-      '2027-01-28',
-    ]);
+    expect(currentTripDay(content, new Date('2027-01-24T12:00:00Z')).phase).toBe('during');
+    expect(content.days.map((d) => d.date)).toEqual(datesBetween('2026-12-29', '2027-01-28'));
     expect(formatDate(null)).toBe('A definir');
     const copy = structuredClone(content);
+    copy.days = copy.days.filter((d) => d.date !== '2027-01-24');
+    expect(currentTripDay(copy, new Date('2027-01-24T12:00:00Z')).phase).toBe('incomplete');
     copy.trip.itineraryCoverage = 'complete';
     expect(() => validateContent(copy)).toThrow(/dia 2027-01-24/);
   });
@@ -146,9 +144,42 @@ describe('plano atual com dados incompletos', () => {
     expect(arrival.activities.find((a) => a.id === 'regina-checkin')!.time).toBeUndefined();
     const departure = content.days.find((d) => d.date === '2027-01-23')!;
     expect(departure.cityId).toBe('tokyo');
-    expect(departure.hotelId).toBeUndefined();
+    expect(departure.hotelId).toBe('hotel-monterey-hanzomon');
     expect(departure.overnightInTransit).toBe(false);
     expect(departure.activities.find((a) => a.type === 'transfer')!.status).toBe('planned');
+  });
+  it('cobre quatro noites em dois quartos no Monterey e mantém a noite de volta em trânsito', () => {
+    const hotel = content.hotels.find((h) => h.id === 'hotel-monterey-hanzomon')!;
+    expect([hotel.checkInDate, hotel.checkOutDate, hotel.checkIn, hotel.checkOut]).toEqual([
+      '2027-01-23',
+      '2027-01-27',
+      '15:00',
+      '11:00',
+    ]);
+    expect(content.days.filter((d) => d.hotelId === hotel.id).map((d) => d.date)).toEqual([
+      '2027-01-23',
+      '2027-01-24',
+      '2027-01-25',
+      '2027-01-26',
+    ]);
+    expect(hotel.notes).toContain('Hollywood Twin Room');
+    expect(hotel.notes).toContain('Queen Double Room');
+    expect(hotel.notes).toContain('sem garantia');
+    const checkin = content.days
+      .find((d) => d.date === '2027-01-23')!
+      .activities.find((a) => a.id === 'monterey-checkin')!;
+    expect(checkin.time).toBeUndefined();
+    for (const date of ['2027-01-24', '2027-01-25', '2027-01-26', '2027-01-27']) {
+      const day = content.days.find((d) => d.date === date)!;
+      const breakfast = day.activities.find((a) => a.hotelId === hotel.id && a.type === 'meal')!;
+      expect(breakfast.status).toBe('confirmed');
+      expect(breakfast.title).toContain('quatro');
+      expect(breakfast.time).toBeUndefined();
+    }
+    const departure = content.days.find((d) => d.date === '2027-01-27')!;
+    expect(departure.hotelId).toBeUndefined();
+    expect(departure.overnightInTransit).toBe(true);
+    expect(departure.activities.some((a) => a.id === 'monterey-checkout')).toBe(true);
   });
   it('reserva confirmada não implica nome, endereço, horário ou checkout conhecido', () => {
     const copy = structuredClone(content);
@@ -226,6 +257,7 @@ describe('plano atual com dados incompletos', () => {
       'zhangjiajie-hotel',
       'shanghai-hotel',
       'hotel-regina-kawaguchiko',
+      'hotel-monterey-hanzomon',
     ]);
     expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(1);
     expect(

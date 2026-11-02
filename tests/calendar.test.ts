@@ -25,6 +25,10 @@ describe('calendário de datas civis', () => {
   });
   it('mantém as três lacunas no intervalo conhecido sem preencher o plano', () => {
     const content = readContent();
+    // Lacunas sintéticas preservam a cobertura mesmo quando todas as datas têm hospedagem.
+    content.days = content.days.filter(
+      (d) => !['2027-01-24', '2027-01-25', '2027-01-26'].includes(d.date),
+    );
     const { start, end } = calendarBounds(content);
     const dates = calendarMonths(start, end)
       .flatMap(monthCells)

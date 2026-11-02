@@ -3,8 +3,9 @@ cityId: tokyo
 regionId: japan
 summary: Fujikawaguchiko → Tokyo; programação já definida
 status: planned
-notes: Estar em Tokyo em 23/01. Compromissos de 23 e 24/01 informados, sem detalhes ou horários.
-  Hospedagem em Tokyo ainda não registrada; não há pernoite no Regina na noite de 23/01.
+notes: Retorno a Tokyo em 23/01 e quatro noites confirmadas no Hotel Monterey Hanzomon, em dois
+  quartos. Compromissos de 23 e 24/01 informados sem detalhes ou horários. Transporte de
+  Fujikawaguchiko ainda não definido; não há pernoite no Regina na noite de 23/01.
 activities:
   - id: regina-breakfast-23
     type: meal
@@ -29,3 +30,12 @@ activities:
     notes:
       Meio de transporte, estações e horários a definir conforme compromisso em Tokyo. Sem reserva
       registrada.
+  - id: monterey-checkin
+    type: hotel
+    title: Check-in no Hotel Monterey Hanzomon
+    status: confirmed
+    hotelId: hotel-monterey-hanzomon
+    timezone: Asia/Tokyo
+    notes: 'Disponível após 15:00; chegada ainda não agendada. Dois quartos: Hollywood Twin e Queen
+      Double. Solicitação de quartos próximos sem garantia.'
+hotelId: hotel-monterey-hanzomon

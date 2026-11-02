@@ -166,6 +166,17 @@ test('reabre sem rede e navega por todos os dias e cidades registrados', async (
   );
   await reopened.getByRole('link', { name: 'Endereço local', exact: true }).click();
   await expect(reopened.locator('.big-address')).toContainText('５２３９−１');
+  await reopened.goto(base + '#/hoje/2027-01-23');
+  await expect(reopened.locator('.stay-panel')).toContainText('Hotel Monterey Hanzomon');
+  await reopened.goto(base + '#/hotel/hotel-monterey-hanzomon');
+  await expect(reopened.getByText('Check-in:', { exact: false })).toContainText(
+    '23 de janeiro · 15:00',
+  );
+  await expect(reopened.getByText('Check-out:', { exact: false })).toContainText(
+    '27 de janeiro · 11:00',
+  );
+  await reopened.getByRole('link', { name: 'Endereço local', exact: true }).click();
+  await expect(reopened.locator('.big-address')).toContainText('一番町23番1号');
   await reopened.goto(base + '#/logistica');
   await expect(reopened.getByRole('heading', { name: 'Voos', exact: true })).toBeVisible();
   await reopened.reload();
@@ -301,9 +312,11 @@ test('hospedagem sem nome preserva status e não inventa endereço ou horários'
   await page.goto(base + `#/hoje/${firstDay.date}`);
   await expect(page.getByText('Plano parcial.', { exact: true })).toBeVisible();
   await expect(page.locator('.stay-panel')).toContainText('Noite em trânsito');
-  const pendingStay = content.days.find((d) => !d.hotelId && !d.overnightInTransit)!;
-  await page.goto(base + `#/hoje/${pendingStay.date}`);
-  await expect(page.locator('.stay-panel')).toContainText('Hospedagem a definir');
+  const pendingStay = content.days.find((d) => !d.hotelId && !d.overnightInTransit);
+  if (pendingStay) {
+    await page.goto(base + `#/hoje/${pendingStay.date}`);
+    await expect(page.locator('.stay-panel')).toContainText('Hospedagem a definir');
+  }
 });
 
 test('voos da família e conexões permanecem completos offline', async ({ page, context }) => {

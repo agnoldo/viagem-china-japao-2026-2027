@@ -8,24 +8,25 @@ test.beforeEach(async ({ page, request }) => {
   await page.waitForFunction(() => !!navigator.serviceWorker.controller);
 });
 
-test('calendário reúne os meses, preserva lacunas e alterna para a lista', async ({ page }) => {
+test('calendário reúne os meses, mostra hospedagens e alterna para a lista', async ({ page }) => {
   const calendar = page.getByRole('region', { name: 'Calendário da viagem', exact: true });
   await expect(calendar.getByRole('heading', { name: 'janeiro de 2027' })).toBeVisible();
   await expect(calendar.locator('.calendar-day')).toHaveCount(31);
   await expect(calendar.getByRole('heading', { name: 'dezembro de 2026' })).toBeVisible();
-  await expect(calendar.locator('.calendar-gap')).toHaveCount(3);
-  await calendar.getByRole('button', { name: /24 de janeiro.*Sem programação cadastrada/ }).click();
+  await expect(calendar.locator('.calendar-gap')).toHaveCount(0);
+  await calendar.getByRole('button', { name: /24 de janeiro.*Tokyo/ }).click();
   const summary = page.getByRole('region', { name: 'Resumo do dia selecionado' });
-  await expect(summary).toContainText('Cidade, hospedagem e atividades permanecem em aberto');
-  await expect(summary.getByRole('link')).toHaveCount(0);
+  await expect(summary).toContainText('Hotel Monterey Hanzomon');
+  await expect(summary.getByRole('link', { name: 'Ver programação do dia' })).toBeVisible();
   await page.getByRole('button', { name: 'Lista', exact: true }).click();
   await expect(page.locator('.trip-day')).toHaveCount(content.days.length);
   await page.getByRole('button', { name: 'Calendário', exact: true }).click();
   await expect(summary).toContainText('24 de janeiro');
   await page.reload();
-  await expect(
-    calendar.getByRole('button', { name: /24 de janeiro.*Sem programação cadastrada/ }),
-  ).toHaveAttribute('aria-pressed', 'true');
+  await expect(calendar.getByRole('button', { name: /24 de janeiro.*Tokyo/ })).toHaveAttribute(
+    'aria-pressed',
+    'true',
+  );
 });
 
 test('mostra propostas, reservas e trânsito sem inventar hospedagens', async ({ page }) => {

@@ -323,3 +323,46 @@
     retorno em 23/01 conforme compromisso já programado. Comprovante, códigos, nomes de hóspedes e
     valores privados não publicados.'
   checkInUntil: 20:00
+- id: hotel-monterey-hanzomon
+  cityId: tokyo
+  name:
+    default: Hotel Monterey Hanzomon
+    local: ホテルモントレ半蔵門
+  type: hotel
+  status: confirmed
+  address:
+    default: 23-1 Ichiban-cho, Chiyoda-ku, Tokyo 102-0082, Japan
+    local: 〒102-0082 東京千代田区一番町23番1号
+  phone: +81 3-3556-7111
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: ホテルモントレ半蔵門 〒102-0082 東京千代田区一番町23番1号
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  checkInDate: 2027-01-23
+  checkIn: 15:00
+  checkOutDate: 2027-01-27
+  checkOut: 11:00
+  notes:
+    'Duas reservas confirmadas de 4 noites cada, de 23 a 27/01/2027, para os quatro viajantes: 1
+    Hollywood Twin Room com 2 camas de solteiro e 1 Queen Double Room de 18 m² com 1 cama queen de
+    160 cm. Café da manhã incluído para 2 hóspedes por quarto (4 no total) em 24, 25, 26 e 27/01;
+    horário não informado nos comprovantes. Check-in após 15:00 de 23/01; checkout antes de 11:00 de
+    27/01, Asia/Tokyo. Não é chegada ou saída agendada. Cancelamento gratuito antes de 20/01/2027 às
+    23:59, horário local do hotel, nos dois comprovantes. Solicitados quartos próximos; atendimento
+    sujeito à disponibilidade, sem garantia. Endereço e telefone transcritos dos comprovantes.
+    Retorno de Fujikawaguchiko em 23/01 e transporte para Narita em 27/01 ainda sem horários
+    definidos. PDFs, códigos, nomes de hóspedes e valores privados não publicados.'
+  checkInUntil: null

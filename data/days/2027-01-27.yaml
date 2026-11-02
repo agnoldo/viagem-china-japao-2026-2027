@@ -4,8 +4,26 @@ regionId: japan
 summary: 'Início da volta: Narita → Doha'
 status: confirmed
 overnightInTransit: true
-notes: Partida por Narita, terminal 2. Conexão de 45 minutos em Doha; confirmar orientações com a Qatar.
+notes: Partida por Narita, terminal 2. Conexão de 45 minutos em Doha; confirmar orientações com a
+  Qatar. Checkout do Hotel Monterey Hanzomon antes de 11:00; transporte para Narita ainda não
+  definido. Sem pernoite no hotel nesta noite.
 activities:
+  - id: monterey-breakfast-27
+    type: meal
+    title: Café da manhã incluído para quatro
+    status: confirmed
+    hotelId: hotel-monterey-hanzomon
+    timezone: Asia/Tokyo
+    notes: Incluído para dois hóspedes por quarto, quatro no total. Horário ainda não informado.
+  - id: monterey-checkout
+    type: hotel
+    title: Checkout do Hotel Monterey Hanzomon antes de 11:00
+    status: confirmed
+    hotelId: hotel-monterey-hanzomon
+    timezone: Asia/Tokyo
+    notes: Limite de checkout; não é saída agendada. Definir transfer para o voo QR809, que parte de
+      Narita T2 às 16:55.
+    time: 11:00
   - id: depart-qr809
     type: flight
     title: QR809 · NRT → DOH

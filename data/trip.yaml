@@ -52,7 +52,8 @@ notes:
     13/01.'
   - 'Japão: Purpose Resort Echigo-Yuzawa Kura confirmado de 19 a 21/01 e Hotel Regina Kawaguchiko de
     21 a 23/01, duas noites em cada. Retorno a Tokyo em 23/01; dias 23 e 24 já programados, sem
-    detalhes fornecidos. Hospedagem em Tokyo após esse retorno ainda não registrada.'
+    detalhes fornecidos. Hotel Monterey Hanzomon confirmado de 23 a 27/01, quatro noites em dois
+    quartos, com café da manhã para quatro.'
 regions:
   - id: brazil
     name: Brasil
@@ -225,12 +226,14 @@ cities:
     aliases: []
     timezone: Asia/Tokyo
     startDate: 2027-01-18
-    endDate: 2027-01-19
+    endDate: 2027-01-27
     status: planned
-    notes: Pernoite confirmado no Ueno Woo Hotel de 18 a 19/01/2027, em dois quartos Double Room.
-      Check-in entre 15:00 e 21:00, checkout até 11:00. Chegada prevista por Haneda em 18/01 e trem
-      para Echigo-Yuzawa em 19/01, ambos ainda sem horários registrados. Retorno por Narita em 27/01
-      confirmado; outras estadias em Tokyo ainda não registradas.
+    notes:
+      'Estadias separadas em Tokyo: Ueno Woo Hotel de 18 a 19/01 e Hotel Monterey Hanzomon de 23 a
+      27/01/2027, dois quartos em cada hotel. Entre 19 e 23/01 a família estará em Echigo-Yuzawa e
+      Fujikawaguchiko; os limites da cidade não representam estadia contínua. Monterey: quatro
+      noites, café da manhã para quatro em 24–27/01. Compromissos de 23 e 24/01 informados sem
+      detalhes. Voo de retorno por Narita em 27/01 confirmado; transfer ainda não definido.'
     mapPosition:
       lat: 35.689444
       lon: 139.691667
