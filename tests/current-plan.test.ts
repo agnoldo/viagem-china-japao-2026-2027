@@ -14,16 +14,16 @@ describe('plano atual com dados incompletos', () => {
       phase: 'before',
     });
     expect(currentTripDay(content, new Date('2027-02-01T12:00:00Z')).phase).toBe('after');
-    expect(currentTripDay(content, new Date('2027-01-23T12:00:00Z')).phase).toBe('incomplete');
+    expect(currentTripDay(content, new Date('2027-01-24T12:00:00Z')).phase).toBe('incomplete');
     expect(content.days.map((d) => d.date)).toEqual([
-      ...datesBetween('2026-12-29', '2027-01-19'),
+      ...datesBetween('2026-12-29', '2027-01-23'),
       '2027-01-27',
       '2027-01-28',
     ]);
     expect(formatDate(null)).toBe('A definir');
     const copy = structuredClone(content);
     copy.trip.itineraryCoverage = 'complete';
-    expect(() => validateContent(copy)).toThrow(/dia 2027-01-20/);
+    expect(() => validateContent(copy)).toThrow(/dia 2027-01-24/);
   });
   it('cobre cinco noites em Beijing sem transformar disponibilidade de check-in em chegada agendada', () => {
     const hotel = content.hotels.find((h) => h.id === 'pan-pacific-beijing')!;
@@ -120,8 +120,45 @@ describe('plano atual com dados incompletos', () => {
     expect(train.to.placeId).toBe('echigo-yuzawa-station');
     expect(train.recommendedArrivalMinutes).toBeNull();
   });
+  it('associa somente as noites reservadas em Yuzawa e Kawaguchiko, preservando retorno a Tokyo', () => {
+    const snow = content.hotels.find((h) => h.id === 'echigo-yuzawa-resort')!;
+    const regina = content.hotels.find((h) => h.id === 'hotel-regina-kawaguchiko')!;
+    expect([snow.checkInDate, snow.checkOutDate, snow.checkOut]).toEqual([
+      '2027-01-19',
+      '2027-01-21',
+      '10:00',
+    ]);
+    expect([
+      regina.checkInDate,
+      regina.checkOutDate,
+      regina.checkIn,
+      regina.checkInUntil,
+      regina.checkOut,
+    ]).toEqual(['2027-01-21', '2027-01-23', '15:00', '20:00', '11:00']);
+    for (const [hotel, nights] of [
+      [snow, ['2027-01-19', '2027-01-20']],
+      [regina, ['2027-01-21', '2027-01-22']],
+    ] as const) {
+      expect(content.days.filter((d) => d.hotelId === hotel.id).map((d) => d.date)).toEqual(nights);
+      expect(buildMapLinks(hotel, 'apple').url).toMatch(/^https:/);
+    }
+    const arrival = content.days.find((d) => d.date === '2027-01-21')!;
+    expect(arrival.activities.find((a) => a.id === 'regina-checkin')!.time).toBeUndefined();
+    const departure = content.days.find((d) => d.date === '2027-01-23')!;
+    expect(departure.cityId).toBe('tokyo');
+    expect(departure.hotelId).toBeUndefined();
+    expect(departure.overnightInTransit).toBe(false);
+    expect(departure.activities.find((a) => a.type === 'transfer')!.status).toBe('planned');
+  });
   it('reserva confirmada não implica nome, endereço, horário ou checkout conhecido', () => {
-    const hotel = content.hotels[0];
+    const copy = structuredClone(content);
+    const hotel = copy.hotels[0];
+    hotel.name = { default: null, local: null };
+    hotel.address = { default: null, local: null };
+    hotel.mapSearch.apple = null;
+    hotel.checkIn = null;
+    hotel.checkOutDate = null;
+    expect(() => validateContent(copy)).not.toThrow();
     expect(hotel.status).toBe('confirmed');
     expect(hotel.name.default).toBeNull();
     expect(hotel.checkInDate).toBe('2027-01-19');
@@ -141,6 +178,7 @@ describe('plano atual com dados incompletos', () => {
       'shanghai',
       'tokyo',
       'echigo-yuzawa',
+      'fujikawaguchiko',
     ]);
     expect(content.trip.alternatives).toEqual([]);
     expect(content.transfers).toEqual([]);
@@ -187,6 +225,7 @@ describe('plano atual com dados incompletos', () => {
       'chengdu-hotel',
       'zhangjiajie-hotel',
       'shanghai-hotel',
+      'hotel-regina-kawaguchiko',
     ]);
     expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(1);
     expect(
@@ -205,8 +244,11 @@ describe('plano atual com dados incompletos', () => {
     expect(content.trip.cities.filter((c) => c.country === 'JP').map((c) => c.id)).toEqual([
       'tokyo',
       'echigo-yuzawa',
+      'fujikawaguchiko',
     ]);
-    expect(content.hotels.find((h) => h.id === 'echigo-yuzawa-resort')!.checkOutDate).toBeNull();
+    expect(content.hotels.find((h) => h.id === 'echigo-yuzawa-resort')!.checkOutDate).toBe(
+      '2027-01-21',
+    );
   });
   it('remove Xi’an e preserva o voo doméstico confirmado sem inventar volumes de bagagem', () => {
     expect(content.places.some((p) => p.cityId === 'xian')).toBe(false);

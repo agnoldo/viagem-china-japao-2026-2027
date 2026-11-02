@@ -1,0 +1,31 @@
+date: 2027-01-21
+cityId: fujikawaguchiko
+regionId: japan
+summary: Echigo-Yuzawa → Fujikawaguchiko e check-in no Hotel Regina
+status: planned
+hotelId: hotel-regina-kawaguchiko
+notes: Troca de hospedagem confirmada. Definir transporte com chegada dentro da janela de check-in
+  do Regina, das 15:00 às 20:00.
+activities:
+  - id: yuzawa-checkout
+    type: hotel
+    title: Checkout do Purpose Resort até as 10:00
+    status: confirmed
+    timezone: Asia/Tokyo
+    notes: Limite de checkout, não uma saída agendada.
+    hotelId: echigo-yuzawa-resort
+    time: 10:00
+  - id: yuzawa-kawaguchiko-transfer
+    type: transfer
+    title: Deslocamento Echigo-Yuzawa → Fujikawaguchiko
+    status: planned
+    timezone: Asia/Tokyo
+    notes: Meio de transporte, conexões, estações e horários a definir. Nenhuma ligação direta ou
+      reserva confirmada.
+  - id: regina-checkin
+    type: hotel
+    title: Check-in no Hotel Regina Kawaguchiko
+    status: confirmed
+    timezone: Asia/Tokyo
+    notes: Janela 15:00–20:00; chegada não agendada. Quarto quádruplo com vista para o Monte Fuji.
+    hotelId: hotel-regina-kawaguchiko

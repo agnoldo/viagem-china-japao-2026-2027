@@ -126,7 +126,7 @@ describe('URLs nativas com sistemas de coordenadas explícitos', () => {
     expect(new URL(baidu.fallbackUrl!).searchParams.get('wd')).toBe(text);
   });
   it('não gera busca de hotel fictício sem nome, endereço ou coordenadas', () => {
-    const unknown = readContent().hotels.find((h) => h.id === 'echigo-yuzawa-resort')!;
+    const unknown = readContent().hotels.find((h) => h.id === 'chongqing-hotel')!;
     for (const provider of ['amap', 'baidu'])
       expect(buildMapLinks(unknown, provider).appUrl).toBeNull();
   });

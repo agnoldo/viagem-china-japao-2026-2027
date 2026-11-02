@@ -37,7 +37,8 @@ notes:
     viajantes. Check-in de 15:00 a 21:00; checkout até 11:00 de 19/01, horários locais.'
   - Passeios, horários sugeridos e deslocamentos chineses sem reserva são propostas, com status
     Planejado ou Opcional. Hotel de Chongqing ainda a escolher; Wyndham Wulingyuan confirmado em
-    Zhangjiajie. Programação do Japão após 19/01 continua em aberto.
+    Zhangjiajie. Hospedagens japonesas confirmadas em Echigo-Yuzawa de 19 a 21/01 e Fujikawaguchiko
+    de 21 a 23/01. Passeios e transportes desse trecho ainda não definidos.
   - Novotel Shanghai Atlantis confirmado de 14 a 18/01/2027, quatro noites em Junior Suite com vista
     para o rio Huangpu. Happy hour para duas pessoas no restaurante giratório, 17:30–20:00, conforme
     opção reservada.
@@ -49,6 +50,9 @@ notes:
     quartos, com café da manhã para quatro. Tianmen e 72 Qilou planejados em 11/01;
     Yuanjiajie/Tianzi em 12/01; Glass Bridge/Grand Canyon e trecho opcional de Golden Whip Stream em
     13/01.'
+  - 'Japão: Purpose Resort Echigo-Yuzawa Kura confirmado de 19 a 21/01 e Hotel Regina Kawaguchiko de
+    21 a 23/01, duas noites em cada. Retorno a Tokyo em 23/01; dias 23 e 24 já programados, sem
+    detalhes fornecidos. Hospedagem em Tokyo após esse retorno ainda não registrada.'
 regions:
   - id: brazil
     name: Brasil
@@ -241,14 +245,35 @@ cities:
     aliases: []
     timezone: Asia/Tokyo
     startDate: 2027-01-19
-    endDate: null
-    status: planned
-    notes: Destino de neve. Hospedagem em resort reservada a partir de 19/01/2027. Nome, endereço e
-      checkout ainda não registrados.
+    endDate: 2027-01-21
+    status: confirmed
+    notes:
+      Duas noites confirmadas no Purpose Resort Echigo-Yuzawa Kura, de 19 a 21/01/2027. Continuação
+      para Fujikawaguchiko em 21/01; transporte ainda não definido.
     mapPosition:
       lat: 36.934083
       lon: 138.817389
       source: https://www.wikidata.org/wiki/Q1204269
+  - id: fujikawaguchiko
+    name:
+      default: Fujikawaguchiko
+      local: 富士河口湖町
+    regionId: japan
+    country: JP
+    aliases:
+      - Kawaguchiko
+    mapPosition:
+      lat: 35.49725
+      lon: 138.754944
+      source: https://www.wikidata.org/wiki/Q1004231
+    timezone: Asia/Tokyo
+    startDate: 2027-01-21
+    endDate: 2027-01-23
+    status: confirmed
+    notes:
+      Duas noites confirmadas no Hotel Regina Kawaguchiko, de 21 a 23/01/2027, em quarto com vista
+      para o Monte Fuji. Passeios e transportes ainda não definidos. Retorno a Tokyo em 23/01 para
+      programação já informada; 23 e 24/01 não disponíveis para passeio ao Fuji.
 alternatives: []
 usefulInfo:
   - title: Antes de sair do hotel

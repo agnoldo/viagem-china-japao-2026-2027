@@ -154,7 +154,18 @@ test('reabre sem rede e navega por todos os dias e cidades registrados', async (
   await reopened.goto(base + '#/hoje/2027-01-18');
   await expect(reopened.locator('.stay-panel')).toContainText('Ueno Woo Hotel');
   await reopened.goto(base + '#/hoje/2027-01-19');
-  await expect(reopened.locator('.stay-panel')).toContainText('Resort · nome a registrar');
+  await expect(reopened.locator('.stay-panel')).toContainText('Purpose Resort Echigo-Yuzawa Kura');
+  await reopened.goto(base + '#/hoje/2027-01-21');
+  await expect(reopened.locator('.stay-panel')).toContainText('Hotel Regina Kawaguchiko');
+  await reopened.goto(base + '#/hotel/hotel-regina-kawaguchiko');
+  await expect(reopened.getByText('Check-in:', { exact: false })).toContainText(
+    '21 de janeiro · 15:00–20:00',
+  );
+  await expect(reopened.getByText('Check-out:', { exact: false })).toContainText(
+    '23 de janeiro · 11:00',
+  );
+  await reopened.getByRole('link', { name: 'Endereço local', exact: true }).click();
+  await expect(reopened.locator('.big-address')).toContainText('５２３９−１');
   await reopened.goto(base + '#/logistica');
   await expect(reopened.getByRole('heading', { name: 'Voos', exact: true })).toBeVisible();
   await reopened.reload();
@@ -278,13 +289,13 @@ test('controlador instalado confirma offline mesmo se reinscrição falhar', asy
   expect((await health(page)).ready).toBe(true);
 });
 
-test('hospedagem reservada sem nome não inventa endereço ou datas', async ({ page }) => {
+test('hospedagem sem nome preserva status e não inventa endereço ou horários', async ({ page }) => {
   await installed(page);
   const hotel = content.hotels.find((h) => h.name.default === null)!;
   await page.goto(base + `#/hotel/${hotel.id}`);
   await expect(page.locator('h1')).toContainText('nome a registrar');
-  await expect(page.locator('.status-confirmed')).toBeVisible();
-  await expect(page.getByText('Check-out: A definir', { exact: false })).toBeVisible();
+  await expect(page.locator(`.status-${hotel.status}`)).toBeVisible();
+  await expect(page.getByText('Check-out:', { exact: false })).toContainText('horário a definir');
   await page.getByRole('link', { name: 'Endereço local', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Copiar nome e endereço' })).toBeDisabled();
   await page.goto(base + `#/hoje/${firstDay.date}`);

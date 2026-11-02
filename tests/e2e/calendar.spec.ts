@@ -13,18 +13,18 @@ test('calendário reúne os meses, preserva lacunas e alterna para a lista', asy
   await expect(calendar.getByRole('heading', { name: 'janeiro de 2027' })).toBeVisible();
   await expect(calendar.locator('.calendar-day')).toHaveCount(31);
   await expect(calendar.getByRole('heading', { name: 'dezembro de 2026' })).toBeVisible();
-  await expect(calendar.locator('.calendar-gap')).toHaveCount(7);
-  await calendar.getByRole('button', { name: /20 de janeiro.*Sem programação cadastrada/ }).click();
+  await expect(calendar.locator('.calendar-gap')).toHaveCount(3);
+  await calendar.getByRole('button', { name: /24 de janeiro.*Sem programação cadastrada/ }).click();
   const summary = page.getByRole('region', { name: 'Resumo do dia selecionado' });
   await expect(summary).toContainText('Cidade, hospedagem e atividades permanecem em aberto');
   await expect(summary.getByRole('link')).toHaveCount(0);
   await page.getByRole('button', { name: 'Lista', exact: true }).click();
   await expect(page.locator('.trip-day')).toHaveCount(content.days.length);
   await page.getByRole('button', { name: 'Calendário', exact: true }).click();
-  await expect(summary).toContainText('20 de janeiro');
+  await expect(summary).toContainText('24 de janeiro');
   await page.reload();
   await expect(
-    calendar.getByRole('button', { name: /20 de janeiro.*Sem programação cadastrada/ }),
+    calendar.getByRole('button', { name: /24 de janeiro.*Sem programação cadastrada/ }),
   ).toHaveAttribute('aria-pressed', 'true');
 });
 

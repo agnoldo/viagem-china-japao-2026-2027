@@ -1,14 +1,14 @@
 - id: echigo-yuzawa-resort
   cityId: echigo-yuzawa
   name:
-    default: null
-    local: null
+    default: Purpose Resort Echigo-Yuzawa Kura
+    local: パーパスリゾート 越後湯沢 蔵
   type: resort
   status: confirmed
   address:
-    default: null
-    local: null
-  phone: null
+    default: 292-13 Yuzawa, Yuzawa-machi, Minamiuonuma-gun, Niigata 949-6101, Japan
+    local: 〒949-6101 新潟県南魚沼郡湯沢町大字湯沢292-13
+  phone: +81 90-5218-8474
   coordinates:
     wgs84:
       lat: null
@@ -20,19 +20,25 @@
       lat: null
       lon: null
   mapSearch:
-    apple: null
+    apple: パーパスリゾート 越後湯沢 蔵 〒949-6101 新潟県南魚沼郡湯沢町大字湯沢292-13
     amapKeyword: null
     amapCity: null
     baiduKeyword: null
     baiduCity: null
   mapLinks: {}
   checkInDate: 2027-01-19
-  checkIn: null
-  checkOutDate: null
-  checkOut: null
-  notes: 'Reserva informada pelo mantenedor (status original: booked). Resort de neve com início da
-    hospedagem em 19/01/2027. Nome, endereço, telefone, horários e data de checkout ainda não
-    registrados. Não é uma reserva de exemplo.'
+  checkIn: 15:00
+  checkOutDate: 2027-01-21
+  checkOut: 10:00
+  notes:
+    'Reserva confirmada de 2 noites, de 19 a 21/01/2027, para quatro viajantes: 1 apartamento de
+    dois quartos, com quatro camas. Sem refeições incluídas. Check-in de 15:00 até meia-noite;
+    checkout de 00:00 a 10:00, Asia/Tokyo. A janela não representa chegada agendada; avisar
+    previamente o horário de chegada. Cancelamento gratuito até 13/01/2027 às 23:59, horário do
+    Japão, conforme comprovante. Endereço japonês conferido no site oficial. Transporte até a
+    hospedagem e continuação para Fujikawaguchiko ainda não definidos. Comprovante, códigos, nomes
+    de hóspedes e valores privados não publicados.'
+  officialUrl: https://www.purposeresort.com/echigoyuzawa/
 - id: pan-pacific-beijing
   cityId: beijing
   name:
@@ -275,3 +281,45 @@
     publicados pelo hotel, no fuso Asia/Shanghai; conferir eventuais condições específicas da
     reserva. Horário de chegada ainda não definido.'
   officialUrl: https://all.accor.com/hotel/3019/index.en.shtml
+- id: hotel-regina-kawaguchiko
+  cityId: fujikawaguchiko
+  name:
+    default: Hotel Regina Kawaguchiko
+    local: ホテルレジーナ河口湖
+  type: hotel
+  status: confirmed
+  address:
+    default: 5239-1 Funatsu, Fujikawaguchiko, Minamitsuru District, Yamanashi 401-0301, Japan
+    local: 〒401-0301 山梨県富士河口湖船津５２３９−１
+  phone: +81 555-20-9000
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: ホテルレジーナ河口湖 〒401-0301 山梨県富士河口湖船津５２３９−１
+    amapKeyword: null
+    amapCity: null
+    baiduKeyword: null
+    baiduCity: null
+  mapLinks: {}
+  checkInDate: 2027-01-21
+  checkIn: 15:00
+  checkOutDate: 2027-01-23
+  checkOut: 11:00
+  notes:
+    'Reserva confirmada de 2 noites, de 21 a 23/01/2027: 1 Quarto Quádruplo Deluxe com Vista para
+    o Monte Fuji, não fumantes, para quatro hóspedes; 2 camas de casal pequenas e 2 sofás-cama. Café
+    da manhã para quatro incluído em 22 e 23/01, buffet das 07:00 às 10:00. Check-in 15:00–20:00 e
+    checkout 07:00–11:00, Asia/Tokyo; chegada ainda não agendada. Cancelamento gratuito antes de
+    19/01/2027 às 23:00, horário local do hotel, conforme comprovante. Endereço e telefone extraídos
+    da confirmação. Deslocamentos de Echigo-Yuzawa e para Tokyo ainda não definidos; organizar
+    retorno em 23/01 conforme compromisso já programado. Comprovante, códigos, nomes de hóspedes e
+    valores privados não publicados.'
+  checkInUntil: 20:00

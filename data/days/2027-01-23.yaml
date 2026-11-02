@@ -1,0 +1,31 @@
+date: 2027-01-23
+cityId: tokyo
+regionId: japan
+summary: Fujikawaguchiko → Tokyo; programação já definida
+status: planned
+notes: Estar em Tokyo em 23/01. Compromissos de 23 e 24/01 informados, sem detalhes ou horários.
+  Hospedagem em Tokyo ainda não registrada; não há pernoite no Regina na noite de 23/01.
+activities:
+  - id: regina-breakfast-23
+    type: meal
+    title: Café da manhã incluído para quatro
+    status: confirmed
+    timezone: Asia/Tokyo
+    notes: Buffet das 07:00 às 10:00.
+    hotelId: hotel-regina-kawaguchiko
+  - id: regina-checkout
+    type: hotel
+    title: Checkout do Hotel Regina até as 11:00
+    status: confirmed
+    timezone: Asia/Tokyo
+    notes: Checkout entre 07:00 e 11:00; antecipar conforme transporte e compromisso em Tokyo.
+    hotelId: hotel-regina-kawaguchiko
+    time: 11:00
+  - id: kawaguchiko-tokyo-transfer
+    type: transfer
+    title: Retorno Fujikawaguchiko → Tokyo
+    status: planned
+    timezone: Asia/Tokyo
+    notes:
+      Meio de transporte, estações e horários a definir conforme compromisso em Tokyo. Sem reserva
+      registrada.

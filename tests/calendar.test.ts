@@ -23,7 +23,7 @@ describe('calendário de datas civis', () => {
     expect(monthCells('2028-02').filter(Boolean)).toHaveLength(29);
     expect(monthCells('2027-02').filter(Boolean)).toHaveLength(28);
   });
-  it('mantém as sete lacunas no intervalo conhecido sem preencher o plano', () => {
+  it('mantém as três lacunas no intervalo conhecido sem preencher o plano', () => {
     const content = readContent();
     const { start, end } = calendarBounds(content);
     const dates = calendarMonths(start, end)
@@ -31,9 +31,9 @@ describe('calendário de datas civis', () => {
       .filter((date): date is string => !!date && date >= start && date <= end);
     expect(dates).toHaveLength(31);
     expect(dates.filter((date) => !content.days.some((day) => day.date === date))).toEqual(
-      Array.from({ length: 7 }, (_, i) => `2027-01-${20 + i}`),
+      Array.from({ length: 3 }, (_, i) => `2027-01-${24 + i}`),
     );
-    expect(content.days).toHaveLength(24);
+    expect(content.days).toHaveLength(28);
   });
   it('usa dias registrados quando os limites gerais não foram informados', () => {
     const content = readContent();

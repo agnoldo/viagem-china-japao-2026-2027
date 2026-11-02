@@ -23,7 +23,7 @@ test('mapa acompanha a data do calendário, lacunas e pernoite em trânsito', as
   await page.getByRole('button', { name: /7 de janeiro.*Chengdu/ }).click();
   await page.getByRole('button', { name: 'Mapa', exact: true }).click();
   await expect(map.locator('.journey-map-detail h3')).toContainText('Chengdu');
-  await page.getByLabel('Dia da viagem', { exact: true }).fill('2027-01-20');
+  await page.getByLabel('Dia da viagem', { exact: true }).fill('2027-01-24');
   await expect(map).toContainText('Sem programação cadastrada');
   await expect(map.locator('.journey-day-link')).toHaveCount(0);
   await page.getByLabel('Dia da viagem', { exact: true }).fill('2027-01-27');

@@ -1,0 +1,15 @@
+date: 2027-01-22
+cityId: fujikawaguchiko
+regionId: japan
+summary: Estadia em Fujikawaguchiko — região do Monte Fuji
+status: planned
+hotelId: hotel-regina-kawaguchiko
+notes: Pernoite confirmado. Passeios ainda não definidos; vista do Monte Fuji depende do clima.
+activities:
+  - id: regina-breakfast-22
+    type: meal
+    title: Café da manhã incluído para quatro
+    status: confirmed
+    timezone: Asia/Tokyo
+    notes: Buffet das 07:00 às 10:00.
+    hotelId: hotel-regina-kawaguchiko

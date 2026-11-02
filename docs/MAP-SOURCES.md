@@ -7,3 +7,5 @@ Referências aproximadas WGS84 das cidades: Wikidata P625, consultado em 31/10/2
 O mapa deriva seus pontos dos dias e extremos de transportes, as linhas dos transportes não cancelados, e as lacunas do intervalo geral. Não conecta automaticamente dias sucessivos nem inventa trajetos para preencher lacunas. A base e os dados estão no bundle; não há download de mapas/geocodificação em runtime.
 
 Atualização: manter `mapPosition` ao cadastrar uma cidade. Uma cidade sem coordenada continua disponível no roteiro e aparece no aviso de posições ausentes. Alterar dias/transportes atualiza o mapa na publicação seguinte, sem catálogo paralelo.
+
+Fujikawaguchiko: referência urbana WGS84 de Wikidata Q1004231, 35.497250 / 138.754944, consultada em 02/11/2026. Não é coordenada do Hotel Regina.

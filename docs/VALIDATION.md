@@ -4,7 +4,7 @@ Atualização em 01/11/2026 a partir dos dados fornecidos pelo mantenedor.
 
 ## Conteúdo
 
-- 24 dias registrados, 10 cidades, 33 locais e 7 hospedagens (5 confirmadas, 2 propostas ainda sem nome). Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
+- 28 dias registrados, 10 cidades, 33 locais e 7 hospedagens (5 confirmadas, 2 propostas ainda sem nome). Limites confirmados: 29/12/2026 a 28/01/2027; programação parcial preservada.
 - Seis voos do bilhete confirmados para os quatro viajantes: QR7251, QR774, QR892, QR809, QR785, QR4834. Horários locais e durações conferidos entre Brasil, Doha, China e Japão.
 - Conexões calculadas: GRU 9h35, DOH 4h25 na ida; DOH 45 minutos e GRU 1h45 na volta. Trocas de terminal em GRU 2→3 e 3→2.
 - Beijing Daxing (PKX), Haneda (HND) e Narita (NRT) são aeroportos distintos. Economy, 2 volumes por passageiro, peso desconhecido. Operação LATAM nos trechos domésticos.
@@ -13,7 +13,9 @@ Atualização em 01/11/2026 a partir dos dados fornecidos pelo mantenedor.
 - Hotel associado somente às cinco noites; 05/01 tem checkout sem pernoite presumido. Transfer de Daxing não definido; continuação confirmada por voo 3U8894 para Chengdu em 05/01, PEK T2 11h40 → CTU T1 14h40. Valores, política financeira e contato privado excluídos.
 - Dia 18/01: voo Shanghai → Haneda e pernoite confirmado no Ueno Woo Hotel, dois quartos Double Room, sem refeições. Check-in 15h–21h; checkout até 11h de 19/01. Endereço/telefone conferidos no [site do hotel](https://ueno-woo-hotel.mydirectstay.com/contact-us.html). Nome da hóspede, valores e dados de pagamento não publicados.
 - Dia 19/01: Joetsu Shinkansen e início de resort reservado.
-- No resort de Echigo-Yuzawa, `booked` foi normalizado para `confirmed`; nome/endereço/checkout continuam nulos.
+- Purpose Resort Echigo-Yuzawa Kura confirmado de 19 a 21/01: duas noites, apartamento de dois quartos, quatro camas, sem refeições. Check-in 15h até meia-noite (fim preservado nas notas porque atravessa o dia); checkout até 10h. Endereço local conferido em https://www.purposeresort.com/echigoyuzawa/.
+- Hotel Regina Kawaguchiko confirmado de 21 a 23/01: duas noites, quarto quádruplo com vista para o Fuji, não fumantes; café da manhã para quatro em 22 e 23/01, 7h–10h. Check-in 15h–20h; checkout 7h–11h. Comprovantes privados lidos localmente; PDFs, códigos, hóspedes e valores não incorporados.
+- Dias 20–23 registrados; retorno a Tokyo em 23/01 sem transporte ou hotel confirmado. Compromissos de 23 e 24 preservados sem inventar detalhes. Passeios na região do Fuji pendentes.
 - Aeroporto em Shanghai, estação de Tokyo, horários de 18–19/01 e programação dos dias sem registro permanecem desconhecidos.
 - Nenhum horário de demonstração, hotel fictício, retorno presumido ou alternativa antiga entra no conteúdo publicado.
 - A fixture anterior fica isolada em `tests/fixtures/` e não é importada pela aplicação.
@@ -28,7 +30,7 @@ Playwright em Chromium e WebKit com viewport de iPhone: navegação por todos os
 
 ## Calendário
 
-Visão mensal em Viagem com alternância para lista; 31 datas dentro dos limites gerais e 24 dias registrados, preservando as sete lacunas de 20–26/01. Os meses são mostrados juntos em ordem cronológica; a seleção inicial prioriza o mês com mais dias da viagem. Sem duplicação de dados ou mudanças nas reservas.
+Visão mensal em Viagem com alternância para lista; 31 datas dentro dos limites gerais e 28 dias registrados, preservando as três lacunas de 24–26/01. Os meses são mostrados juntos em ordem cronológica; a seleção inicial prioriza o mês com mais dias da viagem. Sem duplicação de dados ou mudanças nas reservas.
 
 Cobertura: virada de ano, alinhamento dos dias da semana, fevereiro bissexto, limites gerais nulos, seleção persistida na URL, resumo de lacunas sem links inválidos, voo planejado junto a hotel confirmado, noites em trânsito, troca de mês, navegação para os detalhes, reabertura offline em subpasta e ausência de overflow em 320 px. Inspeção visual em desktop e mobile; abreviações e legenda mantêm os nomes legíveis em telas estreitas. Chromium e WebKit simulados, sem teste em iPhone físico.
 
@@ -71,11 +73,11 @@ HTML com meta robots noindex e arquivo robots.txt local; regra para a raiz do do
 
 ## Mapa de Viagem — 31/10/2026
 
-Base geográfica local Natural Earth; 11 referências urbanas WGS84 com fontes Wikidata, independentes dos links de navegação e locais de embarque. Pontos derivados dos dias/extremos de transportes; linhas só dos transportes não cancelados. Datas compartilhadas com calendário, sete lacunas preservadas, hospedagem e status vindos do conteúdo validado. Testes cobrem atualização dos dias, conexões sem dia-base, exclusão de cancelados, projeção/rótulos, navegação data/calendário, lacunas, trânsito, todo o percurso e reabertura offline em subpasta/320 px, sem rede externa essencial. Não testado em iPhone físico.
+Base geográfica local Natural Earth; 11 referências urbanas WGS84 com fontes Wikidata, independentes dos links de navegação e locais de embarque. Pontos derivados dos dias/extremos de transportes; linhas só dos transportes não cancelados. Datas compartilhadas com calendário, três lacunas preservadas, hospedagem e status vindos do conteúdo validado. Testes cobrem atualização dos dias, conexões sem dia-base, exclusão de cancelados, projeção/rótulos, navegação data/calendário, lacunas, trânsito, todo o percurso e reabertura offline em subpasta/320 px, sem rede externa essencial. Não testado em iPhone físico.
 
 ## Calendário reunido — 31/10/2026
 
-Dezembro/2026 e janeiro/2027 aparecem juntos em ordem cronológica, sem alternância mensal. Todos os 31 dias da viagem permanecem selecionáveis; sete lacunas preservadas. Semanas completas fora do período são omitidas, com alinhamento dos dias da semana preservado. A seleção continua na URL e no mapa. Verificação E2E inclui os dois títulos/31 datas, resumo, trânsito, lacunas e reabertura offline/320 px.
+Dezembro/2026 e janeiro/2027 aparecem juntos em ordem cronológica, sem alternância mensal. Todos os 31 dias da viagem permanecem selecionáveis; três lacunas preservadas. Semanas completas fora do período são omitidas, com alinhamento dos dias da semana preservado. A seleção continua na URL e no mapa. Verificação E2E inclui os dois títulos/31 datas, resumo, trânsito, lacunas e reabertura offline/320 px.
 
 ## TripAdvisor — 31/10/2026
 
@@ -104,3 +106,9 @@ Confirmação privada consultada: Wyndham ZhangJiajie Wulingyuan Hotel, 11–14/
 Dia 11: trem cedo, depósito a confirmar, Tianmen com acesso de inverno a reconfirmar, 72 Qilou e check-in noturno estimado. Dia 12: Yuanjiajie e Tianzi. Dia 13: Glass Bridge/Grand Canyon e Golden Whip Stream opcional, condicionado a tempo, gelo e últimos ônibus. Sem reservas de trem, motoristas, ingressos ou guarda-volumes; horários são planejamento. Fontes de planejamento: [acesso a Tianmen](https://www.tianmenmount.com/news/yin-tian-men-shan-suo-dao-zheng-ti-sheng-ji-gai-zao-shi-gong-zi-2026-nian-10-yue?lang=en), [circuitos do parque](https://www.discoverzhangjiajie.org/en/guidebook/routes/index.html) e [ponte/cânion](https://visitzhangjiajie.com/experiences/glass-bridge-bungee.html).
 
 Verificação desta atualização: lint, validação de conteúdo, 95 testes unitários e build aprovados. E2E completo: 45/46 aprovados; o teste WebKit de instalação interrompida/atualização/rollback teve timeout na aquisição inicial do controlador SW e passou na repetição isolada (1 teste). Subpasta, reabertura offline, recuperação de cache e ambos os países verificados. Não houve alteração de SW/cache nem teste em iPhone físico. Perda total de armazenamento continua exigindo rede para reinstalar.
+
+## Echigo-Yuzawa e Fujikawaguchiko — 02/11/2026
+
+Comprovantes privados confirmam Purpose Resort Echigo-Yuzawa Kura em 19–21/01 e Hotel Regina Kawaguchiko em 21–23/01, duas noites cada. Datas de checkout não geram noite extra: Yuzawa nas noites de 19 e 20; Regina nas noites de 21 e 22. Dias 20–23 adicionados; dia 23 tem base Tokyo e hospedagem pendente. Os compromissos informados de 23 e 24 não receberam atividades ou horários inventados. Deslocamentos de 21 e 23 constam como atividades planejadas, sem modal, ligação direta ou bilhete presumido. Coordenada urbana de Fujikawaguchiko separada dos endereços de navegação; coordenadas dos hotéis mantidas nulas.
+
+Lint, validação, 96 testes unitários e build aprovados. E2E: 42/46 passaram na execução completa; quatro falhas eram expectativas antigas de resort sem nome/checkout e foram corrigidas. Os quatro testes afetados passaram na repetição em Chromium e WebKit, incluindo todos os dias/cidades offline, dados do Regina, endereços locais e hospedagem pendente. Calendário, mapa, subpasta, recuperação de cache, atualização e rollback passaram na execução completa. WebKit com perfil iPhone é emulação; sem teste em iPhone físico. Perda total do armazenamento exige reinstalação com internet. Sem alteração no SW ou publicação nesta atualização.
