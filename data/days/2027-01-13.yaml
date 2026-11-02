@@ -1,31 +1,58 @@
 date: 2027-01-13
 cityId: zhangjiajie
 regionId: china
-summary: 'Zhangjiajie: Tianmen Mountain ou plano de contingência'
+summary: Glass Bridge e Grand Canyon; Golden Whip Stream se houver tempo
 status: planned
-notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+notes: Manhã no Grand Canyon e tarde flexível no National Forest Park. Ponte e cânion exigem
+  ingresso próprio, separado do parque. Prever 5–6 horas incluindo deslocamentos e entrada; sem
+  atividades extras. Se chegar à entrada leste depois de 14h30, reavaliar conforme fechamento, gelo
+  e último ônibus.
 activities:
-  - id: 2027-01-13-tianmen-mountain
-    title: Tianmen Mountain
+  - id: 2027-01-13-canyon-transfer
+    title: Transfer Wyndham → Grand Canyon
+    type: transfer
+    status: planned
+    time: 07:30
+    endTime: 08:30
+    timezone: Asia/Shanghai
+    notes: Saída estimada entre 07h30 e 08h, ajustada ao primeiro ingresso disponível. Combinar
+      motorista e local de busca na saída efetiva do circuito, que pode diferir da entrada.
+  - id: 2027-01-13-grand-canyon
+    title: Glass Bridge e Grand Canyon
     type: attraction
     status: planned
-    time: 08:00
-    endTime: 15:00
+    time: 08:30
+    endTime: 12:30
     timezone: Asia/Shanghai
-    placeId: tianmen-mountain
-    travelBufferMinutes: 60
-    notes: Confirmar teleférico, passarelas e operação em janeiro.
-  - id: zhangjiajie-weather-flex
-    title: Plano de contingência por clima
-    type: free-time
+    notes: Reservar primeira faixa disponível e ingresso incluindo ponte e cânion; compra ainda
+      pendente. Prever 3–4 horas no circuito, sem tirolesa, bungee ou outros extras. Operação de
+      inverno a confirmar.
+    placeId: zhangjiajie-grand-canyon
+  - id: 2027-01-13-lunch-transfer
+    title: Transfer à entrada leste e almoço simples
+    type: meal
+    status: planned
+    time: 12:30
+    endTime: 14:00
+    timezone: Asia/Shanghai
+    notes: Combinar motorista até Wujiayu; almoço e trânsito podem reduzir o tempo da tarde.
+  - id: 2027-01-13-golden-whip
+    title: 'Golden Whip Stream: trecho curto e retorno'
+    type: attraction
     status: optional
-    time: 10:00
+    time: 14:00
+    endTime: 16:30
     timezone: Asia/Shanghai
-    notes: Se houver neblina intensa ou fechamento, substituir por atividade urbana e descanso.
+    notes: 'Somente se houver margem: entrada leste → ônibus até Shuirao Simen → caminhada de 45–60
+      minutos pelo vale → retorno pelo mesmo caminho e ônibus à entrada leste. Não percorrer o rio
+      inteiro. Alternativa mais curta: Ten-Mile Gallery, sem somar as duas. Respeitar último ônibus
+      e condições de gelo.'
+    placeId: golden-whip-stream
   - id: 2027-01-13-zhangjiajie-dinner
     title: Jantar e organização da saída para Shanghai
     type: meal
     status: planned
     time: 19:00
     timezone: Asia/Shanghai
-    notes: Atividade proposta; confirmar antes da viagem.
+    notes: Retorno ao Wyndham; conferir transporte de 14/01 e checkout antes de 12h.
+hotelId: zhangjiajie-hotel

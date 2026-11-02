@@ -83,9 +83,13 @@
     terminal: null
     station: null
   bookingReferenceHint: null
-  notes: Deslocamento proposto entre Chongqing e Zhangjiajie; confirmar operação e estação.
-  offlineInstructions: Trecho proposto Chongqing → Zhangjiajie. Confirme as estações de partida e
-    chegada, horário, número do trem e reserva antes de sair.
+  notes: Buscar trem cedo Chongqing East → Zhangjiajie West em 11/01, com chegada antes das 10h para
+    Tianmen no mesmo dia. Estações propostas, operação, horários e número de janeiro a confirmar;
+    sem reserva.
+  offlineInstructions:
+    Confirmar bilhete, estações Chongqing East (重庆东站) e Zhangjiajie West (张家界西站),
+    horários e antecedência antes de sair. Combinar transfer da chegada, guarda de bagagem e
+    ingresso de Tianmen com margem. Não usar horário de referência como bilhete confirmado.
   trainNumber: null
   class: null
   recommendedArrivalMinutes: null

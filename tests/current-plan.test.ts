@@ -185,9 +185,13 @@ describe('plano atual com dados incompletos', () => {
       'pan-pacific-beijing',
       'ueno-woo-hotel',
       'chengdu-hotel',
+      'zhangjiajie-hotel',
       'shanghai-hotel',
     ]);
-    expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(2);
+    expect(content.hotels.filter((h) => h.status === 'planned')).toHaveLength(1);
+    expect(
+      content.days.filter((d) => d.hotelId === 'zhangjiajie-hotel').map((d) => d.date),
+    ).toEqual(['2027-01-11', '2027-01-12', '2027-01-13']);
     expect(content.days.filter((d) => d.hotelId === 'shanghai-hotel').map((d) => d.date)).toEqual([
       '2027-01-14',
       '2027-01-15',

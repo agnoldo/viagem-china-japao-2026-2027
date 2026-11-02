@@ -12,7 +12,7 @@ countries:
   - JP
 defaultLocale: pt-BR
 defaultTimeZone: America/Sao_Paulo
-contentVersion: 2026-11-01
+contentVersion: 2026-11-02
 travelers:
   - id: adult-1
     label: Adulto 1
@@ -36,8 +36,8 @@ notes:
   - 'Tokyo: Ueno Woo Hotel reservado para a noite de 18/01, dois quartos Double Room para os quatro
     viajantes. Check-in de 15:00 a 21:00; checkout até 11:00 de 19/01, horários locais.'
   - Passeios, horários sugeridos e deslocamentos chineses sem reserva são propostas, com status
-    Planejado ou Opcional. Hotéis de Chongqing e Zhangjiajie ainda a escolher. Programação do Japão
-    após 19/01 continua em aberto.
+    Planejado ou Opcional. Hotel de Chongqing ainda a escolher; Wyndham Wulingyuan confirmado em
+    Zhangjiajie. Programação do Japão após 19/01 continua em aberto.
   - Novotel Shanghai Atlantis confirmado de 14 a 18/01/2027, quatro noites em Junior Suite com vista
     para o rio Huangpu. Happy hour para duas pessoas no restaurante giratório, 17:30–20:00, conforme
     opção reservada.
@@ -45,6 +45,10 @@ notes:
     Airlines 3U8894, PEK T2 11:40 → CTU T1 14:40, horários locais.'
   - 'Chengdu: Kaiman Top Floor High Altitude Hotel (Taikoo Li Branch) confirmado de 05 a 08/01/2027,
     três noites.'
+  - 'Zhangjiajie: Wyndham ZhangJiajie Wulingyuan Hotel confirmado de 11 a 14/01, três noites em dois
+    quartos, com café da manhã para quatro. Tianmen e 72 Qilou planejados em 11/01;
+    Yuanjiajie/Tianzi em 12/01; Glass Bridge/Grand Canyon e trecho opcional de Golden Whip Stream em
+    13/01.'
 regions:
   - id: brazil
     name: Brasil

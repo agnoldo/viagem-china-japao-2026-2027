@@ -1,26 +1,42 @@
 date: 2027-01-12
 cityId: zhangjiajie
 regionId: china
-summary: 'Zhangjiajie: Wulingyuan e pilares de arenito'
+summary: 'National Forest Park: Yuanjiajie e Tianzi Mountain'
 status: planned
-notes: Programação proposta; confirmar horários, reservas e operação antes da viagem.
+notes: Dia inteiro de mirantes no alto, cerca de 7–8 horas. Reservar o dia de melhor visibilidade
+  para este circuito; pode trocar com 13/01 conforme clima e disponibilidade dos ingressos.
+  Confirmar horários de inverno e últimos transportes internos.
 activities:
   - id: 2027-01-12-wulingyuan-yuanjiajie
-    title: 'Parque Nacional de Zhangjiajie: Yuanjiajie'
+    title: Entrada leste, Bailong e Yuanjiajie
     type: attraction
     status: planned
     time: 08:00
-    endTime: 15:00
+    endTime: 12:00
     timezone: Asia/Shanghai
+    notes:
+      Horários sugeridos, ajustar ao início da operação. Wyndham → entrada leste Wujiayu → ônibus
+      interno → elevador Bailong → mirantes de Yuanjiajie, incluindo First Bridge Under Heaven.
+      Ingressos e elevador não reservados.
     placeId: wulingyuan-yuanjiajie
-    travelBufferMinutes: 90
-    notes: Atividade proposta; confirmar antes da viagem.
+  - id: 2027-01-12-lunch
+    title: Almoço e ônibus internos até Tianzi Mountain
+    type: meal
+    status: planned
+    time: 12:00
+    endTime: 13:30
+    timezone: Asia/Shanghai
+    notes: Pausa e conexões internas conforme operação; não presumir ônibus direto.
   - id: 2027-01-12-wulingyuan-tianzi
-    title: Tianzi Mountain ou área panorâmica equivalente
+    title: Tianzi Mountain e retorno pela entrada leste
     type: attraction
     status: planned
-    time: 15:00
-    endTime: 17:00
+    time: 13:30
+    endTime: 16:30
     timezone: Asia/Shanghai
+    notes:
+      Mirantes da região de He Long Park → teleférico Tianzi para descer → ônibus interno → entrada
+      leste. Sem acrescentar Yangjiajie. Confirmar inclusão e operação do teleférico, com margem
+      para último ônibus.
     placeId: wulingyuan-tianzi
-    notes: Ajustar conforme clima, visibilidade e operação dos transportes do parque.
+hotelId: zhangjiajie-hotel

@@ -1,27 +1,71 @@
 date: 2027-01-11
 cityId: zhangjiajie
 regionId: china
-summary: Chongqing → Zhangjiajie
+summary: Chongqing → Tianmen Mountain → 72 Qilou → Wulingyuan
 status: planned
-notes: Três noites previstas. Hospedagem ainda não escolhida.
+notes: Dia longo, com saída de madrugada e chegada noturna ao Wyndham confirmado. Horários são
+  estimativas, não reservas. Confirmar trem com chegada antes das 10h, ingresso de Tianmen,
+  guarda-volumes e motorista. Em caso de atraso, mau tempo ou cansaço, reduzir ou retirar 72 Qilou.
 activities:
   - id: chongqing-zhangjiajie-train
-    title: Trem Chongqing → Zhangjiajie
+    title: Trem cedo Chongqing → Zhangjiajie
     type: train
     status: planned
+    timezone: Asia/Shanghai
+    notes:
+      Buscar saída por volta de 07h–07h15 de Chongqing East e chegada até 10h em Zhangjiajie West.
+      Grade de janeiro, estações, número e horários a confirmar; não é bilhete emitido.
     transportId: chongqing-zhangjiajie-2027-01-11
-    notes: A ligação ferroviária é o deslocamento-base proposto; confirmar trem e estação.
-  - id: zhangjiajie-arrival
-    title: Chegada e check-in em Zhangjiajie
-    type: hotel
+  - id: zhangjiajie-luggage
+    title: Transfer, guarda de bagagem e acesso a Tianmen
+    type: transfer
+    status: planned
+    time: 10:00
+    endTime: 11:30
+    timezone: Asia/Shanghai
+    notes:
+      Combinar recepção na estação e depósito no acesso usado para Tianmen. Não contar com locker
+      sem confirmar capacidade, funcionamento e retirada. Evitar voltar à estação apenas para
+      recuperar malas.
+  - id: 2027-01-11-tianmen
+    title: Tianmen Mountain
+    type: attraction
+    status: planned
+    time: 11:30
+    endTime: 17:00
+    timezone: Asia/Shanghai
+    notes: Janela estimada. Confirmar operação de inverno e faixa de entrada com margem após o trem.
+      Aviso consultado informa teleférico longo suspenso e rota C pelo portão da montanha,
+      teleférico expresso e escadas rolantes; shuttle urbano a reconfirmar para janeiro.
+    placeId: tianmen-mountain
+  - id: zhangjiajie-luggage-pickup
+    title: Retirada de bagagem e transfer ao 72 Qilou
+    type: transfer
     status: planned
     time: 17:00
+    endTime: 19:00
     timezone: Asia/Shanghai
-    notes: Hospedagem ainda não escolhida; usar a tarde para descanso.
-  - id: zhangjiajie-dinner
-    title: Jantar local
-    type: meal
+    notes:
+      Motorista a combinar antecipadamente; recuperar malas, prever jantar e confirmar guarda da bagagem
+      no veículo durante a visita. Veículo para quatro pessoas, malas de bordo e mochilas.
+  - id: 2027-01-11-72-qilou
+    title: '72 Qilou: iluminação, apresentações e jantar'
+    type: attraction
     status: planned
     time: 19:00
+    endTime: 20:30
     timezone: Asia/Shanghai
-    notes: Atividade proposta; confirmar antes da viagem.
+    notes:
+      Programação noturna de janeiro ainda não confirmada. Reservar 1h30–2h conforme disposição;
+      jantar pode ocorrer antes ou durante a visita. Primeira atividade a reduzir se houver atraso.
+    placeId: zhangjiajie-72-qilou
+  - id: zhangjiajie-arrival
+    title: Transfer e check-in no Wyndham Wulingyuan
+    type: hotel
+    status: planned
+    time: 21:30
+    timezone: Asia/Shanghai
+    notes:
+      Chegada estimada entre 21h15 e 22h. Combinar transfer final e avisar o hotel sobre chegada
+      noturna; recepção tardia ainda a confirmar. Hospedagem reservada, motorista não contratado.
+hotelId: zhangjiajie-hotel

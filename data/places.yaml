@@ -1042,3 +1042,96 @@
   officialUrl: null
   notes: Aeroporto confirmado no comprovante do voo 3U8894 de 05/01/2027. Endereço, coordenadas e
     trajeto terrestre ainda não registrados.
+- id: zhangjiajie-72-qilou
+  cityId: zhangjiajie
+  name:
+    default: 72 Qilou — 72 Wonders Tower
+    local: 七十二奇楼
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 七十二奇楼 张家界
+    amapKeyword: 七十二奇楼
+    amapCity: 张家界
+    baiduKeyword: 七十二奇楼
+    baiduCity: 张家界
+  mapLinks: {}
+  officialUrl: null
+  notes: Passeio planejado, sem ingresso reservado. Confirmar acesso, horários e operação de inverno.
+- id: zhangjiajie-grand-canyon
+  cityId: zhangjiajie
+  name:
+    default: Zhangjiajie Grand Canyon e Glass Bridge
+    local: 张家界大峡谷玻璃桥
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 张家界大峡谷玻璃桥 张家界
+    amapKeyword: 张家界大峡谷玻璃桥
+    amapCity: 张家界
+    baiduKeyword: 张家界大峡谷玻璃桥
+    baiduCity: 张家界
+  mapLinks: {}
+  officialUrl: null
+  notes: Passeio planejado, sem ingresso reservado. Confirmar acesso, horários e operação de inverno.
+- id: golden-whip-stream
+  cityId: zhangjiajie
+  name:
+    default: Golden Whip Stream
+    local: 金鞭溪
+  category: attraction
+  status: planned
+  aliases: []
+  address:
+    default: null
+    local: null
+  phone: null
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 金鞭溪 张家界
+    amapKeyword: 金鞭溪
+    amapCity: 张家界
+    baiduKeyword: 金鞭溪
+    baiduCity: 张家界
+  mapLinks: {}
+  officialUrl: null
+  notes: Passeio planejado, sem ingresso reservado. Confirmar acesso, horários e operação de inverno.
