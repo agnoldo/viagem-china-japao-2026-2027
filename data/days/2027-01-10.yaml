@@ -1,9 +1,12 @@
 date: 2027-01-10
 cityId: chongqing
 regionId: china
-summary: 'Chongqing: dia adicional e passeio opcional'
+summary: 'Chongqing: checkout do SEYA e mudança para o Ji junto à estação'
 status: planned
-notes: Dia adicional para explorar Chongqing. Dazu ou Wulong continuam opcionais, sem reserva.
+notes: Checkout do SEYA antes de 12h; Ji confirmado para a noite de 10–11/01. Combinar depósito de
+  bagagem no SEYA e recuperá-la antes do deslocamento. Preservar chegada ao Ji no início da noite e
+  descanso para trem cedo em 11/01. Metrô é opção informada pela família; linha, conexões e último
+  serviço ainda a conferir.
 activities:
   - id: chongqing-extra-day
     title: Dia flexível em Chongqing
@@ -18,3 +21,31 @@ activities:
     endTime: 17:00
     timezone: Asia/Shanghai
     notes: Alternativa de dia inteiro; não combinar com o roteiro urbano no mesmo dia.
+  - id: seya-checkout
+    title: Checkout do SEYA antes de 12h
+    type: hotel
+    status: confirmed
+    time: 12:00
+    timezone: Asia/Shanghai
+    hotelId: chongqing-hotel
+    notes: Horário limite do checkout, não horário de saída agendado. Combinar guarda das malas.
+  - id: chongqing-ji-metro
+    title: Recuperar malas e seguir de metrô ao Ji Hotel
+    type: transfer
+    status: planned
+    time: 19:00
+    timezone: Asia/Shanghai
+    notes:
+      'Horário sugerido, ajustar ao percurso. Destino: metrô Chongqingdong (重庆东站), saída 5; imagem
+      da família indica 615 m/9 min a pé até o Ji. Confirmar linhas, conexões, elevadores e
+      funcionamento; Chayuan não é a estação de destino indicada. Táxi como alternativa.'
+  - id: ji-checkin
+    title: Check-in no Ji e descanso
+    type: hotel
+    status: planned
+    time: 20:30
+    timezone: Asia/Shanghai
+    hotelId: chongqing-ji-east
+    notes: Chegada estimada, reserva confirmada. Preparar malas e alimentação para saída cedo; trem
+      ainda sem reserva.
+hotelId: chongqing-ji-east

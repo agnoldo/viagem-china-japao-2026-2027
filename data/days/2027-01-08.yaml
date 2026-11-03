@@ -3,7 +3,8 @@ cityId: chongqing
 regionId: china
 summary: Chengdu → Chongqing e panorama noturno
 status: planned
-notes: Duas noites previstas em Chongqing. Hospedagem ainda não escolhida.
+notes: SEYA Jiefangbei Flagship confirmado para as noites de 08 e 09/01, checkout em 10/01 antes de
+  12h. Trem de Chengdu e passeios seguem planejados.
 activities:
   - id: chengdu-hotel-checkout
     title: Checkout do Kaiman Top Floor High Altitude Hotel até as 12:00
@@ -34,3 +35,4 @@ activities:
     time: 19:30
     timezone: Asia/Shanghai
     notes: Atividade proposta; confirmar antes da viagem.
+hotelId: chongqing-hotel

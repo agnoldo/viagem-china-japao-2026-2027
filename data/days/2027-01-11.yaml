@@ -3,10 +3,23 @@ cityId: zhangjiajie
 regionId: china
 summary: Chongqing → Tianmen Mountain → 72 Qilou → Wulingyuan
 status: planned
-notes: Dia longo, com saída de madrugada e chegada noturna ao Wyndham confirmado. Horários são
-  estimativas, não reservas. Confirmar trem com chegada antes das 10h, ingresso de Tianmen,
-  guarda-volumes e motorista. Em caso de atraso, mau tempo ou cansaço, reduzir ou retirar 72 Qilou.
+notes: Dia longo, com saída cedo do Ji junto à estação e chegada noturna ao Wyndham confirmado.
+  Horários são estimativas, não reservas. Confirmar trem com chegada antes das 10h, ingresso de
+  Tianmen, guarda-volumes e motorista. Em caso de atraso, mau tempo ou cansaço, reduzir ou retirar
+  72 Qilou.
 activities:
+  - id: ji-early-checkout
+    title: Checkout antecipado do Ji e caminhada até Chongqing East
+    type: hotel
+    status: planned
+    time: 06:00
+    timezone: Asia/Shanghai
+    hotelId: chongqing-ji-east
+    notes:
+      Horário estimado para trem por volta de 07h–07h15, ainda não reservado. Confirmar horário do
+      bilhete e entrada correta; buscar chegada cerca de 60 min antes. Imagem indica 310 m/5 min ao
+      acesso ferroviário; reservar 10–15 min com malas e orientação. Café não incluído e servido a
+      partir de 07h; providenciar alimentação antes.
   - id: chongqing-zhangjiajie-train
     title: Trem cedo Chongqing → Zhangjiajie
     type: train
@@ -46,8 +59,8 @@ activities:
     endTime: 19:00
     timezone: Asia/Shanghai
     notes:
-      Motorista a combinar antecipadamente; recuperar malas, prever jantar e confirmar guarda da bagagem
-      no veículo durante a visita. Veículo para quatro pessoas, malas de bordo e mochilas.
+      Motorista a combinar antecipadamente; recuperar malas, prever jantar e confirmar guarda da
+      bagagem no veículo durante a visita. Veículo para quatro pessoas, malas de bordo e mochilas.
   - id: 2027-01-11-72-qilou
     title: '72 Qilou: iluminação, apresentações e jantar'
     type: attraction

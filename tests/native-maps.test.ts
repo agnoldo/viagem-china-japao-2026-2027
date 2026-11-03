@@ -126,7 +126,22 @@ describe('URLs nativas com sistemas de coordenadas explícitos', () => {
     expect(new URL(baidu.fallbackUrl!).searchParams.get('wd')).toBe(text);
   });
   it('não gera busca de hotel fictício sem nome, endereço ou coordenadas', () => {
-    const unknown = readContent().hotels.find((h) => h.id === 'chongqing-hotel')!;
+    const unknown = structuredClone(readContent().hotels[0]);
+    unknown.name = { default: null, local: null };
+    unknown.address = { default: null, local: null };
+    unknown.coordinates = {
+      wgs84: { lat: null, lon: null },
+      gcj02: { lat: null, lon: null },
+      bd09: { lat: null, lon: null },
+    };
+    unknown.mapSearch = {
+      apple: null,
+      amapKeyword: null,
+      amapCity: null,
+      baiduKeyword: null,
+      baiduCity: null,
+    };
+    unknown.mapLinks = {};
     for (const provider of ['amap', 'baidu'])
       expect(buildMapLinks(unknown, provider).appUrl).toBeNull();
   });

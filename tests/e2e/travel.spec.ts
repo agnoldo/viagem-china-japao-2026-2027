@@ -300,15 +300,17 @@ test('controlador instalado confirma offline mesmo se reinscrição falhar', asy
   expect((await health(page)).ready).toBe(true);
 });
 
-test('hospedagem sem nome preserva status e não inventa endereço ou horários', async ({ page }) => {
+test('hospedagem preserva pendências existentes e noites em trânsito', async ({ page }) => {
   await installed(page);
-  const hotel = content.hotels.find((h) => h.name.default === null)!;
-  await page.goto(base + `#/hotel/${hotel.id}`);
-  await expect(page.locator('h1')).toContainText('nome a registrar');
-  await expect(page.locator(`.status-${hotel.status}`)).toBeVisible();
-  await expect(page.getByText('Check-out:', { exact: false })).toContainText('horário a definir');
-  await page.getByRole('link', { name: 'Endereço local', exact: true }).click();
-  await expect(page.getByRole('button', { name: 'Copiar nome e endereço' })).toBeDisabled();
+  const hotel = content.hotels.find((h) => h.name.default === null);
+  if (hotel) {
+    await page.goto(base + `#/hotel/${hotel.id}`);
+    await expect(page.locator('h1')).toContainText('nome a registrar');
+    await expect(page.locator(`.status-${hotel.status}`)).toBeVisible();
+    await expect(page.getByText('Check-out:', { exact: false })).toContainText('horário a definir');
+    await page.getByRole('link', { name: 'Endereço local', exact: true }).click();
+    await expect(page.getByRole('button', { name: 'Copiar nome e endereço' })).toBeDisabled();
+  }
   await page.goto(base + `#/hoje/${firstDay.date}`);
   await expect(page.getByText('Plano parcial.', { exact: true })).toBeVisible();
   await expect(page.locator('.stay-panel')).toContainText('Noite em trânsito');

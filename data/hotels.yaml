@@ -168,14 +168,16 @@
 - id: chongqing-hotel
   cityId: chongqing
   name:
-    default: null
-    local: null
+    default: SEYA Panoramic Hotel - Chongqing Jiefangbei Flagship (Managed by SEYA GROUP)
+    local: 世野SEYA酒店(解放碑店)
   type: hotel
-  status: planned
+  status: confirmed
   address:
-    default: null
-    local: null
-  phone: null
+    default:
+      58th Floor, Yingli International Financial Center, No. 28 Minquan Road, Yuzhong District,
+      Chongqing, China
+    local: 重庆渝中区民权路28号英利国际金融中心58楼
+  phone: +86 23 63306800
   coordinates:
     wgs84:
       lat: null
@@ -187,18 +189,69 @@
       lat: null
       lon: null
   mapSearch:
-    apple: null
-    amapKeyword: null
-    amapCity: null
-    baiduKeyword: null
-    baiduCity: null
+    apple: 世野SEYA酒店(解放碑店) 重庆渝中区民权路28号英利国际金融中心58楼
+    amapKeyword: 世野SEYA酒店(解放碑店) 重庆渝中区民权路28号英利国际金融中心58楼
+    amapCity: 重庆
+    baiduKeyword: 世野SEYA酒店(解放碑店) 重庆渝中区民权路28号英利国际金融中心58楼
+    baiduCity: 重庆
   mapLinks: {}
   checkInDate: 2027-01-08
-  checkIn: null
+  checkIn: 14:00
+  checkInUntil: null
+  checkOutDate: 2027-01-10
+  checkOut: 12:00
+  notes:
+    'Reserva confirmada de 2 noites, 08–10/01/2027: 1 Baroque Tower - 270° Panoramic Deluxe Suite
+    (15㎡ Private Hot Tub), capacidade para 4 pessoas, 1 cama king e 1 sofá-cama. Café da manhã para
+    2 pessoas em 09 e 10/01, das 09:00 às 12:00; não inclui automaticamente os quatro viajantes.
+    Check-in após 14h e checkout antes de 12h, Asia/Shanghai. Unidade Jiefangbei Flagship na Minquan
+    Road, não a unidade Cloud Eye na Xinhua Road. Chá da tarde para dois, fruta de boas-vindas e
+    benefícios adicionais sujeitos às condições do pacote; conferir serviços com a recepção. Em
+    10/01, combinar guarda de malas após checkout e deslocamento ao Ji no fim do dia.'
+- id: chongqing-ji-east
+  cityId: chongqing
+  name:
+    default: Ji Hotel (Chongqing East Railway Station Chayuan Branch)
+    local: 全季酒店(重庆东站茶园店)
+  type: hotel
+  status: confirmed
+  address:
+    default: No. 518 Kaicheng Avenue, Changshengqiao Town, Nan'an District, Chongqing, China
+    local: 重庆南岸区长生桥镇开城大道518号
+  phone: +86 23 61627888
+  coordinates:
+    wgs84:
+      lat: null
+      lon: null
+    gcj02:
+      lat: null
+      lon: null
+    bd09:
+      lat: null
+      lon: null
+  mapSearch:
+    apple: 全季酒店(重庆东站茶园店) 重庆南岸区长生桥镇开城大道518号
+    amapKeyword: 全季酒店(重庆东站茶园店) 重庆南岸区长生桥镇开城大道518号
+    amapCity: 重庆
+    baiduKeyword: 全季酒店(重庆东站茶园店) 重庆南岸区长生桥镇开城大道518号
+    baiduCity: 重庆
+  mapLinks: {}
+  checkInDate: 2027-01-10
+  checkIn: 04:00
   checkInUntil: null
   checkOutDate: 2027-01-11
-  checkOut: null
-  notes: Hospedagem proposta; nome, endereço e reserva ainda não registrados.
+  checkOut: 14:00
+  notes: 'Reserva confirmada de 1 noite, 10–11/01/2027: 1 Mountain-View Family Suite (180° Panoramic
+    Floor-to-Ceiling Window + Independent Relaxation Area), 1 cama full e 1 cama queen. Capacidade
+    anunciada de até 4 hóspedes, no máximo 3 adultos; conferir cadastro de todos os viajantes e
+    classificação etária no comprovante privado. Sem refeições incluídas. Comprovante informa
+    check-in após 04:00 e checkout antes de 14:00, Asia/Shanghai; reconfirmar o horário incomum de
+    check-in, sem tratar como chegada agendada. Chegada planejada no fim do dia 10; saída cedo em 11
+    para o trem, sem esperar o café, servido 07:00–10:00 e não incluído. Imagem fornecida pela
+    família indica acesso a pé desde a saída 5 do metrô Chongqingdong (重庆东站), cerca de 615 m/9
+    minutos; acesso ferroviário indicado separadamente como 310 m/5 minutos. Prever margem com malas
+    e confirmar elevadores, percurso e entrada de embarque no local. Não confundir com a unidade
+    Chayuan Metro Station.'
 - id: zhangjiajie-hotel
   cityId: zhangjiajie
   name:
